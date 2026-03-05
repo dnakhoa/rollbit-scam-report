@@ -1,0 +1,720 @@
+{
+  "metadata": {
+    "investigation_title": "Rollbit Forensic Investigation: Fund Locking & Scam Behavior Analysis",
+    "compiled_date": "2026-03-05",
+    "total_cases": 87,
+    "confirmed_amount_usd": 489741,
+    "estimated_total_usd": 750000,
+    "sources_searched": [
+      "Bitcointalk.org (Scam Accusations)",
+      "Trustpilot (194+ pages)",
+      "Casino Guru (Complaints)",
+      "AskGamblers (Forum)",
+      "CasinoListings (Forum)",
+      "Twitter/X",
+      "BeInCrypto",
+      "CoinDesk",
+      "CaptainAltcoin",
+      "CryptoSlate",
+      "dev.ua (Ukraine)"
+    ],
+    "categories": {
+      "multiple_accounts_accusation": "User accused of having multiple accounts with no evidence provided",
+      "sportsbook_abuse": "Account disabled for allegedly abusing sportsbook features",
+      "kyc_delay_tactic": "Endless KYC requirements used to delay/deny withdrawal",
+      "maintenance_scam": "Platform maintenance during active leveraged positions causing losses",
+      "restricted_country": "Funds seized citing restricted jurisdiction after allowing deposits",
+      "winning_block": "Account blocked immediately after significant win",
+      "futures_manipulation": "Leveraged trading manipulation, forced liquidations",
+      "account_closure": "Account closed with funds seized, no clear reason",
+      "influencer_fraud": "Fake balances given to influencers for promotion",
+      "token_manipulation": "RLB token price manipulation via undisclosed influencer deals",
+      "license_fraud": "Operating without valid license while claiming to have one",
+      "money_laundering_link": "Links to money laundering operations"
+    }
+  },
+  "bitcointalk_cases": [
+    {
+      "case_id": "BTC-001",
+      "thread_url": "https://bitcointalk.org/?topic=5449402.0",
+      "thread_title": "Rollbit disables account and seizes funds (10.2k)!",
+      "username_forum": "Stakemeharder",
+      "username_rollbit": "Markobagz",
+      "date_posted": "2023-04-15",
+      "amount_usd": 10200,
+      "additional_losses": 1500,
+      "total_claimed_usd": 11700,
+      "category": "sportsbook_abuse",
+      "status": "UNRESOLVED",
+      "details": "Account permanently disabled. Rollbit claimed 'sportsbook abuse' for value-betting at low odds (1.003-1.02) to qualify for rakeback rewards. Rollbit admin 'Razer' justified seizure saying user 'finished in profit on Rollbit'. User had bet history across CSGO, MMA, basketball, Dota 2, esports.",
+      "rollbit_response": "Razer stated: 'standard Sportsbook abuse case, flagged by our Sportsbook provider. They were prolifically abusing bonus features. This was not at the expense of the player as they finished in profit.'",
+      "evidence": ["Screenshots of account balance", "Support conversation logs", "Bet history images", "Rewards statement showing 19.5k in total rewards"],
+      "notable": "User also alleged Rollbit acquired hacked Stake.com user data to target VIP customers with promotional emails"
+    },
+    {
+      "case_id": "BTC-002",
+      "thread_url": "https://bitcointalk.org/index.php?topic=5463996.40",
+      "thread_title": "Rollbit Scam. Cannot Withdraw $30,211. Being Ignored by Support.",
+      "username_forum": "cryptoshisha",
+      "date_posted": "2023-06-01",
+      "amount_usd": 30211,
+      "category": "multiple_accounts_accusation",
+      "status": "UNRESOLVED",
+      "details": "User fully KYC verified before depositing. After sports betting wins, accused of multi-accounting. Support stopped responding to withdrawal requests for months.",
+      "rollbit_response": "Razer cited multi-account violations. Offered referral to Curacao licensing authority.",
+      "evidence": ["KYC documentation submitted", "Support logs"]
+    },
+    {
+      "case_id": "BTC-003",
+      "thread_url": "https://bitcointalk.org/index.php?topic=5419674.0",
+      "thread_title": "Rollbit.com scamming $10,000 USD",
+      "username_forum": "Lak93xy",
+      "date_posted": "2022-11-06",
+      "amount_usd": 10000,
+      "amount_crypto": "0.48534854 BTC",
+      "category": "multiple_accounts_accusation",
+      "status": "UNRESOLVED",
+      "details": "Deposited $10,000 BTC after sportsbook launch. Claims support confirmed multi-accounting and VPN usage were permitted. Account immediately limited upon placing bets. Withdrawal denied citing mandatory wagering requirements.",
+      "rollbit_response": "Admin 'Razer' responded: 'We appreciate you depositing some of the funds back' - interpreted as mocking.",
+      "evidence": ["Blockchain transaction hash: 3754cce9b49beeddceb726e5ea77083102a94984725de40d429d9f02c3889461", "Screenshot from admin Razer"]
+    },
+    {
+      "case_id": "BTC-004",
+      "thread_url": "https://bitcointalk.org/index.php?topic=5520613.0",
+      "thread_title": "ROLLBIT MAINTENANCE SCAM",
+      "username_forum": "tetaeridanus",
+      "date_posted": "2024-11-25",
+      "amount_usd": 44000,
+      "additional_context_losses": 250000,
+      "category": "maintenance_scam",
+      "status": "UNRESOLVED",
+      "details": "Opened 70x leverage position with $44,000 on BTC futures. Platform went offline for 'scheduled maintenance' 30 min before US market open with minimal notice (10 min Telegram pin only). Before maintenance: +$2,000 profit at BTC $98,100. During maintenance: BTC dumped to $97,200. Position loss when site returned: -$36,000. Liquidation price: $96,800. User reports $250,000 cumulative losses over 3 months.",
+      "rollbit_response": "Rollbit reimbursed traders whose positions were liquidated during maintenance but refused compensation because this user's trade remained 'live' after maintenance ended. Directed to legal@rollbit.com.",
+      "evidence": ["Position screenshots", "Telegram maintenance notification timing", "Other users received compensation"],
+      "notable": "Selective compensation - users who were liquidated got reimbursed, but user who suffered massive loss without liquidation was denied"
+    },
+    {
+      "case_id": "BTC-005",
+      "thread_url": "https://bitcointalk.org/index.php?topic=5503600.0",
+      "thread_title": "Rollbit locked my account with $55k+",
+      "username_forum": "throwaccount58",
+      "date_posted": "2024-07-20",
+      "amount_usd": 55000,
+      "additional_losses": 3000,
+      "total_claimed_usd": 58000,
+      "category": "winning_block",
+      "status": "UNRESOLVED",
+      "details": "Won over $50,000 from Spain vs England Euro 2024 sports betting. 2.5+ year user, ~$80,000 total losses prior. Account locked immediately after win for KYC. Completed KYC levels 1-5 including proof of income. Muted in public chat for discussing KYC status. Lost $3,000 in missed daily rakeback ($400-500/day) during suspension. After 6 days, told 'third-party investigation' in progress.",
+      "rollbit_response": "Claimed 'formal request from third-party' for the account. Directed to legal@rollbit.com.",
+      "evidence": ["KYC completion records", "Chat muting logs", "Account history showing $80k lifetime losses"]
+    },
+    {
+      "case_id": "BTC-006",
+      "thread_url": "https://bitcointalk.org/index.php?topic=5471380.0",
+      "thread_title": "Rollbit has literally thrown my money away, sending it to an FTX address",
+      "username_forum": "ineedhelpplease",
+      "date_posted": "2023-10-23",
+      "amount_usd": 5200,
+      "category": "account_closure",
+      "status": "UNRESOLVED",
+      "details": "Deposited via company hot wallet through FTX partnership in July 2022. After 15-month lock and KYC including video call with 'SmokeyLisa', Rollbit sent withdrawal to original FTX deposit address without confirming access. FTX had collapsed, making address inaccessible. User provided Exodus wallet alternative during verification but was ignored.",
+      "evidence": ["FTX deposit records", "Exodus wallet address provided", "Video call with SmokeyLisa"]
+    },
+    {
+      "case_id": "BTC-007",
+      "thread_url": "https://bitcointalk.org/index.php?topic=5489049.0",
+      "thread_title": "ROLLBIT.COM is a scam. They stole my funds!",
+      "username_forum": "rockybalboa-cook",
+      "date_posted": "2024-03-15",
+      "amount_usd": 8500,
+      "amount_crypto": "25.7 SOL",
+      "category": "kyc_delay_tactic",
+      "status": "RESOLVED",
+      "details": "Won ~$4,000 on sportsbook. Withdrawal of 25.7 SOL requested. Additional $4,500 deducted from balance. After posting complaint, resolved within 1 day after 'hell of verification and details'.",
+      "resolution_date": "2024-03-16"
+    },
+    {
+      "case_id": "BTC-008",
+      "thread_url": "https://bitcointalk.org/index.php?topic=5538592.0",
+      "thread_title": "Rollbit ignore and scam?",
+      "username_forum": "steluz",
+      "date_posted": "2025-04-20",
+      "amount_usd": 5486,
+      "category": "multiple_accounts_accusation",
+      "status": "UNRESOLVED",
+      "details": "Account restricted from sportsbook and withdrawals. Completed KYC tier 3 including live verification. Had previous successful $3,000 withdrawal on Jan 20. Compliance asked about 'other accounts' which user denies having. 80+ days without response from compliance@rollbit.com.",
+      "evidence": ["KYC tier 3 confirmation", "Previous withdrawal record", "Email chain"]
+    },
+    {
+      "case_id": "BTC-009",
+      "thread_url": "https://bitcointalk.org/index.php?topic=5504738.0",
+      "thread_title": "[UNRESOLVED]Rollbit SCAMS money from restricted players with 0% chance of lose",
+      "username_forum": "clinexrino",
+      "date_posted": "2024-07-31",
+      "amount_usd": 5000,
+      "amount_currency": "EUR",
+      "category": "restricted_country",
+      "status": "UNRESOLVED",
+      "details": "Played from Spain (restricted country) for 3-4 months. Made ~100 bets. 5 successful withdrawals while unprofitable. When requested EUR 5,000 withdrawal after becoming profitable, KYC triggered. Support member 'Benji' stated: 'you are in significant profit here on Rollbit. The funds have been forfeited.'",
+      "rollbit_response": "Selective enforcement - allowed deposits and losing play from restricted country but blocked profitable withdrawal.",
+      "notable": "Asymmetric enforcement pattern: accept losses from restricted users, block wins"
+    },
+    {
+      "case_id": "BTC-010",
+      "thread_url": "https://bitcointalk.org/index.php?topic=5489760.60",
+      "thread_title": "Rollbit locked/pending withdrawals",
+      "username_forum": "Maxkej",
+      "date_posted": "2024-03-01",
+      "amount_usd": 27000,
+      "category": "restricted_country",
+      "status": "RESOLVED",
+      "details": "Belgian user, 2+ years on platform, wagered ~$125,000. Won $27,000. Belgium added to restricted countries after account creation without notification. Was honest with support about situation. Withdrawal eventually processed, then IP banned.",
+      "resolution": "Funds paid after support review. Account subsequently IP banned."
+    },
+    {
+      "case_id": "BTC-011",
+      "thread_url": "https://bitcointalk.org/index.php?topic=5412105.0",
+      "thread_title": "rollbit.com scam",
+      "username_forum": "basedin2",
+      "date_posted": "2022-09-02",
+      "amount_usd": 330,
+      "category": "multiple_accounts_accusation",
+      "status": "UNRESOLVED",
+      "details": "Deposited $330 via Ethereum. Placed minimal $10 wager at 1.01 odds. After withdrawal request and KYC approval, admin 'Razer' declared 'We don't accept fraud here unfortunately, funds are forfeited' with dismissive GIF. Account deleted.",
+      "rollbit_response": "Razer: 'We don't accept fraud here unfortunately, funds are forfeited' + GIF",
+      "notable": "Community found blockchain evidence of multiple deposits/withdrawals from interconnected addresses, suggesting possible legitimate multi-accounting detection in this case"
+    },
+    {
+      "case_id": "BTC-012",
+      "thread_url": "https://bitcointalk.org/index.php?topic=5447471.0",
+      "thread_title": "Rollbit scam",
+      "username_forum": "Memog229",
+      "date_posted": "2023-04-03",
+      "amount_usd": 350,
+      "category": "account_closure",
+      "status": "UNRESOLVED",
+      "details": "Balance of $350 disappeared suddenly during slot play. Support claimed 'no issues with your balance'. OP posted YouTube video evidence but deleted account before resolution. Community skeptical due to visual bug-like behavior in video.",
+      "evidence": ["YouTube video: https://youtu.be/VAWViM2qCkM"],
+      "credibility": "LOW - User deleted account, video evidence inconclusive"
+    },
+    {
+      "case_id": "BTC-013",
+      "thread_url": "https://bitcointalk.org/index.php?topic=5534596.0",
+      "thread_title": "Scammed by Rollbit",
+      "username_forum": "hind411",
+      "date_posted": "2025-03-08",
+      "amount_usd": 2190,
+      "category": "multiple_accounts_accusation",
+      "status": "UNRESOLVED",
+      "details": "Blocked from withdrawing after sportsbook play. KYC Level 3 completed (ID, address proof, selfie). Support repeatedly asked to 'list other accounts' despite user having only one. Support ceased meaningful communication, copying same message.",
+      "evidence": ["KYC documentation", "Support message logs"]
+    },
+    {
+      "case_id": "BTC-014",
+      "thread_url": "https://bitcointalk.org/index.php?topic=5538532.0",
+      "thread_title": "Rollbit scam for 400 dollars (Resolved)",
+      "username_forum": "kofemaniac",
+      "date_posted": "2025-04-19",
+      "amount_usd": 400,
+      "category": "multiple_accounts_accusation",
+      "status": "RESOLVED",
+      "details": "Deposited $100, won $400 via sports betting. Account flagged. Accused of 'email/address combo linked to same account'. Compliance promised 20-day response but went silent for 27 days. Resolved after forum moderator intervention.",
+      "resolution_date": "2025-05-02",
+      "resolution": "Forum moderator holydarkness contacted Rollbit management. Withdrawal processed. No formal acknowledgment of error."
+    },
+    {
+      "case_id": "BTC-015",
+      "thread_url": "https://bitcointalk.org/index.php?topic=5537096.60",
+      "thread_title": "Rollbit Blocking My funds False Multiple Accounts Claim",
+      "username_forum": "buik",
+      "date_posted": "2025-03-01",
+      "amount_usd": null,
+      "category": "multiple_accounts_accusation",
+      "status": "UNRESOLVED",
+      "details": "Account funds blocked with restricted betting/playing access. Received THREE different explanations: 1) Multiple accounts, 2) AML issue, 3) Sports betting abuse. Still has full login access but restricted from betting or playing. Deposit refund request denied."
+    }
+  ],
+  "trustpilot_cases": [
+    {
+      "case_id": "TP-001",
+      "reviewer": "Irfan",
+      "date": "2025-12-15",
+      "amount_usd": 30000,
+      "category": "winning_block",
+      "details": "Lost 'tens of thousands' initially. Account limited after losses, forced to create new account. Won $30K, account suspended for KYC. Funds forfeited."
+    },
+    {
+      "case_id": "TP-002",
+      "reviewer": "Daniel Castillo",
+      "date": "2025-12-24",
+      "amount_usd": 6000,
+      "category": "winning_block",
+      "details": "Won $8,000. Only paid $2,000. Remaining $6,000 withheld. Account closed."
+    },
+    {
+      "case_id": "TP-003",
+      "reviewer": "Fation Larashi",
+      "date": "2025-08-14",
+      "amount_usd": 47000,
+      "category": "winning_block",
+      "details": "Won $99,000 total. Withdrew $52,000 successfully. Remaining $47,000 blocked. Accused of money laundering without evidence."
+    },
+    {
+      "case_id": "TP-004",
+      "reviewer": "chonex",
+      "date": "2025-10-11",
+      "amount_usd": 22000,
+      "category": "multiple_accounts_accusation",
+      "details": "Won $22,000. Account blocked. Accused of multiple accounts (denies). Four support emails unanswered."
+    },
+    {
+      "case_id": "TP-005",
+      "reviewer": "Jacob Izraelov",
+      "date": "2025-08-12",
+      "amount_usd": 13600,
+      "category": "kyc_delay_tactic",
+      "details": "Won $13,600 on $26,700 deposit. Withdrawal pending 'review' with no ETA. First issue after numerous prior transactions."
+    },
+    {
+      "case_id": "TP-006",
+      "reviewer": "Jihee Lee",
+      "date": "2025-11-28",
+      "amount_usd": 14000,
+      "category": "kyc_delay_tactic",
+      "details": "$12k deposit grew to $14k. Withdrawal pending indefinitely."
+    },
+    {
+      "case_id": "TP-007",
+      "reviewer": "COUNTRY",
+      "date": "2025-02-04",
+      "amount_usd": 18000,
+      "category": "winning_block",
+      "details": "Account suspended after KYC submission. $18,000 balance drained to $23. Questions timing after becoming profitable."
+    },
+    {
+      "case_id": "TP-008",
+      "reviewer": "Anon",
+      "date": "2024-12-17",
+      "amount_usd": 13000,
+      "category": "account_closure",
+      "details": "Account closed. $13,000 seized. Claimed duplicate accounts without proof."
+    },
+    {
+      "case_id": "TP-009",
+      "reviewer": "Miladin Trisic",
+      "date": "2025-03-05",
+      "amount_usd": 6800,
+      "category": "multiple_accounts_accusation",
+      "details": "$6,800 trapped. Multi-account accusation without proof."
+    },
+    {
+      "case_id": "TP-010",
+      "reviewer": "Lukas Adamec",
+      "date": "2025-02-23",
+      "amount_usd": 6000,
+      "category": "kyc_delay_tactic",
+      "details": "$6,000 non-withdrawable after passing verification."
+    },
+    {
+      "case_id": "TP-011",
+      "reviewer": "Consumer (Nov 29)",
+      "date": "2025-11-29",
+      "amount_usd": 5000,
+      "category": "multiple_accounts_accusation",
+      "details": "Won. $2,000 initially paid. $5,000 net winnings blocked via duplicate account claim."
+    },
+    {
+      "case_id": "TP-012",
+      "reviewer": "Aleks",
+      "date": "2025-12-07",
+      "amount_usd": 5000,
+      "category": "multiple_accounts_accusation",
+      "details": "$5,000+ seized after sports betting wins. All documents sent. Compliance demands 'a list' of other accounts."
+    },
+    {
+      "case_id": "TP-013",
+      "reviewer": "Εμμανουήλ Κατάκης",
+      "date": "2025-05-07",
+      "amount_usd": 5400,
+      "category": "kyc_delay_tactic",
+      "details": "Deposited ~$2,800 BTC, grew to ~$5,400. KYC completed. Withdrawal refused. Two winning bets cancelled without explanation."
+    },
+    {
+      "case_id": "TP-014",
+      "reviewer": "sports betta",
+      "date": "2024-07-16",
+      "amount_usd": 4000,
+      "category": "sportsbook_abuse",
+      "details": "$4,000+ in account. Permanently banned after winning consistently on sports betting within two weeks."
+    },
+    {
+      "case_id": "TP-015",
+      "reviewer": "Patryk",
+      "date": "2025-09-02",
+      "amount_usd": 3100,
+      "category": "multiple_accounts_accusation",
+      "details": "$3,100 stolen. Accused of multiple accounts without evidence."
+    },
+    {
+      "case_id": "TP-016",
+      "reviewer": "Gautam",
+      "date": "2025-08-28",
+      "amount_usd": 2230,
+      "category": "multiple_accounts_accusation",
+      "details": "2,230 USDT withdrawal blocked. Won cricket bets. False multiple-account accusations."
+    },
+    {
+      "case_id": "TP-017",
+      "reviewer": "Tuấn Trọng Đào",
+      "date": "2026-01-07",
+      "amount_usd": 2000,
+      "category": "winning_block",
+      "details": "$2,000 deposited, won single bet, then blocked from withdrawal."
+    },
+    {
+      "case_id": "TP-018",
+      "reviewer": "Karolis Golcas",
+      "date": "2025-01-13",
+      "amount_usd": 2000,
+      "category": "multiple_accounts_accusation",
+      "details": "Won $2,000. Claimed duplicate accounts, refused details. Planning legal action."
+    },
+    {
+      "case_id": "TP-019",
+      "reviewer": "Дан Спину",
+      "date": "2025-10-14",
+      "amount_usd": 1935,
+      "category": "multiple_accounts_accusation",
+      "details": "$1,935 USDT stuck. Blocked after 7 successful withdrawals totaling $2,000+. Full KYC verified."
+    },
+    {
+      "case_id": "TP-020",
+      "reviewer": "customer (Mar 15)",
+      "date": "2025-03-15",
+      "amount_usd": 1500,
+      "category": "account_closure",
+      "details": "$1,500 seized after 2-month support process."
+    },
+    {
+      "case_id": "TP-021",
+      "reviewer": "Mohit Kumar",
+      "date": "2025-12-09",
+      "amount_usd": 1270,
+      "category": "winning_block",
+      "details": "$710 deposit + $700 win = $1,270 total seized. Account disabled."
+    },
+    {
+      "case_id": "TP-022",
+      "reviewer": "Paul",
+      "date": "2024-10-26",
+      "amount_usd": 1200,
+      "category": "account_closure",
+      "details": "$1,200 deposit seized. Banned for 'ban evasion' related to friend's account KYC."
+    },
+    {
+      "case_id": "TP-023",
+      "reviewer": "Alex Torres",
+      "date": "2025-03-13",
+      "amount_usd": 800,
+      "category": "winning_block",
+      "details": "Won $800. Account blocked immediately."
+    },
+    {
+      "case_id": "TP-024",
+      "reviewer": "Fabybet",
+      "date": "2025-05-21",
+      "amount_usd": 782,
+      "category": "multiple_accounts_accusation",
+      "details": "$782 withheld. False multiple-account accusations despite KYC. Organizing class action lawsuit."
+    },
+    {
+      "case_id": "TP-025",
+      "reviewer": "Vladislav",
+      "date": "2025-12-30",
+      "amount_usd": 700,
+      "category": "account_closure",
+      "details": "$700 winning balance debited without transfer. Support stopped responding."
+    },
+    {
+      "case_id": "TP-026",
+      "reviewer": "刘汉伟 (Alvin Wijaya)",
+      "date": "2025-12-21",
+      "amount_usd": 600,
+      "category": "multiple_accounts_accusation",
+      "details": "Won $600 on sports. KYC requested. Falsely told of multiple accounts."
+    },
+    {
+      "case_id": "TP-027",
+      "reviewer": "Assasin",
+      "date": "2025-11-30",
+      "amount_usd": 600,
+      "category": "multiple_accounts_accusation",
+      "details": "$600 withdrawal pending. Accused of duplicate accounts with no evidence."
+    },
+    {
+      "case_id": "TP-028",
+      "reviewer": "Arman",
+      "date": "2026-01-15",
+      "amount_usd": 500,
+      "category": "winning_block",
+      "details": "$500 USDT deposit. Account frozen after sports bets. Support muted user for 6944 days."
+    },
+    {
+      "case_id": "TP-029",
+      "reviewer": "Arthur Hoffmann",
+      "date": "2025-11-05",
+      "amount_usd": 500,
+      "category": "account_closure",
+      "details": "$500 USDC deposit. Stake limited to $1 USD. Account disabled. Withdrawal blocked."
+    },
+    {
+      "case_id": "TP-030",
+      "reviewer": "Rollbit fraudsters",
+      "date": "2025-04-09",
+      "amount_usd": 500,
+      "category": "multiple_accounts_accusation",
+      "details": "Account closed with $500. Claims 'multiple accounts'."
+    },
+    {
+      "case_id": "TP-031",
+      "reviewer": "Mikhail Kuleshov",
+      "date": "2025-06-06",
+      "amount_usd": 593,
+      "category": "multiple_accounts_accusation",
+      "details": "Deposited $500, balance grew to $593. Account blocked with false multiple-account accusations."
+    },
+    {
+      "case_id": "TP-032",
+      "reviewer": "fuckthis site",
+      "date": "2025-01-15",
+      "amount_usd": 500,
+      "category": "futures_manipulation",
+      "details": "Futures bet closed over 5 cent funding right before massive pump. Scammed out of $500."
+    },
+    {
+      "case_id": "TP-033",
+      "reviewer": "Jorj Kheb",
+      "date": "2025-12-11",
+      "amount_usd": 433,
+      "category": "account_closure",
+      "details": "Account closed without explanation. $433 seized."
+    },
+    {
+      "case_id": "TP-034",
+      "reviewer": "Shake",
+      "date": "2025-10-22",
+      "amount_usd": 420,
+      "category": "kyc_delay_tactic",
+      "details": "$240 deposited. $420 withdrawal frozen. $321 partially refunded."
+    },
+    {
+      "case_id": "TP-035",
+      "reviewer": "inter",
+      "date": "2025-06-17",
+      "amount_usd": 370,
+      "category": "sportsbook_abuse",
+      "details": "Non-payment of $370 on three MLS football bets."
+    },
+    {
+      "case_id": "TP-036",
+      "reviewer": "Jonathan Walsh",
+      "date": "2025-02-10",
+      "amount_usd": 300,
+      "category": "account_closure",
+      "details": "$300 deposit. No bonuses or winnings."
+    },
+    {
+      "case_id": "TP-037",
+      "reviewer": "Dan",
+      "date": "2025-02-14",
+      "amount_usd": 150,
+      "category": "account_closure",
+      "details": "Account closed unexpectedly. $150 unretrieved."
+    },
+    {
+      "case_id": "TP-038",
+      "reviewer": "Joris Dajuckis",
+      "date": "2025-10-18",
+      "amount_usd": 11000,
+      "category": "account_closure",
+      "details": "Underage gambler (16 years old). Lost $11,000 over 2-3 years. No age verification. Refund denied.",
+      "notable": "Rollbit failed to verify age for 2-3 years, allowing a minor to gamble and lose $11,000"
+    },
+    {
+      "case_id": "TP-039",
+      "reviewer": "SportsDebt",
+      "date": "2025-11-10",
+      "amount_usd": null,
+      "category": "winning_block",
+      "details": "VIP account restricted after substantial win. $1.5M USD wagered over months. Refused crypto withdrawal.",
+      "notable": "$1.5 million wagered, still blocked when winning"
+    },
+    {
+      "case_id": "TP-040",
+      "reviewer": "Liam Marsh",
+      "date": "2026-01-07",
+      "amount_usd": 8000,
+      "category": "multiple_accounts_accusation",
+      "details": "Lost ~$8,000. Account restricted. Claimed multiple accounts."
+    },
+    {
+      "case_id": "TP-041",
+      "reviewer": "Tylr J. Rbrsn",
+      "date": "2025-05-10",
+      "amount_usd": null,
+      "category": "account_closure",
+      "details": "Game developer mode mishap. Platform confiscated winnings, deleted records. Players banned, account data deleted. Also alleged 2023 Christmas wager competition was rigged (founder won)."
+    },
+    {
+      "case_id": "TP-042",
+      "reviewer": "Trustpilot reviewer (17,954 EUR)",
+      "date": "2024-04-22",
+      "amount_usd": 19749,
+      "amount_eur": 17954,
+      "category": "account_closure",
+      "details": "Scammed of EUR 17,954. Filed police report. Going to court. Lawyer reached out. Platform's own lawyer allegedly stated they were illegal. Claims it is illegal to operate under Curacao licence in UK/Europe.",
+      "notable": "One of the few cases where legal action was actually pursued"
+    },
+    {
+      "case_id": "TP-043",
+      "reviewer": "WIDXCHANGE",
+      "date": "2025-12-18",
+      "amount_usd": null,
+      "category": "futures_manipulation",
+      "details": "Futures trading rigged. 5% cut plus slippage favors platform. Burst prices manipulated. 'They will find a way to burst it, no matter the multiplier.'"
+    },
+    {
+      "case_id": "TP-044",
+      "reviewer": "KOT777",
+      "date": "2025-07-01",
+      "amount_usd": 2000,
+      "category": "kyc_delay_tactic",
+      "details": "Fully verified KYC Levels 1-4. 7 successful withdrawals totaling $2,000+ USDT between Nov 2024 and July 2025. Since July 2025 withdrawals blocked with 'Functionality temporarily restricted'."
+    },
+    {
+      "case_id": "TP-045",
+      "reviewer": "Anastasia",
+      "date": "2025-05-12",
+      "amount_usd": null,
+      "category": "multiple_accounts_accusation",
+      "details": "Completed biometric KYC. Withdrawals remain blocked. Withdrawal limits set to $0.40. Accused of having other accounts."
+    }
+  ],
+  "casino_guru_cases": [
+    {
+      "case_id": "CG-001",
+      "source": "Casino Guru Complaints",
+      "url": "https://casino.guru/complaints/rollbit-casino-player-s-withdrawal-restricted-due",
+      "amount_usd": 14800,
+      "category": "multiple_accounts_accusation",
+      "details": "Deposited ~$3,000 in crypto. Balance grew to $14,800 through sports betting. Completed 5-step KYC. Unable to withdraw. Rollbit claimed more accounts existed. No evidence provided.",
+      "rollbit_response": "Casino Guru complaints team contacted Rollbit multiple times. Rollbit failed to respond. Complaint closed as UNRESOLVED."
+    },
+    {
+      "case_id": "CG-002",
+      "source": "Casino Guru Complaints",
+      "url": "https://casino.guru/complaints/rollbit-casino-player-s-account-has-been-closed-and",
+      "amount_usd": null,
+      "category": "account_closure",
+      "details": "Account suspended without clear explanation. Both deposited funds and profits confiscated. No response from support.",
+      "rollbit_response": "No response to Casino Guru mediation attempts."
+    },
+    {
+      "case_id": "CG-003",
+      "source": "Casino Guru Complaints",
+      "url": "https://casino.guru/complaints/rollbit-casino-player-s-withdrawal-has-been-denied",
+      "amount_usd": 111,
+      "category": "multiple_accounts_accusation",
+      "details": "Polish player. $111 withdrawal denied. Accused of multiple accounts. Passed verification. Only one account.",
+      "status": "UNRESOLVED"
+    }
+  ],
+  "other_forum_cases": [
+    {
+      "case_id": "CL-001",
+      "source": "CasinoListings",
+      "url": "https://www.casinolistings.com/forum/gambling/online-casinos/41297/rollbit-unfairly-suspended-and-over-7k-stolen-from-me",
+      "amount_usd": 6500,
+      "total_losses_prior": 25000,
+      "category": "sportsbook_abuse",
+      "details": "Lost ~$25,000 over 2 months. Won back a fair portion. Casino suspended account and 'forfeited' over $6,500, claiming 'abusing site features'."
+    },
+    {
+      "case_id": "AG-001",
+      "source": "AskGamblers",
+      "url": "https://forum.askgamblers.com/topic/16031-rollbit-casino-withholding-winnings-and-banned-me-with-0-explanation/",
+      "amount_usd": 3400,
+      "category": "winning_block",
+      "details": "Lifetime wagered ~$30,000. Deposited $3,000, wagered ~$25,000, won $3,400 on live games. Winnings withheld and account banned with no explanation."
+    },
+    {
+      "case_id": "AG-002",
+      "source": "AskGamblers",
+      "url": "https://forum.askgamblers.com/topic/13060-rollbit-unfairly-suspended-and-over-7k-stolen-from-me/",
+      "amount_usd": 7000,
+      "category": "winning_block",
+      "details": "Cross-posted from CasinoListings. Over $7k seized after suspension."
+    },
+    {
+      "case_id": "X-001",
+      "source": "Twitter/X",
+      "url": "https://x.com/Nonopancake/status/1782506890817105973",
+      "amount_usd": null,
+      "category": "license_fraud",
+      "details": "Legal lawsuit against owners Daniel Dixon and Jose Llisterri. Running casino illegally. Also run CSGO Diamond."
+    }
+  ],
+  "regulatory_cases": [
+    {
+      "case_id": "REG-001",
+      "type": "license_revocation",
+      "date": "2023-03",
+      "details": "Curacao license information removed from Rollbit website. RLB token dropped 20%. Rollbit claimed 'annual renewal' but Curacao sub-licenses are valid indefinitely. Anonymous casino owner said Curacao does not disable licenses during renewal.",
+      "sources": [
+        "https://beincrypto.com/rollbit-allegedly-operates-crypto-casino-without-license/",
+        "https://www.coindesk.com/markets/2023/03/31/crypto-casino-rollbits-token-drops-20-amid-licensing-concerns/"
+      ]
+    },
+    {
+      "case_id": "REG-002",
+      "type": "money_laundering_seizure",
+      "date": "2025-05-09",
+      "amount_usd": 123000000,
+      "details": "Ukrainian court seized $123 million in crypto assets linked to money laundering and illegal gambling. Funds connected to Bull Gaming N.V. (Rollbit operator). Bull Gaming confirmed in correspondence that funds 'actually belong to the specified online casino'. Scheme involved promising investment profits but involving victims in illegal gambling on rollbit.com and other sites.",
+      "sources": [
+        "https://dev.ua/en/news/krypto-1747475639"
+      ]
+    },
+    {
+      "case_id": "REG-003",
+      "type": "influencer_fraud",
+      "details": "Rollbit owner 'Lucky' offered influencers $250,000 in RLB tokens for 'organic' tweets. Undisclosed promotional deals. Influencers including Pentoshi posted about RLB without disclosing financial arrangements.",
+      "sources": [
+        "https://cryptoslate.com/solana-based-rollbit-coin-faces-scrutiny-over-crypto-influencer-promotion-tactics/"
+      ]
+    },
+    {
+      "case_id": "REG-004",
+      "type": "fake_balances",
+      "details": "Rollbit allegedly provides influencers with fake balances to showcase large winnings using house money. Platform wallets held ~$16M while ~$75M transferred to Binance. Uniswap liquidity only ~$1.5M, raising questions about solvency.",
+      "sources": [
+        "https://captainaltcoin.com/unethical-allure-the-controversial-sponsorship-deals-of-rollbit-casino/"
+      ]
+    },
+    {
+      "case_id": "REG-005",
+      "type": "ownership",
+      "details": "Owners identified as Daniel Dixon ('Lucky') and Jose Llisterri ('Razer'), both British. Previously ran CSGODiamonds together. Daniel also co-owned CSGORoll. Joe (partner) runs Duelbits. CSGODiamonds collapsed after being caught for false advertising by rigging games.",
+      "sources": [
+        "https://x.com/Monarch/status/1267936494188183552",
+        "https://x.com/CSGOEmpireV2/status/1267129565828263936"
+      ]
+    },
+    {
+      "case_id": "REG-006",
+      "type": "underage_gambling",
+      "details": "At least one documented case of a 16-year-old gambling $11,000 over 2-3 years with no age verification. Rollbit denied refund.",
+      "sources": ["Trustpilot review by Joris Dajuckis, Oct 2025"]
+    }
+  ]
+}
