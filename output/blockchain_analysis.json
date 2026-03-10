@@ -1,0 +1,166 @@
+{
+  "timestamp": "2026-03-10T12:35:19.367765+00:00",
+  "mode": "cached",
+  "wallets": [],
+  "treasury_flows": {
+    "known_events": [
+      {
+        "date": "2025-09-03",
+        "chain": "SOL",
+        "event": "50K SOL sold after 2-year dormancy",
+        "amount_native": 50000,
+        "amount_usd": 10170000,
+        "price_at_time": 203.4,
+        "initial_price": 24.6,
+        "source": "Binance/Bitget reporting, on-chain data",
+        "direction": "outflow"
+      },
+      {
+        "date": "2026-01-11",
+        "chain": "SOL",
+        "event": "15K SOL transferred (batch 1)",
+        "amount_native": 15000,
+        "amount_usd": 2050000,
+        "price_at_time": 136.67,
+        "source": "ChainCatcher",
+        "direction": "outflow"
+      },
+      {
+        "date": "2026-01-11",
+        "chain": "SOL",
+        "event": "15K SOL transferred (batch 2)",
+        "amount_native": 15000,
+        "amount_usd": 2040000,
+        "price_at_time": 136.0,
+        "source": "ChainCatcher",
+        "direction": "outflow"
+      },
+      {
+        "date": "2026-01-15",
+        "chain": "SOL",
+        "event": "21.4K SOL transferred",
+        "amount_native": 21400,
+        "amount_usd": 3140000,
+        "price_at_time": 146.73,
+        "source": "ChainCatcher",
+        "direction": "outflow"
+      },
+      {
+        "date": "2026-02-13",
+        "chain": "BTC",
+        "event": "626 BTC moved to anonymous address",
+        "amount_native": 626.03,
+        "amount_usd": 42210000,
+        "price_at_time": 67427,
+        "source": "ChainCatcher / on-chain",
+        "direction": "outflow"
+      },
+      {
+        "date": "2025-05-09",
+        "chain": "MULTI",
+        "event": "$123M seized by Ukrainian authorities from Binance accounts linked to Bull Gaming N.V.",
+        "amount_native": null,
+        "amount_usd": 123000000,
+        "price_at_time": null,
+        "source": "dev.ua, Pechersk District Court of Kyiv",
+        "direction": "seizure"
+      }
+    ],
+    "total_confirmed_outflow_usd": 59610000
+  },
+  "rlb_analysis": {
+    "buyback_analysis": {
+      "claimed_monthly_buyback_usd": 5000000,
+      "initial_supply": 5000000000,
+      "reported_burned_pct": 50.86
+    },
+    "manipulation_indicators": [
+      {
+        "indicator": "Price decline despite buybacks",
+        "severity": "HIGH"
+      },
+      {
+        "indicator": "Influencer dumping via mixer",
+        "severity": "HIGH"
+      },
+      {
+        "indicator": "Revenue centralization",
+        "severity": "MEDIUM"
+      },
+      {
+        "indicator": "Treasury draining faster than buybacks",
+        "severity": "CRITICAL"
+      }
+    ]
+  },
+  "wallet_clusters": {},
+  "risk_indicators": [
+    {
+      "name": "Treasury Drainage Rate",
+      "score": 5.961,
+      "description": "$59,610,000 in documented treasury outflows over ~4 months",
+      "evidence": [
+        "2025-09-03: 50K SOL sold after 2-year dormancy ($10,170,000)",
+        "2026-01-11: 15K SOL transferred (batch 1) ($2,050,000)",
+        "2026-01-11: 15K SOL transferred (batch 2) ($2,040,000)",
+        "2026-01-15: 21.4K SOL transferred ($3,140,000)",
+        "2026-02-13: 626 BTC moved to anonymous address ($42,210,000)"
+      ]
+    },
+    {
+      "name": "Law Enforcement Seizures",
+      "score": 10.0,
+      "description": "$123,000,000 seized by Ukrainian authorities",
+      "evidence": [
+        "$123M seized by Pechersk District Court, linked to Bull Gaming N.V."
+      ]
+    },
+    {
+      "name": "Token Price Collapse",
+      "score": 7.7,
+      "description": "RLB token declined 77% from highs despite claimed buyback program",
+      "evidence": [
+        "Claimed $5M/month buybacks should support price",
+        "Influencer Gainzy caught dumping while shilling",
+        "$250K token promotion schemes exposed"
+      ]
+    },
+    {
+      "name": "Solvency Indicator",
+      "score": 8.0,
+      "description": "Known wallet balances: $0.00 vs $123M in seized assets",
+      "evidence": [
+        "Platform wallets held ~$16M vs ~$75M transferred to Binance (from CaptainAltcoin report)"
+      ]
+    },
+    {
+      "name": "Regulatory Status",
+      "score": 7.0,
+      "description": "Operating under transitional arrangement; original license expired Aug 2024",
+      "evidence": [
+        "Gaming Curacao/365/JAZ ceased operations August 18, 2024",
+        "Pending application OGL/2024/1260/0494 with new Curacao GCB",
+        "License removed from website in March 2023 (restored after controversy)"
+      ]
+    },
+    {
+      "name": "Complaint Acceleration",
+      "score": 8.0,
+      "description": "Victim complaints accelerating from 2 in 2022 to 37+ in 2025",
+      "evidence": [
+        "2022: 2 cases ($10K)",
+        "2023: 4 cases ($46K)",
+        "2024: 8 cases ($158K)",
+        "2025: 37+ cases ($172K+)",
+        "Resolution rate: 4.5%"
+      ]
+    }
+  ],
+  "summary": {
+    "total_documented_outflows_usd": 59610000,
+    "total_seized_usd": 123000000,
+    "avg_risk_score": 7.8,
+    "risk_level": "CRITICAL",
+    "known_events_count": 6
+  }
+}

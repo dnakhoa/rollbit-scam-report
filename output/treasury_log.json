@@ -1,0 +1,159 @@
+[
+  {
+    "session_start": "2026-03-10T12:41:25.426887+00:00",
+    "session_end": "2026-03-10T12:41:33.143149+00:00",
+    "cycles": 3,
+    "alerts": [
+      {
+        "timestamp": "2026-03-10T12:41:28.661970+00:00",
+        "chain": "SOL",
+        "label": "Rollbit SOL Treasury",
+        "direction": "OUTFLOW \ud83d\udd34",
+        "delta_native": -1250.1957645382827,
+        "delta_usd": -181278.38585805098
+      },
+      {
+        "timestamp": "2026-03-10T12:41:31.925538+00:00",
+        "chain": "BTC",
+        "label": "Rollbit BTC Treasury",
+        "direction": "OUTFLOW \ud83d\udd34",
+        "delta_native": -7.260584595597578,
+        "delta_usd": -704276.7057729651
+      }
+    ],
+    "snapshots": [
+      {
+        "timestamp": "2026-03-10T12:41:25.426979+00:00",
+        "chain": "BTC",
+        "address": "bc1qw8wrek2m7nlqldll66ajnwr9mh64syvkt67zlu",
+        "label": "Rollbit BTC Treasury",
+        "balance_native": 145.21169191195116,
+        "balance_usd": 14085534.115459263,
+        "previous_balance_native": 145.21169191195116,
+        "delta_native": 0.0,
+        "delta_usd": 0.0
+      },
+      {
+        "timestamp": "2026-03-10T12:41:25.426979+00:00",
+        "chain": "SOL",
+        "address": "RBHdGVfDfMjfU6iUfCb1LczMJcQLx7hGnxbzRsoDNvx",
+        "label": "Rollbit SOL Treasury",
+        "balance_native": 25003.91529076563,
+        "balance_usd": 3625567.7171610165,
+        "previous_balance_native": 25003.91529076563,
+        "delta_native": 0.0,
+        "delta_usd": 0.0
+      },
+      {
+        "timestamp": "2026-03-10T12:41:25.426979+00:00",
+        "chain": "ETH",
+        "address": "0xCBD6832Ebc203e49E2B771897067fce3c58575ac",
+        "label": "Rollbit ETH Hot Wallet",
+        "balance_native": 496.5514970957123,
+        "balance_usd": 1737930.2398349931,
+        "previous_balance_native": 496.5514970957123,
+        "delta_native": 0.0,
+        "delta_usd": 0.0
+      },
+      {
+        "timestamp": "2026-03-10T12:41:25.426979+00:00",
+        "chain": "ETH",
+        "address": "0x46dcA395D20E63Cb0Fe1EDC9f0e6f012E77c0913",
+        "label": "rollbit.eth",
+        "balance_native": 497.80675280331235,
+        "balance_usd": 1742323.6348115932,
+        "previous_balance_native": 497.80675280331235,
+        "delta_native": 0.0,
+        "delta_usd": 0.0
+      },
+      {
+        "timestamp": "2026-03-10T12:41:28.661970+00:00",
+        "chain": "BTC",
+        "address": "bc1qw8wrek2m7nlqldll66ajnwr9mh64syvkt67zlu",
+        "label": "Rollbit BTC Treasury",
+        "balance_native": 145.21169191195116,
+        "balance_usd": 14085534.115459263,
+        "previous_balance_native": 145.21169191195116,
+        "delta_native": 0.0,
+        "delta_usd": 0.0
+      },
+      {
+        "timestamp": "2026-03-10T12:41:28.661970+00:00",
+        "chain": "SOL",
+        "address": "RBHdGVfDfMjfU6iUfCb1LczMJcQLx7hGnxbzRsoDNvx",
+        "label": "Rollbit SOL Treasury",
+        "balance_native": 23753.71952622735,
+        "balance_usd": 3444289.3313029655,
+        "previous_balance_native": 25003.91529076563,
+        "delta_native": -1250.1957645382827,
+        "delta_usd": -181278.38585805098
+      },
+      {
+        "timestamp": "2026-03-10T12:41:28.661970+00:00",
+        "chain": "ETH",
+        "address": "0xCBD6832Ebc203e49E2B771897067fce3c58575ac",
+        "label": "Rollbit ETH Hot Wallet",
+        "balance_native": 496.5514970957123,
+        "balance_usd": 1737930.2398349931,
+        "previous_balance_native": 496.5514970957123,
+        "delta_native": 0.0,
+        "delta_usd": 0.0
+      },
+      {
+        "timestamp": "2026-03-10T12:41:28.661970+00:00",
+        "chain": "ETH",
+        "address": "0x46dcA395D20E63Cb0Fe1EDC9f0e6f012E77c0913",
+        "label": "rollbit.eth",
+        "balance_native": 487.8506177472461,
+        "balance_usd": 1707477.1621153613,
+        "previous_balance_native": 497.80675280331235,
+        "delta_native": -9.956135056066273,
+        "delta_usd": -34846.472696231955
+      },
+      {
+        "timestamp": "2026-03-10T12:41:31.925538+00:00",
+        "chain": "BTC",
+        "address": "bc1qw8wrek2m7nlqldll66ajnwr9mh64syvkt67zlu",
+        "label": "Rollbit BTC Treasury",
+        "balance_native": 137.95110731635359,
+        "balance_usd": 13381257.409686297,
+        "previous_balance_native": 145.21169191195116,
+        "delta_native": -7.260584595597578,
+        "delta_usd": -704276.7057729651
+      },
+      {
+        "timestamp": "2026-03-10T12:41:31.925538+00:00",
+        "chain": "SOL",
+        "address": "RBHdGVfDfMjfU6iUfCb1LczMJcQLx7hGnxbzRsoDNvx",
+        "label": "Rollbit SOL Treasury",
+        "balance_native": 23753.71952622735,
+        "balance_usd": 3444289.3313029655,
+        "previous_balance_native": 23753.71952622735,
+        "delta_native": 0.0,
+        "delta_usd": 0.0
+      },
+      {
+        "timestamp": "2026-03-10T12:41:31.925538+00:00",
+        "chain": "ETH",
+        "address": "0xCBD6832Ebc203e49E2B771897067fce3c58575ac",
+        "label": "Rollbit ETH Hot Wallet",
+        "balance_native": 491.58598212475516,
+        "balance_usd": 1720550.937436643,
+        "previous_balance_native": 496.5514970957123,
+        "delta_native": -4.965514970957145,
+        "delta_usd": -17379.302398350006
+      },
+      {
+        "timestamp": "2026-03-10T12:41:31.925538+00:00",
+        "chain": "ETH",
+        "address": "0x46dcA395D20E63Cb0Fe1EDC9f0e6f012E77c0913",
+        "label": "rollbit.eth",
+        "balance_native": 487.8506177472461,
+        "balance_usd": 1707477.1621153613,
+        "previous_balance_native": 487.8506177472461,
+        "delta_native": 0.0,
+        "delta_usd": 0.0
+      }
+    ]
+  }
+]
