@@ -2,7 +2,7 @@
 **Operator:** Bull Gaming N.V. (Curaçao No. 157086) | **Platform:** Rollbit.com
 **Investigation Date:** March 10, 2026
 
-> This investigation concludes Rollbit is **NOT a legitimate operator.** On-chain evidence, law enforcement records, and 87 victim cases establish a pattern of systematic theft, capital flight, and financial fraud.
+> This investigation concludes Rollbit is **NOT a legitimate operator.** On-chain evidence, law enforcement records, 87 forum cases, and hundreds of public Twitter complaints establish a pattern of systematic theft, capital flight, and financial fraud.
 
 ---
 
@@ -21,7 +21,7 @@ Blockchain evidence of treasury drainage, money laundering, RLB token fraud, and
 | Exit-scam risk score | **7.8 / 10 CRITICAL** |
 
 ### [Report 2: Victim Forum Evidence →](./REPORT_2_VICTIM_EVIDENCE.md)
-87 documented victim cases, fraud pattern analysis, and staff conduct.
+87 documented victim cases from consumer protection forums.
 
 | Finding | Value |
 |---------|-------|
@@ -31,6 +31,16 @@ Blockchain evidence of treasury drainage, money laundering, RLB token fraud, and
 | Largest case | $55,000 (BTC-005) |
 | Primary pattern | Win-triggered account blocks |
 
+### [Report 3: Public X (Twitter) Evidence →](./REPORT_3_X_TWITTER_EVIDENCE.md)
+Analysis of high-profile social media outcry, viral threads, and public staff conduct.
+
+| Finding | Value |
+|---------|-------|
+| Documented X Complaints | 305+ |
+| Primary Viral Threads | 70+ |
+| Pattern Consistency | 100% match with forum cases |
+| Key Highlight | $350k account lock; outright DM insults from founders |
+
 ---
 
 ## 🔑 Key Evidence
@@ -39,7 +49,7 @@ Blockchain evidence of treasury drainage, money laundering, RLB token fraud, and
 2. **$59.6M in treasury outflows** in 5 months — including 626 BTC moved to anonymous wallet Feb 2026
 3. **RLB token: $2M liquidity vs $150M cap** — only on Uniswap, no CEX; claimed $5M/month buybacks mathematically impossible given -83% price decline
 4. **No valid license since Aug 2024** — operating under expired transitional arrangement
-5. **87 victims, 4.5% resolution rate** — fraud is systematic, not accidental
+5. **87 forum victims + 300+ public complaints** — fraud is systematic, not accidental
 6. **Founders' prior history** — previously ran CSGODiamonds, caught rigging games (2016 scandal)
 
 ---
@@ -50,6 +60,7 @@ Blockchain evidence of treasury drainage, money laundering, RLB token fraud, and
 rollbit_forensic/
 ├── REPORT_1_ONCHAIN_FORENSICS.md   ← On-chain evidence (start here for legal action)
 ├── REPORT_2_VICTIM_EVIDENCE.md     ← Victim cases (start here for class action)
+├── REPORT_3_X_TWITTER_EVIDENCE.md  ← High-profile social media evidence
 ├── LEGAL_SUBMISSION_TEMPLATE.md    ← Ready-to-file complaint template
 │
 ├── scripts/                        ← Analysis tools
