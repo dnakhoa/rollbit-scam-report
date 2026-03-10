@@ -41,6 +41,9 @@ Analysis of high-profile social media outcry, viral threads, and public staff co
 | Pattern Consistency | 100% match with forum cases |
 | Key Highlight | $350k account lock; outright DM insults from founders |
 
+### [Synthesis: Executive Summary & Forensic Hypothesis →](./REPORT_0_EXECUTIVE_SYNTHESIS.md)
+A unified forensic narrative connecting the $123M seizure, RLB token mechanics, and systematic platform confiscations.
+
 ---
 
 ## 🔑 Key Evidence
@@ -58,6 +61,7 @@ Analysis of high-profile social media outcry, viral threads, and public staff co
 
 ```
 rollbit_forensic/
+├── REPORT_0_EXECUTIVE_SYNTHESIS.md ← Forensic hypothesis (the full narrative)
 ├── REPORT_1_ONCHAIN_FORENSICS.md   ← On-chain evidence (start here for legal action)
 ├── REPORT_2_VICTIM_EVIDENCE.md     ← Victim cases (start here for class action)
 ├── REPORT_3_X_TWITTER_EVIDENCE.md  ← High-profile social media evidence
