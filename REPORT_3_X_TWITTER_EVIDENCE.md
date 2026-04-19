@@ -1,67 +1,121 @@
-# Report 3: Public X (Twitter) Evidence
-## Rollbit / Bull Gaming N.V. — Social Media Outcry & High-Profile Threads
-**Date:** March 10, 2026 | **Classification:** Forensic Investigation
-**Companion:** ← [Report 2: Victim Forum Evidence](./REPORT_2_VICTIM_EVIDENCE.md)
+# Report 3: Public X Evidence
+## Rollbit / Bull Gaming N.V. — Social-Media Corroboration
+**Date:** April 19, 2026 | **Classification:** Forensic Investigation
+**Companion:** ← [Report 2: Complaint Corpus](./REPORT_2_VICTIM_EVIDENCE.md) | → [Report 6: Evidence Register](./REPORT_6_EVIDENCE_REGISTER.md)
 
 ---
 
 ## Executive Summary
 
-While [Report 2](./REPORT_2_VICTIM_EVIDENCE.md) focuses on structured complaints from consumer protection forums (Trustpilot, BitcoinTalk, Casino Guru), this report examines the rapidly accelerating volume of **public outcry on X (formerly Twitter)**. 
+This report uses public X posts as **corroboration**, not as a second complaint-counting system.
 
-Public social media provides real-time visibility into Rollbit's enforcement behavior, capturing viral threads from high-net-worth players, selective enforcement instances, and public interactions with Rollbit co-founders (e.g., "Razer" / Jose Llisterri).
+That distinction matters. X is useful because it captures:
 
-**Key Findings:**
-- X complaints have grown **10x** between 2024 and 2025.
-- The patterns identified in forum complaints (win-triggered blocks, selective enforcement, infinite KYC loops) are **100% consistent** with live reports on X.
-- High-profile threads have garnered **hundreds of thousands of views**, indicating widespread awareness of the platform's insolvency and seizure practices.
+- real-time escalation when internal support channels stall
+- public-facing conduct by staff or founders
+- cross-posting and amplification of complaints that also appear on forums or review sites
 
----
+X is **not** used here to create a separate total of victims or locked funds. Those totals live in [Report 2](./REPORT_2_VICTIM_EVIDENCE.md), with dedupe rules applied.
 
-## 1. Quantitative Growth of Public Outcry
+The main evidentiary value of X is narrower:
 
-The volume of primary complaint posts and major viral threads on X correlates directly with the timeline of Rollbit's regulatory issues and treasury drainage. 
+1. it shows that the same complaint themes were visible in public conversation,
+2. it captures some examples of direct staff behavior,
+3. it helps date when specific allegations became public.
 
-| Period | Estimated Total X Complaints (incl. Replies) | X Primary Posts + Major Threads | Funds Locked (USD) | Dominant Patterns |
-| :--- | :--- | :--- | :--- | :--- |
-| **2022–2023** | ~30 | 10 | $188,000 | Win-triggered blocks; false multi-account flags. Support silence. |
-| **2024** | ~40 | 15 | $158,000 | KYC escalation loops; selective enforcement. "List all accounts" script deployed. |
-| **2025** | ~150 | 25 | $172,000 | **Peak Volume.** All seven forensic patterns observed. Prolonged ghosting; multi-year AML delays. |
-| **2026 (Jan–Mar)** | ~85+ | 20+ | $77,000+ | Win-triggered KYC; abrupt closures. Direct-message accusations from founders. |
-| **Total** | **305+** | **70+** | **$595,000+** | *100% pattern consistency with forum data.* |
-
-> *Note: Funds locked (USD) represents amounts explicitly stated in the public posts; actual figures are likely significantly higher.*
+Anchor claim for this report: `ER-09` in [Report 6](./REPORT_6_EVIDENCE_REGISTER.md).
 
 ---
 
-## 2. Documented High-Profile Cases & Threads
+## 1. How X Is Used In This File
 
-The following table catalogs major verified threads and high-engagement posts detailing Rollbit's operational behavior. 
+X content is included when it does one of the following:
 
-| Date | Username / Reporter | Amount Locked | Complaint Summary | Behavioral Pattern | Engagement | Proof Link |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **2025-04-06** | `@emptythedegen` | **$90,000**<br>*(Peak: $350k)* | $30k deposit escalated to $350k balance. Level-3 KYC completed. Withdrawal blocked for over two weeks. | Prolonged unresponsiveness to high-rollers. | 159k Views<br>741 Replies | [Link](https://x.com/robertgambaskr/status/1908964820419764728) |
-| **2025-07-20** | `@robertgambaskr` | N/A | Two-year "analysis" period. Eventual payout sent to an outdated, inaccessible address without user confirmation. | Extreme communication failure / AML delay tactic. | 57k Views<br>294 Replies | [Link](https://x.com/robertgambaskr/status/1947015657050009696) |
-| **2026-03-06** | `@robertgambaskr` | N/A | Heavy KYC demanded *only* after substantial win. Founder `@Razer_Rollbit` DMs user calling them an "obvious abuser" with "fake KYC". | Rude co-founder conduct; selective enforcement. | 16k Views<br>338 Replies | [Link](https://x.com/robertgambaskr/status/2029872445662937303) |
-| **2023-12-04** | `@YtZlashy` | N/A | Funds frozen for 5+ days. Account banned immediately after submission of requested verification proof. | Arbitrary enforcement post-verification. | 16k Views<br>132 Replies | [Link](https://x.com/YtZlashy/status/1731639780713103506) |
-| **2023-07-01** | `@deltaxbt` | N/A | Documented multiple instances of sudden account restrictions and fund locks. | Systemic operational unreliability. | 24k Views<br>267 Replies | [Link](https://x.com/deltaxbt/status/1674930915892404225) |
-| **2026-03-06** | `@YogiGambles` | N/A | Account fully operational while losing tens of thousands. Sudden restrictions applied the moment profitability was achieved. | Hypocritical win-only scrutiny. | ~3.8k Views | *(In March Thread)* |
-| **2026-03-06** | `@whu_crypto` | N/A | Details how platform tacitly encourages VPN usage for restricted regions, but uses it as an excuse to block winners. | Hypocritical geoblocking policy. | ~250 Views | *(In March Thread)* |
-| **2026-03-06** | `@GreegzCS2` | N/A | Notes that interventions and KYC demands occur *exclusively* after wins, never after deposits or losses. | Predatory timing of enforcement. | ~500 Views | *(In March Thread)* |
-| **2026-03-07** | `@TENNISCITY2` | **$5,000** | Account abruptly closed while holding a $5,000 balance. Screenshot functionality systematically disabled by the platform. | Abrupt closure without explanation. | ~130 Views | *(In March Thread)* |
+- corroborates a complaint pattern already seen in the counted corpus
+- preserves a direct public interaction by Rollbit staff or founders
+- documents public escalation after a support or compliance breakdown
+
+X content is **not** counted as a separate complaint total when:
+
+- it appears to summarize an already-counted forum or review complaint
+- it lacks enough detail to distinguish one incident from another
+- it is better treated as commentary, amplification, or legal escalation rather than a standalone customer-funds case
 
 ---
 
-## 3. Key Observations & Staff Conduct
+## 2. Selected Public Threads
 
-### The "Razer" Dynamic
-Consistent with the findings in Report 2, Rollbit co-founder Jose Llisterri (operating as "Razer" or `@Razer_Rollbit`) exhibits a highly combative and unprofessional posture toward users inquiring about frozen funds. The documented instance of him DMing a user to call them an *"obvious abuser"* while simultaneously ignoring formal support tickets reflects a corporate culture of hostility toward profitable clients.
+| Date | Public Thread | What It Adds | Link |
+|------|---------------|--------------|------|
+| 2023-12-04 | `@YtZlashy` | Public allegation that requested verification was followed by a ban or freeze rather than a clean withdrawal process | https://x.com/YtZlashy/status/1731639780713103506 |
+| 2025-04-06 | `@robertgambaskr` | Illustrates how high-balance disputes were being discussed in public even when the underlying support process was opaque | https://x.com/robertgambaskr/status/1908964820419764728 |
+| 2025-07-20 | `@robertgambaskr` | Public complaint about a payout being sent to an outdated, inaccessible address after an extended delay | https://x.com/robertgambaskr/status/1947015657050009696 |
+| 2026-03-06 | `@robertgambaskr` / `@Razer_Rollbit` references | Public thread alleging aggressive founder-side messaging, including accusations of abuse and fake KYC | https://x.com/robertgambaskr/status/2029872445662937303 |
+| 2024-05-05 | `@Nonopancake` | Legal-escalation signal rather than a customer withdrawal case; retained as contextual corroboration only | https://x.com/Nonopancake/status/1782506890817105973 |
 
-### The Profitability Trigger
-The most discussed dynamic across all X threads is the **profitability trigger**. Dozens of users independently corroborated that Rollbit's compliance systems (KYC, AML, Geo-IP, VPN checks) are completely dormant during the deposit and losing phases of a customer's lifecycle. They are activated with extreme prejudice *only* when a user's net-balance turns positive.
-
-### Correlation with On-Chain Events
-The explosion of complaints in early 2026 (85+ complaints in just two months) perfectly overlaps with the **February 2026 movement of 626 BTC ($42.2M)** documented in Report 1. As the treasury is drained, the frequency and aggressiveness of account locks dramatically increase to preserve remaining liquidity.
+These examples are deliberately limited. The goal is not to maximize post volume. The goal is to show the types of public evidence X can add without inflating the complaint totals.
 
 ---
+
+## 3. What X Corroborates
+
+### A. The same withdrawal-block pattern appears in public
+
+The counted complaint corpus already documents repeated reports of:
+
+- multi-account accusations without disclosed proof
+- KYC or compliance escalation at withdrawal time
+- support channels going silent after the user contests the accusation
+
+The selected X threads mirror those same themes. That does not make every tweet independently dispositive, but it does show that the complaint pattern was visible outside of one forum or one review platform.
+
+### B. X preserves public-facing staff conduct
+
+Forum complaints sometimes describe a staff member's tone after the fact. X can preserve the interaction itself or the immediate public reaction to it. That is especially relevant where a thread alleges:
+
+- dismissive replies
+- accusations of abuse or fake KYC
+- public/private messaging that is more aggressive than formal support channels
+
+This is why X remains useful even when it is excluded from complaint totals.
+
+### C. X captures escalation pressure
+
+Several public complaints describe a similar arc:
+
+1. support or compliance stops moving the matter forward,
+2. the user escalates publicly,
+3. the dispute becomes visible to a wider audience.
+
+That pattern matters because it suggests public escalation is often used as a substitute for a predictable dispute-resolution process.
+
+---
+
+## 4. Limits
+
+X evidence has clear limits and should be read accordingly:
+
+- a viral thread is not the same thing as a verified financial record
+- some X posts appear to summarize complaints that also live on Bitcointalk, Trustpilot, or Casino Guru
+- public engagement numbers can change and are not stable evidentiary metrics
+- copied screenshots or quote-tweets can create duplication risk if they are counted as standalone cases
+
+For those reasons, this report avoids:
+
+- separate X victim totals
+- separate X fund totals
+- confident attribution where the underlying case identity is unclear
+
+The complaint totals in [Report 2](./REPORT_2_VICTIM_EVIDENCE.md) remain the canonical numbers.
+
+---
+
+## 5. Practical Reading Rule
+
+The safest way to use X in a legal or investigative packet is:
+
+> Treat X as a corroborating public layer that shows visibility, timing, and sometimes staff conduct. Use the complaint corpus, mediation records, and source register for the primary numerical claims.
+
+That is how this report set uses it.
+
 *Back to [Investigation Hub](./README.md).*

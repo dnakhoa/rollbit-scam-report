@@ -1,123 +1,127 @@
 # Rollbit Forensic Investigation
 **Operator:** Bull Gaming N.V. (Curaçao No. 157086) | **Platform:** Rollbit.com
-**Investigation Date:** March 10, 2026
+**Investigation Date:** April 19, 2026
 
-> This investigation concludes Rollbit is **NOT a legitimate operator.** On-chain evidence, law enforcement records, 87 forum cases, and hundreds of public Twitter complaints establish a pattern of systematic theft, capital flight, and financial fraud.
+This repo is an evidence pack, not a slogan. It combines live on-chain analysis, a canonical complaint corpus, website-technical inspection, and a source-backed news timeline to evaluate Rollbit's custody transparency, token-market structure, complaint patterns, and regulatory risk.
 
 ---
 
-## 📋 Investigation Reports
+## Investigation Reports
 
 ### [Report 1: On-Chain Financial Forensics →](./REPORT_1_ONCHAIN_FORENSICS.md)
-Blockchain evidence of treasury drainage, money laundering, RLB token fraud, and regulatory failure.
+Live wallet state, treasury-flow review, RLB market-structure analysis, and source-backed corrections to earlier chain claims.
 
 | Finding | Value |
 |---------|-------|
-| Documented treasury outflows (5 months) | $59.6M |
-| Law enforcement seizure (Ukraine, May 2025) | $123M |
-| RLB token liquidity (Uniswap only) | **~$2M** |
-| RLB stated market cap | **~$150M** |
-| Liquidity-to-cap ratio | **1.3%** — token is not real |
-| Exit-scam risk score | **7.8 / 10 CRITICAL** |
+| Visible known wallets (Apr 19, 2026) | **~$67.7M** |
+| Ukraine-linked seizure reporting | **$123M** |
+| RLB top 4 DEX pool liquidity | **~$4.7M** |
+| RLB market cap | **~$101.2M** |
+| Main conclusion | **High custody / counterparty opacity** |
 
-### [Report 2: Victim Forum Evidence →](./REPORT_2_VICTIM_EVIDENCE.md)
-87 documented victim cases from consumer protection forums.
-
-| Finding | Value |
-|---------|-------|
-| Documented cases | 87 |
-| Confirmed stolen | $495,210 |
-| Resolution rate | **4.5%** |
-| Largest case | $55,000 (BTC-005) |
-| Primary pattern | Win-triggered account blocks |
-
-### [Report 3: Public X (Twitter) Evidence →](./REPORT_3_X_TWITTER_EVIDENCE.md)
-Analysis of high-profile social media outcry, viral threads, and public staff conduct.
+### [Report 2: Complaint Corpus →](./REPORT_2_VICTIM_EVIDENCE.md)
+Canonical public complaint record with provenance fields, explicit dedupe rules, and amount-status labeling.
 
 | Finding | Value |
 |---------|-------|
-| Documented X Complaints | 305+ |
-| Primary Viral Threads | 70+ |
-| Pattern Consistency | 100% match with forum cases |
-| Key Highlight | $350k account lock; outright DM insults from founders |
+| Counted public complaints | **80** |
+| Quantified complaints | **74** |
+| Total quantified amount | **$562,081.08** |
+| Public resolution rate | **5.0%** |
+| Largest counted case | **$55,000** |
+| Most common category | **Multiple-account accusation** |
+
+### [Report 3: Public X Evidence →](./REPORT_3_X_TWITTER_EVIDENCE.md)
+Selected X threads used as corroboration for timing, public escalation, and staff conduct. X posts are **not** counted as a separate complaint-total system.
 
 ### [Synthesis: Executive Summary & Forensic Hypothesis →](./REPORT_0_EXECUTIVE_SYNTHESIS.md)
-A unified forensic narrative connecting the $123M seizure, RLB token mechanics, and systematic platform confiscations.
+High-level synthesis tying the on-chain, complaint, website, and timeline evidence together.
+
+### [Report 4: Website Technical Investigation →](./REPORT_4_WEBSITE_TECHNICAL_INVESTIGATION.md)
+DNS, edge, TLS, stack, and public license-verification findings for `rollbit.com`, `blog.rollbit.com`, and `rollbot.rollbit.com`.
+
+### [Report 5: News and Regulatory Timeline →](./REPORT_5_NEWS_AND_REGULATORY_TIMELINE.md)
+Dated chronology of public reporting, operator activity, treasury alerts, and regulatory developments.
+
+### [Report 6: Evidence Register →](./REPORT_6_EVIDENCE_REGISTER.md)
+Human-readable claim-to-source appendix. Machine-readable version: [output/evidence_register.csv](./output/evidence_register.csv).
 
 ---
 
-## 🔑 Key Evidence
+## Key Evidence
 
-1. **$123M seized by Ukrainian court** — linked by Chainalysis to Bull Gaming N.V.; company confirmed in writing funds "actually belong to the casino"
-2. **$59.6M in treasury outflows** in 5 months — including 626 BTC moved to anonymous wallet Feb 2026
-3. **RLB token: $2M liquidity vs $150M cap** — only on Uniswap, no CEX; claimed $5M/month buybacks mathematically impossible given -83% price decline
-4. **No valid license since Aug 2024** — operating under expired transitional arrangement
-5. **87 forum victims + 300+ public complaints** — fraud is systematic, not accidental
-6. **Founders' prior history** — previously ran CSGODiamonds, caught rigging games (2016 scandal)
+1. **Known public wallets still show roughly `$67.7M`** as of April 19, 2026. The sharper issue is incomplete reserve visibility, not a public-wallet balance of zero.
+2. **A Ukraine-linked seizure reported at `$123M`** remains central because it points to material off-wallet or exchange-linked custody exposure.
+3. **RLB remains thin relative to its headline valuation** with only about `$4.7M` in top-pool DEX liquidity against roughly `$101.2M` market cap.
+4. **The complaint corpus now has one canonical count**: `80` counted public complaints, `74` quantified, `$562,081.08` total quantified.
+5. **Only four counted cases are publicly marked resolved**, which keeps the complaint record materially unresolved.
+6. **The website and licensing picture remains incomplete enough to require manual verification**, especially for public certificate checks.
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
-```
+```text
 rollbit_forensic/
-├── REPORT_0_EXECUTIVE_SYNTHESIS.md ← Forensic hypothesis (the full narrative)
-├── REPORT_1_ONCHAIN_FORENSICS.md   ← On-chain evidence (start here for legal action)
-├── REPORT_2_VICTIM_EVIDENCE.md     ← Victim cases (start here for class action)
-├── REPORT_3_X_TWITTER_EVIDENCE.md  ← High-profile social media evidence
-├── LEGAL_SUBMISSION_TEMPLATE.md    ← Ready-to-file complaint template
+├── REPORT_0_EXECUTIVE_SYNTHESIS.md
+├── REPORT_1_ONCHAIN_FORENSICS.md
+├── REPORT_2_VICTIM_EVIDENCE.md
+├── REPORT_3_X_TWITTER_EVIDENCE.md
+├── REPORT_4_WEBSITE_TECHNICAL_INVESTIGATION.md
+├── REPORT_5_NEWS_AND_REGULATORY_TIMELINE.md
+├── REPORT_6_EVIDENCE_REGISTER.md
+├── LEGAL_SUBMISSION_TEMPLATE.md
 │
-├── scripts/                        ← Analysis tools
-│   ├── blockchain_analyzer.py      # Queries BTC/ETH/SOL wallets live
-│   ├── treasury_monitor.py         # Real-time alert monitoring
-│   ├── generate_visualizations.py  # Generates all 5 charts
-│   ├── victim_collector.py         # Victim evidence collection tool
-│   └── run_investigation.py        # One-command orchestrator
+├── scripts/
+│   ├── blockchain_analyzer.py
+│   ├── build_case_corpus.py
+│   ├── generate_visualizations.py
+│   ├── run_investigation.py
+│   ├── treasury_monitor.py
+│   └── victim_collector.py
 │
 ├── output/
-│   ├── charts/                     ← 5 generated evidence charts
-│   ├── blockchain_analysis.json    ← On-chain analysis results
-│   ├── rollbit_analysis.json       ← Statistical case analysis
-│   └── rollbit_cases.csv           ← All cases in spreadsheet form
+│   ├── blockchain_analysis.json
+│   ├── corpus_metrics.json
+│   ├── evidence_register.csv
+│   ├── rollbit_analysis.json
+│   ├── rollbit_cases.csv
+│   └── charts/
 │
-├── cases_database.json             ← 87 cases, machine-readable
-└── requirements.txt                ← pip install -r requirements.txt
+├── cases_database.json
+└── requirements.txt
 ```
 
 ---
 
-## 🚀 Running the Analysis
+## Running The Analysis
 
 ```bash
-# Install dependencies (use your venv)
 pip install -r requirements.txt
 
-# Run full offline analysis + generate all 5 charts
+# Rebuild the canonical complaint corpus and evidence register
+python scripts/build_case_corpus.py
+
+# Generate charts from the current corpus and on-chain data
+python scripts/generate_visualizations.py
+
+# Run the on-chain investigation workflow
 python scripts/run_investigation.py --quick
-
-# Run with live blockchain data
 python scripts/run_investigation.py --full
-
-# Monitor treasury wallets in real-time
-python scripts/treasury_monitor.py --threshold 50000 --dry-run
-
-# Submit victim evidence
-python scripts/victim_collector.py --interactive
 ```
 
 ---
 
-## ⚖️ How to Report
+## Filing / Reporting
 
-See **[LEGAL_SUBMISSION_TEMPLATE.md](./LEGAL_SUBMISSION_TEMPLATE.md)** for a fill-in-the-blank complaint. Key filing destinations:
+Use [LEGAL_SUBMISSION_TEMPLATE.md](./LEGAL_SUBMISSION_TEMPLATE.md) as a starting point for a regulator, consumer-protection, or law-enforcement complaint. The most important attachments for a filing are:
 
-| Authority | Link | Who |
-|-----------|------|-----|
-| FBI IC3 | ic3.gov | US-based victims |
-| Curaçao GCB | cert.gcb.cw | All victims |
-| Action Fraud (UK) | actionfraud.police.uk | UK victims / UK nationals (Dixon, Llisterri) |
-| Interpol | interpol.int | International coordination |
+- [Report 2: Complaint Corpus](./REPORT_2_VICTIM_EVIDENCE.md)
+- [Report 6: Evidence Register](./REPORT_6_EVIDENCE_REGISTER.md)
+- [cases_database.json](./cases_database.json)
+- [output/evidence_register.csv](./output/evidence_register.csv)
+- [output/rollbit_cases.csv](./output/rollbit_cases.csv)
 
 ---
 
-*Sources: Pechersk District Court of Kyiv, dev.ua, CoinDesk, BeInCrypto, CryptoSlate, ChainCatcher, Chainalysis, IQ.wiki, BitcoinTalk, Trustpilot, Casino Guru, DEXScreener (Uniswap RLB/ETH pool data).*
+*Primary sources used in the current report set include Blockstream API, Solana RPC, CoinGecko, DEXScreener, dev.ua, ChainCatcher, official Rollbit blog pages, CGA policy pages, urlscan, Bitcointalk, Trustpilot, and Casino Guru.*

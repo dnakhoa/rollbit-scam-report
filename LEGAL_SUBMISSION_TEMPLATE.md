@@ -1,133 +1,151 @@
 # Legal Complaint Submission Template
-## Rollbit.com / Bull Gaming N.V. — Fund Theft & Fraud
+## Rollbit.com / Bull Gaming N.V. — Fund Withholding / Account Restriction Complaint
 
-> **IMPORTANT**: This template is for informational purposes. Consult a licensed attorney before filing. Fill in all [BRACKETS] with your information.
+> **Important:** This template is informational only. It is not legal advice. Fill in all bracketed fields and adapt the language to your own evidence before filing.
 
 ---
 
 ## COMPLAINANT INFORMATION
 
-- **Full Name**: [YOUR FULL LEGAL NAME]
-- **Email**: [YOUR EMAIL]
-- **Country of Residence**: [YOUR COUNTRY]
-- **Date of Complaint**: [TODAY'S DATE]
+- **Full name:** [YOUR FULL LEGAL NAME]
+- **Email:** [YOUR EMAIL]
+- **Country of residence:** [YOUR COUNTRY]
+- **Date of complaint:** [TODAY'S DATE]
 
 ---
 
 ## SUBJECT OF COMPLAINT
 
-- **Entity**: Bull Gaming N.V. (d/b/a Rollbit.com)
-- **Registration**: Curacao Company No. 157086
-- **Website**: https://rollbit.com
-- **Known Principals**: Daniel Robert Dixon ("Lucky"), Jose Llisterri ("Razer") — both British nationals
-- **Previous Entity**: CSGODiamonds (collapsed after game-rigging scandal)
-- **Current License**: Pending application OGL/2024/1260/0494 with Curacao Gaming Control Board (transitional arrangement)
+- **Entity:** Bull Gaming N.V. (d/b/a Rollbit.com)
+- **Company number:** Curaçao No. 157086
+- **Website:** https://rollbit.com
+- **Known principals named in public reporting:** Daniel Robert Dixon ("Lucky"), Jose Llisterri ("Razer")
+- **Public license-verification note:** Public verification should be re-checked at filing time using the then-current Curaçao certification path
 
 ---
 
-## ALLEGATION SUMMARY
+## SUMMARY OF MY COMPLAINT
 
-On or about [DATE], I deposited [AMOUNT] in [CURRENCY] to my Rollbit.com account. After [describe what happened — winning, requesting withdrawal, etc.], my account was [blocked/suspended/closed] and my funds totaling approximately $[AMOUNT] USD were [seized/forfeited/made inaccessible].
+On or about **[DATE]**, I deposited **[AMOUNT] [CURRENCY]** to my Rollbit account.
 
-Rollbit's stated reason was: [multi-account accusation / sportsbook abuse / KYC non-compliance / restricted country / other].
+After **[brief description: winning / requesting a withdrawal / completing KYC / contacting support]**, my account was **[blocked / suspended / limited / closed]** and funds totaling approximately **[AMOUNT OR BALANCE]** were **[withheld / made inaccessible / returned to an unusable address / otherwise not released to me]**.
 
-I believe this constitutes [fraud / theft / unjust enrichment] because: [explain why the reason is false or pretextual].
+Rollbit stated or implied the following reason:
+
+- **[multiple-account accusation / sportsbook abuse / KYC or AML review / restricted-country issue / terms-of-service breach / other]**
+
+I dispute that explanation because:
+
+- **[brief factual explanation]**
+- **[brief factual explanation]**
+- **[brief factual explanation]**
+
+My concern is that the operator has unfairly withheld or made inaccessible my funds without providing clear evidence or a timely resolution.
 
 ---
 
-## SUPPORTING EVIDENCE
+## SUPPORTING MATERIALS
 
-### Financial Evidence
-- [ ] Deposit transaction hash(es): [TX_HASH]
+### Financial materials
+- [ ] Deposit transaction hash(es): [TX HASH]
+- [ ] Withdrawal request record(s)
+- [ ] Account balance screenshot(s)
 - [ ] Blockchain explorer links
-- [ ] Account balance screenshots
-- [ ] Withdrawal request records
 
-### Communication Evidence
-- [ ] Support chat transcripts
-- [ ] Email correspondence with compliance@rollbit.com / legal@rollbit.com
-- [ ] Screenshots of account status
+### Communication materials
+- [ ] Support chat transcript(s)
+- [ ] Emails with `support@rollbit.com`, `complaints@rollbit.com`, `compliance@rollbit.com`, `legal@rollbit.com`, or other staff
+- [ ] Screenshot(s) showing account status or restriction message
 
-### KYC Evidence (if applicable)
-- [ ] KYC level completion records
-- [ ] Documents submitted (list types, not actual documents here)
+### Verification materials
+- [ ] KYC completion records
+- [ ] List of documents submitted
+- [ ] Any source-of-funds explanation already provided
 
-### On-Chain Evidence
-- [ ] Rollbit treasury outflows: $59.6M+ documented (Sep 2025 - Feb 2026)
-- [ ] $123M seized by Ukrainian authorities from Rollbit-linked Binance accounts (May 2025)
-- [ ] RLB token -77% despite claimed $5M/month buybacks
-- [ ] Known wallet addresses (see attached blockchain analysis)
-
----
-
-## PATTERN OF CONDUCT
-
-This complaint should be considered alongside **87+ documented similar cases** representing over **$489,000 in confirmed locked funds** with a **4.5% resolution rate**. This evidence is compiled in the accompanying forensic report.
-
-Key patterns:
-1. **Win-triggered blocks**: Accounts blocked immediately after significant winnings
-2. **False accusations**: Multi-account claims without evidence
-3. **KYC weaponization**: Escalating verification levels (1-5) used as delay tactics
-4. **Selective enforcement**: Deposits accepted from restricted countries, but withdrawals blocked when profitable
-5. **Support silence**: Compliance department stops responding indefinitely
+### Report-set attachments
+- [ ] [Report 0: Executive Synthesis](./REPORT_0_EXECUTIVE_SYNTHESIS.md)
+- [ ] [Report 1: On-Chain Financial Forensics](./REPORT_1_ONCHAIN_FORENSICS.md)
+- [ ] [Report 2: Complaint Corpus](./REPORT_2_VICTIM_EVIDENCE.md)
+- [ ] [Report 6: Evidence Register](./REPORT_6_EVIDENCE_REGISTER.md)
+- [ ] [output/evidence_register.csv](./output/evidence_register.csv)
+- [ ] [cases_database.json](./cases_database.json)
 
 ---
 
-## REGULATORY HISTORY
+## PUBLIC PATTERN CONTEXT
 
-- **March 2023**: License removed from website; RLB token dropped 20%
-- **August 2024**: Original Curacao sub-license expired
-- **May 2025**: $123 million in crypto assets seized by Ukrainian court, linked to Bull Gaming N.V.
-- **Prior venture**: CSGODiamonds collapsed after being caught rigging games
+My complaint should be reviewed alongside the accompanying public-source corpus.
+
+As of **April 19, 2026**, the attached corpus contains:
+
+- **80 counted public complaints**
+- **74 quantified complaints totaling $562,081.08**
+- **$295,178.56** from more fully documented forum / mediation sources
+- **$266,902.52** from Trustpilot-style claimed amounts
+- **4 publicly resolved cases out of 80 counted complaints**
+
+The public record shows a pattern consistent with:
+
+1. withdrawal restrictions after wins or larger cash-out attempts
+2. repeated multiple-account accusations without public disclosure of supporting evidence
+3. KYC or compliance escalation after the withdrawal stage
+4. long periods of silence or generic responses from support / compliance
+5. complaints that remain unresolved on public mediation platforms
+
+These points are documented in [Report 2](./REPORT_2_VICTIM_EVIDENCE.md) and tied to specific source links and case IDs in [Report 6](./REPORT_6_EVIDENCE_REGISTER.md).
+
+---
+
+## REQUESTED ACTION
+
+I respectfully request:
+
+1. a review of the handling of my account and funds
+2. preservation of relevant records, including KYC, support, and withdrawal logs
+3. disclosure of the specific basis for any multiple-account, AML, or terms-of-service allegation made against me
+4. release of my funds if no substantiated basis exists to continue withholding them
+5. review of whether my complaint matches a broader public pattern already documented against this operator
 
 ---
 
 ## WHERE TO FILE
 
 ### 1. FBI Internet Crime Complaint Center (IC3)
-- **URL**: https://www.ic3.gov/
-- **For**: U.S. victims or U.S.-connected transactions
+- **URL:** https://www.ic3.gov/
+- **Best for:** U.S.-connected victims or transactions
 
-### 2. Curaçao Gaming Control Board
-- **URL**: https://www.gamingcontrolcuracao.org/
-- **Email**: complaints@gcb.cw
-- **For**: Complaints against Curacao-licensed operators
-- **Reference**: Application OGL/2024/1260/0494 (Bull Gaming N.V.)
+### 2. Curaçao Gaming Authority
+- **URL:** https://www.cga.cw/regulation/online-gaming
+- **Email:** complaints@cga.cw
+- **Best for:** Complaints about Curaçao-regulated or Curaçao-presenting operators
 
-### 3. Your Local Police
-- **For**: Filing a criminal complaint for theft/fraud
-- **Bring**: Printed copies of all evidence, transaction records
+### 3. Local police or national fraud-reporting authority
+- **Best for:** Local criminal or consumer-protection reporting
+- **Bring:** Identity documents, transaction records, screenshots, and the attached report set
 
-### 4. Financial Regulators (Country-Specific)
-- **UK**: Action Fraud (actionfraud.police.uk) — operators are British nationals
-- **EU**: European Consumer Centre in your country
-- **Australia**: ACMA (acma.gov.au)
-
-### 5. Interpol
-- **URL**: https://www.interpol.int/
-- **For**: International fraud with anonymous operators
+### 4. Country-specific consumer / gambling / financial regulators
+- **UK:** Action Fraud
+- **EU:** European Consumer Centre or national gambling / consumer authority
+- **Australia:** ACMA or other relevant local authority
 
 ---
 
-## REQUESTED ACTION
+## SHORT FORM STATEMENT
 
-1. Investigation of Bull Gaming N.V. and its principals for systematic fraud
-2. Freezing of known Rollbit wallet assets pending investigation
-3. Recovery of stolen funds: $[YOUR AMOUNT] USD
-4. Coordination with Ukrainian authorities regarding the $123M seizure
-5. Revocation or denial of Curacao gaming license application
+I am submitting this complaint because I believe Rollbit / Bull Gaming N.V. has unfairly withheld or made inaccessible my funds, has not provided a clear evidence-based explanation for doing so, and appears to fit a broader publicly documented pattern of similar complaints.
 
 ---
 
-## ATTACHMENTS
+## FINAL CHECKLIST
 
-- [ ] Forensic investigation report (ROLLBIT_FORENSIC_REPORT_FULL.md)
-- [ ] Blockchain analysis results (blockchain_analysis.json)
-- [ ] Treasury flow visualizations (output/charts/)
-- [ ] Cases database summary (cases_database.json)
-- [ ] Personal transaction records
-- [ ] Support correspondence screenshots
+- [ ] All dates completed
+- [ ] Amounts completed
+- [ ] Transaction hashes attached
+- [ ] Screenshots attached
+- [ ] Support / compliance messages attached
+- [ ] Personal narrative reviewed for accuracy
+- [ ] Public pattern section attached with Report 2 and Report 6
 
 ---
 
-*Template prepared based on publicly available information. Individual claims should be independently verified. This does not constitute legal advice.*
+*Prepared from publicly available source material and the attached complaint corpus. Individual allegations should be independently verified before filing.*

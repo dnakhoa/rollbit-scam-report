@@ -93,13 +93,23 @@ KNOWN_TREASURY_EVENTS = [
     {
         'date': '2025-09-03',
         'chain': 'SOL',
-        'event': '50K SOL sold after 2-year dormancy',
+        'event': '50K SOL sold from treasury-linked wallet after 2-year dormancy',
         'amount_native': 50000,
         'amount_usd': 10_170_000,
         'price_at_time': 203.4,
         'initial_price': 24.6,
-        'source': 'Binance/Bitget reporting, on-chain data',
+        'source': 'ChainCatcher / Lookonchain',
         'direction': 'outflow',
+    },
+    {
+        'date': '2026-01-09',
+        'chain': 'BTC',
+        'event': '497.11 BTC transferred from anonymous address to Rollbit',
+        'amount_native': 497.11,
+        'amount_usd': 45_190_000,
+        'price_at_time': 90_906,
+        'source': 'ChainCatcher / Arkham',
+        'direction': 'inflow',
     },
     {
         'date': '2026-01-11',
@@ -134,12 +144,22 @@ KNOWN_TREASURY_EVENTS = [
     {
         'date': '2026-02-13',
         'chain': 'BTC',
-        'event': '626 BTC moved to anonymous address',
+        'event': '626.03 BTC transferred from anonymous address; some flow reported into Bybit and Rollbit',
         'amount_native': 626.03,
         'amount_usd': 42_210_000,
         'price_at_time': 67_427,
-        'source': 'ChainCatcher / on-chain',
-        'direction': 'outflow',
+        'source': 'ChainCatcher / Arkham',
+        'direction': 'mixed',
+    },
+    {
+        'date': '2026-03-11',
+        'chain': 'BTC',
+        'event': '200 BTC transferred from Coinbase; some flow reported into Rollbit',
+        'amount_native': 200.0,
+        'amount_usd': 13_910_000,
+        'price_at_time': 69_550,
+        'source': 'ChainCatcher / Arkham',
+        'direction': 'mixed',
     },
     {
         'date': '2025-05-09',
@@ -694,7 +714,12 @@ class TreasuryFlowTracer:
         print("  DOCUMENTED TREASURY EVENTS (from public reports)")
         print("  " + "-" * 60)
         for event in sorted(KNOWN_TREASURY_EVENTS, key=lambda x: x['date']):
-            direction = "⬆️ OUTFLOW" if event['direction'] == 'outflow' else "🚨 SEIZURE" if event['direction'] == 'seizure' else "⬇️ INFLOW"
+            direction = (
+                "⬆️ OUTFLOW" if event['direction'] == 'outflow' else
+                "⬇️ INFLOW" if event['direction'] == 'inflow' else
+                "↔️ MIXED FLOW" if event['direction'] == 'mixed' else
+                "🚨 SEIZURE"
+            )
             print(f"  [{event['date']}] {direction}: ${event['amount_usd']:,.0f}")
             print(f"    {event['event']}")
             print(f"    Source: {event['source']}")
@@ -832,15 +857,15 @@ class RLBTokenAnalyzer:
             if e['direction'] == 'outflow'
         )
         indicators.append({
-            'indicator': 'Treasury draining faster than claimed buybacks',
+            'indicator': 'Treasury-related outflows still meaningful relative to RLB liquidity',
             'severity': 'CRITICAL',
             'details': (
-                f'Documented treasury outflows total ${total_treasury_outflow:,.0f} in ~4 months '
-                f'(Sep 2025 - Feb 2026). At claimed $5M/month buyback rate, this far exceeds what '
-                f'should be leaving the treasury for buybacks alone.'
+                f'Documented treasury-related outflows total ${total_treasury_outflow:,.0f}. '
+                f'Even after correcting previously overstated BTC flow assumptions, the outflow set '
+                f'remains large relative to the current visible RLB DEX liquidity.'
             ),
         })
-        print(f"  🔴 Treasury outflows: ${total_treasury_outflow:,.0f} in ~4 months")
+        print(f"  🔴 Treasury-related outflows: ${total_treasury_outflow:,.0f}")
 
         result['manipulation_indicators'] = indicators
         result['price_analysis'] = {
@@ -876,16 +901,16 @@ class RiskScorer:
         )
         score = min(10, total_outflow / 10_000_000)  # $100M = score 10
         indicators.append(RiskIndicator(
-            name='Treasury Drainage Rate',
+            name='Treasury Outflow Pressure',
             score=score,
-            description=f'${total_outflow:,.0f} in documented treasury outflows over ~4 months',
+            description=f'${total_outflow:,.0f} in documented treasury-related outflows',
             evidence=[
                 f"{e['date']}: {e['event']} (${e['amount_usd']:,.0f})"
                 for e in KNOWN_TREASURY_EVENTS if e['direction'] == 'outflow'
             ]
         ))
         color = '🔴' if score >= 7 else '🟡' if score >= 4 else '🟢'
-        print(f"\n  {color} Treasury Drainage: {score:.1f}/10")
+        print(f"\n  {color} Treasury Outflow Pressure: {score:.1f}/10")
 
         # 2. Law enforcement action
         seizure = sum(
@@ -927,7 +952,10 @@ class RiskScorer:
             name='Solvency Indicator',
             score=score4,
             description=f'Known wallet balances: ${total_wallet_usd:,.2f} vs $123M in seized assets',
-            evidence=[f'Platform wallets held ~$16M vs ~$75M transferred to Binance (from CaptainAltcoin report)']
+            evidence=[
+                f'Known public BTC + SOL wallets held ~${total_wallet_usd:,.0f} at the latest snapshot',
+                '$123M seizure reporting indicates that critical reserves may also have been held off-wallet',
+            ]
         ))
         color = '🔴' if score4 >= 7 else '🟡' if score4 >= 4 else '🟢'
         print(f"  {color} Solvency Risk: {score4:.1f}/10")
@@ -951,13 +979,14 @@ class RiskScorer:
         indicators.append(RiskIndicator(
             name='Complaint Acceleration',
             score=score6,
-            description='Victim complaints accelerating from 2 in 2022 to 37+ in 2025',
+            description='Counted public complaints rose from 2 in 2022 to 47 in 2025, with 13 more already visible in 2026 YTD',
             evidence=[
                 '2022: 2 cases ($10K)',
                 '2023: 4 cases ($46K)',
-                '2024: 8 cases ($158K)',
-                '2025: 37+ cases ($172K+)',
-                'Resolution rate: 4.5%',
+                '2024: 9 cases ($177K)',
+                '2025: 47 cases ($258K)',
+                '2026 YTD: 13 cases ($46K)',
+                'Public resolution rate: 5.0% (4/80)',
             ]
         ))
         print(f"  🔴 Complaint Acceleration: {score6:.1f}/10")

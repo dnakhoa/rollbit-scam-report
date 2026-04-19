@@ -29,7 +29,7 @@ def banner():
 ║                                                                ║
 ║  Comprehensive blockchain analysis of Rollbit/Bull Gaming N.V. ║
 ║  Known wallets: BTC, SOL, ETH (6 addresses)                   ║
-║  Known events: $59.6M+ treasury outflows, $123M seizure       ║
+║  Known events: mixed treasury flows + $123M seizure           ║
 ╚══════════════════════════════════════════════════════════════════╝
     """)
 

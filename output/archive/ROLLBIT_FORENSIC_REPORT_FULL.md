@@ -1,5 +1,8 @@
 # Rollbit Casino Forensic Investigation Report
 
+> Archived build from **March 5, 2026**.
+> For the current deep-dive evidence pack, use [README.md](../../README.md) together with [REPORT_0_EXECUTIVE_SYNTHESIS.md](../../REPORT_0_EXECUTIVE_SYNTHESIS.md), [REPORT_1_ONCHAIN_FORENSICS.md](../../REPORT_1_ONCHAIN_FORENSICS.md), [REPORT_4_WEBSITE_TECHNICAL_INVESTIGATION.md](../../REPORT_4_WEBSITE_TECHNICAL_INVESTIGATION.md), and [REPORT_5_NEWS_AND_REGULATORY_TIMELINE.md](../../REPORT_5_NEWS_AND_REGULATORY_TIMELINE.md).
+
 **Date:** March 5, 2026
 **Compiled from:** BitcoinTalk Forum, Trustpilot, Casino Guru, AskGamblers, CasinoListings, Twitter/X, and corroborated with publicly available news sources, court records, and on-chain data.
 

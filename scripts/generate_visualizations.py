@@ -71,7 +71,6 @@ TREASURY_EVENTS = [
     {'date': '2025-09-03', 'label': '50K SOL sold', 'amount_usd': 10_170_000, 'chain': 'SOL'},
     {'date': '2026-01-11', 'label': '15K SOL (×2)', 'amount_usd': 4_090_000, 'chain': 'SOL'},
     {'date': '2026-01-15', 'label': '21.4K SOL', 'amount_usd': 3_140_000, 'chain': 'SOL'},
-    {'date': '2026-02-13', 'label': '626 BTC moved', 'amount_usd': 42_210_000, 'chain': 'BTC'},
 ]
 
 SEIZURE_EVENT = {'date': '2025-05-09', 'label': '$123M seized (Ukraine)', 'amount_usd': 123_000_000}
@@ -109,6 +108,21 @@ def load_cases():
         with open(CASES_DB) as f:
             return json.load(f)
     return {}
+
+
+def canonical_cases(payload):
+    """Return a flat list of cases from either the new or legacy schema."""
+    if isinstance(payload, dict) and isinstance(payload.get('cases'), list):
+        return payload['cases']
+
+    cases = []
+    for key in ['bitcointalk_cases', 'trustpilot_cases', 'casino_guru_cases', 'other_forum_cases']:
+        for case in payload.get(key, []):
+            enriched = dict(case)
+            enriched['source'] = key.replace('_cases', '')
+            enriched['counted_in_totals'] = True
+            cases.append(enriched)
+    return cases
 
 
 # =========================================================================
@@ -240,21 +254,22 @@ def chart_rlb_manipulation(output_dir):
 
 def chart_victim_impact(output_dir):
     print("  [3/5] Victim Impact Analysis...")
-    cases = load_cases()
+    payload = load_cases()
     fig, axes = plt.subplots(2, 2, figsize=(14, 10))
 
     # Gather all cases
     all_cases = []
-    for key in ['bitcointalk_cases', 'trustpilot_cases', 'casino_guru_cases', 'other_forum_cases']:
-        for c in cases.get(key, []):
-            amt = c.get('amount_usd') or c.get('amount_eur', 0)
-            if amt:
-                all_cases.append({
-                    'amount': float(amt),
-                    'category': c.get('category', 'unknown'),
-                    'status': c.get('status', 'UNRESOLVED'),
-                    'source': key.replace('_cases', ''),
-                })
+    for c in canonical_cases(payload):
+        if not c.get('counted_in_totals', True):
+            continue
+        amt = c.get('amount_usd') or c.get('amount_eur', 0)
+        if amt:
+            all_cases.append({
+                'amount': float(amt),
+                'category': c.get('category', 'unknown'),
+                'status': c.get('status', 'UNRESOLVED'),
+                'source': c.get('source', 'unknown'),
+            })
 
     # 3a: Category breakdown
     ax = axes[0, 0]
@@ -318,7 +333,7 @@ def chart_victim_impact(output_dir):
     ax.set_title('By Source Platform', fontsize=12, fontweight='bold')
 
     total_amount = sum(c['amount'] for c in all_cases)
-    fig.suptitle(f'Victim Impact Analysis\n{len(all_cases)} cases | ${total_amount:,.0f} confirmed locked',
+    fig.suptitle(f'Victim Impact Analysis\n{len(all_cases)} quantified complaints | ${total_amount:,.0f} total quantified',
                  fontsize=16, fontweight='bold', y=1.02)
     plt.tight_layout()
     path = os.path.join(output_dir, 'victim_impact_analysis.png')
@@ -354,10 +369,10 @@ def chart_wallet_network(output_dir):
 
     # External nodes
     external_nodes = [
-        ('Binance\n(~$75M transferred)', {'type': 'cex'}),
+        ('Binance / CEX\ncustody path', {'type': 'cex'}),
         ('Unknown Wallets', {'type': 'unknown'}),
         ('Ukrainian Accounts\n($123M seized)', {'type': 'seized'}),
-        ('DEX Liquidity\n(~$1.5M)', {'type': 'dex'}),
+        ('DEX Liquidity\n(~$4.7M top 4 pools)', {'type': 'dex'}),
         ('Influencer Wallets\n(Gainzy et al)', {'type': 'influencer'}),
     ]
     for name, attrs in external_nodes:
@@ -365,15 +380,14 @@ def chart_wallet_network(output_dir):
 
     # Edges: fund flows
     edges = [
-        ('BTC Treasury', 'Unknown Wallets', {'amount': '$42.2M (626 BTC)', 'weight': 4}),
-        ('SOL Treasury', 'Unknown Wallets', {'amount': '$10.2M (50K SOL)', 'weight': 3}),
-        ('SOL Treasury', 'Binance\n(~$75M transferred)', {'amount': '$7.2M (51K SOL)', 'weight': 3}),
-        ('ETH Hot Wallet', 'Binance\n(~$75M transferred)', {'amount': '~$75M total', 'weight': 5}),
+        ('BTC Treasury', 'Unknown Wallets', {'amount': 'sampled operational payouts', 'weight': 2}),
+        ('SOL Treasury', 'Unknown Wallets', {'amount': '$17.4M treasury-related SOL flows', 'weight': 3}),
+        ('ETH Hot Wallet', 'Binance / CEX\ncustody path', {'amount': 'off-wallet custody questions', 'weight': 4}),
         ('ETH Hot Wallet', 'rollbit.eth', {'amount': 'internal', 'weight': 1}),
         ('ETH Hot Wallet', 'ERC20 Ops', {'amount': 'token ops', 'weight': 1}),
-        ('rollbit.eth', 'DEX Liquidity\n(~$1.5M)', {'amount': 'RLB liquidity', 'weight': 2}),
+        ('rollbit.eth', 'DEX Liquidity\n(~$4.7M top 4 pools)', {'amount': 'RLB liquidity', 'weight': 2}),
         ('ERC20 Ops', 'Influencer Wallets\n(Gainzy et al)', {'amount': '$250K RLB deals', 'weight': 2}),
-        ('Binance\n(~$75M transferred)', 'Ukrainian Accounts\n($123M seized)', {'amount': '$123M linked', 'weight': 5}),
+        ('Binance / CEX\ncustody path', 'Ukrainian Accounts\n($123M seized)', {'amount': '$123M linked', 'weight': 5}),
     ]
     for src, dst, attrs in edges:
         G.add_edge(src, dst, **attrs)
@@ -448,8 +462,10 @@ def chart_evidence_timeline(output_dir):
         ('2024-11', '$44K maintenance scam', 'complaint', 1),
         ('2025-05', '$123M seized in Ukraine', 'seizure', -1),
         ('2025-09', '50K SOL sold ($10.2M)', 'outflow', 1),
-        ('2026-01', '51.4K SOL transferred ($7.2M)', 'outflow', -1),
-        ('2026-02', '626 BTC moved ($42.2M)', 'outflow', 1),
+        ('2026-01', '497 BTC moved into Rollbit', 'flow', -1),
+        ('2026-01', '51.4K SOL transferred ($7.2M)', 'outflow', 1),
+        ('2026-02', '626 BTC mixed flow to\nBybit / Rollbit', 'flow', -1),
+        ('2026-03', '200 BTC from Coinbase\npartly to Rollbit', 'flow', 1),
     ]
 
     dates = [datetime.strptime(e[0], '%Y-%m') for e in events]
@@ -461,7 +477,7 @@ def chart_evidence_timeline(output_dir):
         'launch': COLORS['green'], 'complaint': COLORS['orange'],
         'regulatory': COLORS['purple'], 'token': COLORS['blue'],
         'manipulation': COLORS['red'], 'seizure': '#ff0000',
-        'outflow': COLORS['red'],
+        'outflow': COLORS['red'], 'flow': COLORS['cyan'],
     }
 
     # Timeline base line

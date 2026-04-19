@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-10T12:35:19.367765+00:00",
+  "timestamp": "2026-04-19T09:56:56.567623+00:00",
   "mode": "cached",
   "wallets": [],
   "treasury_flows": {
@@ -7,13 +7,23 @@
       {
         "date": "2025-09-03",
         "chain": "SOL",
-        "event": "50K SOL sold after 2-year dormancy",
+        "event": "50K SOL sold from treasury-linked wallet after 2-year dormancy",
         "amount_native": 50000,
         "amount_usd": 10170000,
         "price_at_time": 203.4,
         "initial_price": 24.6,
-        "source": "Binance/Bitget reporting, on-chain data",
+        "source": "ChainCatcher / Lookonchain",
         "direction": "outflow"
+      },
+      {
+        "date": "2026-01-09",
+        "chain": "BTC",
+        "event": "497.11 BTC transferred from anonymous address to Rollbit",
+        "amount_native": 497.11,
+        "amount_usd": 45190000,
+        "price_at_time": 90906,
+        "source": "ChainCatcher / Arkham",
+        "direction": "inflow"
       },
       {
         "date": "2026-01-11",
@@ -48,12 +58,22 @@
       {
         "date": "2026-02-13",
         "chain": "BTC",
-        "event": "626 BTC moved to anonymous address",
+        "event": "626.03 BTC transferred from anonymous address; some flow reported into Bybit and Rollbit",
         "amount_native": 626.03,
         "amount_usd": 42210000,
         "price_at_time": 67427,
-        "source": "ChainCatcher / on-chain",
-        "direction": "outflow"
+        "source": "ChainCatcher / Arkham",
+        "direction": "mixed"
+      },
+      {
+        "date": "2026-03-11",
+        "chain": "BTC",
+        "event": "200 BTC transferred from Coinbase; some flow reported into Rollbit",
+        "amount_native": 200.0,
+        "amount_usd": 13910000,
+        "price_at_time": 69550,
+        "source": "ChainCatcher / Arkham",
+        "direction": "mixed"
       },
       {
         "date": "2025-05-09",
@@ -66,7 +86,7 @@
         "direction": "seizure"
       }
     ],
-    "total_confirmed_outflow_usd": 59610000
+    "total_confirmed_outflow_usd": 17400000
   },
   "rlb_analysis": {
     "buyback_analysis": {
@@ -96,15 +116,14 @@
   "wallet_clusters": {},
   "risk_indicators": [
     {
-      "name": "Treasury Drainage Rate",
-      "score": 5.961,
-      "description": "$59,610,000 in documented treasury outflows over ~4 months",
+      "name": "Treasury Outflow Pressure",
+      "score": 1.74,
+      "description": "$17,400,000 in documented treasury-related outflows",
       "evidence": [
-        "2025-09-03: 50K SOL sold after 2-year dormancy ($10,170,000)",
+        "2025-09-03: 50K SOL sold from treasury-linked wallet after 2-year dormancy ($10,170,000)",
         "2026-01-11: 15K SOL transferred (batch 1) ($2,050,000)",
         "2026-01-11: 15K SOL transferred (batch 2) ($2,040,000)",
-        "2026-01-15: 21.4K SOL transferred ($3,140,000)",
-        "2026-02-13: 626 BTC moved to anonymous address ($42,210,000)"
+        "2026-01-15: 21.4K SOL transferred ($3,140,000)"
       ]
     },
     {
@@ -130,7 +149,8 @@
       "score": 8.0,
       "description": "Known wallet balances: $0.00 vs $123M in seized assets",
       "evidence": [
-        "Platform wallets held ~$16M vs ~$75M transferred to Binance (from CaptainAltcoin report)"
+        "Known public BTC + SOL wallets held ~$0 at the latest snapshot",
+        "$123M seizure reporting indicates that critical reserves may also have been held off-wallet"
       ]
     },
     {
@@ -146,21 +166,22 @@
     {
       "name": "Complaint Acceleration",
       "score": 8.0,
-      "description": "Victim complaints accelerating from 2 in 2022 to 37+ in 2025",
+      "description": "Counted public complaints rose from 2 in 2022 to 47 in 2025, with 13 more already visible in 2026 YTD",
       "evidence": [
         "2022: 2 cases ($10K)",
         "2023: 4 cases ($46K)",
-        "2024: 8 cases ($158K)",
-        "2025: 37+ cases ($172K+)",
-        "Resolution rate: 4.5%"
+        "2024: 9 cases ($177K)",
+        "2025: 47 cases ($258K)",
+        "2026 YTD: 13 cases ($46K)",
+        "Public resolution rate: 5.0% (4/80)"
       ]
     }
   ],
   "summary": {
-    "total_documented_outflows_usd": 59610000,
+    "total_documented_outflows_usd": 17400000,
     "total_seized_usd": 123000000,
-    "avg_risk_score": 7.8,
+    "avg_risk_score": 7.1,
     "risk_level": "CRITICAL",
-    "known_events_count": 6
+    "known_events_count": 8
   }
 }

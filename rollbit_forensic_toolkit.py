@@ -495,31 +495,40 @@ class ForensicAnalyzer:
             data = json.load(f)
 
         cases = []
-        # Parse all case sections
-        for section_key in ['bitcointalk_cases', 'trustpilot_cases',
-                            'casino_guru_cases', 'other_forum_cases']:
-            source_name = section_key.replace('_cases', '')
-            for raw in data.get(section_key, []):
-                case = ComplaintCase(
-                    case_id=raw.get('case_id', ''),
-                    source=raw.get('source', source_name),
-                    url=raw.get('url', raw.get('thread_url', '')),
-                    thread_title=raw.get('thread_title', ''),
-                    username_forum=raw.get('username_forum', raw.get('reviewer', '')),
-                    username_rollbit=raw.get('username_rollbit', ''),
-                    date_posted=raw.get('date_posted', raw.get('date', '')),
-                    amount_usd=raw.get('amount_usd'),
-                    amount_crypto=raw.get('amount_crypto', ''),
-                    amount_currency=raw.get('amount_currency', 'USD'),
-                    category=raw.get('category', ''),
-                    status=raw.get('status', 'UNRESOLVED'),
-                    details=raw.get('details', ''),
-                    rollbit_response=raw.get('rollbit_response', ''),
-                    evidence=raw.get('evidence', []),
-                    notable=raw.get('notable', ''),
-                )
-                case.credibility_score = CredibilityScorer.score(case)
-                cases.append(case)
+
+        if isinstance(data, dict) and isinstance(data.get('cases'), list):
+            raw_cases = [raw for raw in data['cases'] if raw.get('counted_in_totals', True)]
+        else:
+            raw_cases = []
+            for section_key in ['bitcointalk_cases', 'trustpilot_cases',
+                                'casino_guru_cases', 'other_forum_cases']:
+                source_name = section_key.replace('_cases', '')
+                for raw in data.get(section_key, []):
+                    normalized = dict(raw)
+                    normalized['source'] = raw.get('source', source_name)
+                    raw_cases.append(normalized)
+
+        for raw in raw_cases:
+            case = ComplaintCase(
+                case_id=raw.get('case_id', ''),
+                source=raw.get('source', ''),
+                url=raw.get('url', raw.get('source_url', raw.get('thread_url', ''))),
+                thread_title=raw.get('thread_title', raw.get('title', '')),
+                username_forum=raw.get('username_forum', raw.get('reviewer', '')),
+                username_rollbit=raw.get('username_rollbit', ''),
+                date_posted=raw.get('date_posted', raw.get('post_date', raw.get('date', ''))),
+                amount_usd=raw.get('amount_usd'),
+                amount_crypto=raw.get('amount_crypto', raw.get('amount_native', '')),
+                amount_currency=raw.get('amount_currency', 'USD'),
+                category=raw.get('category', ''),
+                status=raw.get('status', 'UNRESOLVED'),
+                details=raw.get('details', raw.get('summary', '')),
+                rollbit_response=raw.get('rollbit_response', ''),
+                evidence=raw.get('evidence', []),
+                notable=raw.get('notable', raw.get('notes_on_verification', '')),
+            )
+            case.credibility_score = raw.get('confidence_score', CredibilityScorer.score(case))
+            cases.append(case)
 
         return cls(cases)
 
