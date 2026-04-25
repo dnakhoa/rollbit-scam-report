@@ -1,7 +1,7 @@
-# Report 5: News and Regulatory Timeline
-## Rollbit / Bull Gaming N.V. — Source-Backed Chronology of Public Events
+# Report 5: Public Event and Flow Timeline
+## Rollbit / Bull Gaming N.V. — Source-Backed Chronology for Forensic Context
 **Date:** April 19, 2026 | **Classification:** Source Appendix
-**Companion:** ← [Report 1: On-Chain Financial Forensics](./REPORT_1_ONCHAIN_FORENSICS.md)
+**Companion:** ← [Report 1: On-Chain Financial Forensics](./REPORT_1_ONCHAIN_FORENSICS.md) | → [Report 7: Technical Deep Dive](./REPORT_7_TECHNICAL_DEEP_DIVE.md)
 
 ---
 
@@ -11,7 +11,7 @@ This appendix turns the scattered public coverage into a dated chronology. The a
 
 - show what was publicly reported
 - separate official company messaging from third-party reporting
-- preserve the sequence in which the risk picture became visible
+- preserve the sequence in which technical risk signals became visible
 
 ---
 
@@ -22,10 +22,10 @@ This appendix turns the scattered public coverage into a dated chronology. The a
 | 2023-03-31 | CoinDesk reports Rollbit's token fell amid licensing concerns after users noticed license information removed from the site | First major public signal that licensing opacity could move the market | https://www.coindesk.com/markets/2023/03/31/crypto-casino-rollbits-token-drops-20-amid-licensing-concerns |
 | 2023-06-28 | Rollbit publishes official RLB migration-to-Ethereum announcement | Important because the migration path ran through Rollbit.com, increasing platform custody importance | https://blog.rollbit.com/rlb-eth-migration/ |
 | 2023-09-13 | Rollbit publishes official buy-and-burn explainer | Establishes the company's own public claims about hourly buybacks and revenue-linked token support | https://blog.rollbit.com/rlb-utility-guide/amp/ |
-| 2023-09-23 | Rollbit says Degen EXchange will be temporarily closed because of regulatory uncertainty and low adoption rates | Direct public acknowledgement that one part of the business was being wound down for regulatory/business reasons | https://www.chaincatcher.com/en/article/2102300 |
+| 2023-09-23 | Rollbit says Degen EXchange will be temporarily closed because of regulatory uncertainty and low adoption rates | Direct public acknowledgement that one product surface was being wound down | https://www.chaincatcher.com/en/article/2102300 |
 | 2023-10-04 | CryptoSlate highlights scrutiny around influencer promotion tactics and Gainzy wallet behavior | Publicly ties RLB promotion to concerns about undisclosed incentives and contradictory wallet behavior | https://cryptoslate.com/solana-based-rollbit-coin-faces-scrutiny-over-crypto-influencer-promotion-tactics/ |
 | 2024-04-30 | ChainCatcher reports Rollbit's notice that SOL-based RLB migration ends that day and remaining tokens will be burned | Confirms the migration deadline and the platform's central role in the swap | https://www.chaincatcher.com/en/tags/rollbit |
-| 2025-05-17 | `dev.ua` summarizes the Kyiv court action allowing transfer of **$123M** in seized crypto allegedly tied to Bull Gaming N.V. | Most serious public law-enforcement-linked event in the file | https://dev.ua/en/news/krypto-1747475639 |
+| 2025-05-17 | `dev.ua` summarizes the Kyiv court action allowing transfer of **$123M** in seized crypto allegedly tied to Bull Gaming N.V. | Key off-wallet custody-location signal in the file | https://dev.ua/en/news/krypto-1747475639 |
 | 2025-09-03 | ChainCatcher / Lookonchain report a treasury-linked wallet selling **50,000 SOL** after two years of inactivity | First large treasury-related liquidation event in the current chronology | https://www.chaincatcher.com/ko/article/2202906 |
 | 2026-01-09 | ChainCatcher reports **497.11 BTC** transferred from an anonymous address **to Rollbit** | Important corrective: large BTC flows in early 2026 were not one-direction-only outflows | https://www.chaincatcher.com/article/2235971 |
 | 2026-01-11 | ChainCatcher reports two separate **15,000 SOL** transfers from Rollbit to an anonymous address | Direct treasury outflow evidence | https://www.chaincatcher.com/article/2236424 and https://www.chaincatcher.com/en/tags/rollbit |
@@ -41,7 +41,7 @@ This appendix turns the scattered public coverage into a dated chronology. The a
 Three patterns stand out once the chronology is cleaned up:
 
 1. **Corporate messaging and external scrutiny diverged early.**
-   Rollbit's public materials emphasized product growth, migration, and buy-and-burn mechanics while media coverage flagged licensing and promotion concerns.
+   Rollbit's public materials emphasized product growth, migration, and buy-and-burn mechanics while media coverage flagged verification, promotion, and custody concerns.
 
 2. **2025-2026 treasury reporting is mixed, not one-way.**
    The platform appears in both outflow and inflow alerts. That is still notable, but it argues for an **opacity** thesis more than a simplistic "everything only leaves" thesis.
@@ -55,7 +55,7 @@ Three patterns stand out once the chronology is cleaned up:
 
 The public news record now supports a stronger and more defensible narrative:
 
-- Rollbit has faced **serious regulatory and reputation events**
+- Rollbit has faced **serious public verification and reputation events**
 - its treasury footprint shows **large, sometimes ambiguous routing activity**
 - the company has maintained an **active promotional and product-marketing surface**
 - the public record does **not** support every early social-media interpretation of those flows

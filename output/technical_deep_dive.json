@@ -1,0 +1,786 @@
+{
+  "generated_at": "2026-04-25T11:35:55.179693+00:00",
+  "input_artifacts": {
+    "cases_database": "cases_database.json",
+    "corpus_metrics": "output/corpus_metrics.json",
+    "blockchain_analysis": "output/blockchain_analysis.json",
+    "web_surface_capture": "output/web_surface_capture.json",
+    "public_record_capture": "output/public_record_capture.json"
+  },
+  "scope_note": "Technical forensic synthesis. Legal/regulatory references are treated only as source context or custody-location signals.",
+  "corpus_metrics_from_existing_file": {
+    "freeze_date": "2026-04-19",
+    "captured_at": "2026-04-19T00:00:00Z",
+    "total_cases": 80,
+    "quantified_cases": 74,
+    "resolved_cases": 4,
+    "open_or_unresolved_cases": 76,
+    "resolution_rate": 0.05,
+    "quantified_amount_total_usd": 562081.08,
+    "confirmed_amount_total_usd": 295178.56,
+    "claimed_amount_total_usd": 266902.52,
+    "source_breakdown": {
+      "bitcointalk": 20,
+      "trustpilot": 51,
+      "casino_guru": 7,
+      "askgamblers": 1,
+      "casinolistings": 1
+    },
+    "category_breakdown": {
+      "multiple_accounts_accusation": 31,
+      "account_closure": 18,
+      "sportsbook_abuse": 4,
+      "restricted_country": 3,
+      "kyc_delay_tactic": 9,
+      "winning_block": 12,
+      "maintenance_scam": 1,
+      "futures_manipulation": 2
+    },
+    "year_breakdown": {
+      "2022": 2,
+      "2023": 4,
+      "2024": 9,
+      "2025": 47,
+      "2026": 13
+    },
+    "dedupe_rules_applied": {
+      "excluded_from_totals": [
+        "AG-002",
+        "X-001"
+      ],
+      "cross_post_groups": [
+        "XPOST-CL-001-AG-002",
+        "XPOST-BGMBET-3189"
+      ]
+    },
+    "top_10_cases": [
+      {
+        "case_id": "BTC-005",
+        "amount_usd": 55000.0,
+        "source": "bitcointalk",
+        "post_date": "2024-07-20",
+        "category": "winning_block"
+      },
+      {
+        "case_id": "TP-003",
+        "amount_usd": 47000.0,
+        "source": "trustpilot",
+        "post_date": "2025-08-14",
+        "category": "winning_block"
+      },
+      {
+        "case_id": "BTC-004",
+        "amount_usd": 44000.0,
+        "source": "bitcointalk",
+        "post_date": "2024-11-25",
+        "category": "maintenance_scam"
+      },
+      {
+        "case_id": "BTC-002",
+        "amount_usd": 30211.0,
+        "source": "bitcointalk",
+        "post_date": "2023-06-01",
+        "category": "multiple_accounts_accusation"
+      },
+      {
+        "case_id": "BT-017",
+        "amount_usd": 30000.0,
+        "source": "bitcointalk",
+        "post_date": "2025-04-21",
+        "category": "winning_block"
+      },
+      {
+        "case_id": "TP-001",
+        "amount_usd": 30000.0,
+        "source": "trustpilot",
+        "post_date": "2025-12-15",
+        "category": "winning_block"
+      },
+      {
+        "case_id": "BTC-010",
+        "amount_usd": 27000.0,
+        "source": "bitcointalk",
+        "post_date": "2024-03-01",
+        "category": "restricted_country"
+      },
+      {
+        "case_id": "TP-004",
+        "amount_usd": 22000.0,
+        "source": "trustpilot",
+        "post_date": "2025-10-11",
+        "category": "multiple_accounts_accusation"
+      },
+      {
+        "case_id": "TP-042",
+        "amount_usd": 19749.0,
+        "source": "trustpilot",
+        "post_date": "2024-04-22",
+        "category": "account_closure"
+      },
+      {
+        "case_id": "TP-007",
+        "amount_usd": 18000.0,
+        "source": "trustpilot",
+        "post_date": "2025-02-04",
+        "category": "winning_block"
+      }
+    ]
+  },
+  "corpus_signal_analysis": {
+    "counted_cases": 80,
+    "quantified_cases": 74,
+    "confirmed_cases": 27,
+    "claimed_cases": 47,
+    "unquantified_cases": 6,
+    "quantified_amount_usd": 562081.08,
+    "confirmed_amount_usd": 295178.56,
+    "claimed_amount_usd": 266902.52,
+    "first_case_date": "2022-09-02",
+    "latest_case_date": "2026-04-12",
+    "yearly_counts": {
+      "2022": 2,
+      "2023": 4,
+      "2024": 9,
+      "2025": 47,
+      "2026": 13
+    },
+    "annualized_2026_case_rate": 43.5,
+    "marker_counts": {
+      "withdrawal_control": {
+        "cases": 48,
+        "amount_usd": 316929.08
+      },
+      "kyc_escalation": {
+        "cases": 33,
+        "amount_usd": 275060.56
+      },
+      "named_staff_or_team": {
+        "cases": 8,
+        "amount_usd": 69287.56
+      },
+      "multi_account_script": {
+        "cases": 29,
+        "amount_usd": 178402.56
+      },
+      "post_win_or_profit": {
+        "cases": 35,
+        "amount_usd": 390931.0
+      },
+      "support_silence": {
+        "cases": 6,
+        "amount_usd": 39746.0
+      },
+      "return_to_origin_address": {
+        "cases": 1,
+        "amount_usd": 5200.0
+      },
+      "maintenance_or_market_event": {
+        "cases": 3,
+        "amount_usd": 44500.0
+      }
+    },
+    "compound_patterns": {
+      "withdrawal_control+kyc_escalation": {
+        "cases": 24,
+        "amount_usd": 153330.56,
+        "case_ids": [
+          "BTC-011",
+          "BTC-002",
+          "BTC-006",
+          "BTC-007",
+          "BTC-009",
+          "TP-010",
+          "BTC-013",
+          "BTC-008",
+          "BT-017",
+          "TP-013",
+          "TP-045",
+          "BT-016",
+          "TP-024",
+          "CG-004",
+          "TP-044",
+          "TP-019",
+          "CG-007",
+          "CG-006",
+          "BT-018",
+          "BT-019",
+          "TP-049",
+          "TP-047",
+          "CG-001",
+          "CG-003"
+        ]
+      },
+      "withdrawal_control+post_win_or_profit": {
+        "cases": 18,
+        "amount_usd": 212431.0,
+        "case_ids": [
+          "BTC-002",
+          "BTC-010",
+          "BTC-007",
+          "BTC-009",
+          "BTC-013",
+          "TP-023",
+          "BT-017",
+          "TP-013",
+          "TP-005",
+          "TP-003",
+          "TP-016",
+          "TP-004",
+          "TP-039",
+          "TP-011",
+          "TP-002",
+          "TP-017",
+          "CG-007",
+          "AG-001"
+        ]
+      },
+      "post_win_or_profit+kyc_escalation": {
+        "cases": 14,
+        "amount_usd": 192931.0,
+        "case_ids": [
+          "BTC-002",
+          "BTC-007",
+          "BTC-005",
+          "BTC-009",
+          "TP-007",
+          "BTC-013",
+          "BTC-014",
+          "BT-017",
+          "TP-013",
+          "BT-020",
+          "TP-012",
+          "TP-001",
+          "TP-026",
+          "CG-007"
+        ]
+      },
+      "multi_account_script+kyc_escalation": {
+        "cases": 15,
+        "amount_usd": 104345.56,
+        "case_ids": [
+          "BTC-002",
+          "BTC-013",
+          "BTC-008",
+          "BT-017",
+          "TP-045",
+          "BT-016",
+          "TP-024",
+          "CG-004",
+          "BT-020",
+          "TP-012",
+          "TP-026",
+          "CG-006",
+          "BT-018",
+          "TP-049",
+          "CG-003"
+        ]
+      },
+      "withdrawal_control+kyc_escalation+post_win_or_profit": {
+        "cases": 7,
+        "amount_usd": 83401.0,
+        "case_ids": [
+          "BTC-002",
+          "BTC-007",
+          "BTC-009",
+          "BTC-013",
+          "BT-017",
+          "TP-013",
+          "CG-007"
+        ]
+      }
+    },
+    "category_stats": [
+      {
+        "category": "winning_block",
+        "cases": 12,
+        "amount_usd": 193970.0,
+        "unresolved_rate": 1.0,
+        "confirmed_cases": 3,
+        "claimed_cases": 8,
+        "avg_confidence": 0.55,
+        "technical_severity_score": 11.77
+      },
+      {
+        "category": "multiple_accounts_accusation",
+        "cases": 31,
+        "amount_usd": 152867.56,
+        "unresolved_rate": 0.9355,
+        "confirmed_cases": 13,
+        "claimed_cases": 16,
+        "avg_confidence": 0.597,
+        "technical_severity_score": 11.62
+      },
+      {
+        "category": "maintenance_scam",
+        "cases": 1,
+        "amount_usd": 44000.0,
+        "unresolved_rate": 1.0,
+        "confirmed_cases": 1,
+        "claimed_cases": 0,
+        "avg_confidence": 0.85,
+        "technical_severity_score": 11.36
+      },
+      {
+        "category": "account_closure",
+        "cases": 18,
+        "amount_usd": 62868.52,
+        "unresolved_rate": 1.0,
+        "confirmed_cases": 3,
+        "claimed_cases": 13,
+        "avg_confidence": 0.551,
+        "technical_severity_score": 10.8
+      },
+      {
+        "category": "kyc_delay_tactic",
+        "cases": 9,
+        "amount_usd": 52705.0,
+        "unresolved_rate": 0.8889,
+        "confirmed_cases": 2,
+        "claimed_cases": 7,
+        "avg_confidence": 0.556,
+        "technical_severity_score": 10.5
+      },
+      {
+        "category": "restricted_country",
+        "cases": 3,
+        "amount_usd": 34100.0,
+        "unresolved_rate": 0.6667,
+        "confirmed_cases": 3,
+        "claimed_cases": 0,
+        "avg_confidence": 0.68,
+        "technical_severity_score": 10.49
+      },
+      {
+        "category": "sportsbook_abuse",
+        "cases": 4,
+        "amount_usd": 21070.0,
+        "unresolved_rate": 1.0,
+        "confirmed_cases": 2,
+        "claimed_cases": 2,
+        "avg_confidence": 0.588,
+        "technical_severity_score": 10.28
+      },
+      {
+        "category": "futures_manipulation",
+        "cases": 2,
+        "amount_usd": 500.0,
+        "unresolved_rate": 1.0,
+        "confirmed_cases": 0,
+        "claimed_cases": 1,
+        "avg_confidence": 0.5,
+        "technical_severity_score": 6.86
+      }
+    ],
+    "source_fidelity": [
+      {
+        "source": "trustpilot",
+        "tier": "review_page_claim",
+        "cases": 51,
+        "quantified_cases": 47,
+        "amount_usd": 266902.52,
+        "confirmed_cases": 0,
+        "claimed_cases": 47,
+        "live_captures": 6,
+        "avg_confidence": 0.503
+      },
+      {
+        "source": "bitcointalk",
+        "tier": "direct_forum_thread",
+        "cases": 20,
+        "quantified_cases": 19,
+        "amount_usd": 257797.0,
+        "confirmed_cases": 19,
+        "claimed_cases": 0,
+        "live_captures": 5,
+        "avg_confidence": 0.739
+      },
+      {
+        "source": "casino_guru",
+        "tier": "mediated_complaint_page",
+        "cases": 7,
+        "quantified_cases": 6,
+        "amount_usd": 27481.56,
+        "confirmed_cases": 6,
+        "claimed_cases": 0,
+        "live_captures": 4,
+        "avg_confidence": 0.691
+      },
+      {
+        "source": "askgamblers",
+        "tier": "mediated_complaint_page",
+        "cases": 1,
+        "quantified_cases": 1,
+        "amount_usd": 3400.0,
+        "confirmed_cases": 1,
+        "claimed_cases": 0,
+        "live_captures": 0,
+        "avg_confidence": 0.5
+      },
+      {
+        "source": "casinolistings",
+        "tier": "mediated_complaint_page",
+        "cases": 1,
+        "quantified_cases": 1,
+        "amount_usd": 6500.0,
+        "confirmed_cases": 1,
+        "claimed_cases": 0,
+        "live_captures": 0,
+        "avg_confidence": 0.5
+      }
+    ],
+    "amount_buckets": {
+      "<$500": 10,
+      "$10K-$24.9K": 11,
+      "$25K-$49.9K": 6,
+      "$5K-$9.9K": 13,
+      "$1K-$4.9K": 19,
+      "$50K+": 1,
+      "$500-$999": 14,
+      "unquantified": 6
+    },
+    "duplicate_candidates": [
+      {
+        "case_a": "TP-011",
+        "case_b": "TP-012",
+        "amount_a": 5000.0,
+        "amount_b": 5000.0,
+        "date_delta_days": 8,
+        "source_a": "trustpilot",
+        "source_b": "trustpilot",
+        "category": "multiple_accounts_accusation",
+        "score": 0.75
+      },
+      {
+        "case_a": "TP-027",
+        "case_b": "TP-026",
+        "amount_a": 600.0,
+        "amount_b": 600.0,
+        "date_delta_days": 21,
+        "source_a": "trustpilot",
+        "source_b": "trustpilot",
+        "category": "multiple_accounts_accusation",
+        "score": 0.75
+      },
+      {
+        "case_a": "CG-005",
+        "case_b": "TP-019",
+        "amount_a": 1935.0,
+        "amount_b": 1935.0,
+        "date_delta_days": 13,
+        "source_a": "casino_guru",
+        "source_b": "trustpilot",
+        "category": "kyc_delay_tactic",
+        "score": 0.65
+      }
+    ]
+  },
+  "onchain_visibility_analysis": {
+    "mode": "cached",
+    "snapshot_note": "Cached mode preserves the April 19, 2026 wallet snapshot from REPORT_1_ONCHAIN_FORENSICS.md; it does not imply current live balances.",
+    "wallet_count": 6,
+    "visible_wallet_usd": 67620165.3,
+    "visible_btc_sol_usd": 67620165.3,
+    "direct_outflow_usd": 17400000.0,
+    "jan_2026_direct_outflow_usd": 7230000.0,
+    "known_inflow_usd": 45190000.0,
+    "mixed_flow_usd": 56120000.0,
+    "reported_off_wallet_event_usd": 123000000.0,
+    "direct_outflow_to_visible_wallet_ratio": 0.2573,
+    "jan_2026_outflow_to_visible_wallet_ratio": 0.1069,
+    "reported_off_wallet_to_visible_wallet_ratio": 1.819,
+    "wallets": [
+      {
+        "chain": "BTC",
+        "address": "bc1qw8wrek2m7nlqldll66ajnwr9mh64syvkt67zlu",
+        "label": "Rollbit BTC Treasury",
+        "balance_native": 649.54550772,
+        "balance_usd": 48758133.54,
+        "tx_count": 469936,
+        "last_activity": "2026-04-19",
+        "fetched_at": "2026-04-19T09:23:00+00:00"
+      },
+      {
+        "chain": "SOL",
+        "address": "RBHdGVfDfMjfU6iUfCb1LczMJcQLx7hGnxbzRsoDNvx",
+        "label": "Rollbit SOL Treasury",
+        "balance_native": 222587.110683,
+        "balance_usd": 18862031.76,
+        "tx_count": 0,
+        "last_activity": "2026-04-19",
+        "fetched_at": "2026-04-19T09:24:00+00:00"
+      },
+      {
+        "chain": "ETH",
+        "address": "0xCBD6832Ebc203e49E2B771897067fce3c58575ac",
+        "label": "Rollbit Hot Wallet",
+        "balance_native": 0.0,
+        "balance_usd": 0.0,
+        "tx_count": 0,
+        "last_activity": "",
+        "fetched_at": "2026-04-19T09:24:00+00:00"
+      },
+      {
+        "chain": "ETH",
+        "address": "0xef8801eaf234ff82801821ffe2d78d60a0237f97",
+        "label": "Rollbit ERC20 Operations",
+        "balance_native": 0.0,
+        "balance_usd": 0.0,
+        "tx_count": 0,
+        "last_activity": "",
+        "fetched_at": "2026-04-19T09:24:00+00:00"
+      },
+      {
+        "chain": "ETH",
+        "address": "0x46dcA395D20E63Cb0Fe1EDC9f0e6f012E77c0913",
+        "label": "rollbit.eth",
+        "balance_native": 0.0,
+        "balance_usd": 0.0,
+        "tx_count": 0,
+        "last_activity": "",
+        "fetched_at": "2026-04-19T09:24:00+00:00"
+      },
+      {
+        "chain": "ETH",
+        "address": "0x8aE57A027c63fcA8070D1Bf38622321dE8004c67",
+        "label": "rollbot.eth",
+        "balance_native": 0.0,
+        "balance_usd": 0.0,
+        "tx_count": 0,
+        "last_activity": "",
+        "fetched_at": "2026-04-19T09:24:00+00:00"
+      }
+    ],
+    "events_by_direction": {
+      "outflow": 4,
+      "inflow": 1,
+      "mixed": 2,
+      "seizure": 1
+    }
+  },
+  "rlb_market_structure": {
+    "snapshot_date": "2026-04-19",
+    "price_usd": 0.059523,
+    "market_cap_usd": 101223201,
+    "top_4_pool_liquidity_usd": 4713083.87,
+    "top_4_pool_volume_24h_usd": 153106.24,
+    "ath_drawdown_pct": -77.49,
+    "liquidity_to_market_cap_ratio": 0.0466,
+    "volume_24h_to_liquidity_ratio": 0.0325,
+    "liquidity_turnover_days_at_24h_volume": 30.8,
+    "one_pct_market_cap_vs_liquidity_ratio": 0.2148,
+    "five_pct_market_cap_vs_liquidity_ratio": 1.0739
+  },
+  "web_surface_capture": {
+    "generated_at": "2026-04-25T10:46:28.212399+00:00",
+    "capture_dir": "output/captures/web/20260425T104619Z",
+    "targets": [
+      {
+        "name": "main_app",
+        "host": "rollbit.com",
+        "path": "/",
+        "selected_ip": "104.20.26.76",
+        "final_status": "HTTP/2 403",
+        "body_size_bytes": 5252,
+        "body_sha256": "4be5da3178ba0422e4b5cf5324e45ef1cc66199325e0e5015379be1642e78dec",
+        "headers_file": "output/captures/web/20260425T104619Z/main_app_rollbit.com.headers.txt",
+        "body_file": "output/captures/web/20260425T104619Z/main_app_rollbit.com.body.bin",
+        "tls_parsed": "subject=CN=rollbit.com\nissuer=C=US, O=Let's Encrypt, CN=E8\nnotBefore=Apr  9 18:41:15 2026 GMT\nnotAfter=Jul  8 18:41:14 2026 GMT\nsha256 Fingerprint=CD:CA:91:F4:B9:2D:06:DE:DE:C1:24:20:E1:E3:5B:00:05:C0:88:B1:8B:CB:77:53:57:9E:DB:0B:74:3F:5C:59\nX509v3 Subject Alternative Name: \n    DNS:*.rollbit.com, DNS:rollbit.com\n"
+      },
+      {
+        "name": "blog",
+        "host": "blog.rollbit.com",
+        "path": "/",
+        "selected_ip": "151.101.3.7",
+        "final_status": "HTTP/2 200",
+        "body_size_bytes": 69908,
+        "body_sha256": "234ca47b237f4ab98833a91b10d2ee74775a3619cd2c451a61b009be35177cae",
+        "headers_file": "output/captures/web/20260425T104619Z/blog_blog.rollbit.com.headers.txt",
+        "body_file": "output/captures/web/20260425T104619Z/blog_blog.rollbit.com.body.bin",
+        "tls_parsed": "subject=CN=blog.rollbit.com\nissuer=C=US, O=Certainly, CN=Certainly Intermediate R1\nnotBefore=Apr 19 17:03:03 2026 GMT\nnotAfter=May 19 17:03:02 2026 GMT\nsha256 Fingerprint=6E:D0:37:3F:88:8D:7D:28:7F:85:83:A6:D0:2B:DB:E4:EB:48:8A:82:07:5B:03:48:9D:E1:74:D9:E1:EB:11:3B\nX509v3 Subject Alternative Name: \n    DNS:blog.rollbit.com\n"
+      },
+      {
+        "name": "rollbot",
+        "host": "rollbot.rollbit.com",
+        "path": "/",
+        "selected_ip": "104.20.26.76",
+        "final_status": "HTTP/2 200",
+        "body_size_bytes": 1448,
+        "body_sha256": "a18a6c7921ee03fa2099bcd3cb7b13347959ae704c90b13ee6cf8318b85e8c91",
+        "headers_file": "output/captures/web/20260425T104619Z/rollbot_rollbot.rollbit.com.headers.txt",
+        "body_file": "output/captures/web/20260425T104619Z/rollbot_rollbot.rollbit.com.body.bin",
+        "tls_parsed": "subject=CN=rollbit.com\nissuer=C=US, O=Let's Encrypt, CN=E8\nnotBefore=Apr  9 18:41:15 2026 GMT\nnotAfter=Jul  8 18:41:14 2026 GMT\nsha256 Fingerprint=CD:CA:91:F4:B9:2D:06:DE:DE:C1:24:20:E1:E3:5B:00:05:C0:88:B1:8B:CB:77:53:57:9E:DB:0B:74:3F:5C:59\nX509v3 Subject Alternative Name: \n    DNS:*.rollbit.com, DNS:rollbit.com\n"
+      },
+      {
+        "name": "cga_policy",
+        "host": "cert.cga.cw",
+        "path": "/page/certification_policy",
+        "selected_ip": "172.67.71.89",
+        "final_status": "HTTP/2 200",
+        "body_size_bytes": 55780,
+        "body_sha256": "8c138281c463af80bec8cd4289b2674722f4b3427c44483f95701e30812e239a",
+        "headers_file": "output/captures/web/20260425T104619Z/cga_policy_cert.cga.cw.headers.txt",
+        "body_file": "output/captures/web/20260425T104619Z/cga_policy_cert.cga.cw.body.bin",
+        "tls_parsed": "subject=CN=cga.cw\nissuer=C=US, O=Google Trust Services, CN=WE1\nnotBefore=Mar  3 00:16:54 2026 GMT\nnotAfter=Jun  1 01:16:41 2026 GMT\nsha256 Fingerprint=38:ED:99:F5:07:EF:AD:21:DB:9F:D6:BB:92:A6:70:84:0E:85:4F:2B:A4:C9:BD:02:89:92:06:9C:32:EA:ED:F3\nX509v3 Subject Alternative Name: \n    DNS:cga.cw, DNS:*.cga.cw\n"
+      }
+    ]
+  },
+  "public_record_capture": {
+    "generated_at": "2026-04-25T11:11:18.543509+00:00",
+    "capture_dir": "output/captures/public_records/20260425T111024Z",
+    "targets_count": 53,
+    "records_count": 53,
+    "ok_count": 52,
+    "failed_count": 1,
+    "blocked_or_challenged_count": 1,
+    "status_counts": {
+      "200": 44,
+      "404": 7,
+      "403": 1,
+      "None": 1
+    },
+    "source_type_counts": {
+      "complaint_forum": 21,
+      "complaint_mediation": 10,
+      "complaint_review": 1,
+      "operator_publication": 3,
+      "operator_surface": 1,
+      "passive_scan": 1,
+      "public_reporting": 8,
+      "public_verification": 3,
+      "social_corroboration": 5
+    },
+    "marker_totals": {
+      "withdrawal": 58,
+      "kyc": 51,
+      "multi_account": 15,
+      "frozen_or_blocked": 28,
+      "profit_or_win": 82,
+      "staff_or_team": 55,
+      "custody_or_wallet": 66,
+      "token": 40
+    }
+  },
+  "token_and_operating_control_gaps": [
+    "RLB deployer/admin authority map",
+    "RLB buy-and-burn execution wallet map",
+    "Top-holder and LP-wallet clustering",
+    "Known team/founder/affiliate wallet attribution",
+    "Exchange custody path for RLB inventory",
+    "Withdrawal decisioning and compliance-control workflow"
+  ],
+  "technical_iocs": {
+    "domains": [
+      "rollbit.com",
+      "blog.rollbit.com",
+      "rollbot.rollbit.com",
+      "cert.cga.cw"
+    ],
+    "wallets": [
+      "bc1qw8wrek2m7nlqldll66ajnwr9mh64syvkt67zlu",
+      "RBHdGVfDfMjfU6iUfCb1LczMJcQLx7hGnxbzRsoDNvx",
+      "0xCBD6832Ebc203e49E2B771897067fce3c58575ac",
+      "0xef8801eaf234ff82801821ffe2d78d60a0237f97",
+      "0x46dcA395D20E63Cb0Fe1EDC9f0e6f012E77c0913",
+      "0x8aE57A027c63fcA8070D1Bf38622321dE8004c67",
+      "0x046EeE2cc3188071C02BfC1745A6b17c656e3f3d"
+    ],
+    "public_apis": [
+      "https://blockstream.info/api",
+      "https://api.mainnet-beta.solana.com",
+      "https://api.coingecko.com/api/v3",
+      "https://api.dexscreener.com/latest/dex"
+    ]
+  },
+  "findings": [
+    {
+      "finding_id": "TF-01",
+      "severity": "high",
+      "confidence": "high",
+      "name": "Known public wallets are not verified reserves",
+      "finding": "The loaded wallet snapshot shows $67,620,165.30 in attributed public wallets, but the repo has no liability-matched proof-of-reserves artifact, complete custody inventory, exchange balance attestation, or customer-fund segregation evidence.",
+      "primary_artifacts": "REPORT_1_ONCHAIN_FORENSICS.md; output/blockchain_analysis.json",
+      "next_steps": "Run refreshed wallet snapshots and pair them with liability, exchange-custody, wallet-control, and segregation evidence before calling anything a reserve."
+    },
+    {
+      "finding_id": "TF-02",
+      "severity": "medium",
+      "confidence": "high",
+      "name": "Direct outflow narrative is bounded and mostly SOL",
+      "finding": "Direct published outflows total $17,400,000.00, equal to 25.7% of the visible wallet snapshot. Mixed BTC alerts should remain separated from direct Rollbit outflows.",
+      "primary_artifacts": "REPORT_1_ONCHAIN_FORENSICS.md; REPORT_5_NEWS_AND_REGULATORY_TIMELINE.md",
+      "next_steps": "For each published alert, preserve original alert text, explorer links, counterparty labels, and direction classification."
+    },
+    {
+      "finding_id": "TF-03",
+      "severity": "high",
+      "confidence": "high",
+      "name": "RLB exit liquidity is thin relative to headline value",
+      "finding": "Top-four DEX pool liquidity is $4,713,083.87, only 4.7% of the $101,223,201.00 market cap. A 5% market-cap notional equals 107.4% of visible top-pool liquidity.",
+      "primary_artifacts": "REPORT_1_ONCHAIN_FORENSICS.md; DEXScreener snapshot",
+      "next_steps": "Collect pool-level reserves, fee tiers, tick liquidity, and holder concentration for a slippage model."
+    },
+    {
+      "finding_id": "TF-04",
+      "severity": "high",
+      "confidence": "medium",
+      "name": "Complaint corpus contains a repeated control-trigger pattern",
+      "finding": "7 counted cases mention withdrawal control, KYC/compliance escalation, and win/profit context together. The compound set totals $83,401.00.",
+      "primary_artifacts": "cases_database.json; output/corpus_metrics.json",
+      "next_steps": "Re-capture each compound-pattern source page and store page hashes/screenshots."
+    },
+    {
+      "finding_id": "TF-05",
+      "severity": "high",
+      "confidence": "high",
+      "name": "Multiple-account accusation is the dominant dispute script",
+      "finding": "The canonical category count shows 31 multiple-account accusation cases out of 80 counted complaints. Keyword extraction also finds 29 cases with linked-account language.",
+      "primary_artifacts": "REPORT_2_VICTIM_EVIDENCE.md; cases_database.json",
+      "next_steps": "Separate cases where Rollbit publicly supplied evidence from cases where the accusation is only asserted."
+    },
+    {
+      "finding_id": "TF-06",
+      "severity": "medium",
+      "confidence": "high",
+      "name": "Corpus fidelity must be split by evidence class",
+      "finding": "27 quantified cases are marked confirmed and 47 are marked claimed. Confirmed quantified cases represent 36.5% of quantified case count and $295,178.56 of quantified amount.",
+      "primary_artifacts": "cases_database.json; output/forensic_indicators.csv",
+      "next_steps": "Do not combine confirmed forum/mediation amounts and Trustpilot-style claimed amounts without labeling the class split."
+    },
+    {
+      "finding_id": "TF-07",
+      "severity": "medium",
+      "confidence": "high",
+      "name": "Duplicate risk is bounded but still needs analyst review",
+      "finding": "The duplicate heuristic produced 3 candidate pairs after preserving explicit cross-post exclusions. These are candidates, not automatic removals.",
+      "primary_artifacts": "cases_database.json; output/technical_deep_dive.json",
+      "next_steps": "Manually review candidate pairs before changing corpus totals."
+    },
+    {
+      "finding_id": "TF-08",
+      "severity": "medium",
+      "confidence": "high",
+      "name": "Web acquisition should preserve challenge and content layers separately",
+      "finding": "The technical surface splits into Cloudflare-gated app endpoints and a separately hosted Ghost/Fastly blog. Forensic acquisition should therefore preserve DNS, TLS, edge headers, challenge HTML, and blog HTML as separate artifacts.",
+      "primary_artifacts": "REPORT_4_WEBSITE_TECHNICAL_INVESTIGATION.md",
+      "next_steps": "Store raw curl output, openssl certificate output, DoH JSON, urlscan references, and content hashes per capture."
+    },
+    {
+      "finding_id": "TF-09",
+      "severity": "high",
+      "confidence": "medium",
+      "name": "Operating controls and token-control attribution remain insufficiently mapped",
+      "finding": "Current artifacts do not establish who controls exchange custody, withdrawal decisioning, RLB admin/deployer paths, buy-and-burn execution wallets, LP positions, market-making wallets, or team/affiliate token clusters.",
+      "primary_artifacts": "REPORT_7_TECHNICAL_DEEP_DIVE.md; output/technical_deep_dive.json",
+      "next_steps": "Build an RLB and operations control map covering deployer/admin rights, top holders, LP wallets, burn wallets, exchange custody, and public team/affiliate wallet links."
+    },
+    {
+      "finding_id": "TF-10",
+      "severity": "medium",
+      "confidence": "high",
+      "name": "Public complaint and record acquisition is reproducible but incomplete",
+      "finding": "The latest public-record capture preserved 53 deduplicated targets, with 52 HTTP captures written, 1 blocked/challenged target, and 1 request failure. Capture gaps should drive browser-aware follow-up.",
+      "primary_artifacts": "REPORT_8_PUBLIC_RECORDS_AND_COMPLAINT_CAPTURE.md; output/public_record_capture.json; output/public_record_index.csv",
+      "next_steps": "Add browser screenshots for Trustpilot and challenge-gated pages, re-check Casino Guru 404s, and map capture hashes back into cases_database.json."
+    }
+  ]
+}

@@ -3,7 +3,7 @@
 Rollbit Forensic Investigation Toolkit
 =======================================
 A comprehensive toolkit for collecting, parsing, analyzing, and visualizing
-data related to Rollbit's fund locking and scam behaviors.
+data related to Rollbit fund-locking allegations and complaint patterns.
 
 Features:
 - Forum scraping (Bitcointalk, Trustpilot, Casino Guru, AskGamblers)
@@ -1007,41 +1007,35 @@ class ReportGenerator:
         report.append("-" * 40)
         report.append(f"Total documented cases: {stats['total_cases']}")
         report.append(f"Cases with confirmed amounts: {stats['cases_with_amounts']}")
-        report.append(f"Total confirmed locked funds: ${stats['total_confirmed_usd']:,.2f}")
+        report.append(f"Total quantified disputed funds: ${stats['total_confirmed_usd']:,.2f}")
         report.append(f"Average per case: ${stats['average_per_case_usd']:,.2f}")
         report.append(f"Median per case: ${stats['median_per_case_usd']:,.2f}")
         report.append(f"Largest single case: ${stats['max_single_case_usd']:,.2f}")
         report.append(f"Resolution rate: {stats['resolution_rate']}%")
         report.append("")
 
-        # Regulatory Context
-        report.append("CRITICAL REGULATORY FINDINGS")
+        # Technical context
+        report.append("TECHNICAL CONTEXT AND CUSTODY SIGNALS")
         report.append("-" * 40)
-        report.append("1. $123 MILLION SEIZED IN UKRAINE (May 2025)")
-        report.append("   - Ukrainian court seized crypto assets linked to Bull Gaming N.V. (Rollbit operator)")
-        report.append("   - Connected to fraud and money laundering criminal proceedings")
-        report.append("   - Bull Gaming confirmed funds 'actually belong to the specified online casino'")
+        report.append("1. OFF-WALLET CUSTODY SIGNAL")
+        report.append("   - Public reporting describes a $123M exchange/proxy custody event tied to Bull Gaming N.V.")
+        report.append("   - This is a custody-location signal; it is not a substitute for live wallet balance analysis.")
         report.append("")
-        report.append("2. LICENSE CONTROVERSY (March 2023)")
-        report.append("   - Curacao license removed from website, RLB token dropped 20%")
-        report.append("   - Rollbit claimed 'annual renewal' but Curacao sub-licenses are indefinite")
-        report.append("   - Anonymous casino owner: Curacao does not disable licenses during renewal")
+        report.append("2. PUBLIC WALLET VISIBILITY")
+        report.append("   - Known public wallets must be analyzed separately from exchange custody and proxy accounts.")
+        report.append("   - Missing live API data must never be interpreted as a zero-balance result.")
         report.append("")
-        report.append("3. OWNERSHIP (Daniel Dixon & Jose Llisterri)")
-        report.append("   - Both British nationals operating from Malta/Curacao")
-        report.append("   - Previously ran CSGODiamonds - collapsed after caught rigging games")
-        report.append("   - Daniel Dixon ('Lucky') confirmed as owner by competitors")
-        report.append("   - Jose Llisterri operates as admin 'Razer' on platform")
+        report.append("3. RLB MARKET STRUCTURE")
+        report.append("   - Token market capitalization should not be treated as reserve depth.")
+        report.append("   - DEX pool liquidity, volume, holder concentration, and slippage require separate modeling.")
         report.append("")
-        report.append("4. INFLUENCER FRAUD")
-        report.append("   - Fake balances provided to influencers to simulate wins")
-        report.append("   - $250,000 RLB offered for 'organic' undisclosed tweets")
-        report.append("   - Platform wallets held ~$16M vs ~$75M transferred to Binance")
+        report.append("4. WEB ACQUISITION")
+        report.append("   - rollbit.com challenge behavior, TLS state, DNS records, and response hashes should be preserved.")
+        report.append("   - blog.rollbit.com should be captured as a separate Ghost/Fastly content surface.")
         report.append("")
-        report.append("5. UNDERAGE GAMBLING")
-        report.append("   - Documented case: 16-year-old lost $11,000 over 2-3 years")
-        report.append("   - No age verification implemented")
-        report.append("   - Refund denied")
+        report.append("5. CORPUS EVIDENCE CLASSES")
+        report.append("   - Forum and mediation records should be separated from review-page claimed amounts.")
+        report.append("   - Duplicate candidates should be manually adjudicated before totals change.")
         report.append("")
 
         # Category Breakdown

@@ -3,8 +3,8 @@
 Rollbit On-Chain Blockchain Forensics Analyzer
 ===============================================
 Queries public blockchain APIs to analyze Rollbit's known wallet addresses,
-trace treasury outflows, analyze RLB token manipulation, cluster related wallets,
-and score exit-scam risk indicators.
+trace treasury outflows, analyze RLB token market structure, cluster related wallets,
+and score technical risk indicators.
 
 Usage:
     python blockchain_analyzer.py --full              # Full analysis
@@ -170,6 +170,69 @@ KNOWN_TREASURY_EVENTS = [
         'price_at_time': None,
         'source': 'dev.ua, Pechersk District Court of Kyiv',
         'direction': 'seizure',
+    },
+]
+
+CACHED_WALLET_SNAPSHOT = [
+    {
+        'chain': 'BTC',
+        'address': ROLLBIT_WALLETS['BTC']['treasury']['address'],
+        'label': ROLLBIT_WALLETS['BTC']['treasury']['label'],
+        'balance_native': 649.54550772,
+        'balance_usd': 48_758_133.54,
+        'tx_count': 469_936,
+        'last_activity': '2026-04-19',
+        'fetched_at': '2026-04-19T09:23:00+00:00',
+    },
+    {
+        'chain': 'SOL',
+        'address': ROLLBIT_WALLETS['SOL']['treasury']['address'],
+        'label': ROLLBIT_WALLETS['SOL']['treasury']['label'],
+        'balance_native': 222_587.110683,
+        'balance_usd': 18_862_031.76,
+        'tx_count': 0,
+        'last_activity': '2026-04-19',
+        'fetched_at': '2026-04-19T09:24:00+00:00',
+    },
+    {
+        'chain': 'ETH',
+        'address': ROLLBIT_WALLETS['ETH']['hot_wallet']['address'],
+        'label': ROLLBIT_WALLETS['ETH']['hot_wallet']['label'],
+        'balance_native': 0.0,
+        'balance_usd': 0.0,
+        'tx_count': 0,
+        'last_activity': '',
+        'fetched_at': '2026-04-19T09:24:00+00:00',
+    },
+    {
+        'chain': 'ETH',
+        'address': ROLLBIT_WALLETS['ETH']['erc20_ops']['address'],
+        'label': ROLLBIT_WALLETS['ETH']['erc20_ops']['label'],
+        'balance_native': 0.0,
+        'balance_usd': 0.0,
+        'tx_count': 0,
+        'last_activity': '',
+        'fetched_at': '2026-04-19T09:24:00+00:00',
+    },
+    {
+        'chain': 'ETH',
+        'address': ROLLBIT_WALLETS['ETH']['rollbit_ens']['address'],
+        'label': ROLLBIT_WALLETS['ETH']['rollbit_ens']['label'],
+        'balance_native': 0.0,
+        'balance_usd': 0.0,
+        'tx_count': 0,
+        'last_activity': '',
+        'fetched_at': '2026-04-19T09:24:00+00:00',
+    },
+    {
+        'chain': 'ETH',
+        'address': ROLLBIT_WALLETS['ETH']['rollbot_ens']['address'],
+        'label': ROLLBIT_WALLETS['ETH']['rollbot_ens']['label'],
+        'balance_native': 0.0,
+        'balance_usd': 0.0,
+        'tx_count': 0,
+        'last_activity': '',
+        'fetched_at': '2026-04-19T09:24:00+00:00',
     },
 ]
 
@@ -734,15 +797,15 @@ class TreasuryFlowTracer:
 # =============================================================================
 
 class RLBTokenAnalyzer:
-    """Analyze RLB token for manipulation indicators."""
+    """Analyze RLB token for market-structure indicators."""
 
     def __init__(self, api: BlockchainAPI):
         self.api = api
 
     def analyze(self) -> dict:
-        """Analyze RLB token metrics and manipulation indicators."""
+        """Analyze RLB token metrics and market-structure indicators."""
         print("\n" + "=" * 70)
-        print("  RLB TOKEN ANALYSIS — Buyback vs Reality")
+        print("  RLB TOKEN ANALYSIS - Market Structure")
         print("=" * 70)
 
         result = {
@@ -795,9 +858,9 @@ class RLBTokenAnalyzer:
             tokens_per_month = claimed_monthly_buyback / rlb_price
             print(f"  Implied tokens bought/month: {tokens_per_month:,.0f}")
 
-        # Manipulation indicators
+        # Market-structure indicators
         print("\n  " + "-" * 60)
-        print("  MANIPULATION INDICATORS")
+        print("  MARKET-STRUCTURE INDICATORS")
         print("  " + "-" * 60)
 
         indicators = []
@@ -882,14 +945,14 @@ class RLBTokenAnalyzer:
 # =============================================================================
 
 class RiskScorer:
-    """Score exit-scam / insolvency risk based on on-chain indicators."""
+    """Score technical risk based on custody, liquidity, and corpus indicators."""
 
     @staticmethod
     def score(wallet_data: list, treasury_data: dict, rlb_data: dict) -> list:
         """Generate risk indicators with scores."""
 
         print("\n" + "=" * 70)
-        print("  RISK ASSESSMENT — Exit Scam Indicators")
+        print("  TECHNICAL RISK ASSESSMENT")
         print("=" * 70)
 
         indicators = []
@@ -912,33 +975,36 @@ class RiskScorer:
         color = '🔴' if score >= 7 else '🟡' if score >= 4 else '🟢'
         print(f"\n  {color} Treasury Outflow Pressure: {score:.1f}/10")
 
-        # 2. Law enforcement action
+        # 2. Off-wallet custody event
         seizure = sum(
             e['amount_usd'] for e in KNOWN_TREASURY_EVENTS
             if e['direction'] == 'seizure'
         )
-        score2 = 10.0 if seizure > 0 else 0.0
+        score2 = 8.5 if seizure > 0 else 0.0
         indicators.append(RiskIndicator(
-            name='Law Enforcement Seizures',
+            name='Off-Wallet Custody Exposure',
             score=score2,
-            description=f'${seizure:,.0f} seized by Ukrainian authorities',
-            evidence=['$123M seized by Pechersk District Court, linked to Bull Gaming N.V.']
-        ))
-        print(f"  🔴 Law Enforcement Seizure: {score2:.1f}/10")
-
-        # 3. Token price collapse
-        score3 = 7.7  # -77% decline
-        indicators.append(RiskIndicator(
-            name='Token Price Collapse',
-            score=score3,
-            description='RLB token declined 77% from highs despite claimed buyback program',
+            description=f'${seizure:,.0f} reported in an exchange/proxy custody event',
             evidence=[
-                'Claimed $5M/month buybacks should support price',
-                'Influencer Gainzy caught dumping while shilling',
-                '$250K token promotion schemes exposed',
+                'Ukraine-linked reporting describes assets tied to Bull Gaming N.V. outside the public treasury wallet set',
+                'This is treated as a custody-location signal, not as proof of current wallet depletion',
             ]
         ))
-        print(f"  🔴 Token Price Collapse: {score3:.1f}/10")
+        print(f"  [HIGH] Off-Wallet Custody Exposure: {score2:.1f}/10")
+
+        # 3. Token liquidity and price stress
+        score3 = 7.7  # -77% decline
+        indicators.append(RiskIndicator(
+            name='RLB Liquidity and Price Stress',
+            score=score3,
+            description='RLB token declined 77% from highs while top-pool DEX liquidity remains thin',
+            evidence=[
+                'Claimed buyback mechanics depend on operator-reported revenue inputs',
+                'Top-pool visible liquidity is small relative to headline market capitalization',
+                'Token market depth should not be treated as reserve depth',
+            ]
+        ))
+        print(f"  [HIGH] RLB Liquidity and Price Stress: {score3:.1f}/10")
 
         # 4. Wallet balance vs obligations
         total_wallet_usd = sum(w.balance_usd for w in wallet_data) if wallet_data else 0
@@ -947,32 +1013,32 @@ class RiskScorer:
             ratio = total_wallet_usd / 123_000_000 if seizure else 0
             score4 = max(0, 10 - (ratio * 10))
         else:
-            score4 = 8.0  # Can't verify = high risk
+            score4 = 8.0  # Missing snapshot = high uncertainty
         indicators.append(RiskIndicator(
-            name='Solvency Indicator',
+            name='Visible Reserve Coverage',
             score=score4,
-            description=f'Known wallet balances: ${total_wallet_usd:,.2f} vs $123M in seized assets',
+            description=f'Known wallet balances: ${total_wallet_usd:,.2f} vs $123M reported off-wallet event scale',
             evidence=[
-                f'Known public BTC + SOL wallets held ~${total_wallet_usd:,.0f} at the latest snapshot',
-                '$123M seizure reporting indicates that critical reserves may also have been held off-wallet',
+                f'Known public wallets held ~${total_wallet_usd:,.0f} at the loaded snapshot',
+                'Public wallets do not expose total liabilities or exchange/proxy custody balances',
             ]
         ))
         color = '🔴' if score4 >= 7 else '🟡' if score4 >= 4 else '🟢'
         print(f"  {color} Solvency Risk: {score4:.1f}/10")
 
-        # 5. License status
-        score5 = 7.0
+        # 5. Public web verification surface
+        score5 = 6.5
         indicators.append(RiskIndicator(
-            name='Regulatory Status',
+            name='Public Web Verification Friction',
             score=score5,
-            description='Operating under transitional arrangement; original license expired Aug 2024',
+            description='Main application is challenge-gated and public domain-level verification was not cleanly reproducible',
             evidence=[
-                'Gaming Curacao/365/JAZ ceased operations August 18, 2024',
-                'Pending application OGL/2024/1260/0494 with new Curacao GCB',
-                'License removed from website in March 2023 (restored after controversy)',
+                'rollbit.com is fronted by Cloudflare challenge infrastructure',
+                'blog.rollbit.com is separately hosted on Ghost/Fastly and remains indexable',
+                'The public certificate check path described in Report 4 did not produce a clean confirmation on the snapshot date',
             ]
         ))
-        print(f"  🔴 Regulatory Risk: {score5:.1f}/10")
+        print(f"  [ELEVATED] Public Web Verification Friction: {score5:.1f}/10")
 
         # 6. Victim complaint acceleration
         score6 = 8.0
@@ -996,13 +1062,13 @@ class RiskScorer:
         print(f"\n  {'=' * 40}")
         print(f"  OVERALL RISK SCORE: {avg_score:.1f}/10")
         if avg_score >= 8:
-            print(f"  RISK LEVEL: 🔴 CRITICAL — Active exit scam indicators")
+            print(f"  RISK LEVEL: CRITICAL - Multiple high-severity technical indicators")
         elif avg_score >= 6:
-            print(f"  RISK LEVEL: 🟡 HIGH — Significant red flags")
+            print(f"  RISK LEVEL: HIGH - Significant forensic risk indicators")
         elif avg_score >= 4:
-            print(f"  RISK LEVEL: 🟡 ELEVATED — Notable concerns")
+            print(f"  RISK LEVEL: ELEVATED - Notable unresolved technical questions")
         else:
-            print(f"  RISK LEVEL: 🟢 MODERATE")
+            print(f"  RISK LEVEL: MODERATE")
         print(f"  {'=' * 40}")
 
         return indicators
@@ -1144,7 +1210,7 @@ class RollbitForensicAnalyzer:
         """Run analysis using cached / hardcoded known data only."""
         print("\n  [CACHED MODE] Using known data — no live API calls")
 
-        wallet_data = []
+        wallet_data = [WalletBalance(**wallet) for wallet in CACHED_WALLET_SNAPSHOT]
         treasury_data = {
             'known_events': KNOWN_TREASURY_EVENTS,
             'total_confirmed_outflow_usd': sum(
@@ -1155,8 +1221,13 @@ class RollbitForensicAnalyzer:
         # Print known events
         print("\n  DOCUMENTED TREASURY EVENTS:")
         for event in sorted(KNOWN_TREASURY_EVENTS, key=lambda x: x['date']):
-            direction_icon = "⬆️" if event['direction'] == 'outflow' else "🚨"
-            print(f"  [{event['date']}] {direction_icon} ${event['amount_usd']:,.0f} — {event['event']}")
+            direction_label = {
+                'outflow': 'OUTFLOW',
+                'inflow': 'INFLOW',
+                'mixed': 'MIXED',
+                'seizure': 'OFF-WALLET',
+            }.get(event['direction'], event['direction'].upper())
+            print(f"  [{event['date']}] {direction_label}: ${event['amount_usd']:,.0f} - {event['event']}")
 
         rlb_data = {
             'buyback_analysis': {
@@ -1168,7 +1239,7 @@ class RollbitForensicAnalyzer:
                 {'indicator': 'Price decline despite buybacks', 'severity': 'HIGH'},
                 {'indicator': 'Influencer dumping via mixer', 'severity': 'HIGH'},
                 {'indicator': 'Revenue centralization', 'severity': 'MEDIUM'},
-                {'indicator': 'Treasury draining faster than buybacks', 'severity': 'CRITICAL'},
+                {'indicator': 'Treasury outflows meaningful relative to RLB liquidity', 'severity': 'HIGH'},
             ],
         }
 
@@ -1182,18 +1253,21 @@ class RollbitForensicAnalyzer:
         return {
             'timestamp': datetime.now(timezone.utc).isoformat(),
             'mode': 'cached',
-            'wallets': [],
+            'snapshot_note': 'Cached mode preserves the April 19, 2026 wallet snapshot from REPORT_1_ONCHAIN_FORENSICS.md; it does not imply current live balances.',
+            'wallets': [asdict(w) for w in wallet_data],
             'treasury_flows': treasury_data,
             'rlb_analysis': rlb_data,
             'wallet_clusters': {},
             'risk_indicators': [asdict(r) for r in risk_indicators],
             'summary': {
+                'total_wallets_analyzed': len(wallet_data),
+                'total_wallet_balance_usd': sum(w.balance_usd for w in wallet_data),
                 'total_documented_outflows_usd': total_outflow,
                 'total_seized_usd': total_seizure,
                 'avg_risk_score': round(
                     sum(r.score for r in risk_indicators) / len(risk_indicators), 1
                 ) if risk_indicators else 0,
-                'risk_level': 'CRITICAL',
+                'risk_level': 'HIGH',
                 'known_events_count': len(KNOWN_TREASURY_EVENTS),
             },
         }

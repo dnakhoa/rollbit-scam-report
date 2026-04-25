@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Rollbit Victim Evidence Collector
-===================================
-Interactive CLI tool for victims to submit structured evidence.
+Rollbit Case Evidence Collector
+===============================
+Interactive CLI tool for collecting structured incident evidence.
 Validates transaction hashes, generates JSON evidence files,
 and optionally appends to the master cases database.
 
@@ -119,7 +119,7 @@ def validate_tx_hash(tx_hash: str) -> dict:
 def interactive_collect():
     """Guided step-by-step evidence collection."""
     print(f"\n{'='*60}")
-    print(f"  ROLLBIT VICTIM EVIDENCE COLLECTOR")
+    print(f"  ROLLBIT CASE EVIDENCE COLLECTOR")
     print(f"{'='*60}")
     print(f"  All data is stored locally.\n")
 
@@ -132,12 +132,12 @@ def interactive_collect():
     # Basic info
     print("  --- Basic Information ---")
     evidence['username_rollbit'] = input("  Your Rollbit username: ").strip()
-    evidence['email'] = input("  Contact email (optional, for legal): ").strip() or None
+    evidence['contact'] = input("  Contact handle/email (optional, for follow-up): ").strip() or None
     evidence['country'] = input("  Your country: ").strip() or None
 
     # Amount
     while True:
-        amt = input("  Amount locked/stolen (USD): $").strip().replace(',', '')
+        amt = input("  Amount disputed or inaccessible (USD): $").strip().replace(',', '')
         try:
             evidence['amount_usd'] = float(amt)
             break
@@ -217,7 +217,7 @@ def interactive_collect():
     if evidence['has_filed_complaint']:
         evidence['complaint_platforms'] = input("  Where? (comma-separated): ").strip()
 
-    evidence['willing_legal_action'] = input("  Willing to participate in legal action? (y/n): ").lower() == 'y'
+    evidence['willing_followup'] = input("  Willing to answer follow-up evidence questions? (y/n): ").lower() == 'y'
 
     # Summary
     print(f"\n{'='*60}")

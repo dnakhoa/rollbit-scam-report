@@ -1,7 +1,7 @@
 # Report 4: Website Technical Investigation
 ## Rollbit / Bull Gaming N.V. — DNS, Edge Infrastructure, Public Web Stack, and License-Verification Friction
 **Date:** April 19, 2026 | **Classification:** Technical Appendix
-**Companion:** ← [Report 1: On-Chain Financial Forensics](./REPORT_1_ONCHAIN_FORENSICS.md)
+**Companion:** ← [Report 1: On-Chain Financial Forensics](./REPORT_1_ONCHAIN_FORENSICS.md) | → [Report 7: Technical Deep Dive](./REPORT_7_TECHNICAL_DEEP_DIVE.md)
 
 ---
 
@@ -30,6 +30,36 @@ This appendix relies on passive or low-impact checks only:
 - official Curaçao Gaming Authority policy pages
 
 Because this workstation had `rollbit.com` locally overridden to localhost, DNS was validated through **DoH**, not the system resolver.
+
+Current capture artifact:
+
+- [scripts/web_surface_capture.py](./scripts/web_surface_capture.py)
+- [output/web_surface_capture.json](./output/web_surface_capture.json)
+- latest local raw-capture directory: `output/captures/web/20260425T104619Z`
+
+The raw capture directory is ignored by git for public release. Publish the JSON summary and hashes; keep raw bodies local or private.
+
+---
+
+## 1.1 April 25, 2026 Capture Snapshot
+
+The new web capture utility preserved DoH DNS, TLS metadata, HTTP headers, response bodies, and body hashes for four surfaces.
+
+| Target | DNS / Edge | HTTP Result | Body SHA-256 Prefix | Capture Note |
+|--------|------------|-------------|---------------------|--------------|
+| `rollbit.com` | Cloudflare `104.20.26.76`, `172.66.170.17` | **HTTP/2 403** | `4be5da3178ba0422` | Cloudflare challenge body captured |
+| `blog.rollbit.com` | `rollbit.ghost.io` -> Fastly A records | **HTTP/2 200** | `234ca47b237f4ab9` | Public Ghost HTML captured |
+| `rollbot.rollbit.com` | Cloudflare `104.20.26.76`, `172.66.170.17` | **HTTP/2 200** | `a18a6c7921ee03fa` | Static Rollbot/NFT-linking HTML captured |
+| `cert.cga.cw/page/certification_policy` | Cloudflare `172.67.71.89`, `104.26.4.227`, `104.26.5.227` | **HTTP/2 200** | `8c138281c463af80` | CGA policy page captured |
+
+TLS metadata from the same capture:
+
+| Host | Certificate Subject | Issuer | Validity Window |
+|------|---------------------|--------|-----------------|
+| `rollbit.com` | `CN=rollbit.com` | Let's Encrypt E8 | Apr 9, 2026 to Jul 8, 2026 |
+| `blog.rollbit.com` | `CN=blog.rollbit.com` | Certainly Intermediate R1 | Apr 19, 2026 to May 19, 2026 |
+| `rollbot.rollbit.com` | `CN=rollbit.com` | Let's Encrypt E8 | Apr 9, 2026 to Jul 8, 2026 |
+| `cert.cga.cw` | `CN=cga.cw` | Google Trust Services WE1 | Mar 3, 2026 to Jun 1, 2026 |
 
 ---
 
@@ -219,7 +249,26 @@ This is a useful technical reminder:
 
 ---
 
-## 8. Investigative Takeaways
+## 8. Acquisition Checklist
+
+[Report 7](./REPORT_7_TECHNICAL_DEEP_DIVE.md) treats the web layer as an acquisition problem. A defensible technical capture should preserve more than a screenshot.
+
+Minimum bundle per capture:
+
+| Artifact | Purpose |
+|----------|---------|
+| DoH JSON for A / AAAA / CNAME / NS | Resolver-independent DNS record preservation |
+| TLS certificate details and fingerprint | Edge certificate attribution and rotation tracking |
+| HTTP status, headers, and redirect chain | Challenge, cache, security-header, and routing evidence |
+| Raw response body and body hash | Reproducible proof of challenge page or HTML content |
+| Browser screenshot when rendering matters | Visual preservation of challenge or certificate state |
+| urlscan / archive references | Independent passive corroboration when live access is blocked |
+
+The main app, Rollbot subdomain, blog, and certificate-verification path should be captured as separate surfaces. They are not the same infrastructure problem.
+
+---
+
+## 9. Investigative Takeaways
 
 1. **Main-site inspection is intentionally gated.** Anyone trying to archive Rollbit's live front end should expect Cloudflare challenge friction.
 2. **The public content stack is easier to preserve than the product stack.** Blog content can be archived cleanly; the account-facing app cannot.
@@ -237,4 +286,4 @@ This is a useful technical reminder:
 
 ---
 
-*Continue to [Report 5: News and Regulatory Timeline](./REPORT_5_NEWS_AND_REGULATORY_TIMELINE.md) for the external media chronology.*
+*Continue to [Report 5: Public Event and Flow Timeline](./REPORT_5_NEWS_AND_REGULATORY_TIMELINE.md) for the external media chronology.*

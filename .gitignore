@@ -1,0 +1,20 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+.vscode/
+.claude/
+.idea/
+.cursor/
+
+# Python/local runtime artifacts
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# OS/editor noise
+.DS_Store
+
+# Raw forensic captures are reproducible local artifacts. Publish summaries/indexes instead.
+output/captures/

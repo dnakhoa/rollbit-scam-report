@@ -1,7 +1,7 @@
 # Report 2: Complaint Corpus
 ## Rollbit / Bull Gaming N.V. — Canonical Public Complaint Record
 **Date:** April 19, 2026 | **Classification:** Forensic Investigation
-**Companion:** ← [Report 1: On-Chain Financial Forensics](./REPORT_1_ONCHAIN_FORENSICS.md) | → [Report 6: Evidence Register](./REPORT_6_EVIDENCE_REGISTER.md)
+**Companion:** ← [Report 1: On-Chain Financial Forensics](./REPORT_1_ONCHAIN_FORENSICS.md) | → [Report 6: Evidence Register](./REPORT_6_EVIDENCE_REGISTER.md) | → [Report 7: Technical Deep Dive](./REPORT_7_TECHNICAL_DEEP_DIVE.md) | → [Report 8: Public Records Capture](./REPORT_8_PUBLIC_RECORDS_AND_COMPLAINT_CAPTURE.md)
 
 ---
 
@@ -80,7 +80,33 @@ Across the counted corpus, the repeated behavior clusters into a small set of re
 
 ---
 
-## 3. Timeline
+## 3. Technical Signal Extraction
+
+[Report 7](./REPORT_7_TECHNICAL_DEEP_DIVE.md) adds a second layer on top of the category labels: keyword and compound-pattern extraction.
+
+| Marker | Case Hits | Amount Linked |
+|--------|----------:|--------------:|
+| Withdrawal-control language | 48 | $316,929.08 |
+| KYC/compliance escalation | 33 | $275,060.56 |
+| Win/profit context | 35 | $390,931.00 |
+| Multi-account / linked-account language | 29 | $178,402.56 |
+| Named staff/team language | 8 | $69,287.56 |
+
+Compound markers are more probative than single keywords:
+
+| Compound Pattern | Cases | Amount Linked |
+|------------------|------:|--------------:|
+| Withdrawal control + KYC escalation | 24 | $153,330.56 |
+| Withdrawal control + win/profit context | 18 | $212,431.00 |
+| Win/profit context + KYC escalation | 14 | $192,931.00 |
+| Multi-account script + KYC escalation | 15 | $104,345.56 |
+| Withdrawal control + KYC escalation + win/profit context | 7 | $83,401.00 |
+
+These markers are not verdicts. They are a triage system for deciding which cases deserve raw-source re-capture, screenshot preservation, page hashing, and timeline reconstruction.
+
+---
+
+## 4. Timeline
 
 Counted complaints and quantified public amounts by year:
 
@@ -95,12 +121,12 @@ Counted complaints and quantified public amounts by year:
 Three timeline points matter most:
 
 1. The complaint record did not stop in 2025. It remained active into **February, March, and April 2026**, including recent Trustpilot complaints `TP-046` through `TP-050`, Bitcointalk entries `BT-018` / `BT-019`, and Casino Guru entry `CG-006`.
-2. The corpus is heaviest in **2025**, which is also the year in which the broader reserve, licensing, and seizure questions intensified elsewhere in the report set.
+2. The corpus is heaviest in **2025**, which is also the year in which broader custody, reserve-verification, and public-verification questions intensified elsewhere in the report set.
 3. Even after the most recent refresh, the complaint record still shows only **four public resolutions**.
 
 ---
 
-## 4. Representative Cases
+## 5. Representative Cases
 
 The table below is not exhaustive. It is a cross-section chosen to show the complaint pattern across source types and dates.
 
@@ -126,7 +152,7 @@ That makes the recurrence harder to dismiss as a single-platform moderation arti
 
 ---
 
-## 5. Outcomes, Limits, and Interpretation
+## 6. Outcomes, Limits, and Interpretation
 
 ### Public outcomes
 
@@ -146,20 +172,32 @@ That does **not** prove there were no private resolutions. It does show that onl
 - Some large public allegations were **not** pulled into the counted totals during this refresh because they lacked enough structured detail or risked double counting.
 - Absence of a counted case is not proof that a complaint is false; it means the current public record was not specific enough to include cleanly.
 
-### Interpretation standard
+### Analyst interpretation standard
 
-The safest legal-grade phrasing is:
+The safest forensic phrasing is:
 
 > The complaint corpus documents a recurrent pattern of reported withholding, account restriction, or post-win verification escalation. The pattern is strong enough to support further scrutiny, but individual allegations should still be evaluated on their own evidence.
 
+Operationally, the next step is not legal argument. It is source preservation:
+
+- re-capture high-value forum and mediation pages
+- store screenshots and raw HTML
+- hash captured pages
+- separate confirmed, claimed, and unquantified cases in every chart
+- manually adjudicate duplicate candidates before changing totals
+
 ---
 
-## 6. Data Files and Cross-References
+## 7. Data Files and Cross-References
 
 - [cases_database.json](./cases_database.json) — canonical complaint corpus with provenance fields
 - [output/rollbit_cases.csv](./output/rollbit_cases.csv) — flat spreadsheet export
 - [output/corpus_metrics.json](./output/corpus_metrics.json) — summary metrics used in this report
 - [output/evidence_register.csv](./output/evidence_register.csv) — machine-readable claim register
+- [output/technical_deep_dive.json](./output/technical_deep_dive.json) — technical signal extraction
+- [output/forensic_indicators.csv](./output/forensic_indicators.csv) — analyst findings register
+- [output/public_record_capture.json](./output/public_record_capture.json) — raw public-source capture summary
+- [output/public_record_index.csv](./output/public_record_index.csv) — captured source index with hashes and file paths
 - [Report 6: Evidence Register](./REPORT_6_EVIDENCE_REGISTER.md) — human-readable claim-to-source appendix
 
-*Continue to [Report 3: Public X Evidence](./REPORT_3_X_TWITTER_EVIDENCE.md) for social-media corroboration, or back to [Report 1](./REPORT_1_ONCHAIN_FORENSICS.md) for the on-chain reserve and custody analysis.*
+*Continue to [Report 3: Public X Evidence](./REPORT_3_X_TWITTER_EVIDENCE.md) for social-media corroboration, or back to [Report 1](./REPORT_1_ONCHAIN_FORENSICS.md) for the on-chain custody and reserve-verification analysis.*

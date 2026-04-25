@@ -1,7 +1,7 @@
 # Report 1: On-Chain Financial Forensics
 ## Rollbit / Bull Gaming N.V. — Live Wallet State, Treasury Flow Review, and Token Market Structure
 **Date:** April 19, 2026 | **Classification:** Forensic Investigation
-**Companion:** → [Report 2: Complaint Corpus](./REPORT_2_VICTIM_EVIDENCE.md) | → [Report 4: Website Technical Investigation](./REPORT_4_WEBSITE_TECHNICAL_INVESTIGATION.md) | → [Report 5: News and Regulatory Timeline](./REPORT_5_NEWS_AND_REGULATORY_TIMELINE.md)
+**Companion:** → [Report 2: Complaint Corpus](./REPORT_2_VICTIM_EVIDENCE.md) | → [Report 4: Website Technical Investigation](./REPORT_4_WEBSITE_TECHNICAL_INVESTIGATION.md) | → [Report 5: Public Event and Flow Timeline](./REPORT_5_NEWS_AND_REGULATORY_TIMELINE.md) | → [Report 7: Technical Deep Dive](./REPORT_7_TECHNICAL_DEEP_DIVE.md)
 
 ---
 
@@ -38,7 +38,7 @@ This revised on-chain report replaces several broad claims from the earlier draf
 ### Core findings
 
 - **Known wallets are not empty.** As of **April 19, 2026**, the publicly tracked BTC and SOL treasury wallets still held approximately **$67.7M** in visible assets.
-- **That does not resolve the custody question.** The **May 9, 2025** Ukraine court action described by `dev.ua` involved **$123M** allegedly tied to Bull Gaming N.V. in Binance accounts controlled through a Ukrainian intermediary, which means critical reserves may have sat outside public treasury wallets.
+- **That does not prove reserves.** The **May 9, 2025** Ukraine court action described by `dev.ua` involved **$123M** allegedly tied to Bull Gaming N.V. in Binance accounts controlled through a Ukrainian intermediary, which means material custody may have sat outside attributed public wallets.
 - **The January-February 2026 BTC narrative requires a narrow reading.** A **626.03 BTC** alert on **February 13, 2026** should not be treated as a confirmed Rollbit treasury outflow. The underlying ChainCatcher/Arkham summary described **626.03 BTC moving from an anonymous address, with some flow into Bybit and Rollbit**. That item is therefore **not reliable evidence of a Rollbit drain**.
 - **Direct published outflows are still material.** Public alerts do document:
   - a **50,000 SOL** treasury-linked liquidation on **September 3, 2025**
@@ -48,7 +48,7 @@ This revised on-chain report replaces several broad claims from the earlier draf
 
 ### Bottom line
 
-The strongest present conclusion is **not** that chain data alone proves zero reserves or imminent collapse. The stronger and better-supported conclusion is that Rollbit exhibits **material custody opacity, concentrated token liquidity, off-wallet reserve uncertainty, and unresolved counterparty risk** that chain data does not dispel.
+The strongest present conclusion is **not** that chain data alone proves zero reserves or imminent collapse. The stronger and better-supported conclusion is that Rollbit's actual reserve position is **not publicly verifiable** from the current artifact set. Known wallets show funds, but they do not prove reserve completeness, liability coverage, customer-fund segregation, or exchange/proxy custody balances.
 
 ---
 
@@ -73,6 +73,12 @@ Important constraint:
 
 - Public wallet analysis can show what is visible on-chain in known addresses.
 - It **cannot** by itself prove total assets, total liabilities, beneficial ownership of every counterparty wallet, or the full contents of exchange/proxy accounts described in court reporting.
+
+Artifact integrity note:
+
+- `scripts/blockchain_analyzer.py --cached` now preserves the April 19, 2026 wallet snapshot in [output/blockchain_analysis.json](./output/blockchain_analysis.json).
+- Cached mode is a frozen artifact replay, not a current live balance check.
+- Live mode should be used when updating the snapshot date, and raw API responses should be preserved separately.
 
 ---
 
@@ -103,13 +109,14 @@ Snapshot time from the regenerated analysis artifact: **2026-04-19T09:23Z to 202
 | ERC20 Ops | **0 ETH** | **$0** | No current ETH visible |
 | rollbit.eth | **0 ETH** | **$0** | No current ETH visible |
 | rollbot.eth | **0 ETH** | **$0** | No current ETH visible |
-| **Total visible** | | **$67,620,165.30** | BTC + SOL dominate visible reserves |
+| **Total visible** | | **$67,620,165.30** | BTC + SOL dominate the attributed public wallet set |
 
 ### Interpretation
 
-- The public treasury set still holds a **substantial visible balance**.
+- The attributed public wallet set still holds a **substantial visible balance**.
 - The chain picture therefore does **not** support the simplistic claim that Rollbit's public wallets have been emptied.
-- At the same time, the visible total remains **well below** the **$123M** described in the Ukraine-linked seizure reporting, which reinforces the possibility that meaningful reserves have historically sat in **off-wallet exchange or proxy custody**.
+- At the same time, the visible total remains **well below** the **$123M** described in the Ukraine-linked seizure reporting, which reinforces the possibility that meaningful custody has historically sat in **off-wallet exchange or proxy structures**.
+- The visible total is **not** a proof-of-reserves figure because the report has no liability total, exchange balance attestation, complete wallet inventory, or segregation evidence.
 
 ---
 
@@ -169,6 +176,18 @@ If the **September 3, 2025** 50K SOL sale from a treasury-linked wallet is inclu
 
 This is still meaningful, but it is **materially lower** than the earlier draft's **$59.61M** figure, which depended on treating the February 13 BTC item as a confirmed Rollbit outflow.
 
+### Technical ratio tests
+
+[Report 7](./REPORT_7_TECHNICAL_DEEP_DIVE.md) converts the event classification into simple ratio checks:
+
+| Ratio | Value | Why It Matters |
+|-------|------:|----------------|
+| Direct outflows / visible wallet snapshot | **25.7%** | Material, but not a reserve-coverage result |
+| January 2026 direct outflows / visible wallet snapshot | **10.7%** | Large enough to monitor, too small to call a full drain |
+| Reported off-wallet custody event / visible wallet snapshot | **181.9%** | Public wallets are not a reserve map |
+
+These ratios should be recalculated whenever the live wallet snapshot is refreshed.
+
 ---
 
 ## 6. The Ukraine Seizure Still Matters
@@ -184,10 +203,10 @@ According to that report:
 
 ### Why this matters for the on-chain story
 
-Even if public treasury wallets still show **$67.7M** today, the seizure reporting implies that:
+Even if attributed public wallets still show **$67.7M** in the snapshot, the seizure reporting implies that:
 
-- some significant reserves may have been parked in **exchange accounts or intermediary-controlled custody**
-- the public wallet set may represent only **part** of the operating reserve picture
+- some significant assets may have been parked in **exchange accounts or intermediary-controlled custody**
+- the public wallet set may represent only **part** of the operating custody picture
 - solvency cannot be inferred safely from public wallet balances alone
 
 That is a more defensible conclusion than simply asserting that the current treasury is empty.
@@ -251,8 +270,8 @@ The previous report leaned too heavily on a single "capital flight" narrative. T
 
 | Risk Area | Current Assessment | Why |
 |-----------|--------------------|-----|
-| Public-wallet solvency visibility | **Medium** | Known wallets still hold sizeable BTC and SOL |
-| Off-wallet custody opacity | **High** | Ukraine-linked Binance/proxy account reporting indicates reserves may sit outside public wallets |
+| Public-wallet reserve verification | **Low** | Known wallets still hold sizeable BTC and SOL, but no liability-matched proof-of-reserves artifact exists |
+| Off-wallet custody opacity | **High** | Ukraine-linked Binance/proxy account reporting indicates custody may sit outside public wallets |
 | Token exit liquidity concentration | **High** | RLB market cap remains large relative to visible DEX liquidity |
 | Treasury-flow transparency | **High** | There are large published treasury-related flows, but direction and ownership are not always straightforward |
 | Complaint / counterparty risk | **High** | Reports 2 and 3 still document unresolved withdrawal and KYC disputes at scale |
@@ -262,20 +281,20 @@ The previous report leaned too heavily on a single "capital flight" narrative. T
 
 The live on-chain picture supports the following:
 
-1. **Rollbit still controls visible reserves in known BTC and SOL wallets.**
-2. **Those visible reserves do not settle the custody question**, because important funds have reportedly moved through exchange/proxy structures.
+1. **Rollbit-linked public wallets still show visible BTC and SOL balances.**
+2. **Those visible balances are not verified reserves**, because important funds have reportedly moved through exchange/proxy structures and no liability-matched reserve attestation is present.
 3. **RLB remains a thin-liquidity market structure** relative to its headline market cap.
 4. **Published treasury alerts show mixed inflow/outflow behavior**, not a one-direction-only drain.
-5. **Counterparty risk remains high** because unresolved user-claim patterns coexist with opaque reserve location and a law-enforcement-linked seizure history.
+5. **Counterparty risk remains high** because unresolved user-claim patterns coexist with opaque reserve location and off-wallet custody exposure.
 
 ---
 
 ## 9. Key Investigative Questions That Remain Open
 
-1. What proportion of Rollbit's operational reserves historically sat in **exchange custody** rather than public treasury wallets?
+1. What proportion of Rollbit's operational custody historically sat in **exchange custody** rather than attributed public wallets?
 2. Which anonymous counterparties on **January 9, 2026**, **February 13, 2026**, and **March 11, 2026** were beneficially linked to Rollbit, if any?
-3. What is the relationship between the **public RLB buy-and-burn dashboard narrative** and the actual market depth available for token exit?
-4. Are customer balances contractually or operationally segregated from operating capital, as current CGA policy expects for licensed B2C operators?
+3. What is the relationship between the **public RLB buy-and-burn dashboard narrative**, actual market depth, deployer/admin controls, and top-holder concentration?
+4. Are customer balances contractually or operationally segregated from operating capital, and where is the evidence?
 
 ---
 

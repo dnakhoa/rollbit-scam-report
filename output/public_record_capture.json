@@ -1,0 +1,2321 @@
+{
+  "generated_at": "2026-04-25T11:11:18.543509+00:00",
+  "capture_dir": "output/captures/public_records/20260425T111024Z",
+  "targets_count": 53,
+  "records_count": 53,
+  "ok_count": 52,
+  "failed_count": 1,
+  "blocked_or_challenged_count": 1,
+  "status_counts": {
+    "200": 44,
+    "404": 7,
+    "403": 1,
+    "None": 1
+  },
+  "source_type_counts": {
+    "complaint_forum": 21,
+    "complaint_mediation": 10,
+    "complaint_review": 1,
+    "operator_publication": 3,
+    "operator_surface": 1,
+    "passive_scan": 1,
+    "public_reporting": 8,
+    "public_verification": 3,
+    "social_corroboration": 5
+  },
+  "domain_counts": {
+    "bitcointalk.org": 21,
+    "casino.guru": 7,
+    "www.chaincatcher.com": 5,
+    "x.com": 5,
+    "blog.rollbit.com": 3,
+    "forum.askgamblers.com": 2,
+    "cert.cga.cw": 2,
+    "www.casinolistings.com": 1,
+    "www.trustpilot.com": 1,
+    "rollbit.com": 1,
+    "urlscan.io": 1,
+    "cryptoslate.com": 1,
+    "dev.ua": 1,
+    "www.coindesk.com": 1,
+    "www.cga.cw": 1
+  },
+  "marker_totals": {
+    "withdrawal": 58,
+    "kyc": 51,
+    "multi_account": 15,
+    "frozen_or_blocked": 28,
+    "profit_or_win": 82,
+    "staff_or_team": 55,
+    "custody_or_wallet": 66,
+    "token": 40
+  },
+  "records": [
+    {
+      "url": "https://bitcointalk.org/?topic=5449402.0",
+      "source_type": "complaint_forum",
+      "source_refs": [
+        "cases_database.json"
+      ],
+      "case_ids": [
+        "BTC-001"
+      ],
+      "source_names": [
+        "bitcointalk"
+      ],
+      "captured_at": "2026-04-25T11:10:24.113670+00:00",
+      "domain": "bitcointalk.org",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://bitcointalk.org/?topic=5449402.0",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=ISO-8859-1",
+      "title": "Rollbit disables account and seizes funds (10.2k)!",
+      "body_size_bytes": 205516,
+      "body_sha256": "aebee273370ab45dc01c0aedffd3ea63cd09cd763087c11804f356abc23aba29",
+      "text_size_chars": 49598,
+      "marker_counts": {
+        "withdrawal": 1,
+        "kyc": 1,
+        "multi_account": 0,
+        "frozen_or_blocked": 2,
+        "profit_or_win": 4,
+        "staff_or_team": 3,
+        "custody_or_wallet": 3,
+        "token": 1
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_611e33190dde.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_611e33190dde.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_611e33190dde.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_611e33190dde.meta.json"
+      }
+    },
+    {
+      "url": "https://bitcointalk.org/index.php?topic=5412105.0",
+      "source_type": "complaint_forum",
+      "source_refs": [
+        "cases_database.json"
+      ],
+      "case_ids": [
+        "BTC-011"
+      ],
+      "source_names": [
+        "bitcointalk"
+      ],
+      "captured_at": "2026-04-25T11:10:25.596491+00:00",
+      "domain": "bitcointalk.org",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://bitcointalk.org/index.php?topic=5412105.0",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=ISO-8859-1",
+      "title": "rollbit.com scam",
+      "body_size_bytes": 199829,
+      "body_sha256": "54c5d5dcea1b11ce7dc0bb0e5d829ac8c36673ba1aab9dfebb952e810b71f2ae",
+      "text_size_chars": 34690,
+      "marker_counts": {
+        "withdrawal": 2,
+        "kyc": 1,
+        "multi_account": 1,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 1,
+        "staff_or_team": 2,
+        "custody_or_wallet": 3,
+        "token": 1
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_2b512c902942.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_2b512c902942.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_2b512c902942.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_2b512c902942.meta.json"
+      }
+    },
+    {
+      "url": "https://bitcointalk.org/index.php?topic=5419674.0",
+      "source_type": "complaint_forum",
+      "source_refs": [
+        "cases_database.json"
+      ],
+      "case_ids": [
+        "BTC-003"
+      ],
+      "source_names": [
+        "bitcointalk"
+      ],
+      "captured_at": "2026-04-25T11:10:26.679953+00:00",
+      "domain": "bitcointalk.org",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://bitcointalk.org/index.php?topic=5419674.0",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=ISO-8859-1",
+      "title": "Rollbit.com scamming $10,000 USD [Careful not to bet in their casino!] &#10071;",
+      "body_size_bytes": 194572,
+      "body_sha256": "c87c2129e91400cbdb7d396a5a972081345ceee76f1e270e4d83d720e420d813",
+      "text_size_chars": 33691,
+      "marker_counts": {
+        "withdrawal": 3,
+        "kyc": 1,
+        "multi_account": 3,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 3,
+        "staff_or_team": 2,
+        "custody_or_wallet": 2,
+        "token": 1
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_82b6c15380ff.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_82b6c15380ff.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_82b6c15380ff.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_82b6c15380ff.meta.json"
+      }
+    },
+    {
+      "url": "https://bitcointalk.org/index.php?topic=5447471.0",
+      "source_type": "complaint_forum",
+      "source_refs": [
+        "cases_database.json"
+      ],
+      "case_ids": [
+        "BTC-012"
+      ],
+      "source_names": [
+        "bitcointalk"
+      ],
+      "captured_at": "2026-04-25T11:10:27.663528+00:00",
+      "domain": "bitcointalk.org",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://bitcointalk.org/index.php?topic=5447471.0",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=ISO-8859-1",
+      "title": "Rollbit scam",
+      "body_size_bytes": 249542,
+      "body_sha256": "29141327d776fa264b92bc1d6fea97c8bfdc3f80d025da89a815e06d881dd88e",
+      "text_size_chars": 33398,
+      "marker_counts": {
+        "withdrawal": 2,
+        "kyc": 1,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 3,
+        "staff_or_team": 1,
+        "custody_or_wallet": 3,
+        "token": 1
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_622d03fdecc1.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_622d03fdecc1.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_622d03fdecc1.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_622d03fdecc1.meta.json"
+      }
+    },
+    {
+      "url": "https://bitcointalk.org/index.php?topic=5463996.40",
+      "source_type": "complaint_forum",
+      "source_refs": [
+        "REPORT_6_EVIDENCE_REGISTER.md",
+        "cases_database.json"
+      ],
+      "case_ids": [
+        "BTC-002"
+      ],
+      "source_names": [
+        "bitcointalk"
+      ],
+      "captured_at": "2026-04-25T11:10:28.972117+00:00",
+      "domain": "bitcointalk.org",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://bitcointalk.org/index.php?topic=5463996.40",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=ISO-8859-1",
+      "title": "Rollbit Scam. Cannot Withdraw $30,211. Being Ignored by Support.",
+      "body_size_bytes": 275437,
+      "body_sha256": "2096dc923ac58d39537048a37eecd1ac4022837fe956b5a236c292deeaff1b58",
+      "text_size_chars": 68226,
+      "marker_counts": {
+        "withdrawal": 2,
+        "kyc": 2,
+        "multi_account": 2,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 4,
+        "staff_or_team": 2,
+        "custody_or_wallet": 2,
+        "token": 2
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_bbf0ee817546.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_bbf0ee817546.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_bbf0ee817546.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_bbf0ee817546.meta.json"
+      }
+    },
+    {
+      "url": "https://bitcointalk.org/index.php?topic=5471380.0",
+      "source_type": "complaint_forum",
+      "source_refs": [
+        "cases_database.json"
+      ],
+      "case_ids": [
+        "BTC-006"
+      ],
+      "source_names": [
+        "bitcointalk"
+      ],
+      "captured_at": "2026-04-25T11:10:30.065743+00:00",
+      "domain": "bitcointalk.org",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://bitcointalk.org/index.php?topic=5471380.0",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=ISO-8859-1",
+      "title": "Rollbit has literally has thrown my money away, sending it to an FTX address",
+      "body_size_bytes": 285522,
+      "body_sha256": "61bcaabf7cb885ade58cb86ed0eb9e896ac6f59a57691a53ec90236ae0089314",
+      "text_size_chars": 76625,
+      "marker_counts": {
+        "withdrawal": 3,
+        "kyc": 2,
+        "multi_account": 0,
+        "frozen_or_blocked": 2,
+        "profit_or_win": 2,
+        "staff_or_team": 4,
+        "custody_or_wallet": 3,
+        "token": 1
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_6d250c2bdb6c.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_6d250c2bdb6c.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_6d250c2bdb6c.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_6d250c2bdb6c.meta.json"
+      }
+    },
+    {
+      "url": "https://bitcointalk.org/index.php?topic=5489049.0",
+      "source_type": "complaint_forum",
+      "source_refs": [
+        "REPORT_6_EVIDENCE_REGISTER.md",
+        "cases_database.json"
+      ],
+      "case_ids": [
+        "BTC-007"
+      ],
+      "source_names": [
+        "bitcointalk"
+      ],
+      "captured_at": "2026-04-25T11:10:31.478747+00:00",
+      "domain": "bitcointalk.org",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://bitcointalk.org/index.php?topic=5489049.0",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=ISO-8859-1",
+      "title": "ROLLBIT.COM is a scam. They stole my funds!",
+      "body_size_bytes": 221486,
+      "body_sha256": "2d3ccf206e2ef7a2de34ddf778bfd86097eca04033e4631fb7d31aaba6bd99c1",
+      "text_size_chars": 33146,
+      "marker_counts": {
+        "withdrawal": 2,
+        "kyc": 2,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 3,
+        "staff_or_team": 2,
+        "custody_or_wallet": 3,
+        "token": 1
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_7ec7a49cdded.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_7ec7a49cdded.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_7ec7a49cdded.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_7ec7a49cdded.meta.json"
+      }
+    },
+    {
+      "url": "https://bitcointalk.org/index.php?topic=5489760.60",
+      "source_type": "complaint_forum",
+      "source_refs": [
+        "REPORT_6_EVIDENCE_REGISTER.md",
+        "cases_database.json"
+      ],
+      "case_ids": [
+        "BTC-010"
+      ],
+      "source_names": [
+        "bitcointalk"
+      ],
+      "captured_at": "2026-04-25T11:10:32.745090+00:00",
+      "domain": "bitcointalk.org",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://bitcointalk.org/index.php?topic=5489760.60",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=ISO-8859-1",
+      "title": "Rollbit locked/pending withdrawals",
+      "body_size_bytes": 293866,
+      "body_sha256": "81c094988d4faed4f7ada71e39b62168fe125bf95ecd6a9e0dc8f2c35dd8fddf",
+      "text_size_chars": 57432,
+      "marker_counts": {
+        "withdrawal": 2,
+        "kyc": 3,
+        "multi_account": 0,
+        "frozen_or_blocked": 4,
+        "profit_or_win": 4,
+        "staff_or_team": 2,
+        "custody_or_wallet": 3,
+        "token": 1
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_fda532cc1707.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_fda532cc1707.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_fda532cc1707.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_fda532cc1707.meta.json"
+      }
+    },
+    {
+      "url": "https://bitcointalk.org/index.php?topic=5503600.0",
+      "source_type": "complaint_forum",
+      "source_refs": [
+        "REPORT_6_EVIDENCE_REGISTER.md",
+        "cases_database.json"
+      ],
+      "case_ids": [
+        "BTC-005"
+      ],
+      "source_names": [
+        "bitcointalk"
+      ],
+      "captured_at": "2026-04-25T11:10:34.173502+00:00",
+      "domain": "bitcointalk.org",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://bitcointalk.org/index.php?topic=5503600.0",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=ISO-8859-1",
+      "title": "Rollbit locked my account with $55k+",
+      "body_size_bytes": 222078,
+      "body_sha256": "87c64fc064d14c13ee6a43c9ea0ede28a03695ffa096c87f75364928ec420205",
+      "text_size_chars": 35457,
+      "marker_counts": {
+        "withdrawal": 2,
+        "kyc": 3,
+        "multi_account": 0,
+        "frozen_or_blocked": 3,
+        "profit_or_win": 3,
+        "staff_or_team": 2,
+        "custody_or_wallet": 2,
+        "token": 1
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_5afdc903b3d1.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_5afdc903b3d1.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_5afdc903b3d1.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_5afdc903b3d1.meta.json"
+      }
+    },
+    {
+      "url": "https://bitcointalk.org/index.php?topic=5504738.0",
+      "source_type": "complaint_forum",
+      "source_refs": [
+        "cases_database.json"
+      ],
+      "case_ids": [
+        "BTC-009"
+      ],
+      "source_names": [
+        "bitcointalk"
+      ],
+      "captured_at": "2026-04-25T11:10:35.629945+00:00",
+      "domain": "bitcointalk.org",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://bitcointalk.org/index.php?topic=5504738.0",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=ISO-8859-1",
+      "title": "[UNRESOLVED]Rollbit SCAMS money from restricted players with 0% chance of lose",
+      "body_size_bytes": 248047,
+      "body_sha256": "92c3e9c1740f8b1968532b08faa077ca50d6340aa726bcaf14d9ef653b84b3c4",
+      "text_size_chars": 43470,
+      "marker_counts": {
+        "withdrawal": 3,
+        "kyc": 1,
+        "multi_account": 0,
+        "frozen_or_blocked": 1,
+        "profit_or_win": 5,
+        "staff_or_team": 3,
+        "custody_or_wallet": 2,
+        "token": 1
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_63a3bf1c9ec4.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_63a3bf1c9ec4.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_63a3bf1c9ec4.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_63a3bf1c9ec4.meta.json"
+      }
+    },
+    {
+      "url": "https://bitcointalk.org/index.php?topic=5520613.0",
+      "source_type": "complaint_forum",
+      "source_refs": [
+        "cases_database.json"
+      ],
+      "case_ids": [
+        "BTC-004"
+      ],
+      "source_names": [
+        "bitcointalk"
+      ],
+      "captured_at": "2026-04-25T11:10:36.676523+00:00",
+      "domain": "bitcointalk.org",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://bitcointalk.org/index.php?topic=5520613.0",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=ISO-8859-1",
+      "title": "ROLLBIT MAINTENANCE SCAM.",
+      "body_size_bytes": 238331,
+      "body_sha256": "601100fc09ae6e6eab15f8b7783a9f4877689b0564f8bf7bf80fcde5814dba43",
+      "text_size_chars": 57874,
+      "marker_counts": {
+        "withdrawal": 1,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 1,
+        "profit_or_win": 3,
+        "staff_or_team": 2,
+        "custody_or_wallet": 2,
+        "token": 1
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_66a555376c58.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_66a555376c58.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_66a555376c58.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_66a555376c58.meta.json"
+      }
+    },
+    {
+      "url": "https://bitcointalk.org/index.php?topic=5534596.0",
+      "source_type": "complaint_forum",
+      "source_refs": [
+        "cases_database.json"
+      ],
+      "case_ids": [
+        "BTC-013"
+      ],
+      "source_names": [
+        "bitcointalk"
+      ],
+      "captured_at": "2026-04-25T11:10:37.644577+00:00",
+      "domain": "bitcointalk.org",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://bitcointalk.org/index.php?topic=5534596.0",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=ISO-8859-1",
+      "title": "Scammed by Rollbit",
+      "body_size_bytes": 131718,
+      "body_sha256": "acf69f6d2a653e5b38a246f42257064cd68cfb0af433860de609b45f5fc43ebf",
+      "text_size_chars": 20119,
+      "marker_counts": {
+        "withdrawal": 1,
+        "kyc": 2,
+        "multi_account": 1,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 2,
+        "staff_or_team": 2,
+        "custody_or_wallet": 2,
+        "token": 1
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_ec869fbbcf26.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_ec869fbbcf26.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_ec869fbbcf26.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_ec869fbbcf26.meta.json"
+      }
+    },
+    {
+      "url": "https://bitcointalk.org/index.php?topic=5537096.60",
+      "source_type": "complaint_forum",
+      "source_refs": [
+        "cases_database.json"
+      ],
+      "case_ids": [
+        "BTC-015"
+      ],
+      "source_names": [
+        "bitcointalk"
+      ],
+      "captured_at": "2026-04-25T11:10:38.902576+00:00",
+      "domain": "bitcointalk.org",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://bitcointalk.org/index.php?topic=5537096.60",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=ISO-8859-1",
+      "title": "Rollbit Blocking My funds \ufffd False Multiple Accounts Claim",
+      "body_size_bytes": 61544,
+      "body_sha256": "de2d7ee9138b8abffdbc64a919ce704ff2c02934284e66cb554e1293ee8e8f31",
+      "text_size_chars": 12561,
+      "marker_counts": {
+        "withdrawal": 0,
+        "kyc": 1,
+        "multi_account": 1,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 1,
+        "staff_or_team": 2,
+        "custody_or_wallet": 2,
+        "token": 1
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_1b41afb75450.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_1b41afb75450.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_1b41afb75450.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_1b41afb75450.meta.json"
+      }
+    },
+    {
+      "url": "https://bitcointalk.org/index.php?topic=5538532.0",
+      "source_type": "complaint_forum",
+      "source_refs": [
+        "REPORT_6_EVIDENCE_REGISTER.md",
+        "cases_database.json"
+      ],
+      "case_ids": [
+        "BTC-014"
+      ],
+      "source_names": [
+        "bitcointalk"
+      ],
+      "captured_at": "2026-04-25T11:10:39.812108+00:00",
+      "domain": "bitcointalk.org",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://bitcointalk.org/index.php?topic=5538532.0",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=ISO-8859-1",
+      "title": "Rollbit scam for 400 dollars (Resolved)",
+      "body_size_bytes": 150995,
+      "body_sha256": "dabf0fed6b8893eda5c31c899675d7b8d6ee381e7d506b3020da1415dd666f26",
+      "text_size_chars": 26742,
+      "marker_counts": {
+        "withdrawal": 1,
+        "kyc": 2,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 2,
+        "staff_or_team": 2,
+        "custody_or_wallet": 2,
+        "token": 1
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_0440c909e6b9.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_0440c909e6b9.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_0440c909e6b9.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_0440c909e6b9.meta.json"
+      }
+    },
+    {
+      "url": "https://bitcointalk.org/index.php?topic=5538592.0",
+      "source_type": "complaint_forum",
+      "source_refs": [
+        "cases_database.json"
+      ],
+      "case_ids": [
+        "BTC-008"
+      ],
+      "source_names": [
+        "bitcointalk"
+      ],
+      "captured_at": "2026-04-25T11:10:40.821265+00:00",
+      "domain": "bitcointalk.org",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://bitcointalk.org/index.php?topic=5538592.0",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=ISO-8859-1",
+      "title": "Rollbit ignore and scam?",
+      "body_size_bytes": 230414,
+      "body_sha256": "dde28bf01c8b14fd5222cf8dac105a6dfdce786e742be3177462953e7a099f7e",
+      "text_size_chars": 31217,
+      "marker_counts": {
+        "withdrawal": 2,
+        "kyc": 2,
+        "multi_account": 1,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 3,
+        "staff_or_team": 2,
+        "custody_or_wallet": 2,
+        "token": 1
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_65270a565625.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_65270a565625.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_65270a565625.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_65270a565625.meta.json"
+      }
+    },
+    {
+      "url": "https://bitcointalk.org/index.php?topic=5539143.0;wap",
+      "source_type": "complaint_forum",
+      "source_refs": [
+        "REPORT_6_EVIDENCE_REGISTER.md",
+        "cases_database.json"
+      ],
+      "case_ids": [
+        "BT-017"
+      ],
+      "source_names": [
+        "bitcointalk"
+      ],
+      "captured_at": "2026-04-25T11:10:41.956330+00:00",
+      "domain": "bitcointalk.org",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://bitcointalk.org/index.php?topic=5539143.0;wap",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=ISO-8859-1",
+      "title": "",
+      "body_size_bytes": 11529,
+      "body_sha256": "2598a4fda7f5802d501edf0c80459708e1af3e828dcbcf7de20620566b2d6bd4",
+      "text_size_chars": 9623,
+      "marker_counts": {
+        "withdrawal": 2,
+        "kyc": 3,
+        "multi_account": 1,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 3,
+        "staff_or_team": 2,
+        "custody_or_wallet": 2,
+        "token": 0
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_d593f7993ded.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_d593f7993ded.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_d593f7993ded.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_d593f7993ded.meta.json"
+      }
+    },
+    {
+      "url": "https://bitcointalk.org/index.php?topic=5543348.0;wap",
+      "source_type": "complaint_forum",
+      "source_refs": [
+        "REPORT_6_EVIDENCE_REGISTER.md",
+        "cases_database.json"
+      ],
+      "case_ids": [
+        "BT-016"
+      ],
+      "source_names": [
+        "bitcointalk"
+      ],
+      "captured_at": "2026-04-25T11:10:42.492132+00:00",
+      "domain": "bitcointalk.org",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://bitcointalk.org/index.php?topic=5543348.0;wap",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=ISO-8859-1",
+      "title": "",
+      "body_size_bytes": 12408,
+      "body_sha256": "6f91c4992a24fbbc6747266316fa5e585da0053f0dbc228da1550e283b05d3c5",
+      "text_size_chars": 10543,
+      "marker_counts": {
+        "withdrawal": 2,
+        "kyc": 3,
+        "multi_account": 1,
+        "frozen_or_blocked": 2,
+        "profit_or_win": 3,
+        "staff_or_team": 2,
+        "custody_or_wallet": 3,
+        "token": 0
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_d54f77166b45.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_d54f77166b45.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_d54f77166b45.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_d54f77166b45.meta.json"
+      }
+    },
+    {
+      "url": "https://bitcointalk.org/index.php?topic=5547447.0",
+      "source_type": "complaint_forum",
+      "source_refs": [
+        "cases_database.json:alternate_urls"
+      ],
+      "case_ids": [
+        "CG-004"
+      ],
+      "source_names": [
+        "casino_guru"
+      ],
+      "captured_at": "2026-04-25T11:10:43.195155+00:00",
+      "domain": "bitcointalk.org",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://bitcointalk.org/index.php?topic=5547447.0",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=ISO-8859-1",
+      "title": "Rollbit Multi Account SCAM 3189$",
+      "body_size_bytes": 169905,
+      "body_sha256": "899fba17ae79abf460af2b17afab3f15edac7d2bb4e8e4e91cda5edec79b5009",
+      "text_size_chars": 24620,
+      "marker_counts": {
+        "withdrawal": 3,
+        "kyc": 3,
+        "multi_account": 1,
+        "frozen_or_blocked": 1,
+        "profit_or_win": 4,
+        "staff_or_team": 2,
+        "custody_or_wallet": 2,
+        "token": 1
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_007fad742a63.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_007fad742a63.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_007fad742a63.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_007fad742a63.meta.json"
+      }
+    },
+    {
+      "url": "https://bitcointalk.org/index.php?topic=5566400.0",
+      "source_type": "complaint_forum",
+      "source_refs": [
+        "cases_database.json"
+      ],
+      "case_ids": [
+        "BT-020"
+      ],
+      "source_names": [
+        "bitcointalk"
+      ],
+      "captured_at": "2026-04-25T11:10:44.133103+00:00",
+      "domain": "bitcointalk.org",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://bitcointalk.org/index.php?topic=5566400.0",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=ISO-8859-1",
+      "title": "ROLLBIT FROZE MY ACCOUNT ACCUSING ME OF MULTIACOUNTING",
+      "body_size_bytes": 42650,
+      "body_sha256": "b535d450916a4bbdc2cf825d74409ba30552cb6d703a6dab06039aaf6b61a2b2",
+      "text_size_chars": 9373,
+      "marker_counts": {
+        "withdrawal": 2,
+        "kyc": 3,
+        "multi_account": 2,
+        "frozen_or_blocked": 1,
+        "profit_or_win": 1,
+        "staff_or_team": 1,
+        "custody_or_wallet": 1,
+        "token": 1
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_c26ebdc15587.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_c26ebdc15587.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_c26ebdc15587.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_c26ebdc15587.meta.json"
+      }
+    },
+    {
+      "url": "https://bitcointalk.org/index.php?topic=5574081.0",
+      "source_type": "complaint_forum",
+      "source_refs": [
+        "REPORT_6_EVIDENCE_REGISTER.md",
+        "cases_database.json"
+      ],
+      "case_ids": [
+        "BT-018"
+      ],
+      "source_names": [
+        "bitcointalk"
+      ],
+      "captured_at": "2026-04-25T11:10:44.696389+00:00",
+      "domain": "bitcointalk.org",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://bitcointalk.org/index.php?topic=5574081.0",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=ISO-8859-1",
+      "title": "[RESOLVED] Rollbit withdrawals frozen with $17,700",
+      "body_size_bytes": 213258,
+      "body_sha256": "81b8ac97f41106f3d7ff90ecdc2e55980b3603f342e4443ce3f2e805b255914e",
+      "text_size_chars": 47310,
+      "marker_counts": {
+        "withdrawal": 2,
+        "kyc": 3,
+        "multi_account": 1,
+        "frozen_or_blocked": 1,
+        "profit_or_win": 3,
+        "staff_or_team": 2,
+        "custody_or_wallet": 2,
+        "token": 1
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_df6b5ddbd2f0.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_df6b5ddbd2f0.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_df6b5ddbd2f0.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_df6b5ddbd2f0.meta.json"
+      }
+    },
+    {
+      "url": "https://bitcointalk.org/index.php?topic=5574189.0",
+      "source_type": "complaint_forum",
+      "source_refs": [
+        "cases_database.json"
+      ],
+      "case_ids": [
+        "BT-019"
+      ],
+      "source_names": [
+        "bitcointalk"
+      ],
+      "captured_at": "2026-04-25T11:10:45.906559+00:00",
+      "domain": "bitcointalk.org",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://bitcointalk.org/index.php?topic=5574189.0",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=ISO-8859-1",
+      "title": "[SCAM] Rollbit.com - Account frozen with 3,000 USDT without explanation",
+      "body_size_bytes": 62221,
+      "body_sha256": "4da15c457cb601951a0a40603abe97843639e97a546b9a867210deb24201e3cb",
+      "text_size_chars": 11618,
+      "marker_counts": {
+        "withdrawal": 1,
+        "kyc": 2,
+        "multi_account": 0,
+        "frozen_or_blocked": 1,
+        "profit_or_win": 2,
+        "staff_or_team": 2,
+        "custody_or_wallet": 1,
+        "token": 1
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_c310c72957a2.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_c310c72957a2.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_c310c72957a2.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_c310c72957a2.meta.json"
+      }
+    },
+    {
+      "url": "https://casino.guru/complaints/rollbit-casino-player-s-account-has-been-closed",
+      "source_type": "complaint_mediation",
+      "source_refs": [
+        "REPORT_6_EVIDENCE_REGISTER.md",
+        "cases_database.json"
+      ],
+      "case_ids": [
+        "CG-004"
+      ],
+      "source_names": [
+        "casino_guru"
+      ],
+      "captured_at": "2026-04-25T11:10:46.797297+00:00",
+      "domain": "casino.guru",
+      "ok": true,
+      "status_code": 404,
+      "tls_verified": false,
+      "tls_error": "HTTPSConnectionPool(host='casino.guru', port=443): Max retries exceeded with url: /complaints/rollbit-casino-player-s-account-has-been-closed (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1081)')))",
+      "final_url": "https://casino.guru/complaints/rollbit-casino-player-s-account-has-been-closed",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=iso-8859-1",
+      "title": "404 Not Found",
+      "body_size_bytes": 315,
+      "body_sha256": "d5a89e26beae0bc03ad18a0b0d1d3d75f87c32047879d25da11970cb5c4662a3",
+      "text_size_chars": 183,
+      "marker_counts": {
+        "withdrawal": 0,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 0,
+        "staff_or_team": 0,
+        "custody_or_wallet": 0,
+        "token": 0
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-account-has-been-closed_3eef231b6ff0.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-account-has-been-closed_3eef231b6ff0.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-account-has-been-closed_3eef231b6ff0.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-account-has-been-closed_3eef231b6ff0.meta.json"
+      }
+    },
+    {
+      "url": "https://casino.guru/complaints/rollbit-casino-player-s-account-has-been-closed-and",
+      "source_type": "complaint_mediation",
+      "source_refs": [
+        "cases_database.json"
+      ],
+      "case_ids": [
+        "CG-002"
+      ],
+      "source_names": [
+        "casino_guru"
+      ],
+      "captured_at": "2026-04-25T11:10:47.970289+00:00",
+      "domain": "casino.guru",
+      "ok": true,
+      "status_code": 404,
+      "tls_verified": false,
+      "tls_error": "HTTPSConnectionPool(host='casino.guru', port=443): Max retries exceeded with url: /complaints/rollbit-casino-player-s-account-has-been-closed-and (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1081)')))",
+      "final_url": "https://casino.guru/complaints/rollbit-casino-player-s-account-has-been-closed-and",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=iso-8859-1",
+      "title": "404 Not Found",
+      "body_size_bytes": 315,
+      "body_sha256": "d5a89e26beae0bc03ad18a0b0d1d3d75f87c32047879d25da11970cb5c4662a3",
+      "text_size_chars": 183,
+      "marker_counts": {
+        "withdrawal": 0,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 0,
+        "staff_or_team": 0,
+        "custody_or_wallet": 0,
+        "token": 0
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-account-has-been-closed-and_dd203118e035.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-account-has-been-closed-and_dd203118e035.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-account-has-been-closed-and_dd203118e035.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-account-has-been-closed-and_dd203118e035.meta.json"
+      }
+    },
+    {
+      "url": "https://casino.guru/complaints/rollbit-casino-player-s-account-is-closed-with-winnings",
+      "source_type": "complaint_mediation",
+      "source_refs": [
+        "cases_database.json"
+      ],
+      "case_ids": [
+        "CG-007"
+      ],
+      "source_names": [
+        "casino_guru"
+      ],
+      "captured_at": "2026-04-25T11:10:48.758630+00:00",
+      "domain": "casino.guru",
+      "ok": true,
+      "status_code": 404,
+      "tls_verified": false,
+      "tls_error": "HTTPSConnectionPool(host='casino.guru', port=443): Max retries exceeded with url: /complaints/rollbit-casino-player-s-account-is-closed-with-winnings (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1081)')))",
+      "final_url": "https://casino.guru/complaints/rollbit-casino-player-s-account-is-closed-with-winnings",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=iso-8859-1",
+      "title": "404 Not Found",
+      "body_size_bytes": 315,
+      "body_sha256": "d5a89e26beae0bc03ad18a0b0d1d3d75f87c32047879d25da11970cb5c4662a3",
+      "text_size_chars": 183,
+      "marker_counts": {
+        "withdrawal": 0,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 0,
+        "staff_or_team": 0,
+        "custody_or_wallet": 0,
+        "token": 0
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-account-is-closed-with-winnings_efe997bb3a08.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-account-is-closed-with-winnings_efe997bb3a08.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-account-is-closed-with-winnings_efe997bb3a08.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-account-is-closed-with-winnings_efe997bb3a08.meta.json"
+      }
+    },
+    {
+      "url": "https://casino.guru/complaints/rollbit-casino-player-s-withdrawal-has-been-denied",
+      "source_type": "complaint_mediation",
+      "source_refs": [
+        "cases_database.json"
+      ],
+      "case_ids": [
+        "CG-003"
+      ],
+      "source_names": [
+        "casino_guru"
+      ],
+      "captured_at": "2026-04-25T11:10:49.357727+00:00",
+      "domain": "casino.guru",
+      "ok": true,
+      "status_code": 404,
+      "tls_verified": false,
+      "tls_error": "HTTPSConnectionPool(host='casino.guru', port=443): Max retries exceeded with url: /complaints/rollbit-casino-player-s-withdrawal-has-been-denied (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1081)')))",
+      "final_url": "https://casino.guru/complaints/rollbit-casino-player-s-withdrawal-has-been-denied",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=iso-8859-1",
+      "title": "404 Not Found",
+      "body_size_bytes": 315,
+      "body_sha256": "d5a89e26beae0bc03ad18a0b0d1d3d75f87c32047879d25da11970cb5c4662a3",
+      "text_size_chars": 183,
+      "marker_counts": {
+        "withdrawal": 0,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 0,
+        "staff_or_team": 0,
+        "custody_or_wallet": 0,
+        "token": 0
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-has-been-denied_65cb42cba8e4.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-has-been-denied_65cb42cba8e4.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-has-been-denied_65cb42cba8e4.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-has-been-denied_65cb42cba8e4.meta.json"
+      }
+    },
+    {
+      "url": "https://casino.guru/complaints/rollbit-casino-player-s-withdrawal-is-blocked-for",
+      "source_type": "complaint_mediation",
+      "source_refs": [
+        "REPORT_6_EVIDENCE_REGISTER.md",
+        "cases_database.json"
+      ],
+      "case_ids": [
+        "CG-006"
+      ],
+      "source_names": [
+        "casino_guru"
+      ],
+      "captured_at": "2026-04-25T11:10:50.369258+00:00",
+      "domain": "casino.guru",
+      "ok": true,
+      "status_code": 404,
+      "tls_verified": false,
+      "tls_error": "HTTPSConnectionPool(host='casino.guru', port=443): Max retries exceeded with url: /complaints/rollbit-casino-player-s-withdrawal-is-blocked-for (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1081)')))",
+      "final_url": "https://casino.guru/complaints/rollbit-casino-player-s-withdrawal-is-blocked-for",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=iso-8859-1",
+      "title": "404 Not Found",
+      "body_size_bytes": 315,
+      "body_sha256": "d5a89e26beae0bc03ad18a0b0d1d3d75f87c32047879d25da11970cb5c4662a3",
+      "text_size_chars": 183,
+      "marker_counts": {
+        "withdrawal": 0,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 0,
+        "staff_or_team": 0,
+        "custody_or_wallet": 0,
+        "token": 0
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-is-blocked-for_562ce637bb1a.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-is-blocked-for_562ce637bb1a.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-is-blocked-for_562ce637bb1a.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-is-blocked-for_562ce637bb1a.meta.json"
+      }
+    },
+    {
+      "url": "https://casino.guru/complaints/rollbit-casino-player-s-withdrawal-restricted-due",
+      "source_type": "complaint_mediation",
+      "source_refs": [
+        "cases_database.json"
+      ],
+      "case_ids": [
+        "CG-001"
+      ],
+      "source_names": [
+        "casino_guru"
+      ],
+      "captured_at": "2026-04-25T11:10:51.181208+00:00",
+      "domain": "casino.guru",
+      "ok": true,
+      "status_code": 404,
+      "tls_verified": false,
+      "tls_error": "HTTPSConnectionPool(host='casino.guru', port=443): Max retries exceeded with url: /complaints/rollbit-casino-player-s-withdrawal-restricted-due (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1081)')))",
+      "final_url": "https://casino.guru/complaints/rollbit-casino-player-s-withdrawal-restricted-due",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=iso-8859-1",
+      "title": "404 Not Found",
+      "body_size_bytes": 315,
+      "body_sha256": "d5a89e26beae0bc03ad18a0b0d1d3d75f87c32047879d25da11970cb5c4662a3",
+      "text_size_chars": 183,
+      "marker_counts": {
+        "withdrawal": 0,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 0,
+        "staff_or_team": 0,
+        "custody_or_wallet": 0,
+        "token": 0
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-restricted-due_7ede52204409.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-restricted-due_7ede52204409.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-restricted-due_7ede52204409.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-restricted-due_7ede52204409.meta.json"
+      }
+    },
+    {
+      "url": "https://casino.guru/complaints/rollbit-casino-player-s-withdrawals-are-blocked-by",
+      "source_type": "complaint_mediation",
+      "source_refs": [
+        "REPORT_6_EVIDENCE_REGISTER.md",
+        "cases_database.json"
+      ],
+      "case_ids": [
+        "CG-005"
+      ],
+      "source_names": [
+        "casino_guru"
+      ],
+      "captured_at": "2026-04-25T11:10:54.092957+00:00",
+      "domain": "casino.guru",
+      "ok": true,
+      "status_code": 404,
+      "tls_verified": false,
+      "tls_error": "HTTPSConnectionPool(host='casino.guru', port=443): Max retries exceeded with url: /complaints/rollbit-casino-player-s-withdrawals-are-blocked-by (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1081)')))",
+      "final_url": "https://casino.guru/complaints/rollbit-casino-player-s-withdrawals-are-blocked-by",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=iso-8859-1",
+      "title": "404 Not Found",
+      "body_size_bytes": 315,
+      "body_sha256": "d5a89e26beae0bc03ad18a0b0d1d3d75f87c32047879d25da11970cb5c4662a3",
+      "text_size_chars": 183,
+      "marker_counts": {
+        "withdrawal": 0,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 0,
+        "staff_or_team": 0,
+        "custody_or_wallet": 0,
+        "token": 0
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-withdrawals-are-blocked-by_8f609fa44758.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-withdrawals-are-blocked-by_8f609fa44758.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-withdrawals-are-blocked-by_8f609fa44758.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-withdrawals-are-blocked-by_8f609fa44758.meta.json"
+      }
+    },
+    {
+      "url": "https://forum.askgamblers.com/topic/13060-rollbit-unfairly-suspended-and-over-7k-stolen-from-me/",
+      "source_type": "complaint_mediation",
+      "source_refs": [
+        "cases_database.json"
+      ],
+      "case_ids": [
+        "AG-002"
+      ],
+      "source_names": [
+        "askgamblers"
+      ],
+      "captured_at": "2026-04-25T11:10:54.652813+00:00",
+      "domain": "forum.askgamblers.com",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://forum.askgamblers.com/topic/13060-rollbit-unfairly-suspended-and-over-7k-stolen-from-me/",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html;charset=UTF-8",
+      "title": "[Rollbit] Unfairly suspended and over $7k stolen from me - Online Slot Discussions - AskGamblers",
+      "body_size_bytes": 133832,
+      "body_sha256": "b53fe8526f36cf2f137a7c4d2d410c813586e4999afe81f18b1cdf9f46df335b",
+      "text_size_chars": 12350,
+      "marker_counts": {
+        "withdrawal": 3,
+        "kyc": 1,
+        "multi_account": 0,
+        "frozen_or_blocked": 3,
+        "profit_or_win": 2,
+        "staff_or_team": 1,
+        "custody_or_wallet": 0,
+        "token": 0
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/forum.askgamblers.com_topic_13060-rollbit-unfairly-suspended-and-over-7k-stolen-_3bf275d41b8c.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/forum.askgamblers.com_topic_13060-rollbit-unfairly-suspended-and-over-7k-stolen-_3bf275d41b8c.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/forum.askgamblers.com_topic_13060-rollbit-unfairly-suspended-and-over-7k-stolen-_3bf275d41b8c.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/forum.askgamblers.com_topic_13060-rollbit-unfairly-suspended-and-over-7k-stolen-_3bf275d41b8c.meta.json"
+      }
+    },
+    {
+      "url": "https://forum.askgamblers.com/topic/16031-rollbit-casino-withholding-winnings-and-banned-me-with-0-explanation/",
+      "source_type": "complaint_mediation",
+      "source_refs": [
+        "cases_database.json"
+      ],
+      "case_ids": [
+        "AG-001"
+      ],
+      "source_names": [
+        "askgamblers"
+      ],
+      "captured_at": "2026-04-25T11:10:55.643764+00:00",
+      "domain": "forum.askgamblers.com",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://forum.askgamblers.com/topic/16031-rollbit-casino-withholding-winnings-and-banned-me-with-0-explanation/",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html;charset=UTF-8",
+      "title": "Rollbit Casino Withholding Winnings And Banned Me With 0 Explanation - Need help with a complaint? - AskGamblers",
+      "body_size_bytes": 376214,
+      "body_sha256": "1c6d061bf6f824a5b02432233bda441e589fcdb570e1067f1a50d08c7053ac47",
+      "text_size_chars": 21884,
+      "marker_counts": {
+        "withdrawal": 3,
+        "kyc": 2,
+        "multi_account": 0,
+        "frozen_or_blocked": 2,
+        "profit_or_win": 4,
+        "staff_or_team": 1,
+        "custody_or_wallet": 0,
+        "token": 0
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/forum.askgamblers.com_topic_16031-rollbit-casino-withholding-winnings-and-banned_efcf0b7aeb7b.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/forum.askgamblers.com_topic_16031-rollbit-casino-withholding-winnings-and-banned_efcf0b7aeb7b.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/forum.askgamblers.com_topic_16031-rollbit-casino-withholding-winnings-and-banned_efcf0b7aeb7b.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/forum.askgamblers.com_topic_16031-rollbit-casino-withholding-winnings-and-banned_efcf0b7aeb7b.meta.json"
+      }
+    },
+    {
+      "url": "https://www.casinolistings.com/forum/gambling/online-casinos/41297/rollbit-unfairly-suspended-and-over-7k-stolen-from-me",
+      "source_type": "complaint_mediation",
+      "source_refs": [
+        "cases_database.json"
+      ],
+      "case_ids": [
+        "CL-001"
+      ],
+      "source_names": [
+        "casinolistings"
+      ],
+      "captured_at": "2026-04-25T11:10:57.122798+00:00",
+      "domain": "www.casinolistings.com",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://www.casinolistings.com/forum/gambling/online-casinos/41297/rollbit-unfairly-suspended-and-over-7k-stolen-from-me",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=utf-8",
+      "title": "[Rollbit] Unfairly suspended and over $7k stolen from me | Casino Listings forum",
+      "body_size_bytes": 69160,
+      "body_sha256": "23e3b04fe754ba140e6ac24960009ef7ff69d0c3bd7f3a7980abe2202efc62bf",
+      "text_size_chars": 17280,
+      "marker_counts": {
+        "withdrawal": 2,
+        "kyc": 1,
+        "multi_account": 0,
+        "frozen_or_blocked": 3,
+        "profit_or_win": 3,
+        "staff_or_team": 1,
+        "custody_or_wallet": 1,
+        "token": 0
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/www.casinolistings.com_forum_gambling_online-casinos_41297_rollbit-unfairly-susp_ff814004ed1c.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/www.casinolistings.com_forum_gambling_online-casinos_41297_rollbit-unfairly-susp_ff814004ed1c.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/www.casinolistings.com_forum_gambling_online-casinos_41297_rollbit-unfairly-susp_ff814004ed1c.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/www.casinolistings.com_forum_gambling_online-casinos_41297_rollbit-unfairly-susp_ff814004ed1c.meta.json"
+      }
+    },
+    {
+      "url": "https://www.trustpilot.com/review/www.rollbit.com",
+      "source_type": "complaint_review",
+      "source_refs": [
+        "REPORT_6_EVIDENCE_REGISTER.md",
+        "cases_database.json"
+      ],
+      "case_ids": [
+        "TP-001",
+        "TP-002",
+        "TP-003",
+        "TP-004",
+        "TP-005",
+        "TP-006",
+        "TP-007",
+        "TP-008",
+        "TP-009",
+        "TP-010",
+        "TP-011",
+        "TP-012",
+        "TP-013",
+        "TP-014",
+        "TP-015",
+        "TP-016",
+        "TP-017",
+        "TP-018",
+        "TP-019",
+        "TP-020",
+        "TP-021",
+        "TP-022",
+        "TP-023",
+        "TP-024",
+        "TP-025",
+        "TP-026",
+        "TP-027",
+        "TP-028",
+        "TP-029",
+        "TP-030",
+        "TP-031",
+        "TP-032",
+        "TP-033",
+        "TP-034",
+        "TP-035",
+        "TP-036",
+        "TP-037",
+        "TP-038",
+        "TP-039",
+        "TP-040",
+        "TP-041",
+        "TP-042",
+        "TP-043",
+        "TP-044",
+        "TP-045",
+        "TP-046",
+        "TP-047",
+        "TP-048",
+        "TP-049",
+        "TP-050",
+        "TP-051"
+      ],
+      "source_names": [
+        "trustpilot"
+      ],
+      "captured_at": "2026-04-25T11:10:58.456242+00:00",
+      "domain": "www.trustpilot.com",
+      "ok": true,
+      "status_code": 403,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://www.trustpilot.com/review/www.rollbit.com",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html",
+      "title": "Verifying Connection",
+      "body_size_bytes": 991,
+      "body_sha256": "92d97ed45d6cc267c657b864c4deee1c2d896cda361adc660bc16538a75700f2",
+      "text_size_chars": 185,
+      "marker_counts": {
+        "withdrawal": 0,
+        "kyc": 1,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 0,
+        "staff_or_team": 0,
+        "custody_or_wallet": 0,
+        "token": 0
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/www.trustpilot.com_review_www.rollbit.com_53e318382592.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/www.trustpilot.com_review_www.rollbit.com_53e318382592.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/www.trustpilot.com_review_www.rollbit.com_53e318382592.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/www.trustpilot.com_review_www.rollbit.com_53e318382592.meta.json"
+      }
+    },
+    {
+      "url": "https://blog.rollbit.com/",
+      "source_type": "operator_publication",
+      "source_refs": [
+        "REPORT_4_WEBSITE_TECHNICAL_INVESTIGATION.md",
+        "REPORT_5_NEWS_AND_REGULATORY_TIMELINE.md"
+      ],
+      "case_ids": [],
+      "source_names": [],
+      "captured_at": "2026-04-25T11:10:58.836287+00:00",
+      "domain": "blog.rollbit.com",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://blog.rollbit.com/",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=utf-8",
+      "title": "Official Rollbit Blog",
+      "body_size_bytes": 69908,
+      "body_sha256": "234ca47b237f4ab98833a91b10d2ee74775a3619cd2c451a61b009be35177cae",
+      "text_size_chars": 4606,
+      "marker_counts": {
+        "withdrawal": 0,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 1,
+        "staff_or_team": 0,
+        "custody_or_wallet": 0,
+        "token": 0
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/blog.rollbit.com_deba0a0d9d3a.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/blog.rollbit.com_deba0a0d9d3a.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/blog.rollbit.com_deba0a0d9d3a.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/blog.rollbit.com_deba0a0d9d3a.meta.json"
+      }
+    },
+    {
+      "url": "https://blog.rollbit.com/rlb-eth-migration/",
+      "source_type": "operator_publication",
+      "source_refs": [
+        "REPORT_1_ONCHAIN_FORENSICS.md",
+        "REPORT_5_NEWS_AND_REGULATORY_TIMELINE.md"
+      ],
+      "case_ids": [],
+      "source_names": [],
+      "captured_at": "2026-04-25T11:10:59.302606+00:00",
+      "domain": "blog.rollbit.com",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://blog.rollbit.com/rlb-eth-migration/",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=utf-8",
+      "title": "RLB Migration to ETH \ud83d\udcb1",
+      "body_size_bytes": 29887,
+      "body_sha256": "454b887f2fc98bd1d6965e3943f2308e0f5c169c37c382611c2554cd27ffc181",
+      "text_size_chars": 5730,
+      "marker_counts": {
+        "withdrawal": 2,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 1,
+        "staff_or_team": 2,
+        "custody_or_wallet": 2,
+        "token": 4
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/blog.rollbit.com_rlb-eth-migration_a38e386d4f2b.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/blog.rollbit.com_rlb-eth-migration_a38e386d4f2b.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/blog.rollbit.com_rlb-eth-migration_a38e386d4f2b.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/blog.rollbit.com_rlb-eth-migration_a38e386d4f2b.meta.json"
+      }
+    },
+    {
+      "url": "https://blog.rollbit.com/rlb-utility-guide/amp/",
+      "source_type": "operator_publication",
+      "source_refs": [
+        "REPORT_1_ONCHAIN_FORENSICS.md",
+        "REPORT_5_NEWS_AND_REGULATORY_TIMELINE.md"
+      ],
+      "case_ids": [],
+      "source_names": [],
+      "captured_at": "2026-04-25T11:10:59.568945+00:00",
+      "domain": "blog.rollbit.com",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://blog.rollbit.com/rlb-utility-guide/",
+      "redirect_count": 1,
+      "redirect_history": [
+        {
+          "status_code": 301,
+          "url": "https://blog.rollbit.com/rlb-utility-guide/amp/"
+        }
+      ],
+      "content_type": "text/html; charset=utf-8",
+      "title": "RLB Utility Guide: Everything you need to know",
+      "body_size_bytes": 37274,
+      "body_sha256": "fa4aa7632d04a4bf0789587119d716c8e1a2110d8c5ee7d917ed913e95988557",
+      "text_size_chars": 8431,
+      "marker_counts": {
+        "withdrawal": 1,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 1,
+        "profit_or_win": 3,
+        "staff_or_team": 0,
+        "custody_or_wallet": 0,
+        "token": 3
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/blog.rollbit.com_rlb-utility-guide_amp_2dd657f0ae59.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/blog.rollbit.com_rlb-utility-guide_amp_2dd657f0ae59.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/blog.rollbit.com_rlb-utility-guide_amp_2dd657f0ae59.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/blog.rollbit.com_rlb-utility-guide_amp_2dd657f0ae59.meta.json"
+      }
+    },
+    {
+      "url": "https://rollbit.com/",
+      "source_type": "operator_surface",
+      "source_refs": [
+        "REPORT_4_WEBSITE_TECHNICAL_INVESTIGATION.md"
+      ],
+      "case_ids": [],
+      "source_names": [],
+      "captured_at": "2026-04-25T11:10:59.874099+00:00",
+      "domain": "rollbit.com",
+      "ok": false,
+      "error": "HTTPSConnectionPool(host='rollbit.com', port=443): Max retries exceeded with url: / (Caused by NewConnectionError(\"HTTPSConnection(host='rollbit.com', port=443): Failed to establish a new connection: [Errno 61] Connection refused\"))",
+      "status_code": null,
+      "final_url": "",
+      "redirect_count": 0,
+      "content_type": "",
+      "title": "",
+      "body_size_bytes": 0,
+      "body_sha256": "",
+      "text_size_chars": 0,
+      "marker_counts": {},
+      "files": {
+        "meta": "output/captures/public_records/20260425T111024Z/rollbit.com_06d13996eb0a.meta.json"
+      }
+    },
+    {
+      "url": "https://urlscan.io/result/ae5a0a7d-6223-4610-b982-5c7258a2a285",
+      "source_type": "passive_scan",
+      "source_refs": [
+        "REPORT_4_WEBSITE_TECHNICAL_INVESTIGATION.md"
+      ],
+      "case_ids": [],
+      "source_names": [],
+      "captured_at": "2026-04-25T11:11:00.083581+00:00",
+      "domain": "urlscan.io",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://urlscan.io/result/ae5a0a7d-6223-4610-b982-5c7258a2a285",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=utf-8",
+      "title": "rollbit.com - urlscan.io",
+      "body_size_bytes": 178511,
+      "body_sha256": "6087a7ce9ce8d70438081f75cab80b21ddd87e0f612e8583f54f65f38e8f7d8e",
+      "text_size_chars": 25262,
+      "marker_counts": {
+        "withdrawal": 0,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 1,
+        "staff_or_team": 0,
+        "custody_or_wallet": 2,
+        "token": 0
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/urlscan.io_result_ae5a0a7d-6223-4610-b982-5c7258a2a285_b75a434eb2ab.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/urlscan.io_result_ae5a0a7d-6223-4610-b982-5c7258a2a285_b75a434eb2ab.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/urlscan.io_result_ae5a0a7d-6223-4610-b982-5c7258a2a285_b75a434eb2ab.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/urlscan.io_result_ae5a0a7d-6223-4610-b982-5c7258a2a285_b75a434eb2ab.meta.json"
+      }
+    },
+    {
+      "url": "https://cryptoslate.com/solana-based-rollbit-coin-faces-scrutiny-over-crypto-influencer-promotion-tactics/",
+      "source_type": "public_reporting",
+      "source_refs": [
+        "REPORT_1_ONCHAIN_FORENSICS.md",
+        "REPORT_5_NEWS_AND_REGULATORY_TIMELINE.md"
+      ],
+      "case_ids": [],
+      "source_names": [],
+      "captured_at": "2026-04-25T11:11:01.564748+00:00",
+      "domain": "cryptoslate.com",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://cryptoslate.com/solana-based-rollbit-coin-faces-scrutiny-over-crypto-influencer-promotion-tactics/",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=UTF-8",
+      "title": "Solana-based Rollbit Coin faces scrutiny over crypto influencer promotion tactics",
+      "body_size_bytes": 318019,
+      "body_sha256": "351a032d4ed815c7fb678885fd7b5250d0549736694d04af5e199e1ab0560c45",
+      "text_size_chars": 17530,
+      "marker_counts": {
+        "withdrawal": 2,
+        "kyc": 2,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 1,
+        "staff_or_team": 3,
+        "custody_or_wallet": 4,
+        "token": 3
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/cryptoslate.com_solana-based-rollbit-coin-faces-scrutiny-over-crypto-influencer-_8c474c220819.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/cryptoslate.com_solana-based-rollbit-coin-faces-scrutiny-over-crypto-influencer-_8c474c220819.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/cryptoslate.com_solana-based-rollbit-coin-faces-scrutiny-over-crypto-influencer-_8c474c220819.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/cryptoslate.com_solana-based-rollbit-coin-faces-scrutiny-over-crypto-influencer-_8c474c220819.meta.json"
+      }
+    },
+    {
+      "url": "https://dev.ua/en/news/krypto-1747475639",
+      "source_type": "public_reporting",
+      "source_refs": [
+        "REPORT_1_ONCHAIN_FORENSICS.md",
+        "REPORT_5_NEWS_AND_REGULATORY_TIMELINE.md"
+      ],
+      "case_ids": [],
+      "source_names": [],
+      "captured_at": "2026-04-25T11:11:02.544712+00:00",
+      "domain": "dev.ua",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://dev.ua/en/news/krypto-1747475639",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=utf-8",
+      "title": "Court hands over $123 million in crypto assets of unknown Ukrainian to ARMA. Allegedly linked to Rollbit online casino and money laundering via Binance | dev.ua",
+      "body_size_bytes": 52556,
+      "body_sha256": "f6b78c195384426cff0b7ff6b48c7341e892d3c4a57e38ec3df17dcfa8580551",
+      "text_size_chars": 5648,
+      "marker_counts": {
+        "withdrawal": 0,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 3,
+        "staff_or_team": 2,
+        "custody_or_wallet": 4,
+        "token": 2
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/dev.ua_en_news_krypto-1747475639_07be9265c3b3.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/dev.ua_en_news_krypto-1747475639_07be9265c3b3.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/dev.ua_en_news_krypto-1747475639_07be9265c3b3.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/dev.ua_en_news_krypto-1747475639_07be9265c3b3.meta.json"
+      }
+    },
+    {
+      "url": "https://www.chaincatcher.com/article/2235971",
+      "source_type": "public_reporting",
+      "source_refs": [
+        "REPORT_1_ONCHAIN_FORENSICS.md",
+        "REPORT_5_NEWS_AND_REGULATORY_TIMELINE.md"
+      ],
+      "case_ids": [],
+      "source_names": [],
+      "captured_at": "2026-04-25T11:11:04.310254+00:00",
+      "domain": "www.chaincatcher.com",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://www.chaincatcher.com/article/2235971",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=utf-8",
+      "title": "\u6570\u636e\uff1a497.11 \u679a BTC \u4ece\u533f\u540d\u5730\u5740\u8f6c\u5165 Rollbit\uff0c\u4ef7\u503c\u7ea6 4519 \u4e07\u7f8e\u5143 - ChainCatcher",
+      "body_size_bytes": 77291,
+      "body_sha256": "e793f8d623c9c20a9cdd41c120b83e9926a36a7bcfaddceca2c6eba43867eeb8",
+      "text_size_chars": 1511,
+      "marker_counts": {
+        "withdrawal": 0,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 0,
+        "staff_or_team": 0,
+        "custody_or_wallet": 0,
+        "token": 0
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_article_2235971_1dae7ce57398.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_article_2235971_1dae7ce57398.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_article_2235971_1dae7ce57398.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_article_2235971_1dae7ce57398.meta.json"
+      }
+    },
+    {
+      "url": "https://www.chaincatcher.com/article/2236424",
+      "source_type": "public_reporting",
+      "source_refs": [
+        "REPORT_1_ONCHAIN_FORENSICS.md",
+        "REPORT_5_NEWS_AND_REGULATORY_TIMELINE.md"
+      ],
+      "case_ids": [],
+      "source_names": [],
+      "captured_at": "2026-04-25T11:11:05.083892+00:00",
+      "domain": "www.chaincatcher.com",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://www.chaincatcher.com/article/2236424",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=utf-8",
+      "title": "\u6570\u636e\uff1a1.5 \u4e07\u679a SOL \u4ece Rollbit \u8f6c\u51fa\uff0c\u4ef7\u503c\u7ea6 205 \u4e07\u7f8e\u5143 - ChainCatcher",
+      "body_size_bytes": 76982,
+      "body_sha256": "9e35665818abdc585f738dfc5d05eff85e175cb18c4e8baf57ccc751a047c203",
+      "text_size_chars": 1485,
+      "marker_counts": {
+        "withdrawal": 0,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 0,
+        "staff_or_team": 0,
+        "custody_or_wallet": 0,
+        "token": 0
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_article_2236424_4a84ab69f99e.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_article_2236424_4a84ab69f99e.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_article_2236424_4a84ab69f99e.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_article_2236424_4a84ab69f99e.meta.json"
+      }
+    },
+    {
+      "url": "https://www.chaincatcher.com/en/article/2102300",
+      "source_type": "public_reporting",
+      "source_refs": [
+        "REPORT_5_NEWS_AND_REGULATORY_TIMELINE.md"
+      ],
+      "case_ids": [],
+      "source_names": [],
+      "captured_at": "2026-04-25T11:11:05.622545+00:00",
+      "domain": "www.chaincatcher.com",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://www.chaincatcher.com/en/article/2102300",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=utf-8",
+      "title": "GambleFi platform Rollbit: Degen EXchange will be temporarily closed, and assets on the platform can be sold or withdrawn - ChainCatcher",
+      "body_size_bytes": 68103,
+      "body_sha256": "92c68834f869f63f6c97b90b22d2c589e118565e7f2b2e57e5a7ff7efc40b150",
+      "text_size_chars": 3242,
+      "marker_counts": {
+        "withdrawal": 2,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 0,
+        "staff_or_team": 0,
+        "custody_or_wallet": 1,
+        "token": 2
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_en_article_2102300_593f7571d8a5.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_en_article_2102300_593f7571d8a5.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_en_article_2102300_593f7571d8a5.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_en_article_2102300_593f7571d8a5.meta.json"
+      }
+    },
+    {
+      "url": "https://www.chaincatcher.com/en/tags/rollbit",
+      "source_type": "public_reporting",
+      "source_refs": [
+        "REPORT_1_ONCHAIN_FORENSICS.md",
+        "REPORT_5_NEWS_AND_REGULATORY_TIMELINE.md"
+      ],
+      "case_ids": [],
+      "source_names": [],
+      "captured_at": "2026-04-25T11:11:06.186961+00:00",
+      "domain": "www.chaincatcher.com",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://www.chaincatcher.com/en/tags/rollbit",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=utf-8",
+      "title": "rollbit News and Articles - ChainCatcher",
+      "body_size_bytes": 83547,
+      "body_sha256": "5657ad02a9ad597e8ac3b876bda7e2d0991a8f808211afc65f7b62f5b46ebb61",
+      "text_size_chars": 5767,
+      "marker_counts": {
+        "withdrawal": 2,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 2,
+        "staff_or_team": 0,
+        "custody_or_wallet": 3,
+        "token": 3
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_en_tags_rollbit_451ce44240fa.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_en_tags_rollbit_451ce44240fa.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_en_tags_rollbit_451ce44240fa.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_en_tags_rollbit_451ce44240fa.meta.json"
+      }
+    },
+    {
+      "url": "https://www.chaincatcher.com/ko/article/2202906",
+      "source_type": "public_reporting",
+      "source_refs": [
+        "REPORT_1_ONCHAIN_FORENSICS.md",
+        "REPORT_5_NEWS_AND_REGULATORY_TIMELINE.md"
+      ],
+      "case_ids": [],
+      "source_names": [],
+      "captured_at": "2026-04-25T11:11:06.795657+00:00",
+      "domain": "www.chaincatcher.com",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://www.chaincatcher.com/ko/article/2202906",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=utf-8",
+      "title": "\ub370\uc774\ud130: Rollbit \uae08\uace0 \uc5f0\uad00 \uc8fc\uc18c\uc5d0\uc11c 5\ub9cc \uac1c\uc758 SOL\uc744 \ud310\ub9e4\ud558\uc5ec \uc57d 890\ub9cc \ub2ec\ub7ec\uc758 \uc218\uc775\uc744 \uc62c\ub9bc - ChainCatcher",
+      "body_size_bytes": 85197,
+      "body_sha256": "ab8c7f97a2c848c03ef32aa1f3941d4d2bc171964908f90278bb978d9276617c",
+      "text_size_chars": 2007,
+      "marker_counts": {
+        "withdrawal": 0,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 0,
+        "staff_or_team": 0,
+        "custody_or_wallet": 0,
+        "token": 0
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_ko_article_2202906_842a2999d84f.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_ko_article_2202906_842a2999d84f.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_ko_article_2202906_842a2999d84f.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_ko_article_2202906_842a2999d84f.meta.json"
+      }
+    },
+    {
+      "url": "https://www.coindesk.com/markets/2023/03/31/crypto-casino-rollbits-token-drops-20-amid-licensing-concerns",
+      "source_type": "public_reporting",
+      "source_refs": [
+        "REPORT_1_ONCHAIN_FORENSICS.md",
+        "REPORT_5_NEWS_AND_REGULATORY_TIMELINE.md"
+      ],
+      "case_ids": [],
+      "source_names": [],
+      "captured_at": "2026-04-25T11:11:07.316665+00:00",
+      "domain": "www.coindesk.com",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://www.coindesk.com/markets/2023/03/31/crypto-casino-rollbits-token-drops-20-amid-licensing-concerns",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=utf-8",
+      "title": "Crypto Casino Rollbit&#x27;s Token Drops 20% Amid Licensing Concerns",
+      "body_size_bytes": 458730,
+      "body_sha256": "71bcf6c149b2aca2396d1f25699a34814c5f679cc5899d6913c58617fcd43f58",
+      "text_size_chars": 6114,
+      "marker_counts": {
+        "withdrawal": 2,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 2,
+        "staff_or_team": 0,
+        "custody_or_wallet": 1,
+        "token": 3
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/www.coindesk.com_markets_2023_03_31_crypto-casino-rollbits-token-drops-20-amid-l_745dc5cf90a3.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/www.coindesk.com_markets_2023_03_31_crypto-casino-rollbits-token-drops-20-amid-l_745dc5cf90a3.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/www.coindesk.com_markets_2023_03_31_crypto-casino-rollbits-token-drops-20-amid-l_745dc5cf90a3.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/www.coindesk.com_markets_2023_03_31_crypto-casino-rollbits-token-drops-20-amid-l_745dc5cf90a3.meta.json"
+      }
+    },
+    {
+      "url": "https://cert.cga.cw",
+      "source_type": "public_verification",
+      "source_refs": [
+        "REPORT_4_WEBSITE_TECHNICAL_INVESTIGATION.md"
+      ],
+      "case_ids": [],
+      "source_names": [],
+      "captured_at": "2026-04-25T11:11:08.315409+00:00",
+      "domain": "cert.cga.cw",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://cert.cga.cw/",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=utf-8",
+      "title": "CGA Portal",
+      "body_size_bytes": 57674,
+      "body_sha256": "9c35afea419b5d5703d00280b63021ba033e874dcdf72dce73a7fb9569d2f569",
+      "text_size_chars": 1882,
+      "marker_counts": {
+        "withdrawal": 0,
+        "kyc": 1,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 0,
+        "staff_or_team": 0,
+        "custody_or_wallet": 0,
+        "token": 0
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/cert.cga.cw_a20395602945.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/cert.cga.cw_a20395602945.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/cert.cga.cw_a20395602945.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/cert.cga.cw_a20395602945.meta.json"
+      }
+    },
+    {
+      "url": "https://cert.cga.cw/page/certification_policy",
+      "source_type": "public_verification",
+      "source_refs": [
+        "REPORT_4_WEBSITE_TECHNICAL_INVESTIGATION.md"
+      ],
+      "case_ids": [],
+      "source_names": [],
+      "captured_at": "2026-04-25T11:11:09.360961+00:00",
+      "domain": "cert.cga.cw",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://cert.cga.cw/page/certification_policy",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=utf-8",
+      "title": "CGA Portal",
+      "body_size_bytes": 55780,
+      "body_sha256": "9baa212a9fa09f1bc7ccd027ae79f36f48b4ea7496c8255b11209ee32687384c",
+      "text_size_chars": 3300,
+      "marker_counts": {
+        "withdrawal": 0,
+        "kyc": 2,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 0,
+        "staff_or_team": 0,
+        "custody_or_wallet": 0,
+        "token": 0
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/cert.cga.cw_page_certification_policy_ed5e977f0d2d.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/cert.cga.cw_page_certification_policy_ed5e977f0d2d.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/cert.cga.cw_page_certification_policy_ed5e977f0d2d.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/cert.cga.cw_page_certification_policy_ed5e977f0d2d.meta.json"
+      }
+    },
+    {
+      "url": "https://www.cga.cw/regulation/online-gaming",
+      "source_type": "public_verification",
+      "source_refs": [
+        "REPORT_4_WEBSITE_TECHNICAL_INVESTIGATION.md"
+      ],
+      "case_ids": [],
+      "source_names": [],
+      "captured_at": "2026-04-25T11:11:10.176595+00:00",
+      "domain": "www.cga.cw",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://www.cga.cw/regulation/online-gaming",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=UTF-8",
+      "title": "Online Gaming - Gaming Control Board",
+      "body_size_bytes": 38319,
+      "body_sha256": "9f224f7b81fa6e6f8b741ebf38938b8a089f30a4037e1cc83f8237cf412fb0a1",
+      "text_size_chars": 5126,
+      "marker_counts": {
+        "withdrawal": 0,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 0,
+        "staff_or_team": 1,
+        "custody_or_wallet": 1,
+        "token": 0
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/www.cga.cw_regulation_online-gaming_55d63641d2e5.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/www.cga.cw_regulation_online-gaming_55d63641d2e5.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/www.cga.cw_regulation_online-gaming_55d63641d2e5.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/www.cga.cw_regulation_online-gaming_55d63641d2e5.meta.json"
+      }
+    },
+    {
+      "url": "https://x.com/Nonopancake/status/1782506890817105973",
+      "source_type": "social_corroboration",
+      "source_refs": [
+        "REPORT_3_X_TWITTER_EVIDENCE.md",
+        "cases_database.json"
+      ],
+      "case_ids": [
+        "X-001"
+      ],
+      "source_names": [
+        "x"
+      ],
+      "captured_at": "2026-04-25T11:11:11.094071+00:00",
+      "domain": "x.com",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://x.com/Nonopancake/status/1782506890817105973",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=utf-8",
+      "title": "",
+      "body_size_bytes": 257705,
+      "body_sha256": "0ceccf997f8a99185860e9dfce2213a27fb0338edb4f07d0ce42f1814c9193ef",
+      "text_size_chars": 170,
+      "marker_counts": {
+        "withdrawal": 0,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 0,
+        "staff_or_team": 0,
+        "custody_or_wallet": 0,
+        "token": 0
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/x.com_Nonopancake_status_1782506890817105973_0223659239a0.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/x.com_Nonopancake_status_1782506890817105973_0223659239a0.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/x.com_Nonopancake_status_1782506890817105973_0223659239a0.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/x.com_Nonopancake_status_1782506890817105973_0223659239a0.meta.json"
+      }
+    },
+    {
+      "url": "https://x.com/YtZlashy/status/1731639780713103506",
+      "source_type": "social_corroboration",
+      "source_refs": [
+        "REPORT_3_X_TWITTER_EVIDENCE.md",
+        "REPORT_6_EVIDENCE_REGISTER.md"
+      ],
+      "case_ids": [],
+      "source_names": [],
+      "captured_at": "2026-04-25T11:11:12.367818+00:00",
+      "domain": "x.com",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://x.com/YtZlashy/status/1731639780713103506",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=utf-8",
+      "title": "",
+      "body_size_bytes": 257709,
+      "body_sha256": "e892184b6dc74d9e1eb144bfd2748b70fece3fb8d59900f3ef9b4bbafe7ec0e5",
+      "text_size_chars": 170,
+      "marker_counts": {
+        "withdrawal": 0,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 0,
+        "staff_or_team": 0,
+        "custody_or_wallet": 0,
+        "token": 0
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/x.com_YtZlashy_status_1731639780713103506_76125a561763.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/x.com_YtZlashy_status_1731639780713103506_76125a561763.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/x.com_YtZlashy_status_1731639780713103506_76125a561763.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/x.com_YtZlashy_status_1731639780713103506_76125a561763.meta.json"
+      }
+    },
+    {
+      "url": "https://x.com/robertgambaskr/status/1908964820419764728",
+      "source_type": "social_corroboration",
+      "source_refs": [
+        "REPORT_3_X_TWITTER_EVIDENCE.md"
+      ],
+      "case_ids": [],
+      "source_names": [],
+      "captured_at": "2026-04-25T11:11:14.137994+00:00",
+      "domain": "x.com",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://x.com/robertgambaskr/status/1908964820419764728",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=utf-8",
+      "title": "",
+      "body_size_bytes": 259438,
+      "body_sha256": "7a6bf13785fa0fa172d9df9bc60838af8f78d6020afa20175efc61de25e0cc7e",
+      "text_size_chars": 170,
+      "marker_counts": {
+        "withdrawal": 0,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 0,
+        "staff_or_team": 0,
+        "custody_or_wallet": 0,
+        "token": 0
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/x.com_robertgambaskr_status_1908964820419764728_8f9121f5f188.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/x.com_robertgambaskr_status_1908964820419764728_8f9121f5f188.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/x.com_robertgambaskr_status_1908964820419764728_8f9121f5f188.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/x.com_robertgambaskr_status_1908964820419764728_8f9121f5f188.meta.json"
+      }
+    },
+    {
+      "url": "https://x.com/robertgambaskr/status/1947015657050009696",
+      "source_type": "social_corroboration",
+      "source_refs": [
+        "REPORT_3_X_TWITTER_EVIDENCE.md",
+        "REPORT_6_EVIDENCE_REGISTER.md"
+      ],
+      "case_ids": [],
+      "source_names": [],
+      "captured_at": "2026-04-25T11:11:15.159916+00:00",
+      "domain": "x.com",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://x.com/robertgambaskr/status/1947015657050009696",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=utf-8",
+      "title": "",
+      "body_size_bytes": 256416,
+      "body_sha256": "5749ea73618e6add951bb347b4ba6574bb19dc8ac2920c31f30765308772500a",
+      "text_size_chars": 170,
+      "marker_counts": {
+        "withdrawal": 0,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 0,
+        "staff_or_team": 0,
+        "custody_or_wallet": 0,
+        "token": 0
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/x.com_robertgambaskr_status_1947015657050009696_153cd018366c.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/x.com_robertgambaskr_status_1947015657050009696_153cd018366c.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/x.com_robertgambaskr_status_1947015657050009696_153cd018366c.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/x.com_robertgambaskr_status_1947015657050009696_153cd018366c.meta.json"
+      }
+    },
+    {
+      "url": "https://x.com/robertgambaskr/status/2029872445662937303",
+      "source_type": "social_corroboration",
+      "source_refs": [
+        "REPORT_3_X_TWITTER_EVIDENCE.md",
+        "REPORT_6_EVIDENCE_REGISTER.md"
+      ],
+      "case_ids": [],
+      "source_names": [],
+      "captured_at": "2026-04-25T11:11:17.402837+00:00",
+      "domain": "x.com",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://x.com/robertgambaskr/status/2029872445662937303",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=utf-8",
+      "title": "",
+      "body_size_bytes": 263764,
+      "body_sha256": "a0194e01d28e1127b03a65d715e5f962887d1f41e113a77f03823c6bb8e809ae",
+      "text_size_chars": 170,
+      "marker_counts": {
+        "withdrawal": 0,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 0,
+        "staff_or_team": 0,
+        "custody_or_wallet": 0,
+        "token": 0
+      },
+      "files": {
+        "body": "output/captures/public_records/20260425T111024Z/x.com_robertgambaskr_status_2029872445662937303_81f79cb59f59.body.bin",
+        "headers": "output/captures/public_records/20260425T111024Z/x.com_robertgambaskr_status_2029872445662937303_81f79cb59f59.headers.txt",
+        "text": "output/captures/public_records/20260425T111024Z/x.com_robertgambaskr_status_2029872445662937303_81f79cb59f59.text.txt",
+        "meta": "output/captures/public_records/20260425T111024Z/x.com_robertgambaskr_status_2029872445662937303_81f79cb59f59.meta.json"
+      }
+    }
+  ]
+}

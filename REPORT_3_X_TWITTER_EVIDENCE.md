@@ -112,10 +112,10 @@ The complaint totals in [Report 2](./REPORT_2_VICTIM_EVIDENCE.md) remain the can
 
 ## 5. Practical Reading Rule
 
-The safest way to use X in a legal or investigative packet is:
+The safest forensic use of X is:
 
 > Treat X as a corroborating public layer that shows visibility, timing, and sometimes staff conduct. Use the complaint corpus, mediation records, and source register for the primary numerical claims.
 
-That is how this report set uses it.
+Analyst handling rule: preserve URLs, screenshots, timestamps, and any linked primary complaint records. Do not let X become a second counting system.
 
 *Back to [Investigation Hub](./README.md).*

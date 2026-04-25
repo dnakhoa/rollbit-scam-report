@@ -2,6 +2,8 @@
 ## Rollbit.com / Bull Gaming N.V. — Fund Withholding / Account Restriction Complaint
 
 > **Important:** This template is informational only. It is not legal advice. Fill in all bracketed fields and adapt the language to your own evidence before filing.
+>
+> **Forensic workflow note:** This file is downstream packaging only. The technical core of the repo is the report set, raw artifacts, and generated forensic indicators.
 
 ---
 

@@ -4,7 +4,7 @@ Rollbit Forensic Visualizations Generator
 ==========================================
 Generates 5 key charts from on-chain data and victim case database:
 1. Treasury Flow Analysis (outflows over time)
-2. RLB Manipulation Evidence (price vs buybacks)
+2. RLB Market Structure Stress (price, buybacks, and liquidity)
 3. Victim Impact Analysis (from case database)
 4. Wallet Network Graph (fund flow visualization)
 5. Evidence Timeline (critical events chronology)
@@ -185,7 +185,7 @@ def chart_treasury_flows(output_dir):
 # =========================================================================
 
 def chart_rlb_manipulation(output_dir):
-    print("  [2/5] RLB Manipulation Evidence...")
+    print("  [2/5] RLB Market Structure Stress...")
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(14, 10), height_ratios=[2, 1])
 
     dates = [datetime.strptime(d, '%Y-%m') for d, _ in RLB_PRICE_HISTORY]
@@ -236,7 +236,7 @@ def chart_rlb_manipulation(output_dir):
     bar_colors = [COLORS['red'] if v > 5 else COLORS['orange'] if v > 2 else COLORS['green']
                   for v in inconsistency]
     ax2.bar(dates, inconsistency, width=20, color=bar_colors, alpha=0.8)
-    ax2.set_title('Buyback Inconsistency Score (higher = more suspicious)', fontsize=12)
+    ax2.set_title('Buyback Inconsistency Score (higher = larger technical discrepancy)', fontsize=12)
     ax2.set_ylabel('Inconsistency %')
     ax2.grid(alpha=0.3)
     ax2.xaxis.set_major_formatter(mdates.DateFormatter('%b %y'))
@@ -346,10 +346,79 @@ def chart_victim_impact(output_dir):
 # CHART 4: Wallet Network Graph
 # =========================================================================
 
+def chart_wallet_network_static(output_dir):
+    """Fallback wallet graph when networkx is not installed."""
+    fig, ax = plt.subplots(figsize=(14, 10))
+    ax.set_facecolor(COLORS['bg2'])
+
+    nodes = {
+        'BTC Treasury': (0.1, 0.75, COLORS['blue']),
+        'SOL Treasury': (0.1, 0.55, COLORS['blue']),
+        'ETH Hot Wallet': (0.1, 0.35, COLORS['blue']),
+        'Unknown Wallets': (0.48, 0.67, COLORS['orange']),
+        'Binance / CEX\ncustody path': (0.48, 0.42, COLORS['orange']),
+        'Ukrainian Accounts\n($123M event)': (0.85, 0.42, COLORS['red']),
+        'DEX Liquidity\n(~$4.7M top pools)': (0.85, 0.72, COLORS['purple']),
+    }
+    edges = [
+        ('BTC Treasury', 'Unknown Wallets', 'sampled operational payouts'),
+        ('SOL Treasury', 'Unknown Wallets', '$17.4M direct outflow set'),
+        ('ETH Hot Wallet', 'Binance / CEX\ncustody path', 'off-wallet custody question'),
+        ('Binance / CEX\ncustody path', 'Ukrainian Accounts\n($123M event)', '$123M reported event'),
+        ('ETH Hot Wallet', 'DEX Liquidity\n(~$4.7M top pools)', 'RLB market surface'),
+    ]
+
+    for src, dst, label in edges:
+        x1, y1, _ = nodes[src]
+        x2, y2, _ = nodes[dst]
+        ax.annotate(
+            '',
+            xy=(x2, y2), xytext=(x1, y1),
+            arrowprops=dict(arrowstyle='->', color=COLORS['text2'], lw=2, alpha=0.7),
+        )
+        ax.text(
+            (x1 + x2) / 2,
+            (y1 + y2) / 2 + 0.025,
+            label,
+            ha='center',
+            va='center',
+            fontsize=8,
+            color=COLORS['text2'],
+            bbox=dict(boxstyle='round,pad=0.25', facecolor=COLORS['bg'], edgecolor='none', alpha=0.8),
+        )
+
+    for label, (x, y, color) in nodes.items():
+        circle = plt.Circle((x, y), 0.075, color=color, alpha=0.9)
+        ax.add_patch(circle)
+        ax.text(x, y, label, ha='center', va='center', fontsize=8,
+                color='white', fontweight='bold')
+
+    ax.set_title('Rollbit Fund Flow Network\n(Static fallback without networkx)',
+                 fontsize=16, fontweight='bold', pad=20)
+    ax.set_xlim(0, 1)
+    ax.set_ylim(0.15, 0.9)
+    ax.axis('off')
+
+    legend_elements = [
+        mpatches.Patch(color=COLORS['blue'], label='Known Rollbit Wallets'),
+        mpatches.Patch(color=COLORS['orange'], label='External / Unknown'),
+        mpatches.Patch(color=COLORS['red'], label='Off-Wallet Event'),
+        mpatches.Patch(color=COLORS['purple'], label='Token Liquidity Surface'),
+    ]
+    ax.legend(handles=legend_elements, loc='lower left', fontsize=10, framealpha=0.8)
+
+    plt.tight_layout()
+    path = os.path.join(output_dir, 'wallet_network_graph.png')
+    fig.savefig(path, dpi=150, bbox_inches='tight')
+    plt.close(fig)
+    print(f"    Saved fallback: {path}")
+
+
 def chart_wallet_network(output_dir):
     print("  [4/5] Wallet Network Graph...")
     if not HAS_NX:
-        print("    [SKIP] networkx required: pip install networkx")
+        print("    [INFO] networkx unavailable; using static matplotlib fallback")
+        chart_wallet_network_static(output_dir)
         return
 
     fig, ax = plt.subplots(figsize=(14, 10))
