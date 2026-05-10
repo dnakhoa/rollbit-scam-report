@@ -83,6 +83,9 @@ Raw public-source preservation layer for complaint pages, public reporting, oper
 | Trustpilot automated capture result | **HTTP 403 challenge** |
 | Casino Guru automated capture result | **7 URLs returned 404** |
 
+### [Report 9: External Review Fact-Check Matrix →](./REPORT_9_EXTERNAL_REVIEW_FACT_CHECK.md)
+Quality-control appendix mapping `Defi3000` feedback to corrected report language and remaining collection tasks.
+
 ---
 
 ## Key Technical Evidence
@@ -111,6 +114,7 @@ rollbit_forensic/
 ├── REPORT_6_EVIDENCE_REGISTER.md
 ├── REPORT_7_TECHNICAL_DEEP_DIVE.md
 ├── REPORT_8_PUBLIC_RECORDS_AND_COMPLAINT_CAPTURE.md
+├── REPORT_9_EXTERNAL_REVIEW_FACT_CHECK.md
 ├── LEGAL_SUBMISSION_TEMPLATE.md
 ├── PUBLISHING_NOTES.md
 ├── .gitignore

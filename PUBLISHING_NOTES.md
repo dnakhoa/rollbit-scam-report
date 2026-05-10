@@ -47,7 +47,7 @@ Avoid:
 - mixing direct outflows with mixed-flow alerts
 - treating sampled withdrawals as evidence of a drain without an operating-cost baseline
 - treating Uniswap/DEXScreener/CoinGecko data as complete RLB liquidity
-- saying RLB trades only on Uniswap or has no other liquidity venue unless that has been independently verified
+- describing Uniswap/DEXScreener/CoinGecko coverage as the complete or sole RLB venue map
 - making legal conclusions in the technical reports
 
 ---
