@@ -1,6 +1,6 @@
 # Rollbit Forensic Investigation: Public Evidence Pack
 **Operator:** Bull Gaming N.V. (Curaçao No. 157086) | **Platform:** Rollbit.com
-**Investigation Date:** April 19, 2026
+**Investigation Date:** April 19, 2026 | **Latest Data Refresh:** May 10, 2026
 
 This repo is a technical forensic workspace. It combines on-chain analysis, custody-visibility modeling, token-market snapshots, website/infrastructure inspection, and a canonical public complaint corpus. Legal/regulatory material is downstream context, not the analytical center of gravity.
 
@@ -8,7 +8,7 @@ This repo is a technical forensic workspace. It combines on-chain analysis, cust
 
 ## Publication Lead
 
-**Primary finding:** the repo has attributed public wallet balances, but it does **not** have Rollbit's verified reserve. Known BTC/SOL wallets showed about **$67.62M** on April 19, 2026, yet there is no liability-matched proof-of-reserves, complete custody inventory, exchange-balance attestation, or customer-fund segregation proof in the public artifact set.
+**Primary finding:** the repo has attributed public wallet balances, but it does **not** have Rollbit's verified reserve. The May 10 live refresh showed about **$59.13M** across the tracked BTC/SOL wallets, yet there is no liability-matched proof-of-reserves, complete custody inventory, exchange-balance attestation, or customer-fund segregation proof in the public artifact set.
 
 **Analysis posture:** the repo should show what was observed, what could not be verified, and what data would be needed next. It should not ask readers to accept an opinion about intent.
 
@@ -27,10 +27,10 @@ Live wallet state, treasury-flow review, RLB public-market snapshot, and source-
 
 | Finding | Value |
 |---------|-------|
-| Visible known wallets (Apr 19, 2026) | **~$67.7M** |
+| Visible known wallets (May 10, 2026) | **~$59.1M** |
 | Ukraine-linked seizure reporting | **$123M** |
-| RLB tracked public DEX liquidity | **~$4.7M** |
-| RLB market cap | **~$101.2M** |
+| RLB tracked public DEX liquidity | **~$5.05M** |
+| RLB market cap | **~$118.22M** |
 | Main data gap | **Reserves, liabilities, venue depth, and operating controls are not publicly reconstructable** |
 
 ### [Report 2: Complaint Corpus →](./REPORT_2_VICTIM_EVIDENCE.md)
@@ -65,10 +65,10 @@ Computed technical indicators across custody visibility, RLB market data scope, 
 
 | Finding | Value |
 |---------|-------|
-| Attributed public wallet snapshot | **$67.62M** |
-| Direct outflows / visible wallet snapshot | **25.7%** |
-| Reported off-wallet event / visible wallet snapshot | **181.9%** |
-| Tracked public DEX liquidity / market cap | **4.7%** |
+| Attributed public wallet snapshot | **$59.13M** |
+| Direct outflows / visible wallet snapshot | **29.4%** |
+| Reported off-wallet event / visible wallet snapshot | **208.0%** |
+| Tracked public DEX liquidity / market cap | **4.3%** |
 | Withdrawal-control keyword hits | **48 cases** |
 | KYC/compliance keyword hits | **33 cases** |
 
@@ -77,11 +77,11 @@ Raw public-source preservation layer for complaint pages, public reporting, oper
 
 | Finding | Value |
 |---------|-------|
-| Deduplicated public targets captured | **53** |
-| HTTP captures written | **52** |
-| Bitcointalk complaint threads captured | **21 / 21** |
+| Deduplicated public targets captured | **67** |
+| HTTP responses written | **67** |
+| Bitcointalk complaint threads captured | **24 / 24** |
 | Trustpilot automated capture result | **HTTP 403 challenge** |
-| Casino Guru automated capture result | **7 URLs returned 404** |
+| Casino Guru automated capture result | **9 / 9 URLs returned HTTP 200** |
 
 ### [Report 9: External Review Fact-Check Matrix →](./REPORT_9_EXTERNAL_REVIEW_FACT_CHECK.md)
 Quality-control appendix mapping `Defi3000` feedback to corrected report language and remaining collection tasks.
@@ -90,9 +90,9 @@ Quality-control appendix mapping `Defi3000` feedback to corrected report languag
 
 ## Key Technical Evidence
 
-1. **Known public wallets still show roughly `$67.7M`** as of April 19, 2026, but those balances are **not verified reserves**. The sharper issue is the absence of a liability-matched proof-of-reserves view.
+1. **Known public wallets still show roughly `$59.1M`** as of May 10, 2026, but those balances are **not verified reserves**. The sharper issue is the absence of a liability-matched proof-of-reserves view.
 2. **A Ukraine-linked seizure reported at `$123M`** remains central because it points to material off-wallet or exchange-linked custody exposure.
-3. **RLB market data is incomplete in this repo.** The current snapshot captures about `$4.7M` in tracked public DEX liquidity against roughly `$101.2M` market cap, but it does **not** quantify Rollbit app/on-platform liquidity, order-book depth, or custody-side token inventory. It should not describe Uniswap as the only RLB trading or liquidity venue.
+3. **RLB market data is incomplete in this repo.** The current snapshot captures about `$5.05M` in tracked public DEX liquidity against roughly `$118.22M` market cap, but it does **not** quantify Rollbit app/on-platform liquidity, order-book depth, or custody-side token inventory. It should not describe Uniswap as the only RLB trading or liquidity venue.
 4. **The complaint corpus now has one canonical count**: `80` counted public complaints, `74` quantified, `$562,081.08` total quantified.
 5. **Only four counted cases are publicly marked resolved**, which keeps the complaint record materially unresolved.
 6. **The technical deep-dive now extracts process signatures**: withdrawal-control language appears in `48` counted cases, KYC/compliance escalation in `33`, and win/profit context in `35`.

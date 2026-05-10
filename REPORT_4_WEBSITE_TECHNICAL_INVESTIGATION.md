@@ -1,6 +1,6 @@
 # Report 4: Website Technical Investigation
 ## Rollbit / Bull Gaming N.V. — DNS, Edge Infrastructure, Public Web Stack, and License-Verification Friction
-**Date:** April 19, 2026 | **Classification:** Technical Appendix
+**Date:** May 10, 2026 | **Classification:** Technical Appendix
 **Companion:** ← [Report 1: On-Chain Financial Forensics](./REPORT_1_ONCHAIN_FORENSICS.md) | → [Report 7: Technical Deep Dive](./REPORT_7_TECHNICAL_DEEP_DIVE.md)
 
 ---
@@ -35,31 +35,31 @@ Current capture artifact:
 
 - [scripts/web_surface_capture.py](./scripts/web_surface_capture.py)
 - [output/web_surface_capture.json](./output/web_surface_capture.json)
-- latest local raw-capture directory: `output/captures/web/20260425T104619Z`
+- latest local raw-capture directory: `output/captures/web/20260510T101136Z`
 
 The raw capture directory is ignored by git for public release. Publish the JSON summary and hashes; keep raw bodies local or private.
 
 ---
 
-## 1.1 April 25, 2026 Capture Snapshot
+## 1.1 May 10, 2026 Capture Snapshot
 
 The new web capture utility preserved DoH DNS, TLS metadata, HTTP headers, response bodies, and body hashes for four surfaces.
 
 | Target | DNS / Edge | HTTP Result | Body SHA-256 Prefix | Capture Note |
 |--------|------------|-------------|---------------------|--------------|
-| `rollbit.com` | Cloudflare `104.20.26.76`, `172.66.170.17` | **HTTP/2 403** | `4be5da3178ba0422` | Cloudflare challenge body captured |
-| `blog.rollbit.com` | `rollbit.ghost.io` -> Fastly A records | **HTTP/2 200** | `234ca47b237f4ab9` | Public Ghost HTML captured |
-| `rollbot.rollbit.com` | Cloudflare `104.20.26.76`, `172.66.170.17` | **HTTP/2 200** | `a18a6c7921ee03fa` | Static Rollbot/NFT-linking HTML captured |
-| `cert.cga.cw/page/certification_policy` | Cloudflare `172.67.71.89`, `104.26.4.227`, `104.26.5.227` | **HTTP/2 200** | `8c138281c463af80` | CGA policy page captured |
+| `rollbit.com` | Cloudflare `104.20.26.76`, `172.66.170.17` | **HTTP/2 403** | `5414107756277ffa` | Cloudflare challenge body captured |
+| `blog.rollbit.com` | `rollbit.ghost.io` -> Fastly A records | **HTTP/2 200** | `f44662a5702d9dba` | Public Ghost HTML captured |
+| `rollbot.rollbit.com` | Cloudflare `104.20.26.76`, `172.66.170.17` | **HTTP/2 200** | `cf329fdef9e3a463` | Static Rollbot/NFT-linking HTML captured |
+| `cert.cga.cw/page/certification_policy` | Cloudflare `104.26.5.227`, `104.26.4.227`, `172.67.71.89` | **HTTP/2 200** | `02ee39c1782d1355` | CGA policy page captured |
 
 TLS metadata from the same capture:
 
 | Host | Certificate Subject | Issuer | Validity Window |
 |------|---------------------|--------|-----------------|
 | `rollbit.com` | `CN=rollbit.com` | Let's Encrypt E8 | Apr 9, 2026 to Jul 8, 2026 |
-| `blog.rollbit.com` | `CN=blog.rollbit.com` | Certainly Intermediate R1 | Apr 19, 2026 to May 19, 2026 |
+| `blog.rollbit.com` | `CN=blog.rollbit.com` | Certainly Intermediate R1 | May 9, 2026 to Jun 8, 2026 |
 | `rollbot.rollbit.com` | `CN=rollbit.com` | Let's Encrypt E8 | Apr 9, 2026 to Jul 8, 2026 |
-| `cert.cga.cw` | `CN=cga.cw` | Google Trust Services WE1 | Mar 3, 2026 to Jun 1, 2026 |
+| `cert.cga.cw` | `CN=cga.cw` | Google Trust Services WE1 | May 1, 2026 to Jul 30, 2026 |
 
 ---
 
@@ -67,7 +67,7 @@ TLS metadata from the same capture:
 
 ### 2.1 DNS and nameserver layer
 
-As of **April 19, 2026**, DNS-over-HTTPS returned:
+As of the **May 10, 2026** capture, DNS-over-HTTPS returned:
 
 | Record Type | Value |
 |-------------|-------|
@@ -223,7 +223,8 @@ This **does not prove** that Rollbit is currently unlicensed.
 
 It **does mean** that:
 
-- direct public certificate verification for the operational domain was not cleanly reproducible on **April 19, 2026**
+- direct public certificate verification for the operational domain was not cleanly reproducible in this repo's captured checks
+- the May 10 source-refresh captured a CGA registry PDF listing Bull Gaming N.V. license `OGL/2024/1260/0494`, but that is a registry artifact, not the same as a clean browser-level certificate verification page for `rollbit.com`
 - the public evidence path is therefore weaker than ideal for a player-facing operator
 - anyone relying on public domain-level licensing claims should preserve screenshots and timestamps when checking
 
@@ -231,6 +232,7 @@ Source pages:
 
 - CGA certification policy: https://cert.cga.cw/page/certification_policy
 - CGA online gaming regulation page: https://www.cga.cw/regulation/online-gaming
+- CGA registry PDF captured May 10: https://gamingcontrol.spin-cdn.com/media/license_registry/20260324_20260323_ogl_license_registry.pdf
 
 ---
 

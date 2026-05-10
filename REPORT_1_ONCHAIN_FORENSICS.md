@@ -1,6 +1,6 @@
 # Report 1: On-Chain Financial Forensics
 ## Rollbit / Bull Gaming N.V. — Live Wallet State, Treasury Flow Review, and Public Token-Market Snapshot
-**Date:** April 19, 2026 | **Classification:** Forensic Investigation
+**Date:** May 10, 2026 | **Classification:** Forensic Investigation
 **Companion:** → [Report 2: Complaint Corpus](./REPORT_2_VICTIM_EVIDENCE.md) | → [Report 4: Website Technical Investigation](./REPORT_4_WEBSITE_TECHNICAL_INVESTIGATION.md) | → [Report 5: Public Event and Flow Timeline](./REPORT_5_NEWS_AND_REGULATORY_TIMELINE.md) | → [Report 7: Technical Deep Dive](./REPORT_7_TECHNICAL_DEEP_DIVE.md)
 
 ---
@@ -9,7 +9,7 @@
 
 This revised on-chain report replaces several broad claims from the earlier draft with a more precise split between:
 
-1. **Directly observed chain facts** from a live snapshot taken on **April 19, 2026**
+1. **Directly observed chain facts** from a live snapshot taken on **May 10, 2026**
 2. **Published treasury-flow alerts** from public reporting and explorer-linked news items
 3. **Analytical limits**, which are labeled rather than presented as proof
 
@@ -17,34 +17,34 @@ This revised on-chain report replaces several broad claims from the earlier draf
 
 | Metric | Value |
 |--------|-------|
-| Visible BTC in known treasury wallet | **649.5455 BTC** |
-| Visible SOL in known treasury wallet | **222,587.1107 SOL** |
-| Visible value across known wallets | **~$67.62M** |
+| Visible BTC in known treasury wallet | **661.6337 BTC** |
+| Visible SOL in known treasury wallet | **60,474.0331 SOL** |
+| Visible value across known wallets | **~$59.13M** |
 | Tracked ETH balance across 4 known ETH wallets | **0 ETH** |
-| BTC treasury transaction count | **469,936** |
-| Latest BTC/SOL activity in snapshot | **April 19, 2026** |
+| BTC treasury transaction count | **472,538** |
+| Latest BTC/SOL activity in snapshot | **May 10, 2026** |
 
 ### What the current token snapshot shows
 
 | Metric | Value |
 |--------|-------|
-| RLB spot price | **$0.0595** |
-| RLB market cap | **~$101.2M** |
-| Top 4 tracked public DEX pools combined liquidity | **~$4.71M** |
-| Primary USDC pool liquidity | **~$1.92M** |
-| Top 4 pools combined 24h volume | **~$153K** |
-| Drawdown from all-time high | **-77.5%** |
+| RLB spot price | **$0.0702** |
+| RLB market cap | **~$118.22M** |
+| Top 4 tracked public DEX pools combined liquidity | **~$5.05M** |
+| Primary USDC pool liquidity | **~$2.11M** |
+| Top 4 pools combined 24h volume | **~$200.65K** |
+| Drawdown from all-time high | **-73.4%** |
 
 ### Core findings
 
-- **Known wallets are not empty.** As of **April 19, 2026**, the publicly tracked BTC and SOL treasury wallets still held approximately **$67.7M** in visible assets.
+- **Known wallets are not empty.** As of **May 10, 2026**, the publicly tracked BTC and SOL treasury wallets still held approximately **$59.1M** in visible assets.
 - **That does not prove reserves.** The **May 9, 2025** Ukraine court action described by `dev.ua` involved **$123M** allegedly tied to Bull Gaming N.V. in Binance accounts controlled through a Ukrainian intermediary, which means material custody may have sat outside attributed public wallets.
 - **The January-February 2026 BTC narrative requires a narrow reading.** A **626.03 BTC** alert on **February 13, 2026** should not be treated as a confirmed Rollbit treasury outflow. The underlying ChainCatcher/Arkham summary described **626.03 BTC moving from an anonymous address, with some flow into Bybit and Rollbit**. That item is therefore **not reliable evidence of a Rollbit drain**.
 - **Direct published outflows are still material.** Public alerts do document:
   - a **50,000 SOL** treasury-linked liquidation on **September 3, 2025**
   - **15,000 SOL + 15,000 SOL** moved out on **January 11, 2026**
   - **21,363.73 SOL** moved out on **January 15, 2026**
-- **The RLB liquidity model is incomplete.** The repo currently captures about **$4.7M** of tracked public DEX liquidity across top Uniswap pools against a roughly **$101M** market cap. That is a scoped public-market snapshot, not a measurement of Rollbit app/on-platform liquidity, order-book depth, or custody-side token inventory.
+- **The RLB liquidity model is incomplete.** The repo currently captures about **$5.05M** of tracked public DEX liquidity across top public aggregator-indexed pools against a roughly **$118M** market cap. That is a scoped public-market snapshot, not a measurement of Rollbit app/on-platform liquidity, order-book depth, or custody-side token inventory.
 
 ### Bottom line
 
@@ -56,7 +56,7 @@ The strongest present conclusion is **not** that chain data alone proves zero re
 
 This report combines:
 
-- **Live chain data** pulled on **April 19, 2026 (UTC)** from:
+- **Live chain data** pulled on **May 10, 2026 (UTC)** from:
   - Blockstream API for BTC
   - Solana JSON-RPC for SOL
   - DEXScreener for tracked public RLB DEX liquidity
@@ -76,7 +76,8 @@ Important constraint:
 
 Artifact integrity note:
 
-- `scripts/blockchain_analyzer.py --cached` now preserves the April 19, 2026 wallet snapshot in [output/blockchain_analysis.json](./output/blockchain_analysis.json).
+- `scripts/blockchain_analyzer.py --cached` preserves the April 19, 2026 wallet snapshot for offline replay.
+- `scripts/blockchain_analyzer.py --full` refreshed [output/blockchain_analysis.json](./output/blockchain_analysis.json) on May 10, 2026.
 - Cached mode is a frozen artifact replay, not a current live balance check.
 - Live mode should be used when updating the snapshot date, and raw API responses should be preserved separately.
 
@@ -97,19 +98,19 @@ The tracked addresses used in this repo are:
 
 ---
 
-## 3. Live Reserve Snapshot — April 19, 2026
+## 3. Live Wallet Snapshot — May 10, 2026
 
-Snapshot time from the regenerated analysis artifact: **2026-04-19T09:23Z to 2026-04-19T09:24Z**.
+Snapshot time from the regenerated analysis artifact: **2026-05-10T10:28Z**.
 
 | Wallet | Native Balance | USD Value | Notes |
 |--------|----------------|-----------|-------|
-| BTC Treasury | **649.54550772 BTC** | **$48,758,133.54** | 469,936 transactions; active on snapshot date |
-| SOL Treasury | **222,587.110683 SOL** | **$18,862,031.76** | Recent signatures every few seconds on snapshot date |
+| BTC Treasury | **661.63373307 BTC** | **$53,454,712.56** | 472,538 transactions; active on snapshot date |
+| SOL Treasury | **60,474.0331 SOL** | **$5,670,650.09** | Recent signatures visible on snapshot date |
 | ETH Hot Wallet | **0 ETH** | **$0** | No current ETH visible |
 | ERC20 Ops | **0 ETH** | **$0** | No current ETH visible |
 | rollbit.eth | **0 ETH** | **$0** | No current ETH visible |
 | rollbot.eth | **0 ETH** | **$0** | No current ETH visible |
-| **Total visible** | | **$67,620,165.30** | BTC + SOL dominate the attributed public wallet set |
+| **Total visible** | | **$59,125,362.65** | BTC + SOL dominate the attributed public wallet set |
 
 ### Interpretation
 
@@ -122,7 +123,15 @@ Snapshot time from the regenerated analysis artifact: **2026-04-19T09:23Z to 202
 
 ## 4. What Recent BTC and SOL Activity Actually Looks Like
 
-The live sample from **April 19, 2026** looks more like **operational wallet activity** than another single-shot treasury evacuation.
+The live sample preserved in this repo still looks more like **operational wallet activity** than another single-shot treasury evacuation, but the sample is not a full transaction graph.
+
+The May 10 tracer captured:
+
+- **25** recent BTC transactions: **24** outflows and **1** inflow
+- largest recent BTC outflow in that sample: **0.06744540 BTC** on **May 10, 2026**
+- **20** recent SOL signatures, with latest activity on **May 10, 2026**
+
+The April 19 examples below remain useful as examples of the observed small-transaction pattern, not as a current exhaustive flow export.
 
 ### 4.1 Sampled BTC transactions
 
@@ -182,9 +191,9 @@ This is a smaller classified outflow set than the earlier draft because the Febr
 
 | Ratio | Value | Why It Matters |
 |-------|------:|----------------|
-| Direct outflows / visible wallet snapshot | **25.7%** | Material, but not a reserve-coverage result |
-| January 2026 direct outflows / visible wallet snapshot | **10.7%** | Large enough to monitor, too small to call a full drain |
-| Reported off-wallet custody event / visible wallet snapshot | **181.9%** | Public wallets are not a reserve map |
+| Direct outflows / visible wallet snapshot | **29.4%** | Material, but not a reserve-coverage result |
+| January 2026 direct outflows / visible wallet snapshot | **12.2%** | Large enough to monitor, too small to call a full drain |
+| Reported off-wallet custody event / visible wallet snapshot | **208.0%** | Public wallets are not a reserve map |
 
 These ratios should be recalculated whenever the live wallet snapshot is refreshed.
 
@@ -203,7 +212,7 @@ According to that report:
 
 ### Why this matters for the on-chain story
 
-Even if attributed public wallets still show **$67.7M** in the snapshot, the seizure reporting implies that:
+Even if attributed public wallets still show **$59.1M** in the snapshot, the seizure reporting implies that:
 
 - some significant assets may have been parked in **exchange accounts or intermediary-controlled custody**
 - the public wallet set may represent only **part** of the operating custody picture
@@ -219,32 +228,33 @@ That is a more defensible conclusion than simply asserting that the current trea
 
 | Metric | Value |
 |--------|-------|
-| Price | **$0.059523** |
-| Market cap | **$101,223,201** |
-| Circulating supply | **1,700,989,104 RLB** |
-| Total supply | **1,700,989,104 RLB** |
+| Price | **$0.070204** |
+| Market cap | **$118,218,080** |
+| Circulating supply | **~1,683,929,933 RLB** by CoinGecko; **1,683,904,316.91 RLB** from Rollbit public supply endpoint |
+| Total supply | **~1,683,929,933 RLB** by CoinGecko |
 | ATH | **$0.264358** |
-| Drawdown from ATH | **-77.49%** |
+| Drawdown from ATH | **-73.44%** |
 
 ### 7.2 Tracked Public DEX Liquidity By Primary Pools
 
 | Pool | Liquidity | 24h Volume |
 |------|-----------|------------|
-| RLB / USDC (Uniswap V3) | **$1,922,698.69** | **$79,411.54** |
-| RLB / USDT (Uniswap V3) | **$2,188,645.08** | **$56,582.21** |
-| RLB / WETH (Uniswap V3) | **$597,299.69** | **$16,018.14** |
-| RLB / ETH (Uniswap V4) | **$4,440.41** | **$1,094.35** |
-| **Top 4 total** | **$4,713,083.87** | **$153,106.24** |
+| RLB / USDT (Uniswap V3) | **$2,378,658.49** | **$74,166.73** |
+| RLB / USDC (Uniswap V3) | **$2,109,509.55** | **$103,059.82** |
+| RLB / WETH (Uniswap V3) | **$557,387.60** | **$23,425.25** |
+| RLB / ETH (Uniswap V4) | **$4,845.66** | **$2.98** |
+| **Top 4 total** | **$5,050,401.30** | **$200,654.78** |
 
 Scope note:
 
 - This table is a public DEX snapshot from the repo's DEXScreener/CoinGecko capture path.
 - It does **not** measure Rollbit app/on-platform liquidity, internal conversion depth, order books, or custodial token inventory.
 - Rollbit's own materials describe RLB trading directly on Rollbit.com and RLB liquidity pools introduced in May 2023. The current whitepaper also describes RLB/USD pools used to support RLB trading on Rollbit. Those app-gated surfaces need a separate capture method.
+- CoinGecko and DEXScreener currently expose the tracked live RLB market/liquidity surface as Uniswap-based in this capture. A Poloniex public market API capture returned no active RLB market matches, but this report should not convert that limited check into a categorical venue-absence claim.
 
 ### 7.3 Why this still matters
 
-- A roughly **$101M** token trading against **~$4.7M** in tracked public DEX liquidity shows that market cap should not be used as reserve depth.
+- A roughly **$118M** token trading against **~$5.05M** in tracked public DEX liquidity shows that market cap should not be used as reserve depth.
 - Public market aggregators currently show tracked public RLB coverage concentrated in Uniswap pools, but this report must not describe Uniswap as the only RLB trading or liquidity venue.
 - The official buy-and-burn narrative remains **operator-reported**, not independently audited.
 
@@ -310,6 +320,8 @@ The live on-chain picture supports the following:
 - Solana JSON-RPC transaction and balance data: https://api.mainnet-beta.solana.com/
 - CoinGecko RLB market data: https://api.coingecko.com/api/v3/coins/rollbit-coin
 - DEXScreener RLB pool data: https://api.dexscreener.com/latest/dex/tokens/0x046eee2cc3188071c02bfc1745a6b17c656e3f3d
+- Rollbit public RLB supply endpoint: https://api.rollbit.com/v1/public/rlb/supply.json
+- Poloniex public markets API: https://api.poloniex.com/markets
 - `dev.ua` on Ukraine-linked seizure: https://dev.ua/en/news/krypto-1747475639
 - ChainCatcher Rollbit tag archive: https://www.chaincatcher.com/en/tags/rollbit
 - ChainCatcher January 11, 2026 15K SOL transfer: https://www.chaincatcher.com/article/2236424

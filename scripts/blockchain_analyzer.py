@@ -242,6 +242,7 @@ RLB_TOKEN = {
     'initial_supply': 5_000_000_000,
     'migration_date': '2024-04-30',  # SOL -> ETH migration deadline
     'dexscreener_pair': 'ethereum/0x...',  # placeholder
+    'ath_usd': 0.264358,
 }
 
 # API endpoints
@@ -604,17 +605,56 @@ class BlockchainAPI:
         if not pairs:
             return {}
 
-        pair = pairs[0]
+        normalized_pairs = []
+        for pair in pairs:
+            base = pair.get('baseToken', {})
+            quote = pair.get('quoteToken', {})
+            liquidity = float(pair.get('liquidity', {}).get('usd') or 0)
+            volume_24h = float(pair.get('volume', {}).get('h24') or 0)
+            normalized_pairs.append({
+                'chain_id': pair.get('chainId', ''),
+                'dex': pair.get('dexId', ''),
+                'labels': pair.get('labels', []),
+                'base_symbol': base.get('symbol', ''),
+                'quote_symbol': quote.get('symbol', ''),
+                'pair': f"{base.get('symbol', '')}/{quote.get('symbol', '')}",
+                'price_usd': float(pair.get('priceUsd') or 0),
+                'price_change_24h': float(pair.get('priceChange', {}).get('h24') or 0),
+                'volume_24h': volume_24h,
+                'liquidity_usd': liquidity,
+                'fdv': float(pair.get('fdv') or 0),
+                'market_cap': float(pair.get('marketCap') or 0),
+                'pair_address': pair.get('pairAddress', ''),
+                'url': pair.get('url', ''),
+                'txns_24h_buys': pair.get('txns', {}).get('h24', {}).get('buys', 0),
+                'txns_24h_sells': pair.get('txns', {}).get('h24', {}).get('sells', 0),
+            })
+
+        normalized_pairs.sort(key=lambda item: item['liquidity_usd'], reverse=True)
+        primary_rlb_pairs = [
+            pair for pair in normalized_pairs
+            if pair['base_symbol'].upper() == 'RLB'
+        ]
+        aggregate_pairs = primary_rlb_pairs or normalized_pairs
+        top_pair = normalized_pairs[0]
         return {
-            'price_usd': float(pair.get('priceUsd', 0)),
-            'price_change_24h': float(pair.get('priceChange', {}).get('h24', 0)),
-            'volume_24h': float(pair.get('volume', {}).get('h24', 0)),
-            'liquidity_usd': float(pair.get('liquidity', {}).get('usd', 0)),
-            'fdv': float(pair.get('fdv', 0)),
-            'pair_address': pair.get('pairAddress', ''),
-            'dex': pair.get('dexId', ''),
-            'txns_24h_buys': pair.get('txns', {}).get('h24', {}).get('buys', 0),
-            'txns_24h_sells': pair.get('txns', {}).get('h24', {}).get('sells', 0),
+            'price_usd': top_pair['price_usd'],
+            'price_change_24h': top_pair['price_change_24h'],
+            'volume_24h': top_pair['volume_24h'],
+            'liquidity_usd': top_pair['liquidity_usd'],
+            'fdv': top_pair['fdv'],
+            'market_cap': top_pair['market_cap'],
+            'pair_address': top_pair['pair_address'],
+            'dex': top_pair['dex'],
+            'txns_24h_buys': top_pair['txns_24h_buys'],
+            'txns_24h_sells': top_pair['txns_24h_sells'],
+            'pairs_returned': len(normalized_pairs),
+            'pairs': normalized_pairs,
+            'primary_rlb_pair_count': len(primary_rlb_pairs),
+            'tracked_primary_rlb_liquidity_usd': sum(pair['liquidity_usd'] for pair in aggregate_pairs),
+            'tracked_primary_rlb_volume_24h_usd': sum(pair['volume_24h'] for pair in aggregate_pairs),
+            'tracked_all_pair_liquidity_usd': sum(pair['liquidity_usd'] for pair in normalized_pairs),
+            'tracked_all_pair_volume_24h_usd': sum(pair['volume_24h'] for pair in normalized_pairs),
         }
 
 
@@ -821,8 +861,10 @@ class RLBTokenAnalyzer:
         if dex_data:
             result['token_info'] = dex_data
             print(f"  Price: ${dex_data.get('price_usd', 0):.6f}")
-            print(f"  24h Volume: ${dex_data.get('volume_24h', 0):,.2f}")
-            print(f"  Liquidity: ${dex_data.get('liquidity_usd', 0):,.2f}")
+            print(f"  Top-pair 24h Volume: ${dex_data.get('volume_24h', 0):,.2f}")
+            print(f"  Top-pair Liquidity: ${dex_data.get('liquidity_usd', 0):,.2f}")
+            print(f"  Primary RLB pair liquidity: ${dex_data.get('tracked_primary_rlb_liquidity_usd', 0):,.2f}")
+            print(f"  Primary RLB pair 24h volume: ${dex_data.get('tracked_primary_rlb_volume_24h_usd', 0):,.2f}")
             print(f"  FDV: ${dex_data.get('fdv', 0):,.2f}")
             print(f"  24h Buys: {dex_data.get('txns_24h_buys', 0)} | Sells: {dex_data.get('txns_24h_sells', 0)}")
 
@@ -868,16 +910,28 @@ class RLBTokenAnalyzer:
         indicators = []
 
         # 1. Price drawdown alongside reported buy-and-burn mechanics
+        decline_from_high_pct = (
+            ((rlb_price / RLB_TOKEN['ath_usd']) - 1) * 100
+            if rlb_price and RLB_TOKEN.get('ath_usd')
+            else None
+        )
         indicators.append({
             'indicator': 'Price drawdown alongside reported buy-and-burn mechanics',
             'collection_priority': 'HIGH',
             'details': (
-                'RLB traded roughly 77% below its all-time high in the loaded snapshot. '
+                f"RLB traded {decline_from_high_pct:.1f}% below its all-time high in the loaded snapshot. "
+                'This should be compared against timestamped buy, burn, redistribution, supply, and venue-depth data '
+                'before drawing any conclusion about the buy-and-burn program.'
+            ) if decline_from_high_pct is not None else (
+                'RLB drawdown from all-time high could not be calculated in this live run. '
                 'This should be compared against timestamped buy, burn, redistribution, supply, and venue-depth data '
                 'before drawing any conclusion about the buy-and-burn program.'
             ),
         })
-        print(f"\n  [DATA] Price drawdown alongside reported buy-and-burn mechanics (-77% from highs)")
+        if decline_from_high_pct is not None:
+            print(f"\n  [DATA] Price drawdown alongside reported buy-and-burn mechanics ({decline_from_high_pct:.1f}% from high)")
+        else:
+            print(f"\n  [DATA] Price drawdown alongside reported buy-and-burn mechanics")
 
         # 2. Influencer-promotion reconstruction
         indicators.append({
@@ -903,19 +957,18 @@ class RLBTokenAnalyzer:
         print(f"  [DATA] Revenue numbers are operator-reported")
 
         # 4. Public DEX liquidity scope
-        if dex_data and dex_data.get('liquidity_usd', 0) > 0:
-            liq = dex_data['liquidity_usd']
-            if liq < 5_000_000:
-                indicators.append({
-                    'indicator': 'Tracked public DEX liquidity is a scoped market slice',
-                    'collection_priority': 'HIGH',
-                    'details': (
-                        f'Tracked public DEX liquidity is ${liq:,.2f}. This snapshot should not be treated as complete '
-                        'RLB liquidity because Rollbit app/on-platform liquidity, order-book depth, and custody-side '
-                        'token inventory are not measured here. It should not be described as the only RLB trading or liquidity venue.'
-                    ),
-                })
-                print(f"  [DATA] Tracked public DEX liquidity: ${liq:,.2f}")
+        if dex_data and dex_data.get('tracked_primary_rlb_liquidity_usd', 0) > 0:
+            liq = dex_data['tracked_primary_rlb_liquidity_usd']
+            indicators.append({
+                'indicator': 'Tracked public DEX liquidity is a scoped market slice',
+                'collection_priority': 'HIGH',
+                'details': (
+                    f'Tracked public DEX liquidity is ${liq:,.2f}. This snapshot should not be treated as complete '
+                    'RLB liquidity because Rollbit app/on-platform liquidity, order-book depth, and custody-side '
+                    'token inventory are not measured here. It should not be described as the only RLB trading or liquidity venue.'
+                ),
+            })
+            print(f"  [DATA] Tracked public DEX liquidity: ${liq:,.2f}")
 
         # 5. Treasury outflows vs buybacks
         total_treasury_outflow = sum(
@@ -937,7 +990,8 @@ class RLBTokenAnalyzer:
         result['price_analysis'] = {
             'current_price': rlb_price,
             'market_cap': rlb_mcap,
-            'decline_from_high_pct': -77,  # documented
+            'ath_usd': RLB_TOKEN['ath_usd'],
+            'decline_from_high_pct': round(decline_from_high_pct, 2) if decline_from_high_pct is not None else None,
         }
 
         return result

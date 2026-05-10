@@ -1,6 +1,6 @@
 # Report 5: Public Event and Flow Timeline
 ## Rollbit / Bull Gaming N.V. — Source-Backed Chronology for Forensic Context
-**Date:** April 19, 2026 | **Classification:** Source Appendix
+**Date:** May 10, 2026 | **Classification:** Source Appendix
 **Companion:** ← [Report 1: On-Chain Financial Forensics](./REPORT_1_ONCHAIN_FORENSICS.md) | → [Report 7: Technical Deep Dive](./REPORT_7_TECHNICAL_DEEP_DIVE.md)
 
 ---
@@ -33,6 +33,8 @@ This appendix turns the scattered public coverage into a dated chronology. The a
 | 2026-02-13 | ChainCatcher reports **626.03 BTC** moved from an anonymous address, with some flow to **Bybit and Rollbit** | Important because this event was previously overstated as a confirmed Rollbit outflow | https://www.chaincatcher.com/en/tags/rollbit |
 | 2026-03-11 | ChainCatcher reports **200 BTC** moved from Coinbase, with some flow into Rollbit | Shows the platform still appearing in large BTC routing activity after the January SOL outflows | https://www.chaincatcher.com/en/tags/rollbit |
 | 2026-04-14 | Rollbit blog continues publishing promotions and community events | Confirms the brand remains operational and marketing-active in April 2026 | https://blog.rollbit.com/ |
+| 2026-05-10 | Refresh check found routine Rollbit blog posts after April 19, but no new material source-backed operator, regulatory, or RLB-token announcement from the named news/operator sources | Keeps the timeline current without adding unsupported interpretation; new complaint leads are preserved separately in Report 8 | https://blog.rollbit.com/ and https://www.chaincatcher.com/en/tags/rollbit |
+| 2026-05-10 | Curaçao Gaming Authority registry PDF captured; listed Bull Gaming N.V. license `OGL/2024/1260/0494`, B2C, company `157086`, issued Nov 23, 2025, expiring May 23, 2026 | Current registry capture is a public verification artifact, not a solvency or complaint-resolution artifact | https://gamingcontrol.spin-cdn.com/media/license_registry/20260324_20260323_ogl_license_registry.pdf |
 
 ---
 
@@ -48,6 +50,9 @@ Three chronology notes matter once the event list is cleaned up:
 
 3. **The platform remained visibly active after the most serious negative events.**
    Blog posts and promotions continued after the Ukraine-linked seizure reporting and after the January-February 2026 treasury alerts.
+
+4. **The May 10 refresh did not find a new material news/regulatory event after April 19.**
+   The post-freeze items found were routine operator promotions and complaint/review records. Those complaint/review leads are preserved in [Report 8](./REPORT_8_PUBLIC_RECORDS_AND_COMPLAINT_CAPTURE.md) but are not automatically counted in the frozen complaint corpus.
 
 ---
 
@@ -75,3 +80,5 @@ The goal of this timeline is to preserve sequence, sources, and classification, 
 - ChainCatcher Rollbit tag archive: https://www.chaincatcher.com/en/tags/rollbit
 - ChainCatcher January 9, 2026 BTC transfer: https://www.chaincatcher.com/article/2235971
 - ChainCatcher January 11, 2026 SOL transfer: https://www.chaincatcher.com/article/2236424
+- Curaçao Gaming Authority registry PDF captured May 10: https://gamingcontrol.spin-cdn.com/media/license_registry/20260324_20260323_ogl_license_registry.pdf
+- Official Rollbit blog index: https://blog.rollbit.com/

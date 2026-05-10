@@ -482,12 +482,58 @@ def summarize_onchain(blockchain: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def summarize_rlb() -> dict[str, Any]:
+def summarize_rlb(blockchain: dict[str, Any] | None = None) -> dict[str, Any]:
+    blockchain = blockchain or {}
+    rlb_analysis = blockchain.get("rlb_analysis") or {}
+    token_info = rlb_analysis.get("token_info") or {}
+    price_analysis = rlb_analysis.get("price_analysis") or {}
+
+    if token_info.get("tracked_primary_rlb_liquidity_usd"):
+        liquidity = float(token_info.get("tracked_primary_rlb_liquidity_usd") or 0)
+        market_cap = float(
+            price_analysis.get("market_cap")
+            or token_info.get("market_cap")
+            or token_info.get("fdv")
+            or 0
+        )
+        volume = float(token_info.get("tracked_primary_rlb_volume_24h_usd") or 0)
+        price = float(price_analysis.get("current_price") or token_info.get("price_usd") or 0)
+        snapshot_date = str(blockchain.get("timestamp", ""))[:10] or RLB_MARKET_SNAPSHOT["snapshot_date"]
+        ath_drawdown_pct = float(
+            price_analysis.get("decline_from_high_pct")
+            or RLB_MARKET_SNAPSHOT["ath_drawdown_pct"]
+        )
+        return {
+            "snapshot_date": snapshot_date,
+            "price_usd": price,
+            "market_cap_usd": round(market_cap, 2),
+            "top_4_pool_liquidity_usd": round(liquidity, 2),
+            "top_4_pool_volume_24h_usd": round(volume, 2),
+            "ath_drawdown_pct": ath_drawdown_pct,
+            "source": "output/blockchain_analysis.json live RLB analyzer",
+            "pairs_returned": token_info.get("pairs_returned", 0),
+            "primary_rlb_pair_count": token_info.get("primary_rlb_pair_count", 0),
+            "tracked_all_pair_liquidity_usd": round(float(token_info.get("tracked_all_pair_liquidity_usd") or 0), 2),
+            "tracked_all_pair_volume_24h_usd": round(float(token_info.get("tracked_all_pair_volume_24h_usd") or 0), 2),
+            "pairs": token_info.get("pairs", []),
+            "liquidity_to_market_cap_ratio": round(liquidity / market_cap, 4) if market_cap else None,
+            "volume_24h_to_liquidity_ratio": round(volume / liquidity, 4) if liquidity else None,
+            "liquidity_turnover_days_at_24h_volume": round(liquidity / volume, 1) if volume else None,
+            "one_pct_market_cap_vs_liquidity_ratio": round((market_cap * 0.01) / liquidity, 4) if liquidity and market_cap else None,
+            "five_pct_market_cap_vs_liquidity_ratio": round((market_cap * 0.05) / liquidity, 4) if liquidity and market_cap else None,
+        }
+
     liquidity = RLB_MARKET_SNAPSHOT["top_4_pool_liquidity_usd"]
     market_cap = RLB_MARKET_SNAPSHOT["market_cap_usd"]
     volume = RLB_MARKET_SNAPSHOT["top_4_pool_volume_24h_usd"]
     return {
         **RLB_MARKET_SNAPSHOT,
+        "source": "fallback April 19 static snapshot",
+        "pairs_returned": 0,
+        "primary_rlb_pair_count": 0,
+        "tracked_all_pair_liquidity_usd": liquidity,
+        "tracked_all_pair_volume_24h_usd": volume,
+        "pairs": [],
         "liquidity_to_market_cap_ratio": round(liquidity / market_cap, 4),
         "volume_24h_to_liquidity_ratio": round(volume / liquidity, 4),
         "liquidity_turnover_days_at_24h_volume": round(liquidity / volume, 1) if volume else None,
@@ -640,7 +686,7 @@ def build_findings(
                 f"{public_capture.get('failed_count', 0)} request failure. Capture gaps should drive browser-aware follow-up."
             ),
             "primary_artifacts": "REPORT_8_PUBLIC_RECORDS_AND_COMPLAINT_CAPTURE.md; output/public_record_capture.json; output/public_record_index.csv",
-            "next_steps": "Add browser screenshots for Trustpilot and challenge-gated pages, re-check Casino Guru 404s, and map capture hashes back into cases_database.json.",
+            "next_steps": "Add browser screenshots for Trustpilot, Reddit, and challenge-gated pages; preserve current Casino Guru hashes; and map capture hashes back into cases_database.json.",
         },
     ]
 
@@ -655,7 +701,7 @@ def build_deep_dive() -> dict[str, Any]:
     cases = canonical_cases(cases_payload)
     corpus = summarize_cases(cases)
     onchain = summarize_onchain(blockchain)
-    rlb = summarize_rlb()
+    rlb = summarize_rlb(blockchain)
     public_capture = summarize_public_record_capture(public_record_capture)
     findings = build_findings(corpus, onchain, rlb, public_capture)
 

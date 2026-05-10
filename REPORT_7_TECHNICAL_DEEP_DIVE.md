@@ -1,6 +1,6 @@
 # Report 7: Technical Forensic Deep Dive
 ## Artifact Quality, Custody Visibility, Market-Data Scope, and Complaint Signal Extraction
-**Generated:** April 25, 2026 | **Data Freeze:** April 19, 2026 | **Classification:** Technical Forensic Work Product
+**Generated:** May 10, 2026 | **Corpus Data Freeze:** April 19, 2026 | **Classification:** Technical Forensic Work Product
 
 This report is deliberately technical. It does not try to argue a legal theory or ask the reader to accept an opinion about intent. It turns the repository's existing artifacts into indicators that can be tested, re-run, contradicted, or expanded.
 
@@ -32,9 +32,9 @@ Legal and regulatory references are treated only as source context or custody-lo
 
 | ID | Collection Priority | Confidence | Finding |
 |----|---------------------|------------|---------|
-| `TF-01` | High | High | Known public wallets are **not verified reserves**. The loaded wallet snapshot shows **$67,620,165.30**, but there is no proof-of-reserves system tying those balances to customer liabilities or segregated custody. |
-| `TF-02` | Medium | High | Direct published outflows are bounded at **$17,400,000.00**, equal to **25.7%** of the visible wallet snapshot. Mixed BTC alerts must stay separated from direct outflows, and routine operating payouts need a baseline before interpretation. |
-| `TF-03` | High | High | RLB tracked public DEX pool liquidity is **$4,713,083.87**, equal to **4.7%** of the **$101,223,201** market cap. This excludes Rollbit app/on-platform liquidity and custody-side token inventory. |
+| `TF-01` | High | High | Known public wallets are **not verified reserves**. The May 10 live wallet snapshot shows **$59,125,362.65**, but there is no proof-of-reserves system tying those balances to customer liabilities or segregated custody. |
+| `TF-02` | Medium | High | Direct published outflows are bounded at **$17,400,000.00**, equal to **29.4%** of the visible wallet snapshot. Mixed BTC alerts must stay separated from direct outflows, and routine operating payouts need a baseline before interpretation. |
+| `TF-03` | High | High | RLB tracked public DEX pool liquidity is **$5,050,401.30**, equal to **4.3%** of the **$118,218,080.44** market cap. This excludes Rollbit app/on-platform liquidity and custody-side token inventory. |
 | `TF-04` | High | Medium | Seven counted cases mention withdrawal control, KYC/compliance escalation, and win/profit context together, totaling **$83,401.00**. |
 | `TF-05` | High | High | Multiple-account accusation is the dominant dispute script: **31 of 80** counted complaints by category, and **29** keyword hits for linked-account language. |
 | `TF-06` | Medium | High | Corpus fidelity must be split by evidence class: **27** quantified cases are confirmed and **47** are claimed. |
@@ -66,13 +66,13 @@ None of that exists in the current public artifact set.
 
 ### 3.1 Loaded wallet snapshot
 
-The corrected cached analyzer now preserves the April 19 wallet snapshot instead of treating missing live API data as zero.
+The corrected cached analyzer preserves the April 19 wallet snapshot instead of treating missing live API data as zero. The May 10 live analyzer refresh updates the current wallet and RLB market figures below.
 
 | Metric | Value |
 |--------|-------|
-| Attributed public wallet value | **$67,620,165.30** |
-| BTC treasury value | **$48,758,133.54** |
-| SOL treasury value | **$18,862,031.76** |
+| Attributed public wallet value | **$59,125,362.65** |
+| BTC treasury value | **$53,454,712.56** |
+| SOL treasury value | **$5,670,650.09** |
 | Tracked ETH wallet value | **$0.00** |
 | Direct published outflows | **$17,400,000.00** |
 | January 2026 direct outflows | **$7,230,000.00** |
@@ -84,9 +84,9 @@ The corrected cached analyzer now preserves the April 19 wallet snapshot instead
 
 | Ratio | Value | Interpretation |
 |-------|-------|----------------|
-| Direct outflows / visible wallet snapshot | **25.7%** | Material, but not a reserve-coverage result |
-| January 2026 direct outflows / visible wallet snapshot | **10.7%** | Large enough to track, too small to call a full drain |
-| Reported off-wallet event / visible wallet snapshot | **181.9%** | Strong custody-location signal; public wallets are not a reserve map |
+| Direct outflows / visible wallet snapshot | **29.4%** | Material, but not a reserve-coverage result |
+| January 2026 direct outflows / visible wallet snapshot | **12.2%** | Large enough to track, too small to call a full drain |
+| Reported off-wallet event / visible wallet snapshot | **208.0%** | Strong custody-location signal; public wallets are not a reserve map |
 
 ### 3.3 Working custody hypotheses
 
@@ -104,15 +104,15 @@ The technical point is narrower than a legal framing: the visible wallet set is 
 
 | Metric | Value |
 |--------|-------|
-| RLB price | **$0.059523** |
-| Market cap | **$101,223,201** |
-| Top-four tracked public DEX pool liquidity | **$4,713,083.87** |
-| Top-four 24h volume | **$153,106.24** |
-| Tracked public DEX liquidity / market cap | **4.66%** |
-| 24h volume / liquidity | **3.25%** |
-| Days to turn visible liquidity at 24h volume | **30.8 days** |
-| 1% market-cap notional / liquidity | **21.5%** |
-| 5% market-cap notional / liquidity | **107.4%** |
+| RLB price | **$0.070204** |
+| Market cap | **$118,218,080.44** |
+| Top-four tracked public DEX pool liquidity | **$5,050,401.30** |
+| Top-four 24h volume | **$200,654.78** |
+| Tracked public DEX liquidity / market cap | **4.3%** |
+| 24h volume / liquidity | **4.0%** |
+| Days to turn visible liquidity at 24h volume | **25.2 days** |
+| 1% market-cap notional / liquidity | **23.4%** |
+| 5% market-cap notional / liquidity | **117.0%** |
 
 Analytical implication: RLB market cap is not usable as a reserve proxy. The repo's current DEX snapshot captures only a few million dollars across top public pools and does not quantify Rollbit app/on-platform liquidity, internal conversion depth, order books, or custodial token inventory.
 
@@ -223,18 +223,18 @@ The web surface has two different capture problems:
 The new capture utility [scripts/web_surface_capture.py](./scripts/web_surface_capture.py) produced a current capture bundle at:
 
 - [output/web_surface_capture.json](./output/web_surface_capture.json)
-- local raw-capture directory: `output/captures/web/20260425T104619Z`
+- local raw-capture directory: `output/captures/web/20260510T101136Z`
 
 The raw capture directory is ignored by git for public release. Publish the JSON summary and hashes; keep raw bodies local or private.
 
-April 25, 2026 capture highlights:
+May 10, 2026 capture highlights:
 
 | Target | HTTP Result | Body SHA-256 Prefix |
 |--------|-------------|---------------------|
-| `rollbit.com` | HTTP/2 403 | `4be5da3178ba0422` |
-| `blog.rollbit.com` | HTTP/2 200 | `234ca47b237f4ab9` |
-| `rollbot.rollbit.com` | HTTP/2 200 | `a18a6c7921ee03fa` |
-| `cert.cga.cw/page/certification_policy` | HTTP/2 200 | `8c138281c463af80` |
+| `rollbit.com` | HTTP/2 403 | `5414107756277ffa` |
+| `blog.rollbit.com` | HTTP/2 200 | `f44662a5702d9dba` |
+| `rollbot.rollbit.com` | HTTP/2 200 | `cf329fdef9e3a463` |
+| `cert.cga.cw/page/certification_policy` | HTTP/2 200 | `02ee39c1782d1355` |
 
 Minimum acquisition bundle per web capture:
 
@@ -255,7 +255,7 @@ Minimum acquisition bundle per web capture:
 4. Capture any public Rollbit app/on-platform RLB trade, liquidity, dashboard, or order-book data, and label it separately from public DEX liquidity.
 5. Re-capture high-value direct forum and mediation cases with HTML hashes and screenshots.
 6. Manually adjudicate the three duplicate candidates.
-7. Follow up on [Report 8](./REPORT_8_PUBLIC_RECORDS_AND_COMPLAINT_CAPTURE.md) capture gaps: Trustpilot browser capture, Casino Guru 404 review, and archived missing pages.
+7. Follow up on [Report 8](./REPORT_8_PUBLIC_RECORDS_AND_COMPLAINT_CAPTURE.md) capture gaps: Trustpilot browser capture, Reddit 403 capture, and browser screenshots for newly identified post-freeze complaint leads.
 8. Add a reproducible web capture script for DNS, TLS, headers, challenge HTML, and blog metadata.
 9. Build an RLB control map: deployer, admin rights, burn wallets, top holders, LP wallets, and known affiliate/team clusters.
 10. Maintain a separate "legal submission" file as a downstream use case only; do not let it drive the forensic report structure.

@@ -1,8 +1,8 @@
 # Synthesis: Forensic Findings and Open Data Gaps
 **Document Classification:** Technical Forensic Synthesis
 **Subject:** Bull Gaming N.V. / Rollbit
-**Data Freeze:** April 19, 2026
-**Updated:** April 25, 2026
+**Corpus Data Freeze:** April 19, 2026
+**Updated:** May 10, 2026
 
 This synthesis is written from a data-analysis posture. It does not try to prove a legal theory or ask the reader to accept an opinion about intent. It asks what the artifacts show, where they conflict, and what must be collected next.
 
@@ -21,10 +21,10 @@ Primary technical artifacts:
 ## Publication Lead Data Points
 
 1. The repository does **not** have Rollbit's verified reserve. It has attributed public wallet balances and incomplete public custody signals.
-2. Known BTC/SOL wallets showed **$67.62M** on April 19, 2026, but there is no liability-matched proof-of-reserves, complete custody inventory, exchange-balance attestation, or customer-fund segregation proof.
+2. Known BTC/SOL wallets showed **$59.13M** in the May 10, 2026 live refresh, but there is no liability-matched proof-of-reserves, complete custody inventory, exchange-balance attestation, or customer-fund segregation proof.
 3. The reported **$123M** off-wallet/exchange-proxy custody event is larger than the visible wallet snapshot, which reinforces that public wallets are not a reserve map.
 4. Public complaints repeatedly describe funds becoming inaccessible after wins, withdrawals, KYC/compliance escalation, or multiple-account accusations.
-5. RLB market cap is not usable as reserve depth. The repo captured **$4.71M** of tracked public DEX liquidity against **$101.22M** market cap, but it does not quantify Rollbit app/on-platform liquidity, order-book depth, or custody-side token inventory.
+5. RLB market cap is not usable as reserve depth. The May 10 refresh captured **$5.05M** of tracked public DEX liquidity against **$118.22M** market cap, but it does not quantify Rollbit app/on-platform liquidity, order-book depth, or custody-side token inventory.
 
 **Interpretation boundary:** these data points define an evidence collection problem. They do not prove intent, validate every complaint, or establish a complete custody or RLB venue-depth map.
 
@@ -34,15 +34,15 @@ Primary technical artifacts:
 
 | Evidence Layer | Direct Observation | Analytical Use |
 |----------------|--------------------|------------------------|
-| Known public wallets | BTC/SOL snapshot shows **$67.62M** visible on April 19, 2026 | Attributed wallets are not empty, but they are not verified reserves |
+| Known public wallets | BTC/SOL snapshot shows **$59.13M** visible on May 10, 2026 | Attributed wallets are not empty, but they are not verified reserves |
 | Treasury event timeline | Direct outflows total **$17.40M**; mixed BTC alerts total **$56.12M** | Directionality must stay explicit; mixed alerts are not direct outflows |
 | Off-wallet custody signal | Reported exchange/proxy custody event is **$123M** | Public wallets are not a reserve map |
-| RLB token market | Tracked public DEX pool liquidity is **$4.71M** against **$101.22M** market cap | Token headline value is not reserve depth; Rollbit app/on-platform liquidity and token-control attribution remain unmapped |
+| RLB token market | Tracked public DEX pool liquidity is **$5.05M** against **$118.22M** market cap | Token headline value is not reserve depth; Rollbit app/on-platform liquidity and token-control attribution remain unmapped |
 | Complaint corpus | **80** counted complaints; **74** quantified; **4** resolved | Recurrent operational dispute pattern remains unresolved at corpus level |
-| Source acquisition | **53** deduplicated public targets captured; **52** HTTP captures written | Raw-source preservation now exists separately from complaint counting |
+| Source acquisition | **67** deduplicated public targets captured; **67** HTTP responses written in the May 10 refresh | Raw-source preservation now exists separately from complaint counting |
 | Web surface | Main app is Cloudflare challenge-gated; blog is Ghost/Fastly and indexable | Product and publication layers require separate acquisition methods |
 
-The corrected cached analyzer now preserves the April 19 wallet snapshot. It no longer writes a stale `$0` visible-wallet result when running without live API calls.
+The corrected cached analyzer preserves the April 19 wallet snapshot when running offline. The May 10 live run refreshed wallet, RLB, and public-source capture outputs separately.
 
 ---
 
@@ -71,8 +71,8 @@ The current answer is no. The repo does not have:
 | Hypothesis | Current Support | Contradictions / Gaps | Next Test |
 |------------|-----------------|------------------------|-----------|
 | `H1`: Public wallets are not verified reserves | Supported by absence of liability data, absence of reserve attestation, and $123M off-wallet custody reporting | Public wallet balances still show operational funds | Preserve source documents, map exchange/proxy custody, and require liability-matched snapshots |
-| `H2`: Recent visible wallet activity is operational, not a current drain | Supported by April 19 sampled BTC/SOL activity and nonzero wallet balances | Full recent transaction graph has not been exported in this repo | Export recent BTC/SOL transactions with direction, counterparties, and value buckets |
-| `H3`: The RLB venue-depth model is incomplete | Supported by **4.66%** tracked public DEX liquidity/market-cap ratio and incomplete token-control mapping | DEXScreener/CoinGecko data is a public DEX slice, not a full slippage, holder-control, or Rollbit app/on-platform liquidity model; official Rollbit materials describe direct RLB trading and liquidity pools on Rollbit | Pull Uniswap pool state, capture any public Rollbit app/on-platform trade/liquidity data, map top holders, identify admin/deployer/burn/LP wallets, and simulate exits |
+| `H2`: Recent visible wallet activity is operational, not a current drain | Supported by April 19 sampled BTC/SOL activity, May 10 active wallet state, and nonzero wallet balances | Full recent transaction graph has not been exported in this repo | Export recent BTC/SOL transactions with direction, counterparties, and value buckets |
+| `H3`: The RLB venue-depth model is incomplete | Supported by **4.3%** tracked public DEX liquidity/market-cap ratio and incomplete token-control mapping | DEXScreener/CoinGecko data is a public DEX slice, not a full slippage, holder-control, or Rollbit app/on-platform liquidity model; official Rollbit materials describe direct RLB trading and liquidity pools on Rollbit | Pull Uniswap pool state, capture any public Rollbit app/on-platform trade/liquidity data, map top holders, identify admin/deployer/burn/LP wallets, and simulate exits |
 | `H4`: Complaint pattern reflects a repeatable control process | Supported by keyword/compound extraction across 80 counted complaints | Complaint data is public-source and mixed fidelity | Re-capture high-value cases, hash pages, preserve screenshots, and split confirmed vs claimed |
 | `H5`: Main-site acquisition requires browser-aware methods | Supported by Cloudflare challenge behavior | Challenge state can vary by geography, ASN, cookies, and time | Capture DNS/TLS/headers/body/screenshots from controlled environments |
 
@@ -133,7 +133,7 @@ Both problems reduce forensic quality. The revised structure fixes the technical
 6. Build an RLB control map: deployer, admin rights, burn wallets, top holders, LP wallets, and known affiliate/team clusters.
 7. Re-capture the highest-value direct forum and mediation cases with HTML hashes and screenshots.
 8. Manually review the duplicate candidates in [Report 7](./REPORT_7_TECHNICAL_DEEP_DIVE.md).
-9. Follow up [Report 8](./REPORT_8_PUBLIC_RECORDS_AND_COMPLAINT_CAPTURE.md) capture gaps: Trustpilot challenge capture and Casino Guru 404 review.
+9. Follow up [Report 8](./REPORT_8_PUBLIC_RECORDS_AND_COMPLAINT_CAPTURE.md) capture gaps: Trustpilot challenge capture, Reddit 403 capture, and browser screenshots for newly identified post-freeze leads.
 10. Add a reproducible web capture script for DNS, TLS, headers, challenge pages, and blog metadata.
 11. Keep [LEGAL_SUBMISSION_TEMPLATE.md](./LEGAL_SUBMISSION_TEMPLATE.md) as downstream packaging only.
 
@@ -141,6 +141,6 @@ Both problems reduce forensic quality. The revised structure fixes the technical
 
 ## Bottom Line
 
-Rollbit appears operational, and the known BTC/SOL wallets were not empty at the April 19 snapshot. The current artifact boundary is different: the public wallet set is not a verified reserve, sampled withdrawals look like routine operating activity unless tied to a broader transaction graph, the operating/custody model is not publicly reconstructable from current artifacts, RLB public DEX data is not a full venue-depth map, complaint signals show repeatable withdrawal/KYC/profit-trigger patterns, and the main web application requires careful acquisition because ordinary passive HTTP inspection stops at the edge challenge.
+Rollbit appears operational, and the known BTC/SOL wallets were not empty in the May 10 refresh. The current artifact boundary is different: the public wallet set is not a verified reserve, sampled withdrawals look like routine operating activity unless tied to a broader transaction graph, the operating/custody model is not publicly reconstructable from current artifacts, RLB public DEX data is not a full venue-depth map, complaint signals show repeatable withdrawal/KYC/profit-trigger patterns, and the main web application requires careful acquisition because ordinary passive HTTP inspection stops at the edge challenge.
 
 That is a testable data-collection frame, not a final conclusion.

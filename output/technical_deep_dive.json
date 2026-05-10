@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-10T10:05:27.132323+00:00",
+  "generated_at": "2026-05-10T10:32:44.843631+00:00",
   "input_artifacts": {
     "cases_database": "cases_database.json",
     "corpus_metrics": "output/corpus_metrics.json",
@@ -475,39 +475,39 @@
     ]
   },
   "onchain_visibility_analysis": {
-    "mode": "cached",
-    "snapshot_note": "Cached mode preserves the April 19, 2026 wallet snapshot from REPORT_1_ONCHAIN_FORENSICS.md; it does not imply current live balances.",
+    "mode": "fallback_or_live",
+    "snapshot_note": "",
     "wallet_count": 6,
-    "visible_wallet_usd": 67620165.3,
-    "visible_btc_sol_usd": 67620165.3,
+    "visible_wallet_usd": 59125362.65,
+    "visible_btc_sol_usd": 59125362.65,
     "direct_outflow_usd": 17400000.0,
     "jan_2026_direct_outflow_usd": 7230000.0,
     "known_inflow_usd": 45190000.0,
     "mixed_flow_usd": 56120000.0,
     "reported_off_wallet_event_usd": 123000000.0,
-    "direct_outflow_to_visible_wallet_ratio": 0.2573,
-    "jan_2026_outflow_to_visible_wallet_ratio": 0.1069,
-    "reported_off_wallet_to_visible_wallet_ratio": 1.819,
+    "direct_outflow_to_visible_wallet_ratio": 0.2943,
+    "jan_2026_outflow_to_visible_wallet_ratio": 0.1223,
+    "reported_off_wallet_to_visible_wallet_ratio": 2.0803,
     "wallets": [
       {
         "chain": "BTC",
         "address": "bc1qw8wrek2m7nlqldll66ajnwr9mh64syvkt67zlu",
         "label": "Rollbit BTC Treasury",
-        "balance_native": 649.54550772,
-        "balance_usd": 48758133.54,
-        "tx_count": 469936,
-        "last_activity": "2026-04-19",
-        "fetched_at": "2026-04-19T09:23:00+00:00"
+        "balance_native": 661.63373307,
+        "balance_usd": 53454712.562191434,
+        "tx_count": 472538,
+        "last_activity": "",
+        "fetched_at": "2026-05-10T10:28:44.451031+00:00"
       },
       {
         "chain": "SOL",
         "address": "RBHdGVfDfMjfU6iUfCb1LczMJcQLx7hGnxbzRsoDNvx",
         "label": "Rollbit SOL Treasury",
-        "balance_native": 222587.110683,
-        "balance_usd": 18862031.76,
+        "balance_native": 60474.033115557,
+        "balance_usd": 5670650.08524578,
         "tx_count": 0,
-        "last_activity": "2026-04-19",
-        "fetched_at": "2026-04-19T09:24:00+00:00"
+        "last_activity": "",
+        "fetched_at": "2026-05-10T10:28:45.483479+00:00"
       },
       {
         "chain": "ETH",
@@ -517,7 +517,7 @@
         "balance_usd": 0.0,
         "tx_count": 0,
         "last_activity": "",
-        "fetched_at": "2026-04-19T09:24:00+00:00"
+        "fetched_at": "2026-05-10T10:28:46.664287+00:00"
       },
       {
         "chain": "ETH",
@@ -527,7 +527,7 @@
         "balance_usd": 0.0,
         "tx_count": 0,
         "last_activity": "",
-        "fetched_at": "2026-04-19T09:24:00+00:00"
+        "fetched_at": "2026-05-10T10:28:46.971044+00:00"
       },
       {
         "chain": "ETH",
@@ -537,7 +537,7 @@
         "balance_usd": 0.0,
         "tx_count": 0,
         "last_activity": "",
-        "fetched_at": "2026-04-19T09:24:00+00:00"
+        "fetched_at": "2026-05-10T10:28:47.277789+00:00"
       },
       {
         "chain": "ETH",
@@ -547,7 +547,7 @@
         "balance_usd": 0.0,
         "tx_count": 0,
         "last_activity": "",
-        "fetched_at": "2026-04-19T09:24:00+00:00"
+        "fetched_at": "2026-05-10T10:28:47.584974+00:00"
       }
     ],
     "events_by_direction": {
@@ -558,21 +558,128 @@
     }
   },
   "rlb_market_structure": {
-    "snapshot_date": "2026-04-19",
-    "price_usd": 0.059523,
-    "market_cap_usd": 101223201,
-    "top_4_pool_liquidity_usd": 4713083.87,
-    "top_4_pool_volume_24h_usd": 153106.24,
-    "ath_drawdown_pct": -77.49,
-    "liquidity_to_market_cap_ratio": 0.0466,
-    "volume_24h_to_liquidity_ratio": 0.0325,
-    "liquidity_turnover_days_at_24h_volume": 30.8,
-    "one_pct_market_cap_vs_liquidity_ratio": 0.2148,
-    "five_pct_market_cap_vs_liquidity_ratio": 1.0739
+    "snapshot_date": "2026-05-10",
+    "price_usd": 0.070204,
+    "market_cap_usd": 118218080.44,
+    "top_4_pool_liquidity_usd": 5050401.3,
+    "top_4_pool_volume_24h_usd": 200654.78,
+    "ath_drawdown_pct": -73.44,
+    "source": "output/blockchain_analysis.json live RLB analyzer",
+    "pairs_returned": 5,
+    "primary_rlb_pair_count": 4,
+    "tracked_all_pair_liquidity_usd": 5055275.16,
+    "tracked_all_pair_volume_24h_usd": 200713.32,
+    "pairs": [
+      {
+        "chain_id": "ethereum",
+        "dex": "uniswap",
+        "labels": [
+          "v3"
+        ],
+        "base_symbol": "RLB",
+        "quote_symbol": "USDT",
+        "pair": "RLB/USDT",
+        "price_usd": 0.07004,
+        "price_change_24h": 0.61,
+        "volume_24h": 74166.73,
+        "liquidity_usd": 2378658.49,
+        "fdv": 117961256.0,
+        "market_cap": 118126476.0,
+        "pair_address": "0x33676385160f9d8f03a0db2821029882f7c79e93",
+        "url": "https://dexscreener.com/ethereum/0x33676385160f9d8f03a0db2821029882f7c79e93",
+        "txns_24h_buys": 37,
+        "txns_24h_sells": 25
+      },
+      {
+        "chain_id": "ethereum",
+        "dex": "uniswap",
+        "labels": [
+          "v3"
+        ],
+        "base_symbol": "RLB",
+        "quote_symbol": "USDC",
+        "pair": "RLB/USDC",
+        "price_usd": 0.07005,
+        "price_change_24h": 0.61,
+        "volume_24h": 103059.82,
+        "liquidity_usd": 2109509.55,
+        "fdv": 117992360.0,
+        "market_cap": 118157624.0,
+        "pair_address": "0x2322e5517A3cBc75A3f02d74c96F82dda120D841",
+        "url": "https://dexscreener.com/ethereum/0x2322e5517a3cbc75a3f02d74c96f82dda120d841",
+        "txns_24h_buys": 44,
+        "txns_24h_sells": 30
+      },
+      {
+        "chain_id": "ethereum",
+        "dex": "uniswap",
+        "labels": [
+          "v3"
+        ],
+        "base_symbol": "RLB",
+        "quote_symbol": "WETH",
+        "pair": "RLB/WETH",
+        "price_usd": 0.06996,
+        "price_change_24h": 0.64,
+        "volume_24h": 23425.25,
+        "liquidity_usd": 557387.6,
+        "fdv": 117834620.0,
+        "market_cap": 117999663.0,
+        "pair_address": "0x510100D5143e011Db24E2aa38abE85d73D5B2177",
+        "url": "https://dexscreener.com/ethereum/0x510100d5143e011db24e2aa38abe85d73d5b2177",
+        "txns_24h_buys": 24,
+        "txns_24h_sells": 18
+      },
+      {
+        "chain_id": "ethereum",
+        "dex": "uniswap",
+        "labels": [
+          "v3"
+        ],
+        "base_symbol": "DI",
+        "quote_symbol": "RLB",
+        "pair": "DI/RLB",
+        "price_usd": 0.0003987,
+        "price_change_24h": 1.56,
+        "volume_24h": 58.54,
+        "liquidity_usd": 4873.86,
+        "fdv": 39877.0,
+        "market_cap": 39877.0,
+        "pair_address": "0x32Fb6E7aaf16BAF9a41A5FaCf96C383c0F56fcC7",
+        "url": "https://dexscreener.com/ethereum/0x32fb6e7aaf16baf9a41a5facf96c383c0f56fcc7",
+        "txns_24h_buys": 1,
+        "txns_24h_sells": 1
+      },
+      {
+        "chain_id": "ethereum",
+        "dex": "uniswap",
+        "labels": [
+          "v4"
+        ],
+        "base_symbol": "RLB",
+        "quote_symbol": "ETH",
+        "pair": "RLB/ETH",
+        "price_usd": 0.0699,
+        "price_change_24h": 0.06,
+        "volume_24h": 2.98,
+        "liquidity_usd": 4845.66,
+        "fdv": 117737420.0,
+        "market_cap": 117903978.0,
+        "pair_address": "0xe11593f6cf00ce09b2bcd0b9a5e6bfbd656f2593dbbbc27fd7772159ded5881d",
+        "url": "https://dexscreener.com/ethereum/0xe11593f6cf00ce09b2bcd0b9a5e6bfbd656f2593dbbbc27fd7772159ded5881d",
+        "txns_24h_buys": 1,
+        "txns_24h_sells": 1
+      }
+    ],
+    "liquidity_to_market_cap_ratio": 0.0427,
+    "volume_24h_to_liquidity_ratio": 0.0397,
+    "liquidity_turnover_days_at_24h_volume": 25.2,
+    "one_pct_market_cap_vs_liquidity_ratio": 0.2341,
+    "five_pct_market_cap_vs_liquidity_ratio": 1.1704
   },
   "web_surface_capture": {
-    "generated_at": "2026-04-25T10:46:28.212399+00:00",
-    "capture_dir": "output/captures/web/20260425T104619Z",
+    "generated_at": "2026-05-10T10:11:47.326386+00:00",
+    "capture_dir": "output/captures/web/20260510T101136Z",
     "targets": [
       {
         "name": "main_app",
@@ -581,9 +688,9 @@
         "selected_ip": "104.20.26.76",
         "final_status": "HTTP/2 403",
         "body_size_bytes": 5252,
-        "body_sha256": "4be5da3178ba0422e4b5cf5324e45ef1cc66199325e0e5015379be1642e78dec",
-        "headers_file": "output/captures/web/20260425T104619Z/main_app_rollbit.com.headers.txt",
-        "body_file": "output/captures/web/20260425T104619Z/main_app_rollbit.com.body.bin",
+        "body_sha256": "5414107756277ffa0d0934f144531ccd14cb361a918a8e7e76ff5f959a25ed31",
+        "headers_file": "output/captures/web/20260510T101136Z/main_app_rollbit.com.headers.txt",
+        "body_file": "output/captures/web/20260510T101136Z/main_app_rollbit.com.body.bin",
         "tls_parsed": "subject=CN=rollbit.com\nissuer=C=US, O=Let's Encrypt, CN=E8\nnotBefore=Apr  9 18:41:15 2026 GMT\nnotAfter=Jul  8 18:41:14 2026 GMT\nsha256 Fingerprint=CD:CA:91:F4:B9:2D:06:DE:DE:C1:24:20:E1:E3:5B:00:05:C0:88:B1:8B:CB:77:53:57:9E:DB:0B:74:3F:5C:59\nX509v3 Subject Alternative Name: \n    DNS:*.rollbit.com, DNS:rollbit.com\n"
       },
       {
@@ -592,11 +699,11 @@
         "path": "/",
         "selected_ip": "151.101.3.7",
         "final_status": "HTTP/2 200",
-        "body_size_bytes": 69908,
-        "body_sha256": "234ca47b237f4ab98833a91b10d2ee74775a3619cd2c451a61b009be35177cae",
-        "headers_file": "output/captures/web/20260425T104619Z/blog_blog.rollbit.com.headers.txt",
-        "body_file": "output/captures/web/20260425T104619Z/blog_blog.rollbit.com.body.bin",
-        "tls_parsed": "subject=CN=blog.rollbit.com\nissuer=C=US, O=Certainly, CN=Certainly Intermediate R1\nnotBefore=Apr 19 17:03:03 2026 GMT\nnotAfter=May 19 17:03:02 2026 GMT\nsha256 Fingerprint=6E:D0:37:3F:88:8D:7D:28:7F:85:83:A6:D0:2B:DB:E4:EB:48:8A:82:07:5B:03:48:9D:E1:74:D9:E1:EB:11:3B\nX509v3 Subject Alternative Name: \n    DNS:blog.rollbit.com\n"
+        "body_size_bytes": 70169,
+        "body_sha256": "f44662a5702d9dba170ad5e58fdedc49fbc54ff8c676c492ab8f6b5cd8e8ddf1",
+        "headers_file": "output/captures/web/20260510T101136Z/blog_blog.rollbit.com.headers.txt",
+        "body_file": "output/captures/web/20260510T101136Z/blog_blog.rollbit.com.body.bin",
+        "tls_parsed": "subject=CN=blog.rollbit.com\nissuer=C=US, O=Certainly, CN=Certainly Intermediate R1\nnotBefore=May  9 16:06:58 2026 GMT\nnotAfter=Jun  8 16:06:57 2026 GMT\nsha256 Fingerprint=FA:F9:E6:7D:13:B4:8F:13:63:AE:70:90:71:D5:6F:70:8D:0D:3A:39:80:54:C2:53:AD:0C:99:C1:79:DC:93:F5\nX509v3 Subject Alternative Name: \n    DNS:blog.rollbit.com\n"
       },
       {
         "name": "rollbot",
@@ -605,59 +712,58 @@
         "selected_ip": "104.20.26.76",
         "final_status": "HTTP/2 200",
         "body_size_bytes": 1448,
-        "body_sha256": "a18a6c7921ee03fa2099bcd3cb7b13347959ae704c90b13ee6cf8318b85e8c91",
-        "headers_file": "output/captures/web/20260425T104619Z/rollbot_rollbot.rollbit.com.headers.txt",
-        "body_file": "output/captures/web/20260425T104619Z/rollbot_rollbot.rollbit.com.body.bin",
+        "body_sha256": "cf329fdef9e3a463c19a01339ea235ff57d44769db4179a0a0ec6e16b2c0661b",
+        "headers_file": "output/captures/web/20260510T101136Z/rollbot_rollbot.rollbit.com.headers.txt",
+        "body_file": "output/captures/web/20260510T101136Z/rollbot_rollbot.rollbit.com.body.bin",
         "tls_parsed": "subject=CN=rollbit.com\nissuer=C=US, O=Let's Encrypt, CN=E8\nnotBefore=Apr  9 18:41:15 2026 GMT\nnotAfter=Jul  8 18:41:14 2026 GMT\nsha256 Fingerprint=CD:CA:91:F4:B9:2D:06:DE:DE:C1:24:20:E1:E3:5B:00:05:C0:88:B1:8B:CB:77:53:57:9E:DB:0B:74:3F:5C:59\nX509v3 Subject Alternative Name: \n    DNS:*.rollbit.com, DNS:rollbit.com\n"
       },
       {
         "name": "cga_policy",
         "host": "cert.cga.cw",
         "path": "/page/certification_policy",
-        "selected_ip": "172.67.71.89",
+        "selected_ip": "104.26.5.227",
         "final_status": "HTTP/2 200",
         "body_size_bytes": 55780,
-        "body_sha256": "8c138281c463af80bec8cd4289b2674722f4b3427c44483f95701e30812e239a",
-        "headers_file": "output/captures/web/20260425T104619Z/cga_policy_cert.cga.cw.headers.txt",
-        "body_file": "output/captures/web/20260425T104619Z/cga_policy_cert.cga.cw.body.bin",
-        "tls_parsed": "subject=CN=cga.cw\nissuer=C=US, O=Google Trust Services, CN=WE1\nnotBefore=Mar  3 00:16:54 2026 GMT\nnotAfter=Jun  1 01:16:41 2026 GMT\nsha256 Fingerprint=38:ED:99:F5:07:EF:AD:21:DB:9F:D6:BB:92:A6:70:84:0E:85:4F:2B:A4:C9:BD:02:89:92:06:9C:32:EA:ED:F3\nX509v3 Subject Alternative Name: \n    DNS:cga.cw, DNS:*.cga.cw\n"
+        "body_sha256": "02ee39c1782d13555e55df9ad3820554e7ce748409e01541b484479be0db0ef0",
+        "headers_file": "output/captures/web/20260510T101136Z/cga_policy_cert.cga.cw.headers.txt",
+        "body_file": "output/captures/web/20260510T101136Z/cga_policy_cert.cga.cw.body.bin",
+        "tls_parsed": "subject=CN=cga.cw\nissuer=C=US, O=Google Trust Services, CN=WE1\nnotBefore=May  1 01:29:30 2026 GMT\nnotAfter=Jul 30 02:29:17 2026 GMT\nsha256 Fingerprint=20:62:55:B7:A2:F7:2B:06:A8:FC:E7:1B:48:E5:A4:74:0B:95:3B:34:B5:21:AB:1A:50:A3:A6:BE:50:82:DB:D0\nX509v3 Subject Alternative Name: \n    DNS:cga.cw, DNS:*.cga.cw\n"
       }
     ]
   },
   "public_record_capture": {
-    "generated_at": "2026-04-25T11:11:18.543509+00:00",
-    "capture_dir": "output/captures/public_records/20260425T111024Z",
-    "targets_count": 53,
-    "records_count": 53,
-    "ok_count": 52,
-    "failed_count": 1,
-    "blocked_or_challenged_count": 1,
+    "generated_at": "2026-05-10T10:26:15.912927+00:00",
+    "capture_dir": "output/captures/public_records/20260510T102511Z",
+    "targets_count": 67,
+    "records_count": 67,
+    "ok_count": 67,
+    "failed_count": 0,
+    "blocked_or_challenged_count": 4,
     "status_counts": {
-      "200": 44,
-      "404": 7,
-      "403": 1,
-      "None": 1
+      "200": 63,
+      "403": 4
     },
     "source_type_counts": {
-      "complaint_forum": 21,
-      "complaint_mediation": 10,
+      "complaint_forum": 24,
+      "complaint_mediation": 12,
       "complaint_review": 1,
       "operator_publication": 3,
-      "operator_surface": 1,
+      "operator_surface": 2,
       "passive_scan": 1,
+      "public_record": 8,
       "public_reporting": 8,
       "public_verification": 3,
       "social_corroboration": 5
     },
     "marker_totals": {
-      "withdrawal": 58,
-      "kyc": 51,
-      "multi_account": 15,
-      "frozen_or_blocked": 28,
-      "profit_or_win": 82,
-      "staff_or_team": 55,
-      "custody_or_wallet": 66,
-      "token": 40
+      "withdrawal": 77,
+      "kyc": 79,
+      "multi_account": 22,
+      "frozen_or_blocked": 53,
+      "profit_or_win": 111,
+      "staff_or_team": 74,
+      "custody_or_wallet": 88,
+      "token": 61
     }
   },
   "token_and_operating_control_gaps": [
@@ -698,7 +804,7 @@
       "collection_priority": "high",
       "confidence": "high",
       "name": "Known public wallets are not verified reserves",
-      "finding": "The loaded wallet snapshot shows $67,620,165.30 in attributed public wallets, but the repo has no liability-matched proof-of-reserves artifact, complete custody inventory, exchange balance attestation, or customer-fund segregation evidence.",
+      "finding": "The loaded wallet snapshot shows $59,125,362.65 in attributed public wallets, but the repo has no liability-matched proof-of-reserves artifact, complete custody inventory, exchange balance attestation, or customer-fund segregation evidence.",
       "primary_artifacts": "REPORT_1_ONCHAIN_FORENSICS.md; output/blockchain_analysis.json",
       "next_steps": "Run refreshed wallet snapshots and pair them with liability, exchange-custody, wallet-control, and segregation evidence before calling anything a reserve."
     },
@@ -707,7 +813,7 @@
       "collection_priority": "medium",
       "confidence": "high",
       "name": "Direct flow narrative is bounded and mostly SOL",
-      "finding": "Direct published outflows total $17,400,000.00, equal to 25.7% of the visible wallet snapshot. Mixed BTC alerts should remain separated from direct Rollbit outflows, and routine payouts need an operating-cost baseline before interpretation.",
+      "finding": "Direct published outflows total $17,400,000.00, equal to 29.4% of the visible wallet snapshot. Mixed BTC alerts should remain separated from direct Rollbit outflows, and routine payouts need an operating-cost baseline before interpretation.",
       "primary_artifacts": "REPORT_1_ONCHAIN_FORENSICS.md; REPORT_5_NEWS_AND_REGULATORY_TIMELINE.md",
       "next_steps": "For each published alert, preserve original alert text, explorer links, counterparty labels, and direction classification."
     },
@@ -716,7 +822,7 @@
       "collection_priority": "high",
       "confidence": "high",
       "name": "RLB tracked public DEX liquidity is a scoped market slice",
-      "finding": "Top-four tracked public DEX pool liquidity is $4,713,083.87, equal to 4.7% of the $101,223,201.00 market cap. This does not measure Rollbit app/on-platform liquidity, order-book depth, or custody-side token inventory, and should not be described as the only RLB trading or liquidity venue.",
+      "finding": "Top-four tracked public DEX pool liquidity is $5,050,401.30, equal to 4.3% of the $118,218,080.44 market cap. This does not measure Rollbit app/on-platform liquidity, order-book depth, or custody-side token inventory, and should not be described as the only RLB trading or liquidity venue.",
       "primary_artifacts": "REPORT_1_ONCHAIN_FORENSICS.md; DEXScreener snapshot",
       "next_steps": "Collect pool-level reserves, fee tiers, tick liquidity, holder concentration, and any public Rollbit app/on-platform RLB venue data."
     },
@@ -779,9 +885,9 @@
       "collection_priority": "medium",
       "confidence": "high",
       "name": "Public complaint and record acquisition is reproducible but incomplete",
-      "finding": "The latest public-record capture preserved 53 deduplicated targets, with 52 HTTP captures written, 1 blocked/challenged target, and 1 request failure. Capture gaps should drive browser-aware follow-up.",
+      "finding": "The latest public-record capture preserved 67 deduplicated targets, with 67 HTTP captures written, 4 blocked/challenged target, and 0 request failure. Capture gaps should drive browser-aware follow-up.",
       "primary_artifacts": "REPORT_8_PUBLIC_RECORDS_AND_COMPLAINT_CAPTURE.md; output/public_record_capture.json; output/public_record_index.csv",
-      "next_steps": "Add browser screenshots for Trustpilot and challenge-gated pages, re-check Casino Guru 404s, and map capture hashes back into cases_database.json."
+      "next_steps": "Add browser screenshots for Trustpilot, Reddit, and challenge-gated pages; preserve current Casino Guru hashes; and map capture hashes back into cases_database.json."
     }
   ]
 }

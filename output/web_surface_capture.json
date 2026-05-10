@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-25T10:46:28.212399+00:00",
-  "capture_dir": "output/captures/web/20260425T104619Z",
+  "generated_at": "2026-05-10T10:11:47.326386+00:00",
+  "capture_dir": "output/captures/web/20260510T101136Z",
   "method": "DoH DNS + openssl TLS + curl HTTP capture",
   "results": [
     {
@@ -9,7 +9,7 @@
         "host": "rollbit.com",
         "path": "/"
       },
-      "captured_at": "2026-04-25T10:46:20.853447+00:00",
+      "captured_at": "2026-05-10T10:11:39.549447+00:00",
       "dns": {
         "A": {
           "status_code": 200,
@@ -62,7 +62,7 @@
                 "name": "rollbit.com",
                 "type": 6,
                 "TTL": 1800,
-                "data": "penny.ns.cloudflare.com. dns.cloudflare.com. 2401249296 10000 2400 604800 1800"
+                "data": "penny.ns.cloudflare.com. dns.cloudflare.com. 2402890628 10000 2400 604800 1800"
               }
             ]
           }
@@ -87,7 +87,7 @@
                 "name": "rollbit.com",
                 "type": 6,
                 "TTL": 1800,
-                "data": "penny.ns.cloudflare.com. dns.cloudflare.com. 2401249296 10000 2400 604800 1800"
+                "data": "penny.ns.cloudflare.com. dns.cloudflare.com. 2402890628 10000 2400 604800 1800"
               }
             ]
           }
@@ -175,18 +175,18 @@
           "--max-time",
           "45",
           "-D",
-          "/Users/khoadoan/rollbit_forensic/output/captures/web/20260425T104619Z/main_app_rollbit.com.headers.txt",
+          "/Users/khoadoan/rollbit_forensic/output/captures/web/20260510T101136Z/main_app_rollbit.com.headers.txt",
           "-o",
-          "/Users/khoadoan/rollbit_forensic/output/captures/web/20260425T104619Z/main_app_rollbit.com.body.bin",
+          "/Users/khoadoan/rollbit_forensic/output/captures/web/20260510T101136Z/main_app_rollbit.com.body.bin",
           "--resolve",
           "rollbit.com:443:104.20.26.76",
           "https://rollbit.com/"
         ],
         "returncode": 0,
         "stderr": "",
-        "headers_file": "output/captures/web/20260425T104619Z/main_app_rollbit.com.headers.txt",
-        "body_file": "output/captures/web/20260425T104619Z/main_app_rollbit.com.body.bin",
-        "body_sha256": "4be5da3178ba0422e4b5cf5324e45ef1cc66199325e0e5015379be1642e78dec",
+        "headers_file": "output/captures/web/20260510T101136Z/main_app_rollbit.com.headers.txt",
+        "body_file": "output/captures/web/20260510T101136Z/main_app_rollbit.com.body.bin",
+        "body_sha256": "5414107756277ffa0d0934f144531ccd14cb361a918a8e7e76ff5f959a25ed31",
         "body_size_bytes": 5252,
         "status_lines": [
           "HTTP/2 403"
@@ -200,7 +200,7 @@
         "host": "blog.rollbit.com",
         "path": "/"
       },
-      "captured_at": "2026-04-25T10:46:23.071943+00:00",
+      "captured_at": "2026-05-10T10:11:41.525647+00:00",
       "dns": {
         "A": {
           "status_code": 200,
@@ -408,7 +408,7 @@
         "raw_returncode": 0,
         "raw_stderr": "Connecting to 151.101.3.7\ndepth=1 C=US, O=Certainly, CN=Certainly Intermediate R1\nverify error:num=20:unable to get local issuer certificate\nverify return:1\ndepth=0 CN=blog.rollbit.com\nverify return:1\nDONE\n",
         "parsed_returncode": 0,
-        "parsed": "subject=CN=blog.rollbit.com\nissuer=C=US, O=Certainly, CN=Certainly Intermediate R1\nnotBefore=Apr 19 17:03:03 2026 GMT\nnotAfter=May 19 17:03:02 2026 GMT\nsha256 Fingerprint=6E:D0:37:3F:88:8D:7D:28:7F:85:83:A6:D0:2B:DB:E4:EB:48:8A:82:07:5B:03:48:9D:E1:74:D9:E1:EB:11:3B\nX509v3 Subject Alternative Name: \n    DNS:blog.rollbit.com\n",
+        "parsed": "subject=CN=blog.rollbit.com\nissuer=C=US, O=Certainly, CN=Certainly Intermediate R1\nnotBefore=May  9 16:06:58 2026 GMT\nnotAfter=Jun  8 16:06:57 2026 GMT\nsha256 Fingerprint=FA:F9:E6:7D:13:B4:8F:13:63:AE:70:90:71:D5:6F:70:8D:0D:3A:39:80:54:C2:53:AD:0C:99:C1:79:DC:93:F5\nX509v3 Subject Alternative Name: \n    DNS:blog.rollbit.com\n",
         "parsed_stderr": ""
       },
       "http": {
@@ -422,19 +422,19 @@
           "--max-time",
           "45",
           "-D",
-          "/Users/khoadoan/rollbit_forensic/output/captures/web/20260425T104619Z/blog_blog.rollbit.com.headers.txt",
+          "/Users/khoadoan/rollbit_forensic/output/captures/web/20260510T101136Z/blog_blog.rollbit.com.headers.txt",
           "-o",
-          "/Users/khoadoan/rollbit_forensic/output/captures/web/20260425T104619Z/blog_blog.rollbit.com.body.bin",
+          "/Users/khoadoan/rollbit_forensic/output/captures/web/20260510T101136Z/blog_blog.rollbit.com.body.bin",
           "--resolve",
           "blog.rollbit.com:443:151.101.3.7",
           "https://blog.rollbit.com/"
         ],
         "returncode": 0,
         "stderr": "",
-        "headers_file": "output/captures/web/20260425T104619Z/blog_blog.rollbit.com.headers.txt",
-        "body_file": "output/captures/web/20260425T104619Z/blog_blog.rollbit.com.body.bin",
-        "body_sha256": "234ca47b237f4ab98833a91b10d2ee74775a3619cd2c451a61b009be35177cae",
-        "body_size_bytes": 69908,
+        "headers_file": "output/captures/web/20260510T101136Z/blog_blog.rollbit.com.headers.txt",
+        "body_file": "output/captures/web/20260510T101136Z/blog_blog.rollbit.com.body.bin",
+        "body_sha256": "f44662a5702d9dba170ad5e58fdedc49fbc54ff8c676c492ab8f6b5cd8e8ddf1",
+        "body_size_bytes": 70169,
         "status_lines": [
           "HTTP/2 200"
         ],
@@ -447,7 +447,7 @@
         "host": "rollbot.rollbit.com",
         "path": "/"
       },
-      "captured_at": "2026-04-25T10:46:25.043553+00:00",
+      "captured_at": "2026-05-10T10:11:44.196994+00:00",
       "dns": {
         "A": {
           "status_code": 200,
@@ -500,7 +500,7 @@
                 "name": "rollbit.com",
                 "type": 6,
                 "TTL": 1800,
-                "data": "penny.ns.cloudflare.com. dns.cloudflare.com. 2401249296 10000 2400 604800 1800"
+                "data": "penny.ns.cloudflare.com. dns.cloudflare.com. 2402890628 10000 2400 604800 1800"
               }
             ]
           }
@@ -525,7 +525,7 @@
                 "name": "rollbit.com",
                 "type": 6,
                 "TTL": 1800,
-                "data": "penny.ns.cloudflare.com. dns.cloudflare.com. 2401249296 10000 2400 604800 1800"
+                "data": "penny.ns.cloudflare.com. dns.cloudflare.com. 2402890628 10000 2400 604800 1800"
               }
             ]
           }
@@ -550,7 +550,7 @@
                 "name": "rollbit.com",
                 "type": 6,
                 "TTL": 1800,
-                "data": "penny.ns.cloudflare.com. dns.cloudflare.com. 2401249296 10000 2400 604800 1800"
+                "data": "penny.ns.cloudflare.com. dns.cloudflare.com. 2402890628 10000 2400 604800 1800"
               }
             ]
           }
@@ -575,7 +575,7 @@
                 "name": "rollbit.com",
                 "type": 6,
                 "TTL": 1800,
-                "data": "penny.ns.cloudflare.com. dns.cloudflare.com. 2401249296 10000 2400 604800 1800"
+                "data": "penny.ns.cloudflare.com. dns.cloudflare.com. 2402890628 10000 2400 604800 1800"
               }
             ]
           }
@@ -601,18 +601,18 @@
           "--max-time",
           "45",
           "-D",
-          "/Users/khoadoan/rollbit_forensic/output/captures/web/20260425T104619Z/rollbot_rollbot.rollbit.com.headers.txt",
+          "/Users/khoadoan/rollbit_forensic/output/captures/web/20260510T101136Z/rollbot_rollbot.rollbit.com.headers.txt",
           "-o",
-          "/Users/khoadoan/rollbit_forensic/output/captures/web/20260425T104619Z/rollbot_rollbot.rollbit.com.body.bin",
+          "/Users/khoadoan/rollbit_forensic/output/captures/web/20260510T101136Z/rollbot_rollbot.rollbit.com.body.bin",
           "--resolve",
           "rollbot.rollbit.com:443:104.20.26.76",
           "https://rollbot.rollbit.com/"
         ],
         "returncode": 0,
         "stderr": "",
-        "headers_file": "output/captures/web/20260425T104619Z/rollbot_rollbot.rollbit.com.headers.txt",
-        "body_file": "output/captures/web/20260425T104619Z/rollbot_rollbot.rollbit.com.body.bin",
-        "body_sha256": "a18a6c7921ee03fa2099bcd3cb7b13347959ae704c90b13ee6cf8318b85e8c91",
+        "headers_file": "output/captures/web/20260510T101136Z/rollbot_rollbot.rollbit.com.headers.txt",
+        "body_file": "output/captures/web/20260510T101136Z/rollbot_rollbot.rollbit.com.body.bin",
+        "body_sha256": "cf329fdef9e3a463c19a01339ea235ff57d44769db4179a0a0ec6e16b2c0661b",
         "body_size_bytes": 1448,
         "status_lines": [
           "HTTP/2 200"
@@ -626,7 +626,7 @@
         "host": "cert.cga.cw",
         "path": "/page/certification_policy"
       },
-      "captured_at": "2026-04-25T10:46:28.212340+00:00",
+      "captured_at": "2026-05-10T10:11:47.326321+00:00",
       "dns": {
         "A": {
           "status_code": 200,
@@ -648,7 +648,7 @@
                 "name": "cert.cga.cw",
                 "type": 1,
                 "TTL": 300,
-                "data": "172.67.71.89"
+                "data": "104.26.5.227"
               },
               {
                 "name": "cert.cga.cw",
@@ -660,7 +660,7 @@
                 "name": "cert.cga.cw",
                 "type": 1,
                 "TTL": 300,
-                "data": "104.26.5.227"
+                "data": "172.67.71.89"
               }
             ]
           }
@@ -722,7 +722,7 @@
                 "name": "cga.cw",
                 "type": 6,
                 "TTL": 1800,
-                "data": "cass.ns.cloudflare.com. dns.cloudflare.com. 2401960306 10000 2400 604800 1800"
+                "data": "cass.ns.cloudflare.com. dns.cloudflare.com. 2403088291 10000 2400 604800 1800"
               }
             ]
           }
@@ -747,7 +747,7 @@
                 "name": "cga.cw",
                 "type": 6,
                 "TTL": 1800,
-                "data": "cass.ns.cloudflare.com. dns.cloudflare.com. 2401960306 10000 2400 604800 1800"
+                "data": "cass.ns.cloudflare.com. dns.cloudflare.com. 2403088291 10000 2400 604800 1800"
               }
             ]
           }
@@ -772,24 +772,24 @@
                 "name": "cga.cw",
                 "type": 6,
                 "TTL": 1800,
-                "data": "cass.ns.cloudflare.com. dns.cloudflare.com. 2401960306 10000 2400 604800 1800"
+                "data": "cass.ns.cloudflare.com. dns.cloudflare.com. 2403088291 10000 2400 604800 1800"
               }
             ]
           }
         }
       },
-      "selected_ip": "172.67.71.89",
+      "selected_ip": "104.26.5.227",
       "tls": {
-        "connect_ip": "172.67.71.89",
+        "connect_ip": "104.26.5.227",
         "raw_returncode": 0,
-        "raw_stderr": "Connecting to 172.67.71.89\ndepth=2 C=US, O=Google Trust Services LLC, CN=GTS Root R4\nverify error:num=20:unable to get local issuer certificate\nverify return:1\ndepth=1 C=US, O=Google Trust Services, CN=WE1\nverify return:1\ndepth=0 CN=cga.cw\nverify return:1\nDONE\n",
+        "raw_stderr": "Connecting to 104.26.5.227\ndepth=2 C=US, O=Google Trust Services LLC, CN=GTS Root R4\nverify error:num=20:unable to get local issuer certificate\nverify return:1\ndepth=1 C=US, O=Google Trust Services, CN=WE1\nverify return:1\ndepth=0 CN=cga.cw\nverify return:1\nDONE\n",
         "parsed_returncode": 0,
-        "parsed": "subject=CN=cga.cw\nissuer=C=US, O=Google Trust Services, CN=WE1\nnotBefore=Mar  3 00:16:54 2026 GMT\nnotAfter=Jun  1 01:16:41 2026 GMT\nsha256 Fingerprint=38:ED:99:F5:07:EF:AD:21:DB:9F:D6:BB:92:A6:70:84:0E:85:4F:2B:A4:C9:BD:02:89:92:06:9C:32:EA:ED:F3\nX509v3 Subject Alternative Name: \n    DNS:cga.cw, DNS:*.cga.cw\n",
+        "parsed": "subject=CN=cga.cw\nissuer=C=US, O=Google Trust Services, CN=WE1\nnotBefore=May  1 01:29:30 2026 GMT\nnotAfter=Jul 30 02:29:17 2026 GMT\nsha256 Fingerprint=20:62:55:B7:A2:F7:2B:06:A8:FC:E7:1B:48:E5:A4:74:0B:95:3B:34:B5:21:AB:1A:50:A3:A6:BE:50:82:DB:D0\nX509v3 Subject Alternative Name: \n    DNS:cga.cw, DNS:*.cga.cw\n",
         "parsed_stderr": ""
       },
       "http": {
         "url": "https://cert.cga.cw/page/certification_policy",
-        "connect_ip": "172.67.71.89",
+        "connect_ip": "104.26.5.227",
         "command": [
           "curl",
           "-sS",
@@ -798,18 +798,18 @@
           "--max-time",
           "45",
           "-D",
-          "/Users/khoadoan/rollbit_forensic/output/captures/web/20260425T104619Z/cga_policy_cert.cga.cw.headers.txt",
+          "/Users/khoadoan/rollbit_forensic/output/captures/web/20260510T101136Z/cga_policy_cert.cga.cw.headers.txt",
           "-o",
-          "/Users/khoadoan/rollbit_forensic/output/captures/web/20260425T104619Z/cga_policy_cert.cga.cw.body.bin",
+          "/Users/khoadoan/rollbit_forensic/output/captures/web/20260510T101136Z/cga_policy_cert.cga.cw.body.bin",
           "--resolve",
-          "cert.cga.cw:443:172.67.71.89",
+          "cert.cga.cw:443:104.26.5.227",
           "https://cert.cga.cw/page/certification_policy"
         ],
         "returncode": 0,
         "stderr": "",
-        "headers_file": "output/captures/web/20260425T104619Z/cga_policy_cert.cga.cw.headers.txt",
-        "body_file": "output/captures/web/20260425T104619Z/cga_policy_cert.cga.cw.body.bin",
-        "body_sha256": "8c138281c463af80bec8cd4289b2674722f4b3427c44483f95701e30812e239a",
+        "headers_file": "output/captures/web/20260510T101136Z/cga_policy_cert.cga.cw.headers.txt",
+        "body_file": "output/captures/web/20260510T101136Z/cga_policy_cert.cga.cw.body.bin",
+        "body_sha256": "02ee39c1782d13555e55df9ad3820554e7ce748409e01541b484479be0db0ef0",
         "body_size_bytes": 55780,
         "status_lines": [
           "HTTP/2 200"

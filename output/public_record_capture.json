@@ -1,54 +1,60 @@
 {
-  "generated_at": "2026-04-25T11:11:18.543509+00:00",
-  "capture_dir": "output/captures/public_records/20260425T111024Z",
-  "targets_count": 53,
-  "records_count": 53,
-  "ok_count": 52,
-  "failed_count": 1,
-  "blocked_or_challenged_count": 1,
+  "generated_at": "2026-05-10T10:26:15.912927+00:00",
+  "capture_dir": "output/captures/public_records/20260510T102511Z",
+  "targets_count": 67,
+  "records_count": 67,
+  "ok_count": 67,
+  "failed_count": 0,
+  "blocked_or_challenged_count": 4,
   "status_counts": {
-    "200": 44,
-    "404": 7,
-    "403": 1,
-    "None": 1
+    "200": 63,
+    "403": 4
   },
   "source_type_counts": {
-    "complaint_forum": 21,
-    "complaint_mediation": 10,
+    "complaint_forum": 24,
+    "complaint_mediation": 12,
     "complaint_review": 1,
     "operator_publication": 3,
-    "operator_surface": 1,
+    "operator_surface": 2,
     "passive_scan": 1,
+    "public_record": 8,
     "public_reporting": 8,
     "public_verification": 3,
     "social_corroboration": 5
   },
   "domain_counts": {
-    "bitcointalk.org": 21,
-    "casino.guru": 7,
+    "bitcointalk.org": 24,
+    "casino.guru": 9,
     "www.chaincatcher.com": 5,
     "x.com": 5,
     "blog.rollbit.com": 3,
     "forum.askgamblers.com": 2,
+    "whitepaper.rollbot.com": 2,
+    "www.reddit.com": 2,
     "cert.cga.cw": 2,
     "www.casinolistings.com": 1,
     "www.trustpilot.com": 1,
+    "api.rollbit.com": 1,
     "rollbit.com": 1,
     "urlscan.io": 1,
+    "api.coingecko.com": 1,
+    "api.dexscreener.com": 1,
+    "api.poloniex.com": 1,
+    "gamingcontrol.spin-cdn.com": 1,
     "cryptoslate.com": 1,
     "dev.ua": 1,
     "www.coindesk.com": 1,
     "www.cga.cw": 1
   },
   "marker_totals": {
-    "withdrawal": 58,
-    "kyc": 51,
-    "multi_account": 15,
-    "frozen_or_blocked": 28,
-    "profit_or_win": 82,
-    "staff_or_team": 55,
-    "custody_or_wallet": 66,
-    "token": 40
+    "withdrawal": 77,
+    "kyc": 79,
+    "multi_account": 22,
+    "frozen_or_blocked": 53,
+    "profit_or_win": 111,
+    "staff_or_team": 74,
+    "custody_or_wallet": 88,
+    "token": 61
   },
   "records": [
     {
@@ -63,7 +69,7 @@
       "source_names": [
         "bitcointalk"
       ],
-      "captured_at": "2026-04-25T11:10:24.113670+00:00",
+      "captured_at": "2026-05-10T10:25:11.426627+00:00",
       "domain": "bitcointalk.org",
       "ok": true,
       "status_code": 200,
@@ -74,9 +80,9 @@
       "redirect_history": [],
       "content_type": "text/html; charset=ISO-8859-1",
       "title": "Rollbit disables account and seizes funds (10.2k)!",
-      "body_size_bytes": 205516,
-      "body_sha256": "aebee273370ab45dc01c0aedffd3ea63cd09cd763087c11804f356abc23aba29",
-      "text_size_chars": 49598,
+      "body_size_bytes": 216513,
+      "body_sha256": "c588149561311c0e917ec08403cba77dff048ca959af52f6c31ef941e6de9808",
+      "text_size_chars": 50824,
       "marker_counts": {
         "withdrawal": 1,
         "kyc": 1,
@@ -88,10 +94,10 @@
         "token": 1
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_611e33190dde.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_611e33190dde.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_611e33190dde.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_611e33190dde.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/bitcointalk.org_611e33190dde.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/bitcointalk.org_611e33190dde.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/bitcointalk.org_611e33190dde.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/bitcointalk.org_611e33190dde.meta.json"
       }
     },
     {
@@ -106,7 +112,7 @@
       "source_names": [
         "bitcointalk"
       ],
-      "captured_at": "2026-04-25T11:10:25.596491+00:00",
+      "captured_at": "2026-05-10T10:25:12.373131+00:00",
       "domain": "bitcointalk.org",
       "ok": true,
       "status_code": 200,
@@ -117,9 +123,9 @@
       "redirect_history": [],
       "content_type": "text/html; charset=ISO-8859-1",
       "title": "rollbit.com scam",
-      "body_size_bytes": 199829,
-      "body_sha256": "54c5d5dcea1b11ce7dc0bb0e5d829ac8c36673ba1aab9dfebb952e810b71f2ae",
-      "text_size_chars": 34690,
+      "body_size_bytes": 225397,
+      "body_sha256": "460a2c4eb5c2732b35f7b6efdfd72d61f36b9e9c9043615ad0ae4b21b08a8a69",
+      "text_size_chars": 37415,
       "marker_counts": {
         "withdrawal": 2,
         "kyc": 1,
@@ -131,10 +137,10 @@
         "token": 1
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_2b512c902942.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_2b512c902942.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_2b512c902942.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_2b512c902942.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_2b512c902942.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_2b512c902942.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_2b512c902942.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_2b512c902942.meta.json"
       }
     },
     {
@@ -149,7 +155,7 @@
       "source_names": [
         "bitcointalk"
       ],
-      "captured_at": "2026-04-25T11:10:26.679953+00:00",
+      "captured_at": "2026-05-10T10:25:13.227908+00:00",
       "domain": "bitcointalk.org",
       "ok": true,
       "status_code": 200,
@@ -160,9 +166,9 @@
       "redirect_history": [],
       "content_type": "text/html; charset=ISO-8859-1",
       "title": "Rollbit.com scamming $10,000 USD [Careful not to bet in their casino!] &#10071;",
-      "body_size_bytes": 194572,
-      "body_sha256": "c87c2129e91400cbdb7d396a5a972081345ceee76f1e270e4d83d720e420d813",
-      "text_size_chars": 33691,
+      "body_size_bytes": 203370,
+      "body_sha256": "63d51b22f8713efb0187d50c2c9967edf63c63336959e2d211ddfb9cc899cd3e",
+      "text_size_chars": 34747,
       "marker_counts": {
         "withdrawal": 3,
         "kyc": 1,
@@ -174,10 +180,10 @@
         "token": 1
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_82b6c15380ff.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_82b6c15380ff.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_82b6c15380ff.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_82b6c15380ff.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_82b6c15380ff.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_82b6c15380ff.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_82b6c15380ff.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_82b6c15380ff.meta.json"
       }
     },
     {
@@ -192,7 +198,7 @@
       "source_names": [
         "bitcointalk"
       ],
-      "captured_at": "2026-04-25T11:10:27.663528+00:00",
+      "captured_at": "2026-05-10T10:25:14.067037+00:00",
       "domain": "bitcointalk.org",
       "ok": true,
       "status_code": 200,
@@ -203,11 +209,11 @@
       "redirect_history": [],
       "content_type": "text/html; charset=ISO-8859-1",
       "title": "Rollbit scam",
-      "body_size_bytes": 249542,
-      "body_sha256": "29141327d776fa264b92bc1d6fea97c8bfdc3f80d025da89a815e06d881dd88e",
-      "text_size_chars": 33398,
+      "body_size_bytes": 264540,
+      "body_sha256": "4a747665afb69e55362b34870e383cf1fb97532af9d90203e4d51a4fcedfd86b",
+      "text_size_chars": 36926,
       "marker_counts": {
-        "withdrawal": 2,
+        "withdrawal": 0,
         "kyc": 1,
         "multi_account": 0,
         "frozen_or_blocked": 0,
@@ -217,10 +223,10 @@
         "token": 1
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_622d03fdecc1.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_622d03fdecc1.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_622d03fdecc1.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_622d03fdecc1.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_622d03fdecc1.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_622d03fdecc1.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_622d03fdecc1.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_622d03fdecc1.meta.json"
       }
     },
     {
@@ -236,7 +242,7 @@
       "source_names": [
         "bitcointalk"
       ],
-      "captured_at": "2026-04-25T11:10:28.972117+00:00",
+      "captured_at": "2026-05-10T10:25:15.000336+00:00",
       "domain": "bitcointalk.org",
       "ok": true,
       "status_code": 200,
@@ -247,9 +253,9 @@
       "redirect_history": [],
       "content_type": "text/html; charset=ISO-8859-1",
       "title": "Rollbit Scam. Cannot Withdraw $30,211. Being Ignored by Support.",
-      "body_size_bytes": 275437,
-      "body_sha256": "2096dc923ac58d39537048a37eecd1ac4022837fe956b5a236c292deeaff1b58",
-      "text_size_chars": 68226,
+      "body_size_bytes": 274846,
+      "body_sha256": "40f1915832408e9bf9ebcb50dfeb439fac46dfd012c406efa33afaa320d2071a",
+      "text_size_chars": 68064,
       "marker_counts": {
         "withdrawal": 2,
         "kyc": 2,
@@ -261,10 +267,10 @@
         "token": 2
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_bbf0ee817546.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_bbf0ee817546.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_bbf0ee817546.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_bbf0ee817546.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_bbf0ee817546.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_bbf0ee817546.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_bbf0ee817546.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_bbf0ee817546.meta.json"
       }
     },
     {
@@ -279,7 +285,7 @@
       "source_names": [
         "bitcointalk"
       ],
-      "captured_at": "2026-04-25T11:10:30.065743+00:00",
+      "captured_at": "2026-05-10T10:25:15.927240+00:00",
       "domain": "bitcointalk.org",
       "ok": true,
       "status_code": 200,
@@ -290,9 +296,9 @@
       "redirect_history": [],
       "content_type": "text/html; charset=ISO-8859-1",
       "title": "Rollbit has literally has thrown my money away, sending it to an FTX address",
-      "body_size_bytes": 285522,
-      "body_sha256": "61bcaabf7cb885ade58cb86ed0eb9e896ac6f59a57691a53ec90236ae0089314",
-      "text_size_chars": 76625,
+      "body_size_bytes": 284958,
+      "body_sha256": "5e0c67c266beddb264b826417deb151871e3b0d54e37f30b0e4396998bc72364",
+      "text_size_chars": 76463,
       "marker_counts": {
         "withdrawal": 3,
         "kyc": 2,
@@ -304,10 +310,10 @@
         "token": 1
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_6d250c2bdb6c.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_6d250c2bdb6c.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_6d250c2bdb6c.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_6d250c2bdb6c.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_6d250c2bdb6c.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_6d250c2bdb6c.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_6d250c2bdb6c.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_6d250c2bdb6c.meta.json"
       }
     },
     {
@@ -323,7 +329,7 @@
       "source_names": [
         "bitcointalk"
       ],
-      "captured_at": "2026-04-25T11:10:31.478747+00:00",
+      "captured_at": "2026-05-10T10:25:17.040617+00:00",
       "domain": "bitcointalk.org",
       "ok": true,
       "status_code": 200,
@@ -334,9 +340,9 @@
       "redirect_history": [],
       "content_type": "text/html; charset=ISO-8859-1",
       "title": "ROLLBIT.COM is a scam. They stole my funds!",
-      "body_size_bytes": 221486,
-      "body_sha256": "2d3ccf206e2ef7a2de34ddf778bfd86097eca04033e4631fb7d31aaba6bd99c1",
-      "text_size_chars": 33146,
+      "body_size_bytes": 220938,
+      "body_sha256": "70e2f04dc0703d6d14c3bfbefe350485dac58e55a35ba52aaa7ab6c1e4dff6a6",
+      "text_size_chars": 33259,
       "marker_counts": {
         "withdrawal": 2,
         "kyc": 2,
@@ -348,10 +354,10 @@
         "token": 1
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_7ec7a49cdded.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_7ec7a49cdded.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_7ec7a49cdded.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_7ec7a49cdded.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_7ec7a49cdded.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_7ec7a49cdded.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_7ec7a49cdded.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_7ec7a49cdded.meta.json"
       }
     },
     {
@@ -367,7 +373,7 @@
       "source_names": [
         "bitcointalk"
       ],
-      "captured_at": "2026-04-25T11:10:32.745090+00:00",
+      "captured_at": "2026-05-10T10:25:17.883541+00:00",
       "domain": "bitcointalk.org",
       "ok": true,
       "status_code": 200,
@@ -378,9 +384,9 @@
       "redirect_history": [],
       "content_type": "text/html; charset=ISO-8859-1",
       "title": "Rollbit locked/pending withdrawals",
-      "body_size_bytes": 293866,
-      "body_sha256": "81c094988d4faed4f7ada71e39b62168fe125bf95ecd6a9e0dc8f2c35dd8fddf",
-      "text_size_chars": 57432,
+      "body_size_bytes": 294067,
+      "body_sha256": "ef4eb78bf3f180fcbf64a0ff302dedca0a2bb7c4239a126435331340b8bbb929",
+      "text_size_chars": 57826,
       "marker_counts": {
         "withdrawal": 2,
         "kyc": 3,
@@ -392,10 +398,10 @@
         "token": 1
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_fda532cc1707.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_fda532cc1707.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_fda532cc1707.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_fda532cc1707.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_fda532cc1707.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_fda532cc1707.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_fda532cc1707.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_fda532cc1707.meta.json"
       }
     },
     {
@@ -411,7 +417,7 @@
       "source_names": [
         "bitcointalk"
       ],
-      "captured_at": "2026-04-25T11:10:34.173502+00:00",
+      "captured_at": "2026-05-10T10:25:19.031596+00:00",
       "domain": "bitcointalk.org",
       "ok": true,
       "status_code": 200,
@@ -422,9 +428,9 @@
       "redirect_history": [],
       "content_type": "text/html; charset=ISO-8859-1",
       "title": "Rollbit locked my account with $55k+",
-      "body_size_bytes": 222078,
-      "body_sha256": "87c64fc064d14c13ee6a43c9ea0ede28a03695ffa096c87f75364928ec420205",
-      "text_size_chars": 35457,
+      "body_size_bytes": 203820,
+      "body_sha256": "c0dc20af0466f2ed4e9b05feca1d6927658279b05715f5b6d8028686fddf0099",
+      "text_size_chars": 35228,
       "marker_counts": {
         "withdrawal": 2,
         "kyc": 3,
@@ -436,10 +442,10 @@
         "token": 1
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_5afdc903b3d1.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_5afdc903b3d1.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_5afdc903b3d1.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_5afdc903b3d1.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_5afdc903b3d1.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_5afdc903b3d1.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_5afdc903b3d1.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_5afdc903b3d1.meta.json"
       }
     },
     {
@@ -454,7 +460,7 @@
       "source_names": [
         "bitcointalk"
       ],
-      "captured_at": "2026-04-25T11:10:35.629945+00:00",
+      "captured_at": "2026-05-10T10:25:19.960991+00:00",
       "domain": "bitcointalk.org",
       "ok": true,
       "status_code": 200,
@@ -465,9 +471,9 @@
       "redirect_history": [],
       "content_type": "text/html; charset=ISO-8859-1",
       "title": "[UNRESOLVED]Rollbit SCAMS money from restricted players with 0% chance of lose",
-      "body_size_bytes": 248047,
-      "body_sha256": "92c3e9c1740f8b1968532b08faa077ca50d6340aa726bcaf14d9ef653b84b3c4",
-      "text_size_chars": 43470,
+      "body_size_bytes": 237180,
+      "body_sha256": "c4def99c2822d0937476fe81f2e687bb62c1ad58ab609bfd3d35a146f24e3a26",
+      "text_size_chars": 43002,
       "marker_counts": {
         "withdrawal": 3,
         "kyc": 1,
@@ -479,10 +485,10 @@
         "token": 1
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_63a3bf1c9ec4.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_63a3bf1c9ec4.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_63a3bf1c9ec4.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_63a3bf1c9ec4.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_63a3bf1c9ec4.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_63a3bf1c9ec4.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_63a3bf1c9ec4.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_63a3bf1c9ec4.meta.json"
       }
     },
     {
@@ -497,7 +503,7 @@
       "source_names": [
         "bitcointalk"
       ],
-      "captured_at": "2026-04-25T11:10:36.676523+00:00",
+      "captured_at": "2026-05-10T10:25:20.824012+00:00",
       "domain": "bitcointalk.org",
       "ok": true,
       "status_code": 200,
@@ -508,9 +514,9 @@
       "redirect_history": [],
       "content_type": "text/html; charset=ISO-8859-1",
       "title": "ROLLBIT MAINTENANCE SCAM.",
-      "body_size_bytes": 238331,
-      "body_sha256": "601100fc09ae6e6eab15f8b7783a9f4877689b0564f8bf7bf80fcde5814dba43",
-      "text_size_chars": 57874,
+      "body_size_bytes": 237788,
+      "body_sha256": "027360b91f05f904d1376ed5af5d875afd36c8f43c6e2ba30a921d52c1779a47",
+      "text_size_chars": 57712,
       "marker_counts": {
         "withdrawal": 1,
         "kyc": 0,
@@ -522,10 +528,10 @@
         "token": 1
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_66a555376c58.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_66a555376c58.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_66a555376c58.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_66a555376c58.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_66a555376c58.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_66a555376c58.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_66a555376c58.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_66a555376c58.meta.json"
       }
     },
     {
@@ -540,7 +546,7 @@
       "source_names": [
         "bitcointalk"
       ],
-      "captured_at": "2026-04-25T11:10:37.644577+00:00",
+      "captured_at": "2026-05-10T10:25:21.675355+00:00",
       "domain": "bitcointalk.org",
       "ok": true,
       "status_code": 200,
@@ -551,9 +557,9 @@
       "redirect_history": [],
       "content_type": "text/html; charset=ISO-8859-1",
       "title": "Scammed by Rollbit",
-      "body_size_bytes": 131718,
-      "body_sha256": "acf69f6d2a653e5b38a246f42257064cd68cfb0af433860de609b45f5fc43ebf",
-      "text_size_chars": 20119,
+      "body_size_bytes": 131486,
+      "body_sha256": "e4ae3508d1e168cde2d78b5a420845535696fffc3b2f70e92181c266a740a070",
+      "text_size_chars": 20037,
       "marker_counts": {
         "withdrawal": 1,
         "kyc": 2,
@@ -565,10 +571,10 @@
         "token": 1
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_ec869fbbcf26.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_ec869fbbcf26.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_ec869fbbcf26.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_ec869fbbcf26.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_ec869fbbcf26.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_ec869fbbcf26.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_ec869fbbcf26.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_ec869fbbcf26.meta.json"
       }
     },
     {
@@ -583,7 +589,7 @@
       "source_names": [
         "bitcointalk"
       ],
-      "captured_at": "2026-04-25T11:10:38.902576+00:00",
+      "captured_at": "2026-05-10T10:25:22.544423+00:00",
       "domain": "bitcointalk.org",
       "ok": true,
       "status_code": 200,
@@ -594,9 +600,9 @@
       "redirect_history": [],
       "content_type": "text/html; charset=ISO-8859-1",
       "title": "Rollbit Blocking My funds \ufffd False Multiple Accounts Claim",
-      "body_size_bytes": 61544,
-      "body_sha256": "de2d7ee9138b8abffdbc64a919ce704ff2c02934284e66cb554e1293ee8e8f31",
-      "text_size_chars": 12561,
+      "body_size_bytes": 61659,
+      "body_sha256": "5b8ca8bc5002bc8d5951423630354fce2e947d11e48bd796cd1b2891a43485bf",
+      "text_size_chars": 12543,
       "marker_counts": {
         "withdrawal": 0,
         "kyc": 1,
@@ -608,10 +614,10 @@
         "token": 1
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_1b41afb75450.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_1b41afb75450.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_1b41afb75450.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_1b41afb75450.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_1b41afb75450.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_1b41afb75450.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_1b41afb75450.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_1b41afb75450.meta.json"
       }
     },
     {
@@ -627,7 +633,7 @@
       "source_names": [
         "bitcointalk"
       ],
-      "captured_at": "2026-04-25T11:10:39.812108+00:00",
+      "captured_at": "2026-05-10T10:25:23.322580+00:00",
       "domain": "bitcointalk.org",
       "ok": true,
       "status_code": 200,
@@ -638,9 +644,9 @@
       "redirect_history": [],
       "content_type": "text/html; charset=ISO-8859-1",
       "title": "Rollbit scam for 400 dollars (Resolved)",
-      "body_size_bytes": 150995,
-      "body_sha256": "dabf0fed6b8893eda5c31c899675d7b8d6ee381e7d506b3020da1415dd666f26",
-      "text_size_chars": 26742,
+      "body_size_bytes": 150738,
+      "body_sha256": "c8b7660b285956769055677c5d1e124d9b0680db5e83aa98228dd92182225acb",
+      "text_size_chars": 26652,
       "marker_counts": {
         "withdrawal": 1,
         "kyc": 2,
@@ -652,10 +658,10 @@
         "token": 1
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_0440c909e6b9.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_0440c909e6b9.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_0440c909e6b9.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_0440c909e6b9.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_0440c909e6b9.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_0440c909e6b9.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_0440c909e6b9.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_0440c909e6b9.meta.json"
       }
     },
     {
@@ -670,7 +676,7 @@
       "source_names": [
         "bitcointalk"
       ],
-      "captured_at": "2026-04-25T11:10:40.821265+00:00",
+      "captured_at": "2026-05-10T10:25:24.140806+00:00",
       "domain": "bitcointalk.org",
       "ok": true,
       "status_code": 200,
@@ -681,9 +687,9 @@
       "redirect_history": [],
       "content_type": "text/html; charset=ISO-8859-1",
       "title": "Rollbit ignore and scam?",
-      "body_size_bytes": 230414,
-      "body_sha256": "dde28bf01c8b14fd5222cf8dac105a6dfdce786e742be3177462953e7a099f7e",
-      "text_size_chars": 31217,
+      "body_size_bytes": 229958,
+      "body_sha256": "10ab5facb0cef46e23aaa8b0ad2f8aa39981fd8c532c3f951772dbd96ca6220e",
+      "text_size_chars": 31055,
       "marker_counts": {
         "withdrawal": 2,
         "kyc": 2,
@@ -695,10 +701,10 @@
         "token": 1
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_65270a565625.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_65270a565625.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_65270a565625.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_65270a565625.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_65270a565625.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_65270a565625.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_65270a565625.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_65270a565625.meta.json"
       }
     },
     {
@@ -714,7 +720,7 @@
       "source_names": [
         "bitcointalk"
       ],
-      "captured_at": "2026-04-25T11:10:41.956330+00:00",
+      "captured_at": "2026-05-10T10:25:25.023078+00:00",
       "domain": "bitcointalk.org",
       "ok": true,
       "status_code": 200,
@@ -739,10 +745,10 @@
         "token": 0
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_d593f7993ded.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_d593f7993ded.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_d593f7993ded.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_d593f7993ded.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_d593f7993ded.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_d593f7993ded.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_d593f7993ded.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_d593f7993ded.meta.json"
       }
     },
     {
@@ -758,7 +764,7 @@
       "source_names": [
         "bitcointalk"
       ],
-      "captured_at": "2026-04-25T11:10:42.492132+00:00",
+      "captured_at": "2026-05-10T10:25:25.575440+00:00",
       "domain": "bitcointalk.org",
       "ok": true,
       "status_code": 200,
@@ -783,10 +789,10 @@
         "token": 0
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_d54f77166b45.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_d54f77166b45.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_d54f77166b45.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_d54f77166b45.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_d54f77166b45.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_d54f77166b45.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_d54f77166b45.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_d54f77166b45.meta.json"
       }
     },
     {
@@ -801,7 +807,7 @@
       "source_names": [
         "casino_guru"
       ],
-      "captured_at": "2026-04-25T11:10:43.195155+00:00",
+      "captured_at": "2026-05-10T10:25:26.160707+00:00",
       "domain": "bitcointalk.org",
       "ok": true,
       "status_code": 200,
@@ -812,9 +818,9 @@
       "redirect_history": [],
       "content_type": "text/html; charset=ISO-8859-1",
       "title": "Rollbit Multi Account SCAM 3189$",
-      "body_size_bytes": 169905,
-      "body_sha256": "899fba17ae79abf460af2b17afab3f15edac7d2bb4e8e4e91cda5edec79b5009",
-      "text_size_chars": 24620,
+      "body_size_bytes": 169536,
+      "body_sha256": "7c1c720a0efbaacb53344d56af371f76ab719775568819a67b07c452450f3644",
+      "text_size_chars": 24506,
       "marker_counts": {
         "withdrawal": 3,
         "kyc": 3,
@@ -826,10 +832,10 @@
         "token": 1
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_007fad742a63.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_007fad742a63.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_007fad742a63.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_007fad742a63.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_007fad742a63.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_007fad742a63.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_007fad742a63.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_007fad742a63.meta.json"
       }
     },
     {
@@ -844,7 +850,7 @@
       "source_names": [
         "bitcointalk"
       ],
-      "captured_at": "2026-04-25T11:10:44.133103+00:00",
+      "captured_at": "2026-05-10T10:25:26.983370+00:00",
       "domain": "bitcointalk.org",
       "ok": true,
       "status_code": 200,
@@ -855,9 +861,9 @@
       "redirect_history": [],
       "content_type": "text/html; charset=ISO-8859-1",
       "title": "ROLLBIT FROZE MY ACCOUNT ACCUSING ME OF MULTIACOUNTING",
-      "body_size_bytes": 42650,
-      "body_sha256": "b535d450916a4bbdc2cf825d74409ba30552cb6d703a6dab06039aaf6b61a2b2",
-      "text_size_chars": 9373,
+      "body_size_bytes": 42888,
+      "body_sha256": "d42677441e5f3d6082a5a2858b495ad57f3ae227e96fdf1834208e85e35570e3",
+      "text_size_chars": 9363,
       "marker_counts": {
         "withdrawal": 2,
         "kyc": 3,
@@ -869,10 +875,10 @@
         "token": 1
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_c26ebdc15587.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_c26ebdc15587.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_c26ebdc15587.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_c26ebdc15587.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_c26ebdc15587.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_c26ebdc15587.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_c26ebdc15587.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_c26ebdc15587.meta.json"
       }
     },
     {
@@ -888,7 +894,7 @@
       "source_names": [
         "bitcointalk"
       ],
-      "captured_at": "2026-04-25T11:10:44.696389+00:00",
+      "captured_at": "2026-05-10T10:25:27.539981+00:00",
       "domain": "bitcointalk.org",
       "ok": true,
       "status_code": 200,
@@ -899,9 +905,9 @@
       "redirect_history": [],
       "content_type": "text/html; charset=ISO-8859-1",
       "title": "[RESOLVED] Rollbit withdrawals frozen with $17,700",
-      "body_size_bytes": 213258,
-      "body_sha256": "81b8ac97f41106f3d7ff90ecdc2e55980b3603f342e4443ce3f2e805b255914e",
-      "text_size_chars": 47310,
+      "body_size_bytes": 213176,
+      "body_sha256": "ef0343ea4938ab1922859f75999951712db8f43bb986782cb2fc5f55552dcf0e",
+      "text_size_chars": 47164,
       "marker_counts": {
         "withdrawal": 2,
         "kyc": 3,
@@ -913,10 +919,10 @@
         "token": 1
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_df6b5ddbd2f0.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_df6b5ddbd2f0.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_df6b5ddbd2f0.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_df6b5ddbd2f0.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_df6b5ddbd2f0.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_df6b5ddbd2f0.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_df6b5ddbd2f0.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_df6b5ddbd2f0.meta.json"
       }
     },
     {
@@ -931,7 +937,7 @@
       "source_names": [
         "bitcointalk"
       ],
-      "captured_at": "2026-04-25T11:10:45.906559+00:00",
+      "captured_at": "2026-05-10T10:25:28.386578+00:00",
       "domain": "bitcointalk.org",
       "ok": true,
       "status_code": 200,
@@ -942,9 +948,9 @@
       "redirect_history": [],
       "content_type": "text/html; charset=ISO-8859-1",
       "title": "[SCAM] Rollbit.com - Account frozen with 3,000 USDT without explanation",
-      "body_size_bytes": 62221,
-      "body_sha256": "4da15c457cb601951a0a40603abe97843639e97a546b9a867210deb24201e3cb",
-      "text_size_chars": 11618,
+      "body_size_bytes": 62256,
+      "body_sha256": "f9ea712301da1a99b73783c3e43111a2e12268018be96854e9da9544eff28451",
+      "text_size_chars": 11592,
       "marker_counts": {
         "withdrawal": 1,
         "kyc": 2,
@@ -956,10 +962,166 @@
         "token": 1
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_c310c72957a2.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_c310c72957a2.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_c310c72957a2.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/bitcointalk.org_index.php_c310c72957a2.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_c310c72957a2.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_c310c72957a2.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_c310c72957a2.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_c310c72957a2.meta.json"
+      }
+    },
+    {
+      "url": "https://bitcointalk.org/index.php?topic=5581051.0",
+      "source_type": "complaint_forum",
+      "source_refs": [
+        "cli"
+      ],
+      "case_ids": [],
+      "source_names": [],
+      "captured_at": "2026-05-10T10:25:29.178216+00:00",
+      "domain": "bitcointalk.org",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://bitcointalk.org/index.php?topic=5581051.0",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=ISO-8859-1",
+      "title": "Rollbit $29,090 withdrawal pending and sportsbook access blocked",
+      "body_size_bytes": 181626,
+      "body_sha256": "479a3db03c08a52b7995f20256ddd5572d582cc985ec27b3b79971b6b718b8df",
+      "text_size_chars": 25621,
+      "marker_counts": {
+        "withdrawal": 2,
+        "kyc": 2,
+        "multi_account": 2,
+        "frozen_or_blocked": 3,
+        "profit_or_win": 1,
+        "staff_or_team": 2,
+        "custody_or_wallet": 2,
+        "token": 1
+      },
+      "files": {
+        "body": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_958201815cb3.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_958201815cb3.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_958201815cb3.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_958201815cb3.meta.json"
+      }
+    },
+    {
+      "url": "https://bitcointalk.org/index.php?topic=5581293.msg66655063",
+      "source_type": "complaint_forum",
+      "source_refs": [
+        "cli"
+      ],
+      "case_ids": [],
+      "source_names": [],
+      "captured_at": "2026-05-10T10:25:29.998938+00:00",
+      "domain": "bitcointalk.org",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://bitcointalk.org/index.php?topic=5581293.msg66655063",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=ISO-8859-1",
+      "title": "Rollbit.com withdrawal and kyc issues RESOLVED",
+      "body_size_bytes": 120208,
+      "body_sha256": "d322b90a116cbe5616020c3bc6f763142b96b466ae3a668e86e403c07e052a5f",
+      "text_size_chars": 15343,
+      "marker_counts": {
+        "withdrawal": 2,
+        "kyc": 2,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 2,
+        "staff_or_team": 1,
+        "custody_or_wallet": 1,
+        "token": 1
+      },
+      "files": {
+        "body": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_06c35c47f63e.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_06c35c47f63e.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_06c35c47f63e.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_06c35c47f63e.meta.json"
+      }
+    },
+    {
+      "url": "https://bitcointalk.org/index.php?topic=5581481.msg66673322",
+      "source_type": "complaint_forum",
+      "source_refs": [
+        "cli"
+      ],
+      "case_ids": [],
+      "source_names": [],
+      "captured_at": "2026-05-10T10:25:30.817789+00:00",
+      "domain": "bitcointalk.org",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://bitcointalk.org/index.php?topic=5581481.msg66673322",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=ISO-8859-1",
+      "title": "Rollbit closed my account with ~$4,800 and I still don\ufffdt know the reason",
+      "body_size_bytes": 133816,
+      "body_sha256": "b380615723a8c3e80cdf55e56b28120ea87802882f8390622bf3a4217b05431e",
+      "text_size_chars": 25375,
+      "marker_counts": {
+        "withdrawal": 2,
+        "kyc": 3,
+        "multi_account": 1,
+        "frozen_or_blocked": 2,
+        "profit_or_win": 1,
+        "staff_or_team": 2,
+        "custody_or_wallet": 3,
+        "token": 1
+      },
+      "files": {
+        "body": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_94ebb32cf4ab.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_94ebb32cf4ab.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_94ebb32cf4ab.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/bitcointalk.org_index.php_94ebb32cf4ab.meta.json"
+      }
+    },
+    {
+      "url": "https://casino.guru/complaints/rollbit-casino-player-believes-that-their-withdrawal-1",
+      "source_type": "complaint_mediation",
+      "source_refs": [
+        "cli"
+      ],
+      "case_ids": [],
+      "source_names": [],
+      "captured_at": "2026-05-10T10:25:31.652448+00:00",
+      "domain": "casino.guru",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://casino.guru/complaints/rollbit-casino-player-believes-that-their-withdrawal-1",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html;charset=UTF-8",
+      "title": "Rollbit Casino - Player believes that their withdrawal has been delayed.",
+      "body_size_bytes": 112793,
+      "body_sha256": "f5ba8f752df9684b616e43264e9f3a527905398b95dbf8c8ca41f2aca9507573",
+      "text_size_chars": 6586,
+      "marker_counts": {
+        "withdrawal": 2,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 0,
+        "staff_or_team": 0,
+        "custody_or_wallet": 1,
+        "token": 0
+      },
+      "files": {
+        "body": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-believes-that-their-withdrawal-1_9e8d2f1d95b1.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-believes-that-their-withdrawal-1_9e8d2f1d95b1.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-believes-that-their-withdrawal-1_9e8d2f1d95b1.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-believes-that-their-withdrawal-1_9e8d2f1d95b1.meta.json"
       }
     },
     {
@@ -975,35 +1137,35 @@
       "source_names": [
         "casino_guru"
       ],
-      "captured_at": "2026-04-25T11:10:46.797297+00:00",
+      "captured_at": "2026-05-10T10:25:32.292134+00:00",
       "domain": "casino.guru",
       "ok": true,
-      "status_code": 404,
-      "tls_verified": false,
-      "tls_error": "HTTPSConnectionPool(host='casino.guru', port=443): Max retries exceeded with url: /complaints/rollbit-casino-player-s-account-has-been-closed (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1081)')))",
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
       "final_url": "https://casino.guru/complaints/rollbit-casino-player-s-account-has-been-closed",
       "redirect_count": 0,
       "redirect_history": [],
-      "content_type": "text/html; charset=iso-8859-1",
-      "title": "404 Not Found",
-      "body_size_bytes": 315,
-      "body_sha256": "d5a89e26beae0bc03ad18a0b0d1d3d75f87c32047879d25da11970cb5c4662a3",
-      "text_size_chars": 183,
+      "content_type": "text/html;charset=UTF-8",
+      "title": "Rollbit Casino - Player\u2019s account has been closed.",
+      "body_size_bytes": 199099,
+      "body_sha256": "fb87f6eed50f217fba9a544bf606507f4fefea73212a13a68f68b03affc4fe3a",
+      "text_size_chars": 24712,
       "marker_counts": {
-        "withdrawal": 0,
-        "kyc": 0,
-        "multi_account": 0,
-        "frozen_or_blocked": 0,
-        "profit_or_win": 0,
-        "staff_or_team": 0,
-        "custody_or_wallet": 0,
+        "withdrawal": 2,
+        "kyc": 3,
+        "multi_account": 1,
+        "frozen_or_blocked": 1,
+        "profit_or_win": 3,
+        "staff_or_team": 1,
+        "custody_or_wallet": 1,
         "token": 0
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-account-has-been-closed_3eef231b6ff0.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-account-has-been-closed_3eef231b6ff0.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-account-has-been-closed_3eef231b6ff0.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-account-has-been-closed_3eef231b6ff0.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-s-account-has-been-closed_3eef231b6ff0.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-s-account-has-been-closed_3eef231b6ff0.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-s-account-has-been-closed_3eef231b6ff0.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-s-account-has-been-closed_3eef231b6ff0.meta.json"
       }
     },
     {
@@ -1018,35 +1180,74 @@
       "source_names": [
         "casino_guru"
       ],
-      "captured_at": "2026-04-25T11:10:47.970289+00:00",
+      "captured_at": "2026-05-10T10:25:32.978086+00:00",
       "domain": "casino.guru",
       "ok": true,
-      "status_code": 404,
-      "tls_verified": false,
-      "tls_error": "HTTPSConnectionPool(host='casino.guru', port=443): Max retries exceeded with url: /complaints/rollbit-casino-player-s-account-has-been-closed-and (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1081)')))",
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
       "final_url": "https://casino.guru/complaints/rollbit-casino-player-s-account-has-been-closed-and",
       "redirect_count": 0,
       "redirect_history": [],
-      "content_type": "text/html; charset=iso-8859-1",
-      "title": "404 Not Found",
-      "body_size_bytes": 315,
-      "body_sha256": "d5a89e26beae0bc03ad18a0b0d1d3d75f87c32047879d25da11970cb5c4662a3",
-      "text_size_chars": 183,
+      "content_type": "text/html;charset=UTF-8",
+      "title": "Rollbit Casino - Player's account has been closed and funds confiscated.",
+      "body_size_bytes": 221277,
+      "body_sha256": "ac0ed57b5cd6d683e2b0011584fd9914a74cfdc13739e6ea6a117cb30373274b",
+      "text_size_chars": 29071,
       "marker_counts": {
         "withdrawal": 0,
-        "kyc": 0,
+        "kyc": 4,
         "multi_account": 0,
-        "frozen_or_blocked": 0,
-        "profit_or_win": 0,
-        "staff_or_team": 0,
-        "custody_or_wallet": 0,
+        "frozen_or_blocked": 3,
+        "profit_or_win": 3,
+        "staff_or_team": 1,
+        "custody_or_wallet": 1,
         "token": 0
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-account-has-been-closed-and_dd203118e035.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-account-has-been-closed-and_dd203118e035.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-account-has-been-closed-and_dd203118e035.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-account-has-been-closed-and_dd203118e035.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-s-account-has-been-closed-and_dd203118e035.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-s-account-has-been-closed-and_dd203118e035.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-s-account-has-been-closed-and_dd203118e035.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-s-account-has-been-closed-and_dd203118e035.meta.json"
+      }
+    },
+    {
+      "url": "https://casino.guru/complaints/rollbit-casino-player-s-account-has-been-restricted-2",
+      "source_type": "complaint_mediation",
+      "source_refs": [
+        "cli"
+      ],
+      "case_ids": [],
+      "source_names": [],
+      "captured_at": "2026-05-10T10:25:33.557544+00:00",
+      "domain": "casino.guru",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://casino.guru/complaints/rollbit-casino-player-s-account-has-been-restricted-2",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html;charset=UTF-8",
+      "title": "Rollbit Casino - Player's account has been restricted and funds confiscated.",
+      "body_size_bytes": 131839,
+      "body_sha256": "2da68e6b3e448a5b1bc86bc9d41a0e757638c29c88e36afa831038e4cd95ea2e",
+      "text_size_chars": 17346,
+      "marker_counts": {
+        "withdrawal": 2,
+        "kyc": 4,
+        "multi_account": 0,
+        "frozen_or_blocked": 2,
+        "profit_or_win": 2,
+        "staff_or_team": 2,
+        "custody_or_wallet": 3,
+        "token": 0
+      },
+      "files": {
+        "body": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-s-account-has-been-restricted-2_d12e6ac8af6f.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-s-account-has-been-restricted-2_d12e6ac8af6f.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-s-account-has-been-restricted-2_d12e6ac8af6f.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-s-account-has-been-restricted-2_d12e6ac8af6f.meta.json"
       }
     },
     {
@@ -1061,35 +1262,35 @@
       "source_names": [
         "casino_guru"
       ],
-      "captured_at": "2026-04-25T11:10:48.758630+00:00",
+      "captured_at": "2026-05-10T10:25:34.095947+00:00",
       "domain": "casino.guru",
       "ok": true,
-      "status_code": 404,
-      "tls_verified": false,
-      "tls_error": "HTTPSConnectionPool(host='casino.guru', port=443): Max retries exceeded with url: /complaints/rollbit-casino-player-s-account-is-closed-with-winnings (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1081)')))",
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
       "final_url": "https://casino.guru/complaints/rollbit-casino-player-s-account-is-closed-with-winnings",
       "redirect_count": 0,
       "redirect_history": [],
-      "content_type": "text/html; charset=iso-8859-1",
-      "title": "404 Not Found",
-      "body_size_bytes": 315,
-      "body_sha256": "d5a89e26beae0bc03ad18a0b0d1d3d75f87c32047879d25da11970cb5c4662a3",
-      "text_size_chars": 183,
+      "content_type": "text/html;charset=UTF-8",
+      "title": "Rollbit Casino - Player's account is closed with winnings confiscated.",
+      "body_size_bytes": 153850,
+      "body_sha256": "a414e1531d61f6ea63a54ea29d5d14c04ba77f402e56ab050298dc027f61abb7",
+      "text_size_chars": 18516,
       "marker_counts": {
-        "withdrawal": 0,
-        "kyc": 0,
+        "withdrawal": 1,
+        "kyc": 3,
         "multi_account": 0,
-        "frozen_or_blocked": 0,
-        "profit_or_win": 0,
-        "staff_or_team": 0,
-        "custody_or_wallet": 0,
+        "frozen_or_blocked": 2,
+        "profit_or_win": 3,
+        "staff_or_team": 1,
+        "custody_or_wallet": 1,
         "token": 0
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-account-is-closed-with-winnings_efe997bb3a08.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-account-is-closed-with-winnings_efe997bb3a08.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-account-is-closed-with-winnings_efe997bb3a08.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-account-is-closed-with-winnings_efe997bb3a08.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-s-account-is-closed-with-winnings_efe997bb3a08.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-s-account-is-closed-with-winnings_efe997bb3a08.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-s-account-is-closed-with-winnings_efe997bb3a08.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-s-account-is-closed-with-winnings_efe997bb3a08.meta.json"
       }
     },
     {
@@ -1104,35 +1305,35 @@
       "source_names": [
         "casino_guru"
       ],
-      "captured_at": "2026-04-25T11:10:49.357727+00:00",
+      "captured_at": "2026-05-10T10:25:34.616539+00:00",
       "domain": "casino.guru",
       "ok": true,
-      "status_code": 404,
-      "tls_verified": false,
-      "tls_error": "HTTPSConnectionPool(host='casino.guru', port=443): Max retries exceeded with url: /complaints/rollbit-casino-player-s-withdrawal-has-been-denied (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1081)')))",
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
       "final_url": "https://casino.guru/complaints/rollbit-casino-player-s-withdrawal-has-been-denied",
       "redirect_count": 0,
       "redirect_history": [],
-      "content_type": "text/html; charset=iso-8859-1",
-      "title": "404 Not Found",
-      "body_size_bytes": 315,
-      "body_sha256": "d5a89e26beae0bc03ad18a0b0d1d3d75f87c32047879d25da11970cb5c4662a3",
-      "text_size_chars": 183,
+      "content_type": "text/html;charset=UTF-8",
+      "title": "Rollbit Casino - Player\u2019s withdrawal has been denied.",
+      "body_size_bytes": 131309,
+      "body_sha256": "46dd2463211e3ad0a6855163dedfe4fd1cbaa89feeea0d92e5726bb1a2bf4a69",
+      "text_size_chars": 13663,
       "marker_counts": {
-        "withdrawal": 0,
-        "kyc": 0,
-        "multi_account": 0,
-        "frozen_or_blocked": 0,
-        "profit_or_win": 0,
+        "withdrawal": 2,
+        "kyc": 2,
+        "multi_account": 1,
+        "frozen_or_blocked": 3,
+        "profit_or_win": 2,
         "staff_or_team": 0,
-        "custody_or_wallet": 0,
+        "custody_or_wallet": 1,
         "token": 0
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-has-been-denied_65cb42cba8e4.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-has-been-denied_65cb42cba8e4.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-has-been-denied_65cb42cba8e4.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-has-been-denied_65cb42cba8e4.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-has-been-denied_65cb42cba8e4.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-has-been-denied_65cb42cba8e4.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-has-been-denied_65cb42cba8e4.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-has-been-denied_65cb42cba8e4.meta.json"
       }
     },
     {
@@ -1148,35 +1349,35 @@
       "source_names": [
         "casino_guru"
       ],
-      "captured_at": "2026-04-25T11:10:50.369258+00:00",
+      "captured_at": "2026-05-10T10:25:35.183749+00:00",
       "domain": "casino.guru",
       "ok": true,
-      "status_code": 404,
-      "tls_verified": false,
-      "tls_error": "HTTPSConnectionPool(host='casino.guru', port=443): Max retries exceeded with url: /complaints/rollbit-casino-player-s-withdrawal-is-blocked-for (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1081)')))",
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
       "final_url": "https://casino.guru/complaints/rollbit-casino-player-s-withdrawal-is-blocked-for",
       "redirect_count": 0,
       "redirect_history": [],
-      "content_type": "text/html; charset=iso-8859-1",
-      "title": "404 Not Found",
-      "body_size_bytes": 315,
-      "body_sha256": "d5a89e26beae0bc03ad18a0b0d1d3d75f87c32047879d25da11970cb5c4662a3",
-      "text_size_chars": 183,
+      "content_type": "text/html;charset=UTF-8",
+      "title": "Rollbit Casino - Player's withdrawal is blocked for several months.",
+      "body_size_bytes": 138734,
+      "body_sha256": "b6e23f6263301ad4c20b9999b24f2acb1e03821d2c284b593fbe841a456b80b1",
+      "text_size_chars": 22085,
       "marker_counts": {
-        "withdrawal": 0,
-        "kyc": 0,
-        "multi_account": 0,
-        "frozen_or_blocked": 0,
-        "profit_or_win": 0,
-        "staff_or_team": 0,
-        "custody_or_wallet": 0,
+        "withdrawal": 2,
+        "kyc": 3,
+        "multi_account": 1,
+        "frozen_or_blocked": 2,
+        "profit_or_win": 3,
+        "staff_or_team": 1,
+        "custody_or_wallet": 3,
         "token": 0
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-is-blocked-for_562ce637bb1a.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-is-blocked-for_562ce637bb1a.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-is-blocked-for_562ce637bb1a.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-is-blocked-for_562ce637bb1a.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-is-blocked-for_562ce637bb1a.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-is-blocked-for_562ce637bb1a.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-is-blocked-for_562ce637bb1a.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-is-blocked-for_562ce637bb1a.meta.json"
       }
     },
     {
@@ -1191,35 +1392,35 @@
       "source_names": [
         "casino_guru"
       ],
-      "captured_at": "2026-04-25T11:10:51.181208+00:00",
+      "captured_at": "2026-05-10T10:25:35.741013+00:00",
       "domain": "casino.guru",
       "ok": true,
-      "status_code": 404,
-      "tls_verified": false,
-      "tls_error": "HTTPSConnectionPool(host='casino.guru', port=443): Max retries exceeded with url: /complaints/rollbit-casino-player-s-withdrawal-restricted-due (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1081)')))",
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
       "final_url": "https://casino.guru/complaints/rollbit-casino-player-s-withdrawal-restricted-due",
       "redirect_count": 0,
       "redirect_history": [],
-      "content_type": "text/html; charset=iso-8859-1",
-      "title": "404 Not Found",
-      "body_size_bytes": 315,
-      "body_sha256": "d5a89e26beae0bc03ad18a0b0d1d3d75f87c32047879d25da11970cb5c4662a3",
-      "text_size_chars": 183,
+      "content_type": "text/html;charset=UTF-8",
+      "title": "Rollbit Casino - Player's withdrawal restricted due to accusations of multiple accounts.",
+      "body_size_bytes": 160981,
+      "body_sha256": "772b6be0bc47c56eda941c85e28377fa7b5a8c693d385883072b9e579a627159",
+      "text_size_chars": 17686,
       "marker_counts": {
-        "withdrawal": 0,
-        "kyc": 0,
-        "multi_account": 0,
+        "withdrawal": 2,
+        "kyc": 1,
+        "multi_account": 1,
         "frozen_or_blocked": 0,
-        "profit_or_win": 0,
-        "staff_or_team": 0,
-        "custody_or_wallet": 0,
+        "profit_or_win": 3,
+        "staff_or_team": 1,
+        "custody_or_wallet": 1,
         "token": 0
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-restricted-due_7ede52204409.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-restricted-due_7ede52204409.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-restricted-due_7ede52204409.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-restricted-due_7ede52204409.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-restricted-due_7ede52204409.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-restricted-due_7ede52204409.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-restricted-due_7ede52204409.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-s-withdrawal-restricted-due_7ede52204409.meta.json"
       }
     },
     {
@@ -1235,35 +1436,35 @@
       "source_names": [
         "casino_guru"
       ],
-      "captured_at": "2026-04-25T11:10:54.092957+00:00",
+      "captured_at": "2026-05-10T10:25:36.286350+00:00",
       "domain": "casino.guru",
       "ok": true,
-      "status_code": 404,
-      "tls_verified": false,
-      "tls_error": "HTTPSConnectionPool(host='casino.guru', port=443): Max retries exceeded with url: /complaints/rollbit-casino-player-s-withdrawals-are-blocked-by (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1081)')))",
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
       "final_url": "https://casino.guru/complaints/rollbit-casino-player-s-withdrawals-are-blocked-by",
       "redirect_count": 0,
       "redirect_history": [],
-      "content_type": "text/html; charset=iso-8859-1",
-      "title": "404 Not Found",
-      "body_size_bytes": 315,
-      "body_sha256": "d5a89e26beae0bc03ad18a0b0d1d3d75f87c32047879d25da11970cb5c4662a3",
-      "text_size_chars": 183,
+      "content_type": "text/html;charset=UTF-8",
+      "title": "Rollbit Casino - Player's withdrawals are blocked by casino.",
+      "body_size_bytes": 123667,
+      "body_sha256": "14e842b35718e01d1fccc9f8289ec772e220acb14e8077b9979471bd11154182",
+      "text_size_chars": 11564,
       "marker_counts": {
-        "withdrawal": 0,
-        "kyc": 0,
+        "withdrawal": 2,
+        "kyc": 1,
         "multi_account": 0,
-        "frozen_or_blocked": 0,
-        "profit_or_win": 0,
-        "staff_or_team": 0,
-        "custody_or_wallet": 0,
+        "frozen_or_blocked": 2,
+        "profit_or_win": 2,
+        "staff_or_team": 1,
+        "custody_or_wallet": 1,
         "token": 0
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-withdrawals-are-blocked-by_8f609fa44758.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-withdrawals-are-blocked-by_8f609fa44758.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-withdrawals-are-blocked-by_8f609fa44758.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/casino.guru_complaints_rollbit-casino-player-s-withdrawals-are-blocked-by_8f609fa44758.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-s-withdrawals-are-blocked-by_8f609fa44758.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-s-withdrawals-are-blocked-by_8f609fa44758.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-s-withdrawals-are-blocked-by_8f609fa44758.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/casino.guru_complaints_rollbit-casino-player-s-withdrawals-are-blocked-by_8f609fa44758.meta.json"
       }
     },
     {
@@ -1278,7 +1479,7 @@
       "source_names": [
         "askgamblers"
       ],
-      "captured_at": "2026-04-25T11:10:54.652813+00:00",
+      "captured_at": "2026-05-10T10:25:36.858843+00:00",
       "domain": "forum.askgamblers.com",
       "ok": true,
       "status_code": 200,
@@ -1289,9 +1490,9 @@
       "redirect_history": [],
       "content_type": "text/html;charset=UTF-8",
       "title": "[Rollbit] Unfairly suspended and over $7k stolen from me - Online Slot Discussions - AskGamblers",
-      "body_size_bytes": 133832,
-      "body_sha256": "b53fe8526f36cf2f137a7c4d2d410c813586e4999afe81f18b1cdf9f46df335b",
-      "text_size_chars": 12350,
+      "body_size_bytes": 133812,
+      "body_sha256": "0cb256ffbe2b368ec342a6a1357328c7b900baf786c7d752d7f72418ca08a35d",
+      "text_size_chars": 12402,
       "marker_counts": {
         "withdrawal": 3,
         "kyc": 1,
@@ -1303,10 +1504,10 @@
         "token": 0
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/forum.askgamblers.com_topic_13060-rollbit-unfairly-suspended-and-over-7k-stolen-_3bf275d41b8c.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/forum.askgamblers.com_topic_13060-rollbit-unfairly-suspended-and-over-7k-stolen-_3bf275d41b8c.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/forum.askgamblers.com_topic_13060-rollbit-unfairly-suspended-and-over-7k-stolen-_3bf275d41b8c.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/forum.askgamblers.com_topic_13060-rollbit-unfairly-suspended-and-over-7k-stolen-_3bf275d41b8c.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/forum.askgamblers.com_topic_13060-rollbit-unfairly-suspended-and-over-7k-stolen-_3bf275d41b8c.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/forum.askgamblers.com_topic_13060-rollbit-unfairly-suspended-and-over-7k-stolen-_3bf275d41b8c.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/forum.askgamblers.com_topic_13060-rollbit-unfairly-suspended-and-over-7k-stolen-_3bf275d41b8c.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/forum.askgamblers.com_topic_13060-rollbit-unfairly-suspended-and-over-7k-stolen-_3bf275d41b8c.meta.json"
       }
     },
     {
@@ -1321,7 +1522,7 @@
       "source_names": [
         "askgamblers"
       ],
-      "captured_at": "2026-04-25T11:10:55.643764+00:00",
+      "captured_at": "2026-05-10T10:25:37.916098+00:00",
       "domain": "forum.askgamblers.com",
       "ok": true,
       "status_code": 200,
@@ -1332,9 +1533,9 @@
       "redirect_history": [],
       "content_type": "text/html;charset=UTF-8",
       "title": "Rollbit Casino Withholding Winnings And Banned Me With 0 Explanation - Need help with a complaint? - AskGamblers",
-      "body_size_bytes": 376214,
-      "body_sha256": "1c6d061bf6f824a5b02432233bda441e589fcdb570e1067f1a50d08c7053ac47",
-      "text_size_chars": 21884,
+      "body_size_bytes": 374898,
+      "body_sha256": "42f746e7899ce93fb3ef36e37e1b9947b948ca10efdc9f41ad0bcd1c9125b118",
+      "text_size_chars": 21903,
       "marker_counts": {
         "withdrawal": 3,
         "kyc": 2,
@@ -1346,10 +1547,10 @@
         "token": 0
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/forum.askgamblers.com_topic_16031-rollbit-casino-withholding-winnings-and-banned_efcf0b7aeb7b.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/forum.askgamblers.com_topic_16031-rollbit-casino-withholding-winnings-and-banned_efcf0b7aeb7b.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/forum.askgamblers.com_topic_16031-rollbit-casino-withholding-winnings-and-banned_efcf0b7aeb7b.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/forum.askgamblers.com_topic_16031-rollbit-casino-withholding-winnings-and-banned_efcf0b7aeb7b.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/forum.askgamblers.com_topic_16031-rollbit-casino-withholding-winnings-and-banned_efcf0b7aeb7b.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/forum.askgamblers.com_topic_16031-rollbit-casino-withholding-winnings-and-banned_efcf0b7aeb7b.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/forum.askgamblers.com_topic_16031-rollbit-casino-withholding-winnings-and-banned_efcf0b7aeb7b.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/forum.askgamblers.com_topic_16031-rollbit-casino-withholding-winnings-and-banned_efcf0b7aeb7b.meta.json"
       }
     },
     {
@@ -1364,7 +1565,7 @@
       "source_names": [
         "casinolistings"
       ],
-      "captured_at": "2026-04-25T11:10:57.122798+00:00",
+      "captured_at": "2026-05-10T10:25:39.044626+00:00",
       "domain": "www.casinolistings.com",
       "ok": true,
       "status_code": 200,
@@ -1375,24 +1576,24 @@
       "redirect_history": [],
       "content_type": "text/html; charset=utf-8",
       "title": "[Rollbit] Unfairly suspended and over $7k stolen from me | Casino Listings forum",
-      "body_size_bytes": 69160,
-      "body_sha256": "23e3b04fe754ba140e6ac24960009ef7ff69d0c3bd7f3a7980abe2202efc62bf",
-      "text_size_chars": 17280,
+      "body_size_bytes": 70136,
+      "body_sha256": "ebcf9cf870f3189d992b042ff291d61d675f7ce12100ae0468360a295e923083",
+      "text_size_chars": 17582,
       "marker_counts": {
         "withdrawal": 2,
         "kyc": 1,
         "multi_account": 0,
         "frozen_or_blocked": 3,
-        "profit_or_win": 3,
+        "profit_or_win": 2,
         "staff_or_team": 1,
         "custody_or_wallet": 1,
         "token": 0
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/www.casinolistings.com_forum_gambling_online-casinos_41297_rollbit-unfairly-susp_ff814004ed1c.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/www.casinolistings.com_forum_gambling_online-casinos_41297_rollbit-unfairly-susp_ff814004ed1c.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/www.casinolistings.com_forum_gambling_online-casinos_41297_rollbit-unfairly-susp_ff814004ed1c.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/www.casinolistings.com_forum_gambling_online-casinos_41297_rollbit-unfairly-susp_ff814004ed1c.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/www.casinolistings.com_forum_gambling_online-casinos_41297_rollbit-unfairly-susp_ff814004ed1c.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/www.casinolistings.com_forum_gambling_online-casinos_41297_rollbit-unfairly-susp_ff814004ed1c.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/www.casinolistings.com_forum_gambling_online-casinos_41297_rollbit-unfairly-susp_ff814004ed1c.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/www.casinolistings.com_forum_gambling_online-casinos_41297_rollbit-unfairly-susp_ff814004ed1c.meta.json"
       }
     },
     {
@@ -1458,7 +1659,7 @@
       "source_names": [
         "trustpilot"
       ],
-      "captured_at": "2026-04-25T11:10:58.456242+00:00",
+      "captured_at": "2026-05-10T10:25:40.380635+00:00",
       "domain": "www.trustpilot.com",
       "ok": true,
       "status_code": 403,
@@ -1483,10 +1684,10 @@
         "token": 0
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/www.trustpilot.com_review_www.rollbit.com_53e318382592.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/www.trustpilot.com_review_www.rollbit.com_53e318382592.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/www.trustpilot.com_review_www.rollbit.com_53e318382592.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/www.trustpilot.com_review_www.rollbit.com_53e318382592.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/www.trustpilot.com_review_www.rollbit.com_53e318382592.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/www.trustpilot.com_review_www.rollbit.com_53e318382592.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/www.trustpilot.com_review_www.rollbit.com_53e318382592.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/www.trustpilot.com_review_www.rollbit.com_53e318382592.meta.json"
       }
     },
     {
@@ -1498,7 +1699,7 @@
       ],
       "case_ids": [],
       "source_names": [],
-      "captured_at": "2026-04-25T11:10:58.836287+00:00",
+      "captured_at": "2026-05-10T10:25:41.544482+00:00",
       "domain": "blog.rollbit.com",
       "ok": true,
       "status_code": 200,
@@ -1509,24 +1710,24 @@
       "redirect_history": [],
       "content_type": "text/html; charset=utf-8",
       "title": "Official Rollbit Blog",
-      "body_size_bytes": 69908,
-      "body_sha256": "234ca47b237f4ab98833a91b10d2ee74775a3619cd2c451a61b009be35177cae",
-      "text_size_chars": 4606,
+      "body_size_bytes": 70169,
+      "body_sha256": "f44662a5702d9dba170ad5e58fdedc49fbc54ff8c676c492ab8f6b5cd8e8ddf1",
+      "text_size_chars": 4740,
       "marker_counts": {
         "withdrawal": 0,
         "kyc": 0,
         "multi_account": 0,
         "frozen_or_blocked": 0,
         "profit_or_win": 1,
-        "staff_or_team": 0,
+        "staff_or_team": 1,
         "custody_or_wallet": 0,
         "token": 0
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/blog.rollbit.com_deba0a0d9d3a.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/blog.rollbit.com_deba0a0d9d3a.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/blog.rollbit.com_deba0a0d9d3a.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/blog.rollbit.com_deba0a0d9d3a.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/blog.rollbit.com_deba0a0d9d3a.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/blog.rollbit.com_deba0a0d9d3a.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/blog.rollbit.com_deba0a0d9d3a.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/blog.rollbit.com_deba0a0d9d3a.meta.json"
       }
     },
     {
@@ -1538,7 +1739,7 @@
       ],
       "case_ids": [],
       "source_names": [],
-      "captured_at": "2026-04-25T11:10:59.302606+00:00",
+      "captured_at": "2026-05-10T10:25:42.260723+00:00",
       "domain": "blog.rollbit.com",
       "ok": true,
       "status_code": 200,
@@ -1549,24 +1750,24 @@
       "redirect_history": [],
       "content_type": "text/html; charset=utf-8",
       "title": "RLB Migration to ETH \ud83d\udcb1",
-      "body_size_bytes": 29887,
-      "body_sha256": "454b887f2fc98bd1d6965e3943f2308e0f5c169c37c382611c2554cd27ffc181",
-      "text_size_chars": 5730,
+      "body_size_bytes": 30126,
+      "body_sha256": "90caba2707fd40f8a224ede917a1e7c58d0bf8fca2230aa697c45cf7cd4e6030",
+      "text_size_chars": 5872,
       "marker_counts": {
         "withdrawal": 2,
         "kyc": 0,
         "multi_account": 0,
         "frozen_or_blocked": 0,
         "profit_or_win": 1,
-        "staff_or_team": 2,
+        "staff_or_team": 3,
         "custody_or_wallet": 2,
         "token": 4
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/blog.rollbit.com_rlb-eth-migration_a38e386d4f2b.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/blog.rollbit.com_rlb-eth-migration_a38e386d4f2b.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/blog.rollbit.com_rlb-eth-migration_a38e386d4f2b.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/blog.rollbit.com_rlb-eth-migration_a38e386d4f2b.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/blog.rollbit.com_rlb-eth-migration_a38e386d4f2b.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/blog.rollbit.com_rlb-eth-migration_a38e386d4f2b.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/blog.rollbit.com_rlb-eth-migration_a38e386d4f2b.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/blog.rollbit.com_rlb-eth-migration_a38e386d4f2b.meta.json"
       }
     },
     {
@@ -1574,11 +1775,12 @@
       "source_type": "operator_publication",
       "source_refs": [
         "REPORT_1_ONCHAIN_FORENSICS.md",
-        "REPORT_5_NEWS_AND_REGULATORY_TIMELINE.md"
+        "REPORT_5_NEWS_AND_REGULATORY_TIMELINE.md",
+        "REPORT_9_EXTERNAL_REVIEW_FACT_CHECK.md"
       ],
       "case_ids": [],
       "source_names": [],
-      "captured_at": "2026-04-25T11:10:59.568945+00:00",
+      "captured_at": "2026-05-10T10:25:42.535938+00:00",
       "domain": "blog.rollbit.com",
       "ok": true,
       "status_code": 200,
@@ -1594,49 +1796,103 @@
       ],
       "content_type": "text/html; charset=utf-8",
       "title": "RLB Utility Guide: Everything you need to know",
-      "body_size_bytes": 37274,
-      "body_sha256": "fa4aa7632d04a4bf0789587119d716c8e1a2110d8c5ee7d917ed913e95988557",
-      "text_size_chars": 8431,
+      "body_size_bytes": 37513,
+      "body_sha256": "04fd72d7f6add2fa4aef465b258c0c2c246b1ba29bc38563613fd76b5f3a04c3",
+      "text_size_chars": 8573,
       "marker_counts": {
         "withdrawal": 1,
         "kyc": 0,
         "multi_account": 0,
         "frozen_or_blocked": 1,
         "profit_or_win": 3,
-        "staff_or_team": 0,
+        "staff_or_team": 1,
         "custody_or_wallet": 0,
         "token": 3
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/blog.rollbit.com_rlb-utility-guide_amp_2dd657f0ae59.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/blog.rollbit.com_rlb-utility-guide_amp_2dd657f0ae59.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/blog.rollbit.com_rlb-utility-guide_amp_2dd657f0ae59.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/blog.rollbit.com_rlb-utility-guide_amp_2dd657f0ae59.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/blog.rollbit.com_rlb-utility-guide_amp_2dd657f0ae59.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/blog.rollbit.com_rlb-utility-guide_amp_2dd657f0ae59.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/blog.rollbit.com_rlb-utility-guide_amp_2dd657f0ae59.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/blog.rollbit.com_rlb-utility-guide_amp_2dd657f0ae59.meta.json"
+      }
+    },
+    {
+      "url": "https://api.rollbit.com/v1/public/rlb/supply.json",
+      "source_type": "operator_surface",
+      "source_refs": [
+        "cli"
+      ],
+      "case_ids": [],
+      "source_names": [],
+      "captured_at": "2026-05-10T10:25:42.873416+00:00",
+      "domain": "api.rollbit.com",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://api.rollbit.com/v1/public/rlb/supply.json",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "application/json;charset=UTF-8",
+      "title": "",
+      "body_size_bytes": 31,
+      "body_sha256": "9a48daedc152be833982f7063c64fd8329b86cc6731c37586d8480ae9e6cd55c",
+      "text_size_chars": 31,
+      "marker_counts": {
+        "withdrawal": 0,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 0,
+        "staff_or_team": 0,
+        "custody_or_wallet": 0,
+        "token": 0
+      },
+      "files": {
+        "body": "output/captures/public_records/20260510T102511Z/api.rollbit.com_v1_public_rlb_supply.json_e228b670f9c7.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/api.rollbit.com_v1_public_rlb_supply.json_e228b670f9c7.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/api.rollbit.com_v1_public_rlb_supply.json_e228b670f9c7.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/api.rollbit.com_v1_public_rlb_supply.json_e228b670f9c7.meta.json"
       }
     },
     {
       "url": "https://rollbit.com/",
       "source_type": "operator_surface",
       "source_refs": [
-        "REPORT_4_WEBSITE_TECHNICAL_INVESTIGATION.md"
+        "REPORT_4_WEBSITE_TECHNICAL_INVESTIGATION.md",
+        "REPORT_8_PUBLIC_RECORDS_AND_COMPLAINT_CAPTURE.md"
       ],
       "case_ids": [],
       "source_names": [],
-      "captured_at": "2026-04-25T11:10:59.874099+00:00",
+      "captured_at": "2026-05-10T10:25:44.454931+00:00",
       "domain": "rollbit.com",
-      "ok": false,
-      "error": "HTTPSConnectionPool(host='rollbit.com', port=443): Max retries exceeded with url: / (Caused by NewConnectionError(\"HTTPSConnection(host='rollbit.com', port=443): Failed to establish a new connection: [Errno 61] Connection refused\"))",
-      "status_code": null,
-      "final_url": "",
+      "ok": true,
+      "status_code": 403,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://rollbit.com/",
       "redirect_count": 0,
-      "content_type": "",
-      "title": "",
-      "body_size_bytes": 0,
-      "body_sha256": "",
-      "text_size_chars": 0,
-      "marker_counts": {},
+      "redirect_history": [],
+      "content_type": "text/html; charset=UTF-8",
+      "title": "Just a moment...",
+      "body_size_bytes": 5445,
+      "body_sha256": "24f2cb044da68afcb4b338864e3ae81bfa1e18010bf9b717e98d7e84ae7e57ad",
+      "text_size_chars": 16,
+      "marker_counts": {
+        "withdrawal": 0,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 0,
+        "staff_or_team": 0,
+        "custody_or_wallet": 0,
+        "token": 0
+      },
       "files": {
-        "meta": "output/captures/public_records/20260425T111024Z/rollbit.com_06d13996eb0a.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/rollbit.com_06d13996eb0a.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/rollbit.com_06d13996eb0a.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/rollbit.com_06d13996eb0a.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/rollbit.com_06d13996eb0a.meta.json"
       }
     },
     {
@@ -1647,7 +1903,7 @@
       ],
       "case_ids": [],
       "source_names": [],
-      "captured_at": "2026-04-25T11:11:00.083581+00:00",
+      "captured_at": "2026-05-10T10:25:45.316172+00:00",
       "domain": "urlscan.io",
       "ok": true,
       "status_code": 200,
@@ -1659,7 +1915,7 @@
       "content_type": "text/html; charset=utf-8",
       "title": "rollbit.com - urlscan.io",
       "body_size_bytes": 178511,
-      "body_sha256": "6087a7ce9ce8d70438081f75cab80b21ddd87e0f612e8583f54f65f38e8f7d8e",
+      "body_sha256": "4e89738d934a1d5c37d89b7ae76477ae7ef51b85c3f0953fdf7d3edebe7196cc",
       "text_size_chars": 25262,
       "marker_counts": {
         "withdrawal": 0,
@@ -1672,10 +1928,323 @@
         "token": 0
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/urlscan.io_result_ae5a0a7d-6223-4610-b982-5c7258a2a285_b75a434eb2ab.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/urlscan.io_result_ae5a0a7d-6223-4610-b982-5c7258a2a285_b75a434eb2ab.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/urlscan.io_result_ae5a0a7d-6223-4610-b982-5c7258a2a285_b75a434eb2ab.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/urlscan.io_result_ae5a0a7d-6223-4610-b982-5c7258a2a285_b75a434eb2ab.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/urlscan.io_result_ae5a0a7d-6223-4610-b982-5c7258a2a285_b75a434eb2ab.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/urlscan.io_result_ae5a0a7d-6223-4610-b982-5c7258a2a285_b75a434eb2ab.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/urlscan.io_result_ae5a0a7d-6223-4610-b982-5c7258a2a285_b75a434eb2ab.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/urlscan.io_result_ae5a0a7d-6223-4610-b982-5c7258a2a285_b75a434eb2ab.meta.json"
+      }
+    },
+    {
+      "url": "https://api.coingecko.com/api/v3/coins/rollbit-coin?localization=false&tickers=true&market_data=true&community_data=false&developer_data=false&sparkline=false",
+      "source_type": "public_record",
+      "source_refs": [
+        "cli"
+      ],
+      "case_ids": [],
+      "source_names": [],
+      "captured_at": "2026-05-10T10:25:47.241134+00:00",
+      "domain": "api.coingecko.com",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://api.coingecko.com/api/v3/coins/rollbit-coin?localization=false&tickers=true&market_data=true&community_data=false&developer_data=false&sparkline=false",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "application/json; charset=utf-8",
+      "title": "",
+      "body_size_bytes": 31327,
+      "body_sha256": "ec3aeaa7aae7a5d37451c07567b872496613313c320b4fd074118907a990a0de",
+      "text_size_chars": 31327,
+      "marker_counts": {
+        "withdrawal": 0,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 1,
+        "profit_or_win": 0,
+        "staff_or_team": 0,
+        "custody_or_wallet": 1,
+        "token": 3
+      },
+      "files": {
+        "body": "output/captures/public_records/20260510T102511Z/api.coingecko.com_api_v3_coins_rollbit-coin_d00c9fcf5413.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/api.coingecko.com_api_v3_coins_rollbit-coin_d00c9fcf5413.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/api.coingecko.com_api_v3_coins_rollbit-coin_d00c9fcf5413.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/api.coingecko.com_api_v3_coins_rollbit-coin_d00c9fcf5413.meta.json"
+      }
+    },
+    {
+      "url": "https://api.dexscreener.com/latest/dex/tokens/0x046eee2cc3188071c02bfc1745a6b17c656e3f3d",
+      "source_type": "public_record",
+      "source_refs": [
+        "cli"
+      ],
+      "case_ids": [],
+      "source_names": [],
+      "captured_at": "2026-05-10T10:25:47.991285+00:00",
+      "domain": "api.dexscreener.com",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://api.dexscreener.com/latest/dex/tokens/0x046eee2cc3188071c02bfc1745a6b17c656e3f3d",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "application/json; charset=utf-8",
+      "title": "",
+      "body_size_bytes": 6249,
+      "body_sha256": "64404c312d37024387ce527a5efbfc09866a8833a284133c2baacdfa26bbac7e",
+      "text_size_chars": 6249,
+      "marker_counts": {
+        "withdrawal": 0,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 0,
+        "staff_or_team": 0,
+        "custody_or_wallet": 1,
+        "token": 4
+      },
+      "files": {
+        "body": "output/captures/public_records/20260510T102511Z/api.dexscreener.com_latest_dex_tokens_0x046eee2cc3188071c02bfc1745a6b17c656e3f3d_b218991bd7f4.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/api.dexscreener.com_latest_dex_tokens_0x046eee2cc3188071c02bfc1745a6b17c656e3f3d_b218991bd7f4.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/api.dexscreener.com_latest_dex_tokens_0x046eee2cc3188071c02bfc1745a6b17c656e3f3d_b218991bd7f4.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/api.dexscreener.com_latest_dex_tokens_0x046eee2cc3188071c02bfc1745a6b17c656e3f3d_b218991bd7f4.meta.json"
+      }
+    },
+    {
+      "url": "https://api.poloniex.com/markets",
+      "source_type": "public_record",
+      "source_refs": [
+        "cli"
+      ],
+      "case_ids": [],
+      "source_names": [],
+      "captured_at": "2026-05-10T10:25:48.344320+00:00",
+      "domain": "api.poloniex.com",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://api.poloniex.com/markets",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "application/json",
+      "title": "",
+      "body_size_bytes": 531608,
+      "body_sha256": "4496f408022d2b43bd46bb195bfc3c83d9e3d36332241a229ba0518763c03764",
+      "text_size_chars": 531296,
+      "marker_counts": {
+        "withdrawal": 0,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 1,
+        "staff_or_team": 2,
+        "custody_or_wallet": 0,
+        "token": 0
+      },
+      "files": {
+        "body": "output/captures/public_records/20260510T102511Z/api.poloniex.com_markets_b53ad147e376.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/api.poloniex.com_markets_b53ad147e376.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/api.poloniex.com_markets_b53ad147e376.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/api.poloniex.com_markets_b53ad147e376.meta.json"
+      }
+    },
+    {
+      "url": "https://gamingcontrol.spin-cdn.com/media/license_registry/20260324_20260323_ogl_license_registry.pdf",
+      "source_type": "public_record",
+      "source_refs": [
+        "cli"
+      ],
+      "case_ids": [],
+      "source_names": [],
+      "captured_at": "2026-05-10T10:25:49.984193+00:00",
+      "domain": "gamingcontrol.spin-cdn.com",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://gamingcontrol.spin-cdn.com/media/license_registry/20260324_20260323_ogl_license_registry.pdf",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "application/pdf",
+      "title": "",
+      "body_size_bytes": 1263335,
+      "body_sha256": "63cf160cab2a72f64529877cd9e4d053121f69cde4ac5e9ec1167583a72dbf1f",
+      "text_size_chars": 1216145,
+      "marker_counts": {
+        "withdrawal": 0,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 1,
+        "staff_or_team": 0,
+        "custody_or_wallet": 0,
+        "token": 0
+      },
+      "files": {
+        "body": "output/captures/public_records/20260510T102511Z/gamingcontrol.spin-cdn.com_media_license_registry_20260324_20260323_ogl_license__967bf16bf27f.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/gamingcontrol.spin-cdn.com_media_license_registry_20260324_20260323_ogl_license__967bf16bf27f.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/gamingcontrol.spin-cdn.com_media_license_registry_20260324_20260323_ogl_license__967bf16bf27f.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/gamingcontrol.spin-cdn.com_media_license_registry_20260324_20260323_ogl_license__967bf16bf27f.meta.json"
+      }
+    },
+    {
+      "url": "https://whitepaper.rollbot.com/rlb-whitepaper/i/buy-and-burn",
+      "source_type": "public_record",
+      "source_refs": [
+        "REPORT_1_ONCHAIN_FORENSICS.md"
+      ],
+      "case_ids": [],
+      "source_names": [],
+      "captured_at": "2026-05-10T10:25:50.812586+00:00",
+      "domain": "whitepaper.rollbot.com",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://whitepaper.rollbot.com/rlb-whitepaper/i/buy-and-burn",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=utf-8",
+      "title": "Buy &amp; Burn | RLB Whitepaper",
+      "body_size_bytes": 282909,
+      "body_sha256": "ed8b30b0abe85d757dde7cffad508b902776089d79b3592fa372863ab9aa3de5",
+      "text_size_chars": 2211,
+      "marker_counts": {
+        "withdrawal": 0,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 3,
+        "staff_or_team": 0,
+        "custody_or_wallet": 0,
+        "token": 5
+      },
+      "files": {
+        "body": "output/captures/public_records/20260510T102511Z/whitepaper.rollbot.com_rlb-whitepaper_i_buy-and-burn_4cc79bc7c2b4.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/whitepaper.rollbot.com_rlb-whitepaper_i_buy-and-burn_4cc79bc7c2b4.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/whitepaper.rollbot.com_rlb-whitepaper_i_buy-and-burn_4cc79bc7c2b4.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/whitepaper.rollbot.com_rlb-whitepaper_i_buy-and-burn_4cc79bc7c2b4.meta.json"
+      }
+    },
+    {
+      "url": "https://whitepaper.rollbot.com/rlb-whitepaper/i/utility/provide-liquidity",
+      "source_type": "public_record",
+      "source_refs": [
+        "REPORT_1_ONCHAIN_FORENSICS.md",
+        "REPORT_9_EXTERNAL_REVIEW_FACT_CHECK.md"
+      ],
+      "case_ids": [],
+      "source_names": [],
+      "captured_at": "2026-05-10T10:25:51.289833+00:00",
+      "domain": "whitepaper.rollbot.com",
+      "ok": true,
+      "status_code": 200,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://whitepaper.rollbot.com/rlb-whitepaper/i/utility/provide-liquidity",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html; charset=utf-8",
+      "title": "Provide liquidity | RLB Whitepaper",
+      "body_size_bytes": 258966,
+      "body_sha256": "a73185e57f406c794a9f5853d11c2eb130371aa4baeb138a763bfb7a87bfed60",
+      "text_size_chars": 1221,
+      "marker_counts": {
+        "withdrawal": 0,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 0,
+        "profit_or_win": 0,
+        "staff_or_team": 1,
+        "custody_or_wallet": 0,
+        "token": 5
+      },
+      "files": {
+        "body": "output/captures/public_records/20260510T102511Z/whitepaper.rollbot.com_rlb-whitepaper_i_utility_provide-liquidity_625c399b932d.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/whitepaper.rollbot.com_rlb-whitepaper_i_utility_provide-liquidity_625c399b932d.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/whitepaper.rollbot.com_rlb-whitepaper_i_utility_provide-liquidity_625c399b932d.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/whitepaper.rollbot.com_rlb-whitepaper_i_utility_provide-liquidity_625c399b932d.meta.json"
+      }
+    },
+    {
+      "url": "https://www.reddit.com/r/gambling/comments/1sruwwt/rollbit_is_blackmailing_vip_players_to_withdraw/",
+      "source_type": "public_record",
+      "source_refs": [
+        "cli"
+      ],
+      "case_ids": [],
+      "source_names": [],
+      "captured_at": "2026-05-10T10:25:51.635442+00:00",
+      "domain": "www.reddit.com",
+      "ok": true,
+      "status_code": 403,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://www.reddit.com/r/gambling/comments/1sruwwt/rollbit_is_blackmailing_vip_players_to_withdraw/",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html",
+      "title": "",
+      "body_size_bytes": 190240,
+      "body_sha256": "dc131f91303300301ab1b23a7e3b0a084b9e325b318b2722d00fc637247b8b7a",
+      "text_size_chars": 221,
+      "marker_counts": {
+        "withdrawal": 0,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 2,
+        "profit_or_win": 0,
+        "staff_or_team": 0,
+        "custody_or_wallet": 0,
+        "token": 1
+      },
+      "files": {
+        "body": "output/captures/public_records/20260510T102511Z/www.reddit.com_r_gambling_comments_1sruwwt_rollbit_is_blackmailing_vip_players_t_e0655b507521.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/www.reddit.com_r_gambling_comments_1sruwwt_rollbit_is_blackmailing_vip_players_t_e0655b507521.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/www.reddit.com_r_gambling_comments_1sruwwt_rollbit_is_blackmailing_vip_players_t_e0655b507521.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/www.reddit.com_r_gambling_comments_1sruwwt_rollbit_is_blackmailing_vip_players_t_e0655b507521.meta.json"
+      }
+    },
+    {
+      "url": "https://www.reddit.com/r/onlinegambling/comments/1sruzyu/rollbit_is_blackmailing_vip_players_to_withdraw/",
+      "source_type": "public_record",
+      "source_refs": [
+        "cli"
+      ],
+      "case_ids": [],
+      "source_names": [],
+      "captured_at": "2026-05-10T10:25:53.193649+00:00",
+      "domain": "www.reddit.com",
+      "ok": true,
+      "status_code": 403,
+      "tls_verified": true,
+      "tls_error": "",
+      "final_url": "https://www.reddit.com/r/onlinegambling/comments/1sruzyu/rollbit_is_blackmailing_vip_players_to_withdraw/",
+      "redirect_count": 0,
+      "redirect_history": [],
+      "content_type": "text/html",
+      "title": "",
+      "body_size_bytes": 190240,
+      "body_sha256": "dc131f91303300301ab1b23a7e3b0a084b9e325b318b2722d00fc637247b8b7a",
+      "text_size_chars": 221,
+      "marker_counts": {
+        "withdrawal": 0,
+        "kyc": 0,
+        "multi_account": 0,
+        "frozen_or_blocked": 2,
+        "profit_or_win": 0,
+        "staff_or_team": 0,
+        "custody_or_wallet": 0,
+        "token": 1
+      },
+      "files": {
+        "body": "output/captures/public_records/20260510T102511Z/www.reddit.com_r_onlinegambling_comments_1sruzyu_rollbit_is_blackmailing_vip_pla_64faf488687c.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/www.reddit.com_r_onlinegambling_comments_1sruzyu_rollbit_is_blackmailing_vip_pla_64faf488687c.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/www.reddit.com_r_onlinegambling_comments_1sruzyu_rollbit_is_blackmailing_vip_pla_64faf488687c.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/www.reddit.com_r_onlinegambling_comments_1sruzyu_rollbit_is_blackmailing_vip_pla_64faf488687c.meta.json"
       }
     },
     {
@@ -1687,7 +2256,7 @@
       ],
       "case_ids": [],
       "source_names": [],
-      "captured_at": "2026-04-25T11:11:01.564748+00:00",
+      "captured_at": "2026-05-10T10:25:54.528355+00:00",
       "domain": "cryptoslate.com",
       "ok": true,
       "status_code": 200,
@@ -1698,9 +2267,9 @@
       "redirect_history": [],
       "content_type": "text/html; charset=UTF-8",
       "title": "Solana-based Rollbit Coin faces scrutiny over crypto influencer promotion tactics",
-      "body_size_bytes": 318019,
-      "body_sha256": "351a032d4ed815c7fb678885fd7b5250d0549736694d04af5e199e1ab0560c45",
-      "text_size_chars": 17530,
+      "body_size_bytes": 376365,
+      "body_sha256": "c22f62491e06cc4bb1ee4a9779ff67b9d093931fb2ff78d0d21d3bd799fbef89",
+      "text_size_chars": 19291,
       "marker_counts": {
         "withdrawal": 2,
         "kyc": 2,
@@ -1712,10 +2281,10 @@
         "token": 3
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/cryptoslate.com_solana-based-rollbit-coin-faces-scrutiny-over-crypto-influencer-_8c474c220819.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/cryptoslate.com_solana-based-rollbit-coin-faces-scrutiny-over-crypto-influencer-_8c474c220819.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/cryptoslate.com_solana-based-rollbit-coin-faces-scrutiny-over-crypto-influencer-_8c474c220819.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/cryptoslate.com_solana-based-rollbit-coin-faces-scrutiny-over-crypto-influencer-_8c474c220819.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/cryptoslate.com_solana-based-rollbit-coin-faces-scrutiny-over-crypto-influencer-_8c474c220819.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/cryptoslate.com_solana-based-rollbit-coin-faces-scrutiny-over-crypto-influencer-_8c474c220819.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/cryptoslate.com_solana-based-rollbit-coin-faces-scrutiny-over-crypto-influencer-_8c474c220819.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/cryptoslate.com_solana-based-rollbit-coin-faces-scrutiny-over-crypto-influencer-_8c474c220819.meta.json"
       }
     },
     {
@@ -1727,7 +2296,7 @@
       ],
       "case_ids": [],
       "source_names": [],
-      "captured_at": "2026-04-25T11:11:02.544712+00:00",
+      "captured_at": "2026-05-10T10:25:55.156989+00:00",
       "domain": "dev.ua",
       "ok": true,
       "status_code": 200,
@@ -1738,9 +2307,9 @@
       "redirect_history": [],
       "content_type": "text/html; charset=utf-8",
       "title": "Court hands over $123 million in crypto assets of unknown Ukrainian to ARMA. Allegedly linked to Rollbit online casino and money laundering via Binance | dev.ua",
-      "body_size_bytes": 52556,
-      "body_sha256": "f6b78c195384426cff0b7ff6b48c7341e892d3c4a57e38ec3df17dcfa8580551",
-      "text_size_chars": 5648,
+      "body_size_bytes": 52554,
+      "body_sha256": "b41650ad533469f7afc427a0ffdfc1556fc1c5983903d7403f137fc7ed038148",
+      "text_size_chars": 5623,
       "marker_counts": {
         "withdrawal": 0,
         "kyc": 0,
@@ -1752,10 +2321,10 @@
         "token": 2
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/dev.ua_en_news_krypto-1747475639_07be9265c3b3.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/dev.ua_en_news_krypto-1747475639_07be9265c3b3.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/dev.ua_en_news_krypto-1747475639_07be9265c3b3.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/dev.ua_en_news_krypto-1747475639_07be9265c3b3.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/dev.ua_en_news_krypto-1747475639_07be9265c3b3.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/dev.ua_en_news_krypto-1747475639_07be9265c3b3.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/dev.ua_en_news_krypto-1747475639_07be9265c3b3.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/dev.ua_en_news_krypto-1747475639_07be9265c3b3.meta.json"
       }
     },
     {
@@ -1767,7 +2336,7 @@
       ],
       "case_ids": [],
       "source_names": [],
-      "captured_at": "2026-04-25T11:11:04.310254+00:00",
+      "captured_at": "2026-05-10T10:25:56.885306+00:00",
       "domain": "www.chaincatcher.com",
       "ok": true,
       "status_code": 200,
@@ -1778,9 +2347,9 @@
       "redirect_history": [],
       "content_type": "text/html; charset=utf-8",
       "title": "\u6570\u636e\uff1a497.11 \u679a BTC \u4ece\u533f\u540d\u5730\u5740\u8f6c\u5165 Rollbit\uff0c\u4ef7\u503c\u7ea6 4519 \u4e07\u7f8e\u5143 - ChainCatcher",
-      "body_size_bytes": 77291,
-      "body_sha256": "e793f8d623c9c20a9cdd41c120b83e9926a36a7bcfaddceca2c6eba43867eeb8",
-      "text_size_chars": 1511,
+      "body_size_bytes": 55449,
+      "body_sha256": "fac653224d68024cb90b95cbb1b4d701f672550e4b1b1bdb109a04ffef67c65b",
+      "text_size_chars": 1420,
       "marker_counts": {
         "withdrawal": 0,
         "kyc": 0,
@@ -1792,10 +2361,10 @@
         "token": 0
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_article_2235971_1dae7ce57398.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_article_2235971_1dae7ce57398.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_article_2235971_1dae7ce57398.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_article_2235971_1dae7ce57398.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/www.chaincatcher.com_article_2235971_1dae7ce57398.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/www.chaincatcher.com_article_2235971_1dae7ce57398.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/www.chaincatcher.com_article_2235971_1dae7ce57398.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/www.chaincatcher.com_article_2235971_1dae7ce57398.meta.json"
       }
     },
     {
@@ -1807,7 +2376,7 @@
       ],
       "case_ids": [],
       "source_names": [],
-      "captured_at": "2026-04-25T11:11:05.083892+00:00",
+      "captured_at": "2026-05-10T10:26:00.608141+00:00",
       "domain": "www.chaincatcher.com",
       "ok": true,
       "status_code": 200,
@@ -1818,9 +2387,9 @@
       "redirect_history": [],
       "content_type": "text/html; charset=utf-8",
       "title": "\u6570\u636e\uff1a1.5 \u4e07\u679a SOL \u4ece Rollbit \u8f6c\u51fa\uff0c\u4ef7\u503c\u7ea6 205 \u4e07\u7f8e\u5143 - ChainCatcher",
-      "body_size_bytes": 76982,
-      "body_sha256": "9e35665818abdc585f738dfc5d05eff85e175cb18c4e8baf57ccc751a047c203",
-      "text_size_chars": 1485,
+      "body_size_bytes": 71033,
+      "body_sha256": "787bce7ff63ca07fd1a9633af6afdb8c1cbff26458ad0c4f6bb45dbb17bdfac6",
+      "text_size_chars": 1426,
       "marker_counts": {
         "withdrawal": 0,
         "kyc": 0,
@@ -1832,10 +2401,10 @@
         "token": 0
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_article_2236424_4a84ab69f99e.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_article_2236424_4a84ab69f99e.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_article_2236424_4a84ab69f99e.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_article_2236424_4a84ab69f99e.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/www.chaincatcher.com_article_2236424_4a84ab69f99e.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/www.chaincatcher.com_article_2236424_4a84ab69f99e.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/www.chaincatcher.com_article_2236424_4a84ab69f99e.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/www.chaincatcher.com_article_2236424_4a84ab69f99e.meta.json"
       }
     },
     {
@@ -1846,7 +2415,7 @@
       ],
       "case_ids": [],
       "source_names": [],
-      "captured_at": "2026-04-25T11:11:05.622545+00:00",
+      "captured_at": "2026-05-10T10:26:02.002595+00:00",
       "domain": "www.chaincatcher.com",
       "ok": true,
       "status_code": 200,
@@ -1857,9 +2426,9 @@
       "redirect_history": [],
       "content_type": "text/html; charset=utf-8",
       "title": "GambleFi platform Rollbit: Degen EXchange will be temporarily closed, and assets on the platform can be sold or withdrawn - ChainCatcher",
-      "body_size_bytes": 68103,
-      "body_sha256": "92c68834f869f63f6c97b90b22d2c589e118565e7f2b2e57e5a7ff7efc40b150",
-      "text_size_chars": 3242,
+      "body_size_bytes": 77836,
+      "body_sha256": "bbdc1c51f5f882be4dc336cd61942a12fa9ce0b70461badf7dc49a43916105cc",
+      "text_size_chars": 3080,
       "marker_counts": {
         "withdrawal": 2,
         "kyc": 0,
@@ -1871,10 +2440,10 @@
         "token": 2
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_en_article_2102300_593f7571d8a5.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_en_article_2102300_593f7571d8a5.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_en_article_2102300_593f7571d8a5.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_en_article_2102300_593f7571d8a5.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/www.chaincatcher.com_en_article_2102300_593f7571d8a5.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/www.chaincatcher.com_en_article_2102300_593f7571d8a5.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/www.chaincatcher.com_en_article_2102300_593f7571d8a5.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/www.chaincatcher.com_en_article_2102300_593f7571d8a5.meta.json"
       }
     },
     {
@@ -1886,7 +2455,7 @@
       ],
       "case_ids": [],
       "source_names": [],
-      "captured_at": "2026-04-25T11:11:06.186961+00:00",
+      "captured_at": "2026-05-10T10:26:03.337429+00:00",
       "domain": "www.chaincatcher.com",
       "ok": true,
       "status_code": 200,
@@ -1897,9 +2466,9 @@
       "redirect_history": [],
       "content_type": "text/html; charset=utf-8",
       "title": "rollbit News and Articles - ChainCatcher",
-      "body_size_bytes": 83547,
-      "body_sha256": "5657ad02a9ad597e8ac3b876bda7e2d0991a8f808211afc65f7b62f5b46ebb61",
-      "text_size_chars": 5767,
+      "body_size_bytes": 93727,
+      "body_sha256": "49d4202c7e5f18d618d2db232869b9ade5baaf95b952680701a3ea174540c787",
+      "text_size_chars": 5605,
       "marker_counts": {
         "withdrawal": 2,
         "kyc": 0,
@@ -1911,10 +2480,10 @@
         "token": 3
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_en_tags_rollbit_451ce44240fa.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_en_tags_rollbit_451ce44240fa.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_en_tags_rollbit_451ce44240fa.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_en_tags_rollbit_451ce44240fa.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/www.chaincatcher.com_en_tags_rollbit_451ce44240fa.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/www.chaincatcher.com_en_tags_rollbit_451ce44240fa.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/www.chaincatcher.com_en_tags_rollbit_451ce44240fa.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/www.chaincatcher.com_en_tags_rollbit_451ce44240fa.meta.json"
       }
     },
     {
@@ -1926,7 +2495,7 @@
       ],
       "case_ids": [],
       "source_names": [],
-      "captured_at": "2026-04-25T11:11:06.795657+00:00",
+      "captured_at": "2026-05-10T10:26:04.799546+00:00",
       "domain": "www.chaincatcher.com",
       "ok": true,
       "status_code": 200,
@@ -1937,9 +2506,9 @@
       "redirect_history": [],
       "content_type": "text/html; charset=utf-8",
       "title": "\ub370\uc774\ud130: Rollbit \uae08\uace0 \uc5f0\uad00 \uc8fc\uc18c\uc5d0\uc11c 5\ub9cc \uac1c\uc758 SOL\uc744 \ud310\ub9e4\ud558\uc5ec \uc57d 890\ub9cc \ub2ec\ub7ec\uc758 \uc218\uc775\uc744 \uc62c\ub9bc - ChainCatcher",
-      "body_size_bytes": 85197,
-      "body_sha256": "ab8c7f97a2c848c03ef32aa1f3941d4d2bc171964908f90278bb978d9276617c",
-      "text_size_chars": 2007,
+      "body_size_bytes": 75938,
+      "body_sha256": "84dcf5133f064776190cba5df3a17225432bc263bcddb4294031c75724335bec",
+      "text_size_chars": 1920,
       "marker_counts": {
         "withdrawal": 0,
         "kyc": 0,
@@ -1951,10 +2520,10 @@
         "token": 0
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_ko_article_2202906_842a2999d84f.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_ko_article_2202906_842a2999d84f.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_ko_article_2202906_842a2999d84f.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/www.chaincatcher.com_ko_article_2202906_842a2999d84f.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/www.chaincatcher.com_ko_article_2202906_842a2999d84f.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/www.chaincatcher.com_ko_article_2202906_842a2999d84f.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/www.chaincatcher.com_ko_article_2202906_842a2999d84f.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/www.chaincatcher.com_ko_article_2202906_842a2999d84f.meta.json"
       }
     },
     {
@@ -1966,7 +2535,7 @@
       ],
       "case_ids": [],
       "source_names": [],
-      "captured_at": "2026-04-25T11:11:07.316665+00:00",
+      "captured_at": "2026-05-10T10:26:05.519540+00:00",
       "domain": "www.coindesk.com",
       "ok": true,
       "status_code": 200,
@@ -1977,9 +2546,9 @@
       "redirect_history": [],
       "content_type": "text/html; charset=utf-8",
       "title": "Crypto Casino Rollbit&#x27;s Token Drops 20% Amid Licensing Concerns",
-      "body_size_bytes": 458730,
-      "body_sha256": "71bcf6c149b2aca2396d1f25699a34814c5f679cc5899d6913c58617fcd43f58",
-      "text_size_chars": 6114,
+      "body_size_bytes": 465713,
+      "body_sha256": "94faad49de02e131842ecc0964ca4fc262d2f9e069fd4e275622b46de19b0cc8",
+      "text_size_chars": 5954,
       "marker_counts": {
         "withdrawal": 2,
         "kyc": 0,
@@ -1987,14 +2556,14 @@
         "frozen_or_blocked": 0,
         "profit_or_win": 2,
         "staff_or_team": 0,
-        "custody_or_wallet": 1,
-        "token": 3
+        "custody_or_wallet": 2,
+        "token": 2
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/www.coindesk.com_markets_2023_03_31_crypto-casino-rollbits-token-drops-20-amid-l_745dc5cf90a3.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/www.coindesk.com_markets_2023_03_31_crypto-casino-rollbits-token-drops-20-amid-l_745dc5cf90a3.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/www.coindesk.com_markets_2023_03_31_crypto-casino-rollbits-token-drops-20-amid-l_745dc5cf90a3.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/www.coindesk.com_markets_2023_03_31_crypto-casino-rollbits-token-drops-20-amid-l_745dc5cf90a3.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/www.coindesk.com_markets_2023_03_31_crypto-casino-rollbits-token-drops-20-amid-l_745dc5cf90a3.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/www.coindesk.com_markets_2023_03_31_crypto-casino-rollbits-token-drops-20-amid-l_745dc5cf90a3.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/www.coindesk.com_markets_2023_03_31_crypto-casino-rollbits-token-drops-20-amid-l_745dc5cf90a3.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/www.coindesk.com_markets_2023_03_31_crypto-casino-rollbits-token-drops-20-amid-l_745dc5cf90a3.meta.json"
       }
     },
     {
@@ -2005,7 +2574,7 @@
       ],
       "case_ids": [],
       "source_names": [],
-      "captured_at": "2026-04-25T11:11:08.315409+00:00",
+      "captured_at": "2026-05-10T10:26:07.128946+00:00",
       "domain": "cert.cga.cw",
       "ok": true,
       "status_code": 200,
@@ -2017,7 +2586,7 @@
       "content_type": "text/html; charset=utf-8",
       "title": "CGA Portal",
       "body_size_bytes": 57674,
-      "body_sha256": "9c35afea419b5d5703d00280b63021ba033e874dcdf72dce73a7fb9569d2f569",
+      "body_sha256": "81db13fd152344b2d40284e8b19aa2b8550e04e31120d2d65205f007bea98c04",
       "text_size_chars": 1882,
       "marker_counts": {
         "withdrawal": 0,
@@ -2030,10 +2599,10 @@
         "token": 0
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/cert.cga.cw_a20395602945.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/cert.cga.cw_a20395602945.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/cert.cga.cw_a20395602945.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/cert.cga.cw_a20395602945.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/cert.cga.cw_a20395602945.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/cert.cga.cw_a20395602945.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/cert.cga.cw_a20395602945.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/cert.cga.cw_a20395602945.meta.json"
       }
     },
     {
@@ -2044,7 +2613,7 @@
       ],
       "case_ids": [],
       "source_names": [],
-      "captured_at": "2026-04-25T11:11:09.360961+00:00",
+      "captured_at": "2026-05-10T10:26:08.697709+00:00",
       "domain": "cert.cga.cw",
       "ok": true,
       "status_code": 200,
@@ -2056,7 +2625,7 @@
       "content_type": "text/html; charset=utf-8",
       "title": "CGA Portal",
       "body_size_bytes": 55780,
-      "body_sha256": "9baa212a9fa09f1bc7ccd027ae79f36f48b4ea7496c8255b11209ee32687384c",
+      "body_sha256": "52a739ebc4ef4595a8538f6d1fe1d14495ef32ec0e29ab3917bf27cd47067a0b",
       "text_size_chars": 3300,
       "marker_counts": {
         "withdrawal": 0,
@@ -2069,10 +2638,10 @@
         "token": 0
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/cert.cga.cw_page_certification_policy_ed5e977f0d2d.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/cert.cga.cw_page_certification_policy_ed5e977f0d2d.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/cert.cga.cw_page_certification_policy_ed5e977f0d2d.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/cert.cga.cw_page_certification_policy_ed5e977f0d2d.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/cert.cga.cw_page_certification_policy_ed5e977f0d2d.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/cert.cga.cw_page_certification_policy_ed5e977f0d2d.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/cert.cga.cw_page_certification_policy_ed5e977f0d2d.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/cert.cga.cw_page_certification_policy_ed5e977f0d2d.meta.json"
       }
     },
     {
@@ -2083,7 +2652,7 @@
       ],
       "case_ids": [],
       "source_names": [],
-      "captured_at": "2026-04-25T11:11:10.176595+00:00",
+      "captured_at": "2026-05-10T10:26:09.536232+00:00",
       "domain": "www.cga.cw",
       "ok": true,
       "status_code": 200,
@@ -2095,7 +2664,7 @@
       "content_type": "text/html; charset=UTF-8",
       "title": "Online Gaming - Gaming Control Board",
       "body_size_bytes": 38319,
-      "body_sha256": "9f224f7b81fa6e6f8b741ebf38938b8a089f30a4037e1cc83f8237cf412fb0a1",
+      "body_sha256": "69ac4465de0483e582d8415a5a61a90584bdc5592371dcfcaa5f01f69ed22862",
       "text_size_chars": 5126,
       "marker_counts": {
         "withdrawal": 0,
@@ -2108,10 +2677,10 @@
         "token": 0
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/www.cga.cw_regulation_online-gaming_55d63641d2e5.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/www.cga.cw_regulation_online-gaming_55d63641d2e5.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/www.cga.cw_regulation_online-gaming_55d63641d2e5.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/www.cga.cw_regulation_online-gaming_55d63641d2e5.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/www.cga.cw_regulation_online-gaming_55d63641d2e5.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/www.cga.cw_regulation_online-gaming_55d63641d2e5.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/www.cga.cw_regulation_online-gaming_55d63641d2e5.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/www.cga.cw_regulation_online-gaming_55d63641d2e5.meta.json"
       }
     },
     {
@@ -2127,7 +2696,7 @@
       "source_names": [
         "x"
       ],
-      "captured_at": "2026-04-25T11:11:11.094071+00:00",
+      "captured_at": "2026-05-10T10:26:10.297703+00:00",
       "domain": "x.com",
       "ok": true,
       "status_code": 200,
@@ -2138,8 +2707,8 @@
       "redirect_history": [],
       "content_type": "text/html; charset=utf-8",
       "title": "",
-      "body_size_bytes": 257705,
-      "body_sha256": "0ceccf997f8a99185860e9dfce2213a27fb0338edb4f07d0ce42f1814c9193ef",
+      "body_size_bytes": 270598,
+      "body_sha256": "a68f2bc74e96b8c52c16032b789896d5bd2c66a8b0c6b6b850b5b48d72e51d8a",
       "text_size_chars": 170,
       "marker_counts": {
         "withdrawal": 0,
@@ -2152,10 +2721,10 @@
         "token": 0
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/x.com_Nonopancake_status_1782506890817105973_0223659239a0.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/x.com_Nonopancake_status_1782506890817105973_0223659239a0.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/x.com_Nonopancake_status_1782506890817105973_0223659239a0.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/x.com_Nonopancake_status_1782506890817105973_0223659239a0.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/x.com_Nonopancake_status_1782506890817105973_0223659239a0.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/x.com_Nonopancake_status_1782506890817105973_0223659239a0.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/x.com_Nonopancake_status_1782506890817105973_0223659239a0.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/x.com_Nonopancake_status_1782506890817105973_0223659239a0.meta.json"
       }
     },
     {
@@ -2167,7 +2736,7 @@
       ],
       "case_ids": [],
       "source_names": [],
-      "captured_at": "2026-04-25T11:11:12.367818+00:00",
+      "captured_at": "2026-05-10T10:26:11.803716+00:00",
       "domain": "x.com",
       "ok": true,
       "status_code": 200,
@@ -2178,8 +2747,8 @@
       "redirect_history": [],
       "content_type": "text/html; charset=utf-8",
       "title": "",
-      "body_size_bytes": 257709,
-      "body_sha256": "e892184b6dc74d9e1eb144bfd2748b70fece3fb8d59900f3ef9b4bbafe7ec0e5",
+      "body_size_bytes": 270335,
+      "body_sha256": "baec8cd2fb1a4e7422b4ddf8e6f983e3ddbc3675e85f4a08fae2620cf08a8b8d",
       "text_size_chars": 170,
       "marker_counts": {
         "withdrawal": 0,
@@ -2192,10 +2761,10 @@
         "token": 0
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/x.com_YtZlashy_status_1731639780713103506_76125a561763.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/x.com_YtZlashy_status_1731639780713103506_76125a561763.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/x.com_YtZlashy_status_1731639780713103506_76125a561763.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/x.com_YtZlashy_status_1731639780713103506_76125a561763.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/x.com_YtZlashy_status_1731639780713103506_76125a561763.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/x.com_YtZlashy_status_1731639780713103506_76125a561763.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/x.com_YtZlashy_status_1731639780713103506_76125a561763.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/x.com_YtZlashy_status_1731639780713103506_76125a561763.meta.json"
       }
     },
     {
@@ -2206,7 +2775,7 @@
       ],
       "case_ids": [],
       "source_names": [],
-      "captured_at": "2026-04-25T11:11:14.137994+00:00",
+      "captured_at": "2026-05-10T10:26:12.834175+00:00",
       "domain": "x.com",
       "ok": true,
       "status_code": 200,
@@ -2217,8 +2786,8 @@
       "redirect_history": [],
       "content_type": "text/html; charset=utf-8",
       "title": "",
-      "body_size_bytes": 259438,
-      "body_sha256": "7a6bf13785fa0fa172d9df9bc60838af8f78d6020afa20175efc61de25e0cc7e",
+      "body_size_bytes": 272336,
+      "body_sha256": "63f53e213db485bf91358194ede7a0463a3cef4775c1f704fca85a1c645d4561",
       "text_size_chars": 170,
       "marker_counts": {
         "withdrawal": 0,
@@ -2231,10 +2800,10 @@
         "token": 0
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/x.com_robertgambaskr_status_1908964820419764728_8f9121f5f188.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/x.com_robertgambaskr_status_1908964820419764728_8f9121f5f188.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/x.com_robertgambaskr_status_1908964820419764728_8f9121f5f188.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/x.com_robertgambaskr_status_1908964820419764728_8f9121f5f188.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/x.com_robertgambaskr_status_1908964820419764728_8f9121f5f188.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/x.com_robertgambaskr_status_1908964820419764728_8f9121f5f188.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/x.com_robertgambaskr_status_1908964820419764728_8f9121f5f188.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/x.com_robertgambaskr_status_1908964820419764728_8f9121f5f188.meta.json"
       }
     },
     {
@@ -2246,7 +2815,7 @@
       ],
       "case_ids": [],
       "source_names": [],
-      "captured_at": "2026-04-25T11:11:15.159916+00:00",
+      "captured_at": "2026-05-10T10:26:13.705609+00:00",
       "domain": "x.com",
       "ok": true,
       "status_code": 200,
@@ -2257,8 +2826,8 @@
       "redirect_history": [],
       "content_type": "text/html; charset=utf-8",
       "title": "",
-      "body_size_bytes": 256416,
-      "body_sha256": "5749ea73618e6add951bb347b4ba6574bb19dc8ac2920c31f30765308772500a",
+      "body_size_bytes": 269314,
+      "body_sha256": "a96cf5e1444138ff912aaaa68c648a49f26bcf438e7edbba533401d3ee6334e4",
       "text_size_chars": 170,
       "marker_counts": {
         "withdrawal": 0,
@@ -2271,10 +2840,10 @@
         "token": 0
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/x.com_robertgambaskr_status_1947015657050009696_153cd018366c.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/x.com_robertgambaskr_status_1947015657050009696_153cd018366c.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/x.com_robertgambaskr_status_1947015657050009696_153cd018366c.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/x.com_robertgambaskr_status_1947015657050009696_153cd018366c.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/x.com_robertgambaskr_status_1947015657050009696_153cd018366c.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/x.com_robertgambaskr_status_1947015657050009696_153cd018366c.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/x.com_robertgambaskr_status_1947015657050009696_153cd018366c.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/x.com_robertgambaskr_status_1947015657050009696_153cd018366c.meta.json"
       }
     },
     {
@@ -2286,7 +2855,7 @@
       ],
       "case_ids": [],
       "source_names": [],
-      "captured_at": "2026-04-25T11:11:17.402837+00:00",
+      "captured_at": "2026-05-10T10:26:14.831129+00:00",
       "domain": "x.com",
       "ok": true,
       "status_code": 200,
@@ -2297,8 +2866,8 @@
       "redirect_history": [],
       "content_type": "text/html; charset=utf-8",
       "title": "",
-      "body_size_bytes": 263764,
-      "body_sha256": "a0194e01d28e1127b03a65d715e5f962887d1f41e113a77f03823c6bb8e809ae",
+      "body_size_bytes": 276662,
+      "body_sha256": "5acc9c2e8204465b5c8bf4d00aa9561a4aa88ecd63de16970f6dafd9dc404057",
       "text_size_chars": 170,
       "marker_counts": {
         "withdrawal": 0,
@@ -2311,10 +2880,10 @@
         "token": 0
       },
       "files": {
-        "body": "output/captures/public_records/20260425T111024Z/x.com_robertgambaskr_status_2029872445662937303_81f79cb59f59.body.bin",
-        "headers": "output/captures/public_records/20260425T111024Z/x.com_robertgambaskr_status_2029872445662937303_81f79cb59f59.headers.txt",
-        "text": "output/captures/public_records/20260425T111024Z/x.com_robertgambaskr_status_2029872445662937303_81f79cb59f59.text.txt",
-        "meta": "output/captures/public_records/20260425T111024Z/x.com_robertgambaskr_status_2029872445662937303_81f79cb59f59.meta.json"
+        "body": "output/captures/public_records/20260510T102511Z/x.com_robertgambaskr_status_2029872445662937303_81f79cb59f59.body.bin",
+        "headers": "output/captures/public_records/20260510T102511Z/x.com_robertgambaskr_status_2029872445662937303_81f79cb59f59.headers.txt",
+        "text": "output/captures/public_records/20260510T102511Z/x.com_robertgambaskr_status_2029872445662937303_81f79cb59f59.text.txt",
+        "meta": "output/captures/public_records/20260510T102511Z/x.com_robertgambaskr_status_2029872445662937303_81f79cb59f59.meta.json"
       }
     }
   ]

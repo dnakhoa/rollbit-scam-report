@@ -357,14 +357,14 @@ def chart_wallet_network_static(output_dir):
         'Unknown Wallets': (0.48, 0.67, COLORS['orange']),
         'Binance / CEX\ncustody path': (0.48, 0.42, COLORS['orange']),
         'Ukrainian Accounts\n($123M event)': (0.85, 0.42, COLORS['red']),
-        'DEX Liquidity\n(~$4.7M top pools)': (0.85, 0.72, COLORS['purple']),
+        'DEX Liquidity\n(~$5.05M top pools)': (0.85, 0.72, COLORS['purple']),
     }
     edges = [
         ('BTC Treasury', 'Unknown Wallets', 'sampled operational payouts'),
         ('SOL Treasury', 'Unknown Wallets', '$17.4M direct outflow set'),
         ('ETH Hot Wallet', 'Binance / CEX\ncustody path', 'off-wallet custody question'),
         ('Binance / CEX\ncustody path', 'Ukrainian Accounts\n($123M event)', '$123M reported event'),
-        ('ETH Hot Wallet', 'DEX Liquidity\n(~$4.7M top pools)', 'RLB market surface'),
+        ('ETH Hot Wallet', 'DEX Liquidity\n(~$5.05M top pools)', 'RLB market surface'),
     ]
 
     for src, dst, label in edges:
@@ -440,7 +440,7 @@ def chart_wallet_network(output_dir):
         ('Binance / CEX\ncustody path', {'type': 'cex'}),
         ('Unknown Wallets', {'type': 'unknown'}),
         ('Ukrainian Accounts\n($123M seized)', {'type': 'seized'}),
-        ('DEX Liquidity\n(~$4.7M top 4 pools)', {'type': 'dex'}),
+        ('DEX Liquidity\n(~$5.05M top 4 pools)', {'type': 'dex'}),
         ('Influencer Wallets\n(Gainzy et al)', {'type': 'influencer'}),
     ]
     for name, attrs in external_nodes:
@@ -453,7 +453,7 @@ def chart_wallet_network(output_dir):
         ('ETH Hot Wallet', 'Binance / CEX\ncustody path', {'amount': 'off-wallet custody questions', 'weight': 4}),
         ('ETH Hot Wallet', 'rollbit.eth', {'amount': 'internal', 'weight': 1}),
         ('ETH Hot Wallet', 'ERC20 Ops', {'amount': 'token ops', 'weight': 1}),
-        ('rollbit.eth', 'DEX Liquidity\n(~$4.7M top 4 pools)', {'amount': 'RLB liquidity', 'weight': 2}),
+        ('rollbit.eth', 'DEX Liquidity\n(~$5.05M top 4 pools)', {'amount': 'RLB liquidity', 'weight': 2}),
         ('ERC20 Ops', 'Influencer Wallets\n(Gainzy et al)', {'amount': '$250K RLB deals', 'weight': 2}),
         ('Binance / CEX\ncustody path', 'Ukrainian Accounts\n($123M seized)', {'amount': '$123M linked', 'weight': 5}),
     ]
