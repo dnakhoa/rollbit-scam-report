@@ -29,9 +29,62 @@ def banner():
 ║                                                                ║
 ║  Comprehensive blockchain analysis of Rollbit/Bull Gaming N.V. ║
 ║  Known wallets: BTC, SOL, ETH (6 addresses)                   ║
-║  Known events: $59.6M+ treasury outflows, $123M seizure       ║
+║  Known events: mixed treasury flows + $123M seizure           ║
 ╚══════════════════════════════════════════════════════════════════╝
     """)
+
+
+def run_technical_phase():
+    """Generate analyst-facing technical forensic indicators."""
+    print("\n" + "=" * 60)
+    print("  TECHNICAL FORENSIC DEEP DIVE")
+    print("=" * 60)
+
+    try:
+        from technical_deep_dive import run as run_technical_deep_dive
+        payload = run_technical_deep_dive(OUTPUT_DIR)
+        findings = payload.get('findings', [])
+        onchain = payload.get('onchain_visibility_analysis', {})
+        rlb = payload.get('rlb_market_structure', {})
+        print(f"\n  Phase complete - {len(findings)} technical findings generated")
+        print(f"  Visible wallet snapshot: ${onchain.get('visible_wallet_usd', 0):,.2f}")
+        print(f"  RLB tracked public DEX liquidity / market cap: {rlb.get('liquidity_to_market_cap_ratio', 0) * 100:.1f}%")
+        print(f"  Files generated:")
+        print(f"    - output/technical_deep_dive.json")
+        print(f"    - output/forensic_indicators.csv")
+    except Exception as e:
+        print(f"\n  Technical deep-dive error: {e}")
+
+
+def run_public_record_capture(timeout=25, sleep=0.2, max_targets=0):
+    """Capture public complaint and record source pages."""
+    banner()
+    print("\n" + "=" * 60)
+    print("  PUBLIC RECORD AND COMPLAINT CAPTURE")
+    print("=" * 60)
+
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    try:
+        from public_record_capture import run as run_capture
+        summary = run_capture(
+            include_cases=True,
+            include_reports=True,
+            include_apis=False,
+            max_targets=max_targets,
+            timeout=timeout,
+            sleep_seconds=sleep,
+        )
+        print(f"\n  Capture complete")
+        print(f"  Records: {summary.get('records_count', 0)}")
+        print(f"  OK: {summary.get('ok_count', 0)}")
+        print(f"  Failed: {summary.get('failed_count', 0)}")
+        print(f"  Blocked/challenged: {summary.get('blocked_or_challenged_count', 0)}")
+        print(f"  Capture dir: {summary.get('capture_dir', '')}")
+        print(f"  Files generated:")
+        print(f"    - output/public_record_capture.json")
+        print(f"    - output/public_record_index.csv")
+    except Exception as e:
+        print(f"\n  Public record capture error: {e}")
 
 
 def run_full(etherscan_key=''):
@@ -69,21 +122,23 @@ def run_full(etherscan_key=''):
 
     try:
         from generate_visualizations import (
-            setup_style, chart_treasury_flows, chart_rlb_manipulation,
-            chart_victim_impact, chart_wallet_network, chart_evidence_timeline
+            setup_style, chart_treasury_flows, chart_rlb_market_structure,
+            chart_complaint_amounts, chart_wallet_network, chart_evidence_timeline
         )
         charts_dir = str(OUTPUT_DIR / 'charts')
         os.makedirs(charts_dir, exist_ok=True)
         setup_style()
         chart_treasury_flows(charts_dir)
-        chart_rlb_manipulation(charts_dir)
-        chart_victim_impact(charts_dir)
+        chart_rlb_market_structure(charts_dir)
+        chart_complaint_amounts(charts_dir)
         chart_wallet_network(charts_dir)
         chart_evidence_timeline(charts_dir)
         print("\n  ✅ Phase 2 complete — 5 charts generated")
     except Exception as e:
         print(f"\n  ⚠️  Phase 2 error: {e}")
         print("  Install dependencies: pip install matplotlib networkx")
+
+    run_technical_phase()
 
     print("\n" + "=" * 60)
     print("  PHASE 3: Report Summary")
@@ -95,8 +150,8 @@ def run_full(etherscan_key=''):
   Wallet balances:  ${summary.get('total_wallet_balance_usd', 0):,.2f}
   Documented outflows: ${summary.get('total_documented_outflows_usd', 0):,.2f}
   Assets seized:    ${summary.get('total_seized_usd', 0):,.2f}
-  Risk score:       {summary.get('avg_risk_score', 'N/A')}/10
-  Risk level:       {summary.get('risk_level', 'N/A')}
+  Data-gap score:  {summary.get('avg_data_gap_score', 'N/A')}/10
+  Data-gap level:  {summary.get('data_gap_level', 'N/A')}
     """)
 
     elapsed = time.time() - start
@@ -105,8 +160,8 @@ def run_full(etherscan_key=''):
     print(f"\n  Files generated:")
     print(f"    - output/blockchain_analysis.json")
     print(f"    - output/charts/treasury_flow_analysis.png")
-    print(f"    - output/charts/rlb_manipulation_evidence.png")
-    print(f"    - output/charts/victim_impact_analysis.png")
+    print(f"    - output/charts/rlb_market_structure.png")
+    print(f"    - output/charts/complaint_amount_analysis.png")
     print(f"    - output/charts/wallet_network_graph.png")
     print(f"    - output/charts/evidence_timeline.png")
     print()
@@ -130,20 +185,22 @@ def run_quick():
 
     try:
         from generate_visualizations import (
-            setup_style, chart_treasury_flows, chart_rlb_manipulation,
-            chart_victim_impact, chart_wallet_network, chart_evidence_timeline
+            setup_style, chart_treasury_flows, chart_rlb_market_structure,
+            chart_complaint_amounts, chart_wallet_network, chart_evidence_timeline
         )
         charts_dir = str(OUTPUT_DIR / 'charts')
         os.makedirs(charts_dir, exist_ok=True)
         setup_style()
         chart_treasury_flows(charts_dir)
-        chart_rlb_manipulation(charts_dir)
-        chart_victim_impact(charts_dir)
+        chart_rlb_market_structure(charts_dir)
+        chart_complaint_amounts(charts_dir)
         chart_wallet_network(charts_dir)
         chart_evidence_timeline(charts_dir)
         print("\n  ✅ All charts generated")
     except Exception as e:
         print(f"\n  Visualization error: {e}")
+
+    run_technical_phase()
 
     print(f"\n  Done. Results in: {OUTPUT_DIR}/\n")
 
@@ -172,6 +229,7 @@ Examples:
     python run_investigation.py --full               # Full live analysis
     python run_investigation.py --quick              # Offline cached analysis
     python run_investigation.py --monitor            # Treasury monitoring
+    python run_investigation.py --capture-public-records
     python run_investigation.py --full --etherscan-key YOUR_KEY
         """
     )
@@ -180,6 +238,8 @@ Examples:
     mode.add_argument('--full', action='store_true', help='Full live analysis')
     mode.add_argument('--quick', action='store_true', help='Cached/offline analysis')
     mode.add_argument('--monitor', action='store_true', help='Treasury monitoring')
+    mode.add_argument('--capture-public-records', action='store_true',
+                      help='Capture public complaint and source pages')
 
     parser.add_argument('--etherscan-key', default='', help='Etherscan API key')
     parser.add_argument('--threshold', type=float, default=50000,
@@ -188,6 +248,12 @@ Examples:
                         help='Monitor poll interval (seconds)')
     parser.add_argument('--duration', type=int, default=0,
                         help='Monitor duration (0 = indefinite)')
+    parser.add_argument('--capture-timeout', type=int, default=25,
+                        help='Public-record capture request timeout')
+    parser.add_argument('--capture-sleep', type=float, default=0.2,
+                        help='Public-record capture delay between requests')
+    parser.add_argument('--capture-max-targets', type=int, default=0,
+                        help='Public-record capture target limit')
 
     args = parser.parse_args()
 
@@ -197,6 +263,12 @@ Examples:
         run_quick()
     elif args.monitor:
         run_monitor(args.threshold, args.interval, args.duration, args.etherscan_key)
+    elif args.capture_public_records:
+        run_public_record_capture(
+            timeout=args.capture_timeout,
+            sleep=args.capture_sleep,
+            max_targets=args.capture_max_targets,
+        )
 
 
 if __name__ == '__main__':

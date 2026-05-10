@@ -1,0 +1,821 @@
+{
+  "generated_at": "2026-04-25T10:46:28.212399+00:00",
+  "capture_dir": "output/captures/web/20260425T104619Z",
+  "method": "DoH DNS + openssl TLS + curl HTTP capture",
+  "results": [
+    {
+      "target": {
+        "name": "main_app",
+        "host": "rollbit.com",
+        "path": "/"
+      },
+      "captured_at": "2026-04-25T10:46:20.853447+00:00",
+      "dns": {
+        "A": {
+          "status_code": 200,
+          "json": {
+            "Status": 0,
+            "TC": false,
+            "RD": true,
+            "RA": true,
+            "AD": true,
+            "CD": false,
+            "Question": [
+              {
+                "name": "rollbit.com",
+                "type": 1
+              }
+            ],
+            "Answer": [
+              {
+                "name": "rollbit.com",
+                "type": 1,
+                "TTL": 300,
+                "data": "104.20.26.76"
+              },
+              {
+                "name": "rollbit.com",
+                "type": 1,
+                "TTL": 300,
+                "data": "172.66.170.17"
+              }
+            ]
+          }
+        },
+        "AAAA": {
+          "status_code": 200,
+          "json": {
+            "Status": 0,
+            "TC": false,
+            "RD": true,
+            "RA": true,
+            "AD": true,
+            "CD": false,
+            "Question": [
+              {
+                "name": "rollbit.com",
+                "type": 28
+              }
+            ],
+            "Authority": [
+              {
+                "name": "rollbit.com",
+                "type": 6,
+                "TTL": 1800,
+                "data": "penny.ns.cloudflare.com. dns.cloudflare.com. 2401249296 10000 2400 604800 1800"
+              }
+            ]
+          }
+        },
+        "CNAME": {
+          "status_code": 200,
+          "json": {
+            "Status": 0,
+            "TC": false,
+            "RD": true,
+            "RA": true,
+            "AD": true,
+            "CD": false,
+            "Question": [
+              {
+                "name": "rollbit.com",
+                "type": 5
+              }
+            ],
+            "Authority": [
+              {
+                "name": "rollbit.com",
+                "type": 6,
+                "TTL": 1800,
+                "data": "penny.ns.cloudflare.com. dns.cloudflare.com. 2401249296 10000 2400 604800 1800"
+              }
+            ]
+          }
+        },
+        "NS": {
+          "status_code": 200,
+          "json": {
+            "Status": 0,
+            "TC": false,
+            "RD": true,
+            "RA": true,
+            "AD": true,
+            "CD": false,
+            "Question": [
+              {
+                "name": "rollbit.com",
+                "type": 2
+              }
+            ],
+            "Answer": [
+              {
+                "name": "rollbit.com",
+                "type": 2,
+                "TTL": 86400,
+                "data": "penny.ns.cloudflare.com."
+              },
+              {
+                "name": "rollbit.com",
+                "type": 2,
+                "TTL": 86400,
+                "data": "sullivan.ns.cloudflare.com."
+              }
+            ]
+          }
+        },
+        "TXT": {
+          "status_code": 200,
+          "json": {
+            "Status": 0,
+            "TC": false,
+            "RD": true,
+            "RA": true,
+            "AD": true,
+            "CD": false,
+            "Question": [
+              {
+                "name": "rollbit.com",
+                "type": 16
+              }
+            ],
+            "Answer": [
+              {
+                "name": "rollbit.com",
+                "type": 16,
+                "TTL": 300,
+                "data": "\"google-site-verification=U--qJFBXn8VLeh8KArdrdIOgpzIDypAQfupOZlYiGkI\""
+              },
+              {
+                "name": "rollbit.com",
+                "type": 16,
+                "TTL": 300,
+                "data": "\"v=spf1 include:_spf.google.com include:mail.zendesk.com include:_spf.elasticemail.com ~all\""
+              }
+            ]
+          }
+        }
+      },
+      "selected_ip": "104.20.26.76",
+      "tls": {
+        "connect_ip": "104.20.26.76",
+        "raw_returncode": 0,
+        "raw_stderr": "Connecting to 104.20.26.76\ndepth=1 C=US, O=Let's Encrypt, CN=E8\nverify error:num=20:unable to get local issuer certificate\nverify return:1\ndepth=0 CN=rollbit.com\nverify return:1\nDONE\n",
+        "parsed_returncode": 0,
+        "parsed": "subject=CN=rollbit.com\nissuer=C=US, O=Let's Encrypt, CN=E8\nnotBefore=Apr  9 18:41:15 2026 GMT\nnotAfter=Jul  8 18:41:14 2026 GMT\nsha256 Fingerprint=CD:CA:91:F4:B9:2D:06:DE:DE:C1:24:20:E1:E3:5B:00:05:C0:88:B1:8B:CB:77:53:57:9E:DB:0B:74:3F:5C:59\nX509v3 Subject Alternative Name: \n    DNS:*.rollbit.com, DNS:rollbit.com\n",
+        "parsed_stderr": ""
+      },
+      "http": {
+        "url": "https://rollbit.com/",
+        "connect_ip": "104.20.26.76",
+        "command": [
+          "curl",
+          "-sS",
+          "-L",
+          "--compressed",
+          "--max-time",
+          "45",
+          "-D",
+          "/Users/khoadoan/rollbit_forensic/output/captures/web/20260425T104619Z/main_app_rollbit.com.headers.txt",
+          "-o",
+          "/Users/khoadoan/rollbit_forensic/output/captures/web/20260425T104619Z/main_app_rollbit.com.body.bin",
+          "--resolve",
+          "rollbit.com:443:104.20.26.76",
+          "https://rollbit.com/"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "headers_file": "output/captures/web/20260425T104619Z/main_app_rollbit.com.headers.txt",
+        "body_file": "output/captures/web/20260425T104619Z/main_app_rollbit.com.body.bin",
+        "body_sha256": "4be5da3178ba0422e4b5cf5324e45ef1cc66199325e0e5015379be1642e78dec",
+        "body_size_bytes": 5252,
+        "status_lines": [
+          "HTTP/2 403"
+        ],
+        "final_status": "HTTP/2 403"
+      }
+    },
+    {
+      "target": {
+        "name": "blog",
+        "host": "blog.rollbit.com",
+        "path": "/"
+      },
+      "captured_at": "2026-04-25T10:46:23.071943+00:00",
+      "dns": {
+        "A": {
+          "status_code": 200,
+          "json": {
+            "Status": 0,
+            "TC": false,
+            "RD": true,
+            "RA": true,
+            "AD": false,
+            "CD": false,
+            "Question": [
+              {
+                "name": "blog.rollbit.com",
+                "type": 1
+              }
+            ],
+            "Answer": [
+              {
+                "name": "blog.rollbit.com",
+                "type": 5,
+                "TTL": 300,
+                "data": "rollbit.ghost.io."
+              },
+              {
+                "name": "rollbit.ghost.io",
+                "type": 5,
+                "TTL": 300,
+                "data": "ghost.map.fastly.net."
+              },
+              {
+                "name": "ghost.map.fastly.net",
+                "type": 1,
+                "TTL": 60,
+                "data": "151.101.3.7"
+              },
+              {
+                "name": "ghost.map.fastly.net",
+                "type": 1,
+                "TTL": 60,
+                "data": "151.101.67.7"
+              },
+              {
+                "name": "ghost.map.fastly.net",
+                "type": 1,
+                "TTL": 60,
+                "data": "151.101.131.7"
+              },
+              {
+                "name": "ghost.map.fastly.net",
+                "type": 1,
+                "TTL": 60,
+                "data": "151.101.195.7"
+              }
+            ]
+          }
+        },
+        "AAAA": {
+          "status_code": 200,
+          "json": {
+            "Status": 0,
+            "TC": false,
+            "RD": true,
+            "RA": true,
+            "AD": false,
+            "CD": false,
+            "Question": [
+              {
+                "name": "blog.rollbit.com",
+                "type": 28
+              }
+            ],
+            "Answer": [
+              {
+                "name": "blog.rollbit.com",
+                "type": 5,
+                "TTL": 300,
+                "data": "rollbit.ghost.io."
+              },
+              {
+                "name": "rollbit.ghost.io",
+                "type": 5,
+                "TTL": 300,
+                "data": "ghost.map.fastly.net."
+              },
+              {
+                "name": "ghost.map.fastly.net",
+                "type": 28,
+                "TTL": 60,
+                "data": "2a04:4e42::775"
+              },
+              {
+                "name": "ghost.map.fastly.net",
+                "type": 28,
+                "TTL": 60,
+                "data": "2a04:4e42:200::775"
+              },
+              {
+                "name": "ghost.map.fastly.net",
+                "type": 28,
+                "TTL": 60,
+                "data": "2a04:4e42:400::775"
+              },
+              {
+                "name": "ghost.map.fastly.net",
+                "type": 28,
+                "TTL": 60,
+                "data": "2a04:4e42:600::775"
+              }
+            ]
+          }
+        },
+        "CNAME": {
+          "status_code": 200,
+          "json": {
+            "Status": 0,
+            "TC": false,
+            "RD": true,
+            "RA": true,
+            "AD": true,
+            "CD": false,
+            "Question": [
+              {
+                "name": "blog.rollbit.com",
+                "type": 5
+              }
+            ],
+            "Answer": [
+              {
+                "name": "blog.rollbit.com",
+                "type": 5,
+                "TTL": 300,
+                "data": "rollbit.ghost.io."
+              }
+            ]
+          }
+        },
+        "NS": {
+          "status_code": 200,
+          "json": {
+            "Status": 0,
+            "TC": false,
+            "RD": true,
+            "RA": true,
+            "AD": false,
+            "CD": false,
+            "Question": [
+              {
+                "name": "blog.rollbit.com",
+                "type": 2
+              }
+            ],
+            "Answer": [
+              {
+                "name": "blog.rollbit.com",
+                "type": 5,
+                "TTL": 300,
+                "data": "rollbit.ghost.io."
+              },
+              {
+                "name": "rollbit.ghost.io",
+                "type": 5,
+                "TTL": 300,
+                "data": "ghost.map.fastly.net."
+              }
+            ],
+            "Authority": [
+              {
+                "name": "fastly.net",
+                "type": 6,
+                "TTL": 30,
+                "data": "ns1.fastly.net. hostmaster.fastly.com. 2017052201 3600 600 604800 30"
+              }
+            ]
+          }
+        },
+        "TXT": {
+          "status_code": 200,
+          "json": {
+            "Status": 0,
+            "TC": false,
+            "RD": true,
+            "RA": true,
+            "AD": true,
+            "CD": false,
+            "Question": [
+              {
+                "name": "blog.rollbit.com",
+                "type": 16
+              }
+            ],
+            "Answer": [
+              {
+                "name": "blog.rollbit.com",
+                "type": 16,
+                "TTL": 300,
+                "data": "\"1ED429GH2\""
+              }
+            ]
+          }
+        }
+      },
+      "selected_ip": "151.101.3.7",
+      "tls": {
+        "connect_ip": "151.101.3.7",
+        "raw_returncode": 0,
+        "raw_stderr": "Connecting to 151.101.3.7\ndepth=1 C=US, O=Certainly, CN=Certainly Intermediate R1\nverify error:num=20:unable to get local issuer certificate\nverify return:1\ndepth=0 CN=blog.rollbit.com\nverify return:1\nDONE\n",
+        "parsed_returncode": 0,
+        "parsed": "subject=CN=blog.rollbit.com\nissuer=C=US, O=Certainly, CN=Certainly Intermediate R1\nnotBefore=Apr 19 17:03:03 2026 GMT\nnotAfter=May 19 17:03:02 2026 GMT\nsha256 Fingerprint=6E:D0:37:3F:88:8D:7D:28:7F:85:83:A6:D0:2B:DB:E4:EB:48:8A:82:07:5B:03:48:9D:E1:74:D9:E1:EB:11:3B\nX509v3 Subject Alternative Name: \n    DNS:blog.rollbit.com\n",
+        "parsed_stderr": ""
+      },
+      "http": {
+        "url": "https://blog.rollbit.com/",
+        "connect_ip": "151.101.3.7",
+        "command": [
+          "curl",
+          "-sS",
+          "-L",
+          "--compressed",
+          "--max-time",
+          "45",
+          "-D",
+          "/Users/khoadoan/rollbit_forensic/output/captures/web/20260425T104619Z/blog_blog.rollbit.com.headers.txt",
+          "-o",
+          "/Users/khoadoan/rollbit_forensic/output/captures/web/20260425T104619Z/blog_blog.rollbit.com.body.bin",
+          "--resolve",
+          "blog.rollbit.com:443:151.101.3.7",
+          "https://blog.rollbit.com/"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "headers_file": "output/captures/web/20260425T104619Z/blog_blog.rollbit.com.headers.txt",
+        "body_file": "output/captures/web/20260425T104619Z/blog_blog.rollbit.com.body.bin",
+        "body_sha256": "234ca47b237f4ab98833a91b10d2ee74775a3619cd2c451a61b009be35177cae",
+        "body_size_bytes": 69908,
+        "status_lines": [
+          "HTTP/2 200"
+        ],
+        "final_status": "HTTP/2 200"
+      }
+    },
+    {
+      "target": {
+        "name": "rollbot",
+        "host": "rollbot.rollbit.com",
+        "path": "/"
+      },
+      "captured_at": "2026-04-25T10:46:25.043553+00:00",
+      "dns": {
+        "A": {
+          "status_code": 200,
+          "json": {
+            "Status": 0,
+            "TC": false,
+            "RD": true,
+            "RA": true,
+            "AD": true,
+            "CD": false,
+            "Question": [
+              {
+                "name": "rollbot.rollbit.com",
+                "type": 1
+              }
+            ],
+            "Answer": [
+              {
+                "name": "rollbot.rollbit.com",
+                "type": 1,
+                "TTL": 300,
+                "data": "104.20.26.76"
+              },
+              {
+                "name": "rollbot.rollbit.com",
+                "type": 1,
+                "TTL": 300,
+                "data": "172.66.170.17"
+              }
+            ]
+          }
+        },
+        "AAAA": {
+          "status_code": 200,
+          "json": {
+            "Status": 0,
+            "TC": false,
+            "RD": true,
+            "RA": true,
+            "AD": true,
+            "CD": false,
+            "Question": [
+              {
+                "name": "rollbot.rollbit.com",
+                "type": 28
+              }
+            ],
+            "Authority": [
+              {
+                "name": "rollbit.com",
+                "type": 6,
+                "TTL": 1800,
+                "data": "penny.ns.cloudflare.com. dns.cloudflare.com. 2401249296 10000 2400 604800 1800"
+              }
+            ]
+          }
+        },
+        "CNAME": {
+          "status_code": 200,
+          "json": {
+            "Status": 0,
+            "TC": false,
+            "RD": true,
+            "RA": true,
+            "AD": true,
+            "CD": false,
+            "Question": [
+              {
+                "name": "rollbot.rollbit.com",
+                "type": 5
+              }
+            ],
+            "Authority": [
+              {
+                "name": "rollbit.com",
+                "type": 6,
+                "TTL": 1800,
+                "data": "penny.ns.cloudflare.com. dns.cloudflare.com. 2401249296 10000 2400 604800 1800"
+              }
+            ]
+          }
+        },
+        "NS": {
+          "status_code": 200,
+          "json": {
+            "Status": 0,
+            "TC": false,
+            "RD": true,
+            "RA": true,
+            "AD": true,
+            "CD": false,
+            "Question": [
+              {
+                "name": "rollbot.rollbit.com",
+                "type": 2
+              }
+            ],
+            "Authority": [
+              {
+                "name": "rollbit.com",
+                "type": 6,
+                "TTL": 1800,
+                "data": "penny.ns.cloudflare.com. dns.cloudflare.com. 2401249296 10000 2400 604800 1800"
+              }
+            ]
+          }
+        },
+        "TXT": {
+          "status_code": 200,
+          "json": {
+            "Status": 0,
+            "TC": false,
+            "RD": true,
+            "RA": true,
+            "AD": true,
+            "CD": false,
+            "Question": [
+              {
+                "name": "rollbot.rollbit.com",
+                "type": 16
+              }
+            ],
+            "Authority": [
+              {
+                "name": "rollbit.com",
+                "type": 6,
+                "TTL": 1800,
+                "data": "penny.ns.cloudflare.com. dns.cloudflare.com. 2401249296 10000 2400 604800 1800"
+              }
+            ]
+          }
+        }
+      },
+      "selected_ip": "104.20.26.76",
+      "tls": {
+        "connect_ip": "104.20.26.76",
+        "raw_returncode": 0,
+        "raw_stderr": "Connecting to 104.20.26.76\ndepth=1 C=US, O=Let's Encrypt, CN=E8\nverify error:num=20:unable to get local issuer certificate\nverify return:1\ndepth=0 CN=rollbit.com\nverify return:1\nDONE\n",
+        "parsed_returncode": 0,
+        "parsed": "subject=CN=rollbit.com\nissuer=C=US, O=Let's Encrypt, CN=E8\nnotBefore=Apr  9 18:41:15 2026 GMT\nnotAfter=Jul  8 18:41:14 2026 GMT\nsha256 Fingerprint=CD:CA:91:F4:B9:2D:06:DE:DE:C1:24:20:E1:E3:5B:00:05:C0:88:B1:8B:CB:77:53:57:9E:DB:0B:74:3F:5C:59\nX509v3 Subject Alternative Name: \n    DNS:*.rollbit.com, DNS:rollbit.com\n",
+        "parsed_stderr": ""
+      },
+      "http": {
+        "url": "https://rollbot.rollbit.com/",
+        "connect_ip": "104.20.26.76",
+        "command": [
+          "curl",
+          "-sS",
+          "-L",
+          "--compressed",
+          "--max-time",
+          "45",
+          "-D",
+          "/Users/khoadoan/rollbit_forensic/output/captures/web/20260425T104619Z/rollbot_rollbot.rollbit.com.headers.txt",
+          "-o",
+          "/Users/khoadoan/rollbit_forensic/output/captures/web/20260425T104619Z/rollbot_rollbot.rollbit.com.body.bin",
+          "--resolve",
+          "rollbot.rollbit.com:443:104.20.26.76",
+          "https://rollbot.rollbit.com/"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "headers_file": "output/captures/web/20260425T104619Z/rollbot_rollbot.rollbit.com.headers.txt",
+        "body_file": "output/captures/web/20260425T104619Z/rollbot_rollbot.rollbit.com.body.bin",
+        "body_sha256": "a18a6c7921ee03fa2099bcd3cb7b13347959ae704c90b13ee6cf8318b85e8c91",
+        "body_size_bytes": 1448,
+        "status_lines": [
+          "HTTP/2 200"
+        ],
+        "final_status": "HTTP/2 200"
+      }
+    },
+    {
+      "target": {
+        "name": "cga_policy",
+        "host": "cert.cga.cw",
+        "path": "/page/certification_policy"
+      },
+      "captured_at": "2026-04-25T10:46:28.212340+00:00",
+      "dns": {
+        "A": {
+          "status_code": 200,
+          "json": {
+            "Status": 0,
+            "TC": false,
+            "RD": true,
+            "RA": true,
+            "AD": false,
+            "CD": false,
+            "Question": [
+              {
+                "name": "cert.cga.cw",
+                "type": 1
+              }
+            ],
+            "Answer": [
+              {
+                "name": "cert.cga.cw",
+                "type": 1,
+                "TTL": 300,
+                "data": "172.67.71.89"
+              },
+              {
+                "name": "cert.cga.cw",
+                "type": 1,
+                "TTL": 300,
+                "data": "104.26.4.227"
+              },
+              {
+                "name": "cert.cga.cw",
+                "type": 1,
+                "TTL": 300,
+                "data": "104.26.5.227"
+              }
+            ]
+          }
+        },
+        "AAAA": {
+          "status_code": 200,
+          "json": {
+            "Status": 0,
+            "TC": false,
+            "RD": true,
+            "RA": true,
+            "AD": false,
+            "CD": false,
+            "Question": [
+              {
+                "name": "cert.cga.cw",
+                "type": 28
+              }
+            ],
+            "Answer": [
+              {
+                "name": "cert.cga.cw",
+                "type": 28,
+                "TTL": 300,
+                "data": "2606:4700:20::681a:4e3"
+              },
+              {
+                "name": "cert.cga.cw",
+                "type": 28,
+                "TTL": 300,
+                "data": "2606:4700:20::ac43:4759"
+              },
+              {
+                "name": "cert.cga.cw",
+                "type": 28,
+                "TTL": 300,
+                "data": "2606:4700:20::681a:5e3"
+              }
+            ]
+          }
+        },
+        "CNAME": {
+          "status_code": 200,
+          "json": {
+            "Status": 0,
+            "TC": false,
+            "RD": true,
+            "RA": true,
+            "AD": false,
+            "CD": false,
+            "Question": [
+              {
+                "name": "cert.cga.cw",
+                "type": 5
+              }
+            ],
+            "Authority": [
+              {
+                "name": "cga.cw",
+                "type": 6,
+                "TTL": 1800,
+                "data": "cass.ns.cloudflare.com. dns.cloudflare.com. 2401960306 10000 2400 604800 1800"
+              }
+            ]
+          }
+        },
+        "NS": {
+          "status_code": 200,
+          "json": {
+            "Status": 0,
+            "TC": false,
+            "RD": true,
+            "RA": true,
+            "AD": false,
+            "CD": false,
+            "Question": [
+              {
+                "name": "cert.cga.cw",
+                "type": 2
+              }
+            ],
+            "Authority": [
+              {
+                "name": "cga.cw",
+                "type": 6,
+                "TTL": 1800,
+                "data": "cass.ns.cloudflare.com. dns.cloudflare.com. 2401960306 10000 2400 604800 1800"
+              }
+            ]
+          }
+        },
+        "TXT": {
+          "status_code": 200,
+          "json": {
+            "Status": 0,
+            "TC": false,
+            "RD": true,
+            "RA": true,
+            "AD": false,
+            "CD": false,
+            "Question": [
+              {
+                "name": "cert.cga.cw",
+                "type": 16
+              }
+            ],
+            "Authority": [
+              {
+                "name": "cga.cw",
+                "type": 6,
+                "TTL": 1800,
+                "data": "cass.ns.cloudflare.com. dns.cloudflare.com. 2401960306 10000 2400 604800 1800"
+              }
+            ]
+          }
+        }
+      },
+      "selected_ip": "172.67.71.89",
+      "tls": {
+        "connect_ip": "172.67.71.89",
+        "raw_returncode": 0,
+        "raw_stderr": "Connecting to 172.67.71.89\ndepth=2 C=US, O=Google Trust Services LLC, CN=GTS Root R4\nverify error:num=20:unable to get local issuer certificate\nverify return:1\ndepth=1 C=US, O=Google Trust Services, CN=WE1\nverify return:1\ndepth=0 CN=cga.cw\nverify return:1\nDONE\n",
+        "parsed_returncode": 0,
+        "parsed": "subject=CN=cga.cw\nissuer=C=US, O=Google Trust Services, CN=WE1\nnotBefore=Mar  3 00:16:54 2026 GMT\nnotAfter=Jun  1 01:16:41 2026 GMT\nsha256 Fingerprint=38:ED:99:F5:07:EF:AD:21:DB:9F:D6:BB:92:A6:70:84:0E:85:4F:2B:A4:C9:BD:02:89:92:06:9C:32:EA:ED:F3\nX509v3 Subject Alternative Name: \n    DNS:cga.cw, DNS:*.cga.cw\n",
+        "parsed_stderr": ""
+      },
+      "http": {
+        "url": "https://cert.cga.cw/page/certification_policy",
+        "connect_ip": "172.67.71.89",
+        "command": [
+          "curl",
+          "-sS",
+          "-L",
+          "--compressed",
+          "--max-time",
+          "45",
+          "-D",
+          "/Users/khoadoan/rollbit_forensic/output/captures/web/20260425T104619Z/cga_policy_cert.cga.cw.headers.txt",
+          "-o",
+          "/Users/khoadoan/rollbit_forensic/output/captures/web/20260425T104619Z/cga_policy_cert.cga.cw.body.bin",
+          "--resolve",
+          "cert.cga.cw:443:172.67.71.89",
+          "https://cert.cga.cw/page/certification_policy"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "headers_file": "output/captures/web/20260425T104619Z/cga_policy_cert.cga.cw.headers.txt",
+        "body_file": "output/captures/web/20260425T104619Z/cga_policy_cert.cga.cw.body.bin",
+        "body_sha256": "8c138281c463af80bec8cd4289b2674722f4b3427c44483f95701e30812e239a",
+        "body_size_bytes": 55780,
+        "status_lines": [
+          "HTTP/2 200"
+        ],
+        "final_status": "HTTP/2 200"
+      }
+    }
+  ]
+}

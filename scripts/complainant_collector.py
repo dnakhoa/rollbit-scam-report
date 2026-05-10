@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """
-Rollbit Victim Evidence Collector
-===================================
-Interactive CLI tool for victims to submit structured evidence.
+Rollbit Case Evidence Collector
+===============================
+Interactive CLI tool for collecting structured incident evidence.
 Validates transaction hashes, generates JSON evidence files,
 and optionally appends to the master cases database.
 
 Usage:
-    python victim_collector.py --interactive        # Step-by-step guided mode
-    python victim_collector.py --batch input.csv    # Batch import from CSV
-    python victim_collector.py --validate TX_HASH   # Validate a tx hash
+    python complainant_collector.py --interactive        # Step-by-step guided mode
+    python complainant_collector.py --batch input.csv    # Batch import from CSV
+    python complainant_collector.py --validate TX_HASH   # Validate a tx hash
 """
 
 import argparse
@@ -30,17 +30,17 @@ except ImportError:
 
 DATA_DIR = Path(__file__).resolve().parent.parent
 CASES_DB = DATA_DIR / 'cases_database.json'
-OUTPUT_DIR = DATA_DIR / 'output' / 'victim_evidence'
+OUTPUT_DIR = DATA_DIR / 'output' / 'complaint_evidence'
 
 CATEGORIES = {
-    '1': ('multiple_accounts_accusation', 'False multi-account accusation'),
+    '1': ('multiple_accounts_accusation', 'Multi-account accusation dispute'),
     '2': ('winning_block', 'Account blocked after winning'),
-    '3': ('kyc_delay_tactic', 'Endless KYC requirements'),
+    '3': ('kyc_delay_tactic', 'KYC/compliance delay dispute'),
     '4': ('sportsbook_abuse', 'Accused of sportsbook abuse'),
     '5': ('restricted_country', 'Restricted country enforcement'),
-    '6': ('maintenance_scam', 'Maintenance timing manipulation'),
-    '7': ('futures_manipulation', 'Futures/leverage manipulation'),
-    '8': ('account_closure', 'Account closed, funds seized'),
+    '6': ('maintenance_window_dispute', 'Maintenance-window dispute'),
+    '7': ('futures_pricing_dispute', 'Futures/leverage pricing dispute'),
+    '8': ('account_closure', 'Account closure / balance inaccessible'),
     '9': ('other', 'Other'),
 }
 
@@ -119,25 +119,25 @@ def validate_tx_hash(tx_hash: str) -> dict:
 def interactive_collect():
     """Guided step-by-step evidence collection."""
     print(f"\n{'='*60}")
-    print(f"  ROLLBIT VICTIM EVIDENCE COLLECTOR")
+    print(f"  ROLLBIT CASE EVIDENCE COLLECTOR")
     print(f"{'='*60}")
     print(f"  All data is stored locally.\n")
 
     evidence = {
         'case_id': f'VIC-{uuid4().hex[:8].upper()}',
         'collected_at': datetime.now(timezone.utc).isoformat(),
-        'source': 'victim_submission',
+        'source': 'complainant_submission',
     }
 
     # Basic info
     print("  --- Basic Information ---")
     evidence['username_rollbit'] = input("  Your Rollbit username: ").strip()
-    evidence['email'] = input("  Contact email (optional, for legal): ").strip() or None
+    evidence['contact'] = input("  Contact handle/email (optional, for follow-up): ").strip() or None
     evidence['country'] = input("  Your country: ").strip() or None
 
     # Amount
     while True:
-        amt = input("  Amount locked/stolen (USD): $").strip().replace(',', '')
+        amt = input("  Amount disputed or inaccessible (USD): $").strip().replace(',', '')
         try:
             evidence['amount_usd'] = float(amt)
             break
@@ -217,7 +217,7 @@ def interactive_collect():
     if evidence['has_filed_complaint']:
         evidence['complaint_platforms'] = input("  Where? (comma-separated): ").strip()
 
-    evidence['willing_legal_action'] = input("  Willing to participate in legal action? (y/n): ").lower() == 'y'
+    evidence['willing_followup'] = input("  Willing to answer follow-up evidence questions? (y/n): ").lower() == 'y'
 
     # Summary
     print(f"\n{'='*60}")
@@ -246,7 +246,7 @@ def interactive_collect():
 
 
 def append_to_database(evidence: dict):
-    """Append a victim submission to the main cases database."""
+    """Append a complainant submission to the main cases database."""
     if not CASES_DB.exists():
         print("  [WARN] cases_database.json not found")
         return
@@ -254,11 +254,11 @@ def append_to_database(evidence: dict):
     with open(CASES_DB) as f:
         db = json.load(f)
 
-    # Add to a new 'victim_submissions' section
-    if 'victim_submissions' not in db:
-        db['victim_submissions'] = []
+    # Add to a new 'complainant_submissions' section
+    if 'complainant_submissions' not in db:
+        db['complainant_submissions'] = []
 
-    db['victim_submissions'].append({
+    db['complainant_submissions'].append({
         'case_id': evidence['case_id'],
         'date_submitted': evidence['collected_at'],
         'amount_usd': evidence['amount_usd'],
@@ -334,7 +334,7 @@ def main():
         interactive_collect()
     else:
         parser.print_help()
-        print("\n  Try: python victim_collector.py --interactive")
+        print("\n  Try: python complainant_collector.py --interactive")
 
 
 if __name__ == '__main__':

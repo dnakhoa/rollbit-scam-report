@@ -157,7 +157,7 @@ class ComplaintClassifier {
       ],
       weight: 0.7,
     },
-    maintenance_scam: {
+    maintenance_window_dispute: {
       patterns: [
         /maintenance/i, /scheduled\s*maintenance/i,
         /platform.*down/i, /leverage.*maintenance/i,
@@ -178,9 +178,9 @@ class ComplaintClassifier {
       ],
       weight: 0.8,
     },
-    futures_manipulation: {
+    futures_pricing_dispute: {
       patterns: [
-        /futures.*manipul/i, /leverage.*scam/i, /liquidat/i,
+        /futures.*pricing/i, /futures.*manipul/i, /leverage.*scam/i, /liquidat/i,
         /burst.*price/i, /slippage/i,
       ],
       weight: 0.8,

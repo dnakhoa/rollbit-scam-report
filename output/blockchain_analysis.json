@@ -1,19 +1,91 @@
 {
-  "timestamp": "2026-03-10T12:35:19.367765+00:00",
+  "timestamp": "2026-05-10T10:03:31.965992+00:00",
   "mode": "cached",
-  "wallets": [],
+  "snapshot_note": "Cached mode preserves the April 19, 2026 wallet snapshot from REPORT_1_ONCHAIN_FORENSICS.md; it does not imply current live balances.",
+  "wallets": [
+    {
+      "chain": "BTC",
+      "address": "bc1qw8wrek2m7nlqldll66ajnwr9mh64syvkt67zlu",
+      "label": "Rollbit BTC Treasury",
+      "balance_native": 649.54550772,
+      "balance_usd": 48758133.54,
+      "tx_count": 469936,
+      "last_activity": "2026-04-19",
+      "fetched_at": "2026-04-19T09:23:00+00:00"
+    },
+    {
+      "chain": "SOL",
+      "address": "RBHdGVfDfMjfU6iUfCb1LczMJcQLx7hGnxbzRsoDNvx",
+      "label": "Rollbit SOL Treasury",
+      "balance_native": 222587.110683,
+      "balance_usd": 18862031.76,
+      "tx_count": 0,
+      "last_activity": "2026-04-19",
+      "fetched_at": "2026-04-19T09:24:00+00:00"
+    },
+    {
+      "chain": "ETH",
+      "address": "0xCBD6832Ebc203e49E2B771897067fce3c58575ac",
+      "label": "Rollbit Hot Wallet",
+      "balance_native": 0.0,
+      "balance_usd": 0.0,
+      "tx_count": 0,
+      "last_activity": "",
+      "fetched_at": "2026-04-19T09:24:00+00:00"
+    },
+    {
+      "chain": "ETH",
+      "address": "0xef8801eaf234ff82801821ffe2d78d60a0237f97",
+      "label": "Rollbit ERC20 Operations",
+      "balance_native": 0.0,
+      "balance_usd": 0.0,
+      "tx_count": 0,
+      "last_activity": "",
+      "fetched_at": "2026-04-19T09:24:00+00:00"
+    },
+    {
+      "chain": "ETH",
+      "address": "0x46dcA395D20E63Cb0Fe1EDC9f0e6f012E77c0913",
+      "label": "rollbit.eth",
+      "balance_native": 0.0,
+      "balance_usd": 0.0,
+      "tx_count": 0,
+      "last_activity": "",
+      "fetched_at": "2026-04-19T09:24:00+00:00"
+    },
+    {
+      "chain": "ETH",
+      "address": "0x8aE57A027c63fcA8070D1Bf38622321dE8004c67",
+      "label": "rollbot.eth",
+      "balance_native": 0.0,
+      "balance_usd": 0.0,
+      "tx_count": 0,
+      "last_activity": "",
+      "fetched_at": "2026-04-19T09:24:00+00:00"
+    }
+  ],
   "treasury_flows": {
     "known_events": [
       {
         "date": "2025-09-03",
         "chain": "SOL",
-        "event": "50K SOL sold after 2-year dormancy",
+        "event": "50K SOL sold from treasury-linked wallet after 2-year dormancy",
         "amount_native": 50000,
         "amount_usd": 10170000,
         "price_at_time": 203.4,
         "initial_price": 24.6,
-        "source": "Binance/Bitget reporting, on-chain data",
+        "source": "ChainCatcher / Lookonchain",
         "direction": "outflow"
+      },
+      {
+        "date": "2026-01-09",
+        "chain": "BTC",
+        "event": "497.11 BTC transferred from anonymous address to Rollbit",
+        "amount_native": 497.11,
+        "amount_usd": 45190000,
+        "price_at_time": 90906,
+        "source": "ChainCatcher / Arkham",
+        "direction": "inflow"
       },
       {
         "date": "2026-01-11",
@@ -48,12 +120,22 @@
       {
         "date": "2026-02-13",
         "chain": "BTC",
-        "event": "626 BTC moved to anonymous address",
+        "event": "626.03 BTC transferred from anonymous address; some flow reported into Bybit and Rollbit",
         "amount_native": 626.03,
         "amount_usd": 42210000,
         "price_at_time": 67427,
-        "source": "ChainCatcher / on-chain",
-        "direction": "outflow"
+        "source": "ChainCatcher / Arkham",
+        "direction": "mixed"
+      },
+      {
+        "date": "2026-03-11",
+        "chain": "BTC",
+        "event": "200 BTC transferred from Coinbase; some flow reported into Rollbit",
+        "amount_native": 200.0,
+        "amount_usd": 13910000,
+        "price_at_time": 69550,
+        "source": "ChainCatcher / Arkham",
+        "direction": "mixed"
       },
       {
         "date": "2025-05-09",
@@ -66,101 +148,107 @@
         "direction": "seizure"
       }
     ],
-    "total_confirmed_outflow_usd": 59610000
+    "total_confirmed_outflow_usd": 17400000
   },
   "rlb_analysis": {
     "buyback_analysis": {
-      "claimed_monthly_buyback_usd": 5000000,
+      "reported_first_month_buyback_usd": 5538265.59,
+      "reported_first_month_rlb_bought": 33688709,
       "initial_supply": 5000000000,
       "reported_burned_pct": 50.86
     },
-    "manipulation_indicators": [
+    "market_structure_indicators": [
       {
-        "indicator": "Price decline despite buybacks",
-        "severity": "HIGH"
+        "indicator": "Price drawdown alongside reported buy-and-burn mechanics",
+        "collection_priority": "HIGH"
       },
       {
-        "indicator": "Influencer dumping via mixer",
-        "severity": "HIGH"
+        "indicator": "Influencer-promotion wallet reconstruction needed",
+        "collection_priority": "MEDIUM"
       },
       {
-        "indicator": "Revenue centralization",
-        "severity": "MEDIUM"
+        "indicator": "Revenue figures centralized, burns on-chain",
+        "collection_priority": "MEDIUM"
       },
       {
-        "indicator": "Treasury draining faster than buybacks",
-        "severity": "CRITICAL"
+        "indicator": "Treasury-related flows require operating baseline",
+        "collection_priority": "MEDIUM"
       }
     ]
   },
   "wallet_clusters": {},
-  "risk_indicators": [
+  "data_gap_indicators": [
     {
-      "name": "Treasury Drainage Rate",
-      "score": 5.961,
-      "description": "$59,610,000 in documented treasury outflows over ~4 months",
+      "name": "Treasury Flow Baseline Gap",
+      "score": 1.74,
+      "description": "$17,400,000 in documented treasury-related outflows requiring operating baseline comparison",
       "evidence": [
-        "2025-09-03: 50K SOL sold after 2-year dormancy ($10,170,000)",
+        "2025-09-03: 50K SOL sold from treasury-linked wallet after 2-year dormancy ($10,170,000)",
         "2026-01-11: 15K SOL transferred (batch 1) ($2,050,000)",
         "2026-01-11: 15K SOL transferred (batch 2) ($2,040,000)",
-        "2026-01-15: 21.4K SOL transferred ($3,140,000)",
-        "2026-02-13: 626 BTC moved to anonymous address ($42,210,000)"
+        "2026-01-15: 21.4K SOL transferred ($3,140,000)"
       ]
     },
     {
-      "name": "Law Enforcement Seizures",
-      "score": 10.0,
-      "description": "$123,000,000 seized by Ukrainian authorities",
+      "name": "Off-Wallet Custody Exposure",
+      "score": 8.5,
+      "description": "$123,000,000 reported in an exchange/proxy custody event; custody map is incomplete",
       "evidence": [
-        "$123M seized by Pechersk District Court, linked to Bull Gaming N.V."
+        "Ukraine-linked reporting describes assets tied to Bull Gaming N.V. outside the public treasury wallet set",
+        "This is treated as a custody-location signal, not as proof of current wallet depletion"
       ]
     },
     {
-      "name": "Token Price Collapse",
+      "name": "RLB Public-Market Data Scope",
       "score": 7.7,
-      "description": "RLB token declined 77% from highs despite claimed buyback program",
+      "description": "RLB traded below its high while tracked public DEX liquidity covers only part of the market",
       "evidence": [
-        "Claimed $5M/month buybacks should support price",
-        "Influencer Gainzy caught dumping while shilling",
-        "$250K token promotion schemes exposed"
+        "Buy-and-burn mechanics depend on operator-reported revenue inputs",
+        "Top-pool visible DEX liquidity is limited relative to headline market capitalization",
+        "Rollbit app/on-platform liquidity is not measured in the current artifact set",
+        "Token market depth should not be treated as reserve depth"
       ]
     },
     {
-      "name": "Solvency Indicator",
-      "score": 8.0,
-      "description": "Known wallet balances: $0.00 vs $123M in seized assets",
+      "name": "Visible Reserve Coverage Gap",
+      "score": 4.502425585365853,
+      "description": "Known wallet balances: $67,620,165.30 vs $123M reported off-wallet event scale",
       "evidence": [
-        "Platform wallets held ~$16M vs ~$75M transferred to Binance (from CaptainAltcoin report)"
+        "Known public wallets held ~$67,620,165 at the loaded snapshot",
+        "Public wallets do not expose total liabilities or exchange/proxy custody balances"
       ]
     },
     {
-      "name": "Regulatory Status",
-      "score": 7.0,
-      "description": "Operating under transitional arrangement; original license expired Aug 2024",
+      "name": "Public Web Verification Friction",
+      "score": 6.5,
+      "description": "Main application is challenge-gated and public domain-level verification was not cleanly reproducible",
       "evidence": [
-        "Gaming Curacao/365/JAZ ceased operations August 18, 2024",
-        "Pending application OGL/2024/1260/0494 with new Curacao GCB",
-        "License removed from website in March 2023 (restored after controversy)"
+        "rollbit.com is fronted by Cloudflare challenge infrastructure",
+        "blog.rollbit.com is separately hosted on Ghost/Fastly and remains indexable",
+        "The public certificate check path described in Report 4 did not produce a clean confirmation on the snapshot date"
       ]
     },
     {
       "name": "Complaint Acceleration",
       "score": 8.0,
-      "description": "Victim complaints accelerating from 2 in 2022 to 37+ in 2025",
+      "description": "Counted public complaints rose from 2 in 2022 to 47 in 2025, with 13 more already visible in 2026 YTD",
       "evidence": [
         "2022: 2 cases ($10K)",
         "2023: 4 cases ($46K)",
-        "2024: 8 cases ($158K)",
-        "2025: 37+ cases ($172K+)",
-        "Resolution rate: 4.5%"
+        "2024: 9 cases ($177K)",
+        "2025: 47 cases ($258K)",
+        "2026 YTD: 13 cases ($46K)",
+        "Public resolution rate: 5.0% (4/80)"
       ]
     }
   ],
   "summary": {
-    "total_documented_outflows_usd": 59610000,
+    "total_wallets_analyzed": 6,
+    "total_wallet_balance_usd": 67620165.3,
+    "total_documented_outflows_usd": 17400000,
     "total_seized_usd": 123000000,
-    "avg_risk_score": 7.8,
-    "risk_level": "CRITICAL",
-    "known_events_count": 6
+    "avg_data_gap_score": 6.2,
+    "data_gap_level": "HIGH",
+    "known_events_count": 8
   }
 }

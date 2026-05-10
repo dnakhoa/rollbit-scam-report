@@ -1,0 +1,118 @@
+{
+  "freeze_date": "2026-04-19",
+  "captured_at": "2026-04-19T00:00:00Z",
+  "total_cases": 80,
+  "quantified_cases": 74,
+  "resolved_cases": 4,
+  "open_or_unresolved_cases": 76,
+  "resolution_rate": 0.05,
+  "quantified_amount_total_usd": 562081.08,
+  "confirmed_amount_total_usd": 295178.56,
+  "claimed_amount_total_usd": 266902.52,
+  "source_breakdown": {
+    "bitcointalk": 20,
+    "trustpilot": 51,
+    "casino_guru": 7,
+    "askgamblers": 1,
+    "casinolistings": 1
+  },
+  "category_breakdown": {
+    "multiple_accounts_accusation": 31,
+    "account_closure": 18,
+    "sportsbook_abuse": 4,
+    "restricted_country": 3,
+    "kyc_delay_tactic": 9,
+    "winning_block": 12,
+    "maintenance_window_dispute": 1,
+    "futures_pricing_dispute": 2
+  },
+  "year_breakdown": {
+    "2022": 2,
+    "2023": 4,
+    "2024": 9,
+    "2025": 47,
+    "2026": 13
+  },
+  "dedupe_rules_applied": {
+    "excluded_from_totals": [
+      "AG-002",
+      "X-001"
+    ],
+    "cross_post_groups": [
+      "XPOST-CL-001-AG-002",
+      "XPOST-BGMBET-3189"
+    ]
+  },
+  "top_10_cases": [
+    {
+      "case_id": "BTC-005",
+      "amount_usd": 55000.0,
+      "source": "bitcointalk",
+      "post_date": "2024-07-20",
+      "category": "winning_block"
+    },
+    {
+      "case_id": "TP-003",
+      "amount_usd": 47000.0,
+      "source": "trustpilot",
+      "post_date": "2025-08-14",
+      "category": "winning_block"
+    },
+    {
+      "case_id": "BTC-004",
+      "amount_usd": 44000.0,
+      "source": "bitcointalk",
+      "post_date": "2024-11-25",
+      "category": "maintenance_window_dispute"
+    },
+    {
+      "case_id": "BTC-002",
+      "amount_usd": 30211.0,
+      "source": "bitcointalk",
+      "post_date": "2023-06-01",
+      "category": "multiple_accounts_accusation"
+    },
+    {
+      "case_id": "BT-017",
+      "amount_usd": 30000.0,
+      "source": "bitcointalk",
+      "post_date": "2025-04-21",
+      "category": "winning_block"
+    },
+    {
+      "case_id": "TP-001",
+      "amount_usd": 30000.0,
+      "source": "trustpilot",
+      "post_date": "2025-12-15",
+      "category": "winning_block"
+    },
+    {
+      "case_id": "BTC-010",
+      "amount_usd": 27000.0,
+      "source": "bitcointalk",
+      "post_date": "2024-03-01",
+      "category": "restricted_country"
+    },
+    {
+      "case_id": "TP-004",
+      "amount_usd": 22000.0,
+      "source": "trustpilot",
+      "post_date": "2025-10-11",
+      "category": "multiple_accounts_accusation"
+    },
+    {
+      "case_id": "TP-042",
+      "amount_usd": 19749.0,
+      "source": "trustpilot",
+      "post_date": "2024-04-22",
+      "category": "account_closure"
+    },
+    {
+      "case_id": "TP-007",
+      "amount_usd": 18000.0,
+      "source": "trustpilot",
+      "post_date": "2025-02-04",
+      "category": "winning_block"
+    }
+  ]
+}

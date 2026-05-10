@@ -3,8 +3,8 @@
 Rollbit On-Chain Blockchain Forensics Analyzer
 ===============================================
 Queries public blockchain APIs to analyze Rollbit's known wallet addresses,
-trace treasury outflows, analyze RLB token manipulation, cluster related wallets,
-and score exit-scam risk indicators.
+trace treasury outflows, analyze RLB token market structure, cluster related wallets,
+and surface technical data gaps.
 
 Usage:
     python blockchain_analyzer.py --full              # Full analysis
@@ -93,13 +93,23 @@ KNOWN_TREASURY_EVENTS = [
     {
         'date': '2025-09-03',
         'chain': 'SOL',
-        'event': '50K SOL sold after 2-year dormancy',
+        'event': '50K SOL sold from treasury-linked wallet after 2-year dormancy',
         'amount_native': 50000,
         'amount_usd': 10_170_000,
         'price_at_time': 203.4,
         'initial_price': 24.6,
-        'source': 'Binance/Bitget reporting, on-chain data',
+        'source': 'ChainCatcher / Lookonchain',
         'direction': 'outflow',
+    },
+    {
+        'date': '2026-01-09',
+        'chain': 'BTC',
+        'event': '497.11 BTC transferred from anonymous address to Rollbit',
+        'amount_native': 497.11,
+        'amount_usd': 45_190_000,
+        'price_at_time': 90_906,
+        'source': 'ChainCatcher / Arkham',
+        'direction': 'inflow',
     },
     {
         'date': '2026-01-11',
@@ -134,12 +144,22 @@ KNOWN_TREASURY_EVENTS = [
     {
         'date': '2026-02-13',
         'chain': 'BTC',
-        'event': '626 BTC moved to anonymous address',
+        'event': '626.03 BTC transferred from anonymous address; some flow reported into Bybit and Rollbit',
         'amount_native': 626.03,
         'amount_usd': 42_210_000,
         'price_at_time': 67_427,
-        'source': 'ChainCatcher / on-chain',
-        'direction': 'outflow',
+        'source': 'ChainCatcher / Arkham',
+        'direction': 'mixed',
+    },
+    {
+        'date': '2026-03-11',
+        'chain': 'BTC',
+        'event': '200 BTC transferred from Coinbase; some flow reported into Rollbit',
+        'amount_native': 200.0,
+        'amount_usd': 13_910_000,
+        'price_at_time': 69_550,
+        'source': 'ChainCatcher / Arkham',
+        'direction': 'mixed',
     },
     {
         'date': '2025-05-09',
@@ -150,6 +170,69 @@ KNOWN_TREASURY_EVENTS = [
         'price_at_time': None,
         'source': 'dev.ua, Pechersk District Court of Kyiv',
         'direction': 'seizure',
+    },
+]
+
+CACHED_WALLET_SNAPSHOT = [
+    {
+        'chain': 'BTC',
+        'address': ROLLBIT_WALLETS['BTC']['treasury']['address'],
+        'label': ROLLBIT_WALLETS['BTC']['treasury']['label'],
+        'balance_native': 649.54550772,
+        'balance_usd': 48_758_133.54,
+        'tx_count': 469_936,
+        'last_activity': '2026-04-19',
+        'fetched_at': '2026-04-19T09:23:00+00:00',
+    },
+    {
+        'chain': 'SOL',
+        'address': ROLLBIT_WALLETS['SOL']['treasury']['address'],
+        'label': ROLLBIT_WALLETS['SOL']['treasury']['label'],
+        'balance_native': 222_587.110683,
+        'balance_usd': 18_862_031.76,
+        'tx_count': 0,
+        'last_activity': '2026-04-19',
+        'fetched_at': '2026-04-19T09:24:00+00:00',
+    },
+    {
+        'chain': 'ETH',
+        'address': ROLLBIT_WALLETS['ETH']['hot_wallet']['address'],
+        'label': ROLLBIT_WALLETS['ETH']['hot_wallet']['label'],
+        'balance_native': 0.0,
+        'balance_usd': 0.0,
+        'tx_count': 0,
+        'last_activity': '',
+        'fetched_at': '2026-04-19T09:24:00+00:00',
+    },
+    {
+        'chain': 'ETH',
+        'address': ROLLBIT_WALLETS['ETH']['erc20_ops']['address'],
+        'label': ROLLBIT_WALLETS['ETH']['erc20_ops']['label'],
+        'balance_native': 0.0,
+        'balance_usd': 0.0,
+        'tx_count': 0,
+        'last_activity': '',
+        'fetched_at': '2026-04-19T09:24:00+00:00',
+    },
+    {
+        'chain': 'ETH',
+        'address': ROLLBIT_WALLETS['ETH']['rollbit_ens']['address'],
+        'label': ROLLBIT_WALLETS['ETH']['rollbit_ens']['label'],
+        'balance_native': 0.0,
+        'balance_usd': 0.0,
+        'tx_count': 0,
+        'last_activity': '',
+        'fetched_at': '2026-04-19T09:24:00+00:00',
+    },
+    {
+        'chain': 'ETH',
+        'address': ROLLBIT_WALLETS['ETH']['rollbot_ens']['address'],
+        'label': ROLLBIT_WALLETS['ETH']['rollbot_ens']['label'],
+        'balance_native': 0.0,
+        'balance_usd': 0.0,
+        'tx_count': 0,
+        'last_activity': '',
+        'fetched_at': '2026-04-19T09:24:00+00:00',
     },
 ]
 
@@ -200,7 +283,7 @@ class TransactionRecord:
     label: str = ''
 
 @dataclass
-class RiskIndicator:
+class DataGapIndicator:
     name: str
     score: float  # 0-10
     description: str
@@ -212,7 +295,7 @@ class AnalysisResult:
     wallets: list = field(default_factory=list)
     transactions: list = field(default_factory=list)
     treasury_events: list = field(default_factory=list)
-    risk_indicators: list = field(default_factory=list)
+    data_gap_indicators: list = field(default_factory=list)
     rlb_analysis: dict = field(default_factory=dict)
     summary: dict = field(default_factory=dict)
 
@@ -694,7 +777,12 @@ class TreasuryFlowTracer:
         print("  DOCUMENTED TREASURY EVENTS (from public reports)")
         print("  " + "-" * 60)
         for event in sorted(KNOWN_TREASURY_EVENTS, key=lambda x: x['date']):
-            direction = "⬆️ OUTFLOW" if event['direction'] == 'outflow' else "🚨 SEIZURE" if event['direction'] == 'seizure' else "⬇️ INFLOW"
+            direction = (
+                "⬆️ OUTFLOW" if event['direction'] == 'outflow' else
+                "⬇️ INFLOW" if event['direction'] == 'inflow' else
+                "↔️ MIXED FLOW" if event['direction'] == 'mixed' else
+                "🚨 SEIZURE"
+            )
             print(f"  [{event['date']}] {direction}: ${event['amount_usd']:,.0f}")
             print(f"    {event['event']}")
             print(f"    Source: {event['source']}")
@@ -709,21 +797,21 @@ class TreasuryFlowTracer:
 # =============================================================================
 
 class RLBTokenAnalyzer:
-    """Analyze RLB token for manipulation indicators."""
+    """Analyze RLB token for market-structure indicators."""
 
     def __init__(self, api: BlockchainAPI):
         self.api = api
 
     def analyze(self) -> dict:
-        """Analyze RLB token metrics and manipulation indicators."""
+        """Analyze RLB token metrics and market-structure indicators."""
         print("\n" + "=" * 70)
-        print("  RLB TOKEN ANALYSIS — Buyback vs Reality")
+        print("  RLB TOKEN ANALYSIS - Market Structure")
         print("=" * 70)
 
         result = {
             'token_info': {},
             'price_analysis': {},
-            'manipulation_indicators': [],
+            'market_structure_indicators': [],
             'buyback_analysis': {},
         }
 
@@ -743,18 +831,19 @@ class RLBTokenAnalyzer:
         rlb_price = prices.get('RLB', 0)
         rlb_mcap = prices.get('RLB_market_cap', 0)
 
-        # Buyback analysis
+        # Buy-and-burn context
         print("\n  " + "-" * 60)
-        print("  BUYBACK vs REALITY ANALYSIS")
+        print("  BUY-AND-BURN CONTEXT")
         print("  " + "-" * 60)
 
-        # Rollbit claims ~$5M/month in buybacks
-        claimed_monthly_buyback = 5_000_000
-        claimed_annual = claimed_monthly_buyback * 12
+        # Rollbit's September 2023 post reported first-month buy-and-burn figures.
+        reported_first_month_buyback = 5_538_265.59
+        reported_first_month_rlb = 33_688_709
 
         result['buyback_analysis'] = {
-            'claimed_monthly_buyback_usd': claimed_monthly_buyback,
-            'claimed_annual_buyback_usd': claimed_annual,
+            'reported_first_month_buyback_usd': reported_first_month_buyback,
+            'reported_first_month_rlb_bought': reported_first_month_rlb,
+            'source': 'Rollbit blog RLB Utility Guide, 2023-09-13',
             'initial_supply': RLB_TOKEN['initial_supply'],
             'reported_burned_pct': 50.86,
             'reported_burned_tokens': int(RLB_TOKEN['initial_supply'] * 0.5086),
@@ -762,69 +851,71 @@ class RLBTokenAnalyzer:
             'current_market_cap': rlb_mcap,
         }
 
-        print(f"\n  Claimed buyback rate: ~${claimed_monthly_buyback:,.0f}/month")
+        print(f"\n  Reported first-month buy-and-burn: ${reported_first_month_buyback:,.2f}")
+        print(f"  Reported first-month RLB bought: {reported_first_month_rlb:,.0f}")
         print(f"  Initial supply: {RLB_TOKEN['initial_supply']:,.0f} RLB")
         print(f"  Reported burned: 50.86% ({int(RLB_TOKEN['initial_supply'] * 0.5086):,.0f} tokens)")
         if rlb_price > 0:
             print(f"  Current price: ${rlb_price:.6f}")
-            tokens_per_month = claimed_monthly_buyback / rlb_price
-            print(f"  Implied tokens bought/month: {tokens_per_month:,.0f}")
+            first_month_token_value_now = reported_first_month_rlb * rlb_price
+            print(f"  First-month RLB bought valued at current price: ${first_month_token_value_now:,.2f}")
 
-        # Manipulation indicators
+        # Market-structure indicators
         print("\n  " + "-" * 60)
-        print("  MANIPULATION INDICATORS")
+        print("  MARKET-STRUCTURE INDICATORS")
         print("  " + "-" * 60)
 
         indicators = []
 
-        # 1. Price decline despite "buybacks"
+        # 1. Price drawdown alongside reported buy-and-burn mechanics
         indicators.append({
-            'indicator': 'Price decline despite claimed buybacks',
-            'severity': 'HIGH',
+            'indicator': 'Price drawdown alongside reported buy-and-burn mechanics',
+            'collection_priority': 'HIGH',
             'details': (
-                'RLB dropped ~77% from its highs despite Rollbit claiming $5M/month in buybacks. '
-                'Genuine buyback pressure at this scale should support price, not allow a 77% decline. '
-                'This strongly suggests either: (a) buybacks are not happening, (b) insider selling '
-                'overwhelms buyback volume, or (c) the numbers are fabricated.'
+                'RLB traded roughly 77% below its all-time high in the loaded snapshot. '
+                'This should be compared against timestamped buy, burn, redistribution, supply, and venue-depth data '
+                'before drawing any conclusion about the buy-and-burn program.'
             ),
         })
-        print(f"\n  🔴 Price decline despite claimed buybacks (-77% from highs)")
+        print(f"\n  [DATA] Price drawdown alongside reported buy-and-burn mechanics (-77% from highs)")
 
-        # 2. Gainzy/influencer dumping via mixers
+        # 2. Influencer-promotion reconstruction
         indicators.append({
-            'indicator': 'Influencer RLB dumping via Rollbit as mixer',
-            'severity': 'HIGH',
+            'indicator': 'Influencer-promotion wallet reconstruction needed',
+            'collection_priority': 'MEDIUM',
             'details': (
-                'On-chain analysis showed influencer Gainzy claimed to buy $400K in RLB but was actually '
-                'selling. Pattern: buy with SOL → tweet about RLB → deposit to Rollbit → withdraw from '
-                'different wallets → sell. Rollbit platform used as intermediary mixer to obfuscate selling.'
+                'Public reporting discussed influencer promotion and wallet behavior. '
+                'This repo should preserve source links, wallet addresses, transaction graphs, and timestamps before using those claims analytically.'
             ),
         })
-        print(f"  🔴 Influencer dumping via Rollbit as mixer (documented)")
+        print(f"  [DATA] Influencer-promotion wallet reconstruction needed")
 
         # 3. Revenue centralization vs on-chain burns
         indicators.append({
             'indicator': 'Revenue figures centralized, burns on-chain',
-            'severity': 'MEDIUM',
+            'collection_priority': 'MEDIUM',
             'details': (
                 'While the burn transactions themselves are on-chain and verifiable, the revenue figures '
-                'that determine HOW MUCH to buy and burn are centralized and controlled entirely by Rollbit. '
-                'There is no independent audit of their claimed revenue numbers.'
+                'that determine how much to buy and burn are operator-reported. '
+                'The next step is to reconcile posted dashboard figures with execution transactions.'
             ),
         })
-        print(f"  🟡 Revenue numbers centralized (no independent audit)")
+        print(f"  [DATA] Revenue numbers are operator-reported")
 
-        # 4. Low liquidity relative to claimed burns
+        # 4. Public DEX liquidity scope
         if dex_data and dex_data.get('liquidity_usd', 0) > 0:
             liq = dex_data['liquidity_usd']
             if liq < 5_000_000:
                 indicators.append({
-                    'indicator': 'Extremely low DEX liquidity',
-                    'severity': 'HIGH',
-                    'details': f'DEX liquidity only ${liq:,.2f}. A single large sell could crash the price. '
-                               f'This makes the claimed $5M/month buyback implausible through DEX alone.',
+                    'indicator': 'Tracked public DEX liquidity is a scoped market slice',
+                    'collection_priority': 'HIGH',
+                    'details': (
+                        f'Tracked public DEX liquidity is ${liq:,.2f}. This snapshot should not be treated as complete '
+                        'RLB liquidity because Rollbit app/on-platform liquidity, order-book depth, and custody-side '
+                        'token inventory are not measured here. It should not be described as the only RLB trading or liquidity venue.'
+                    ),
                 })
-                print(f"  🔴 Low DEX liquidity: ${liq:,.2f}")
+                print(f"  [DATA] Tracked public DEX liquidity: ${liq:,.2f}")
 
         # 5. Treasury outflows vs buybacks
         total_treasury_outflow = sum(
@@ -832,17 +923,17 @@ class RLBTokenAnalyzer:
             if e['direction'] == 'outflow'
         )
         indicators.append({
-            'indicator': 'Treasury draining faster than claimed buybacks',
-            'severity': 'CRITICAL',
+            'indicator': 'Treasury-related flows require operating baseline',
+            'collection_priority': 'MEDIUM',
             'details': (
-                f'Documented treasury outflows total ${total_treasury_outflow:,.0f} in ~4 months '
-                f'(Sep 2025 - Feb 2026). At claimed $5M/month buyback rate, this far exceeds what '
-                f'should be leaving the treasury for buybacks alone.'
+                f'Documented treasury-related outflows total ${total_treasury_outflow:,.0f}. '
+                f'This should be analyzed against normal operating payouts, wallet maintenance, inflows, and '
+                f'counterparty labels before treating it as more than a flow-classification dataset.'
             ),
         })
-        print(f"  🔴 Treasury outflows: ${total_treasury_outflow:,.0f} in ~4 months")
+        print(f"  [DATA] Treasury-related outflows: ${total_treasury_outflow:,.0f}")
 
-        result['manipulation_indicators'] = indicators
+        result['market_structure_indicators'] = indicators
         result['price_analysis'] = {
             'current_price': rlb_price,
             'market_cap': rlb_mcap,
@@ -853,67 +944,70 @@ class RLBTokenAnalyzer:
 
 
 # =============================================================================
-# RISK SCORER
+# DATA GAP SCORER
 # =============================================================================
 
-class RiskScorer:
-    """Score exit-scam / insolvency risk based on on-chain indicators."""
+class DataGapScorer:
+    """Score technical data gaps based on custody, liquidity, and corpus indicators."""
 
     @staticmethod
     def score(wallet_data: list, treasury_data: dict, rlb_data: dict) -> list:
-        """Generate risk indicators with scores."""
+        """Generate data-gap indicators with scores."""
 
         print("\n" + "=" * 70)
-        print("  RISK ASSESSMENT — Exit Scam Indicators")
+        print("  TECHNICAL DATA-GAP ASSESSMENT")
         print("=" * 70)
 
         indicators = []
 
-        # 1. Treasury drainage rate
+        # 1. Treasury flow baseline
         total_outflow = sum(
             e['amount_usd'] for e in KNOWN_TREASURY_EVENTS
             if e['direction'] == 'outflow'
         )
-        score = min(10, total_outflow / 10_000_000)  # $100M = score 10
-        indicators.append(RiskIndicator(
-            name='Treasury Drainage Rate',
+        score = min(10, total_outflow / 10_000_000)
+        indicators.append(DataGapIndicator(
+            name='Treasury Flow Baseline Gap',
             score=score,
-            description=f'${total_outflow:,.0f} in documented treasury outflows over ~4 months',
+            description=f'${total_outflow:,.0f} in documented treasury-related outflows requiring operating baseline comparison',
             evidence=[
                 f"{e['date']}: {e['event']} (${e['amount_usd']:,.0f})"
                 for e in KNOWN_TREASURY_EVENTS if e['direction'] == 'outflow'
             ]
         ))
-        color = '🔴' if score >= 7 else '🟡' if score >= 4 else '🟢'
-        print(f"\n  {color} Treasury Drainage: {score:.1f}/10")
+        print(f"\n  [DATA] Treasury Flow Baseline Gap: {score:.1f}/10")
 
-        # 2. Law enforcement action
+        # 2. Off-wallet custody event
         seizure = sum(
             e['amount_usd'] for e in KNOWN_TREASURY_EVENTS
             if e['direction'] == 'seizure'
         )
-        score2 = 10.0 if seizure > 0 else 0.0
-        indicators.append(RiskIndicator(
-            name='Law Enforcement Seizures',
+        score2 = 8.5 if seizure > 0 else 0.0
+        indicators.append(DataGapIndicator(
+            name='Off-Wallet Custody Exposure',
             score=score2,
-            description=f'${seizure:,.0f} seized by Ukrainian authorities',
-            evidence=['$123M seized by Pechersk District Court, linked to Bull Gaming N.V.']
-        ))
-        print(f"  🔴 Law Enforcement Seizure: {score2:.1f}/10")
-
-        # 3. Token price collapse
-        score3 = 7.7  # -77% decline
-        indicators.append(RiskIndicator(
-            name='Token Price Collapse',
-            score=score3,
-            description='RLB token declined 77% from highs despite claimed buyback program',
+            description=f'${seizure:,.0f} reported in an exchange/proxy custody event; custody map is incomplete',
             evidence=[
-                'Claimed $5M/month buybacks should support price',
-                'Influencer Gainzy caught dumping while shilling',
-                '$250K token promotion schemes exposed',
+                'Ukraine-linked reporting describes assets tied to Bull Gaming N.V. outside the public treasury wallet set',
+                'This is treated as a custody-location signal, not as proof of current wallet depletion',
             ]
         ))
-        print(f"  🔴 Token Price Collapse: {score3:.1f}/10")
+        print(f"  [DATA] Off-Wallet Custody Exposure: {score2:.1f}/10")
+
+        # 3. Token public-market data scope
+        score3 = 7.7  # -77% decline
+        indicators.append(DataGapIndicator(
+            name='RLB Public-Market Data Scope',
+            score=score3,
+            description='RLB traded below its high while tracked public DEX liquidity covers only part of the market',
+            evidence=[
+                'Buy-and-burn mechanics depend on operator-reported revenue inputs',
+                'Top-pool visible DEX liquidity is limited relative to headline market capitalization',
+                'Rollbit app/on-platform liquidity is not measured in the current artifact set',
+                'Token market depth should not be treated as reserve depth',
+            ]
+        ))
+        print(f"  [DATA] RLB Public-Market Data Scope: {score3:.1f}/10")
 
         # 4. Wallet balance vs obligations
         total_wallet_usd = sum(w.balance_usd for w in wallet_data) if wallet_data else 0
@@ -922,58 +1016,61 @@ class RiskScorer:
             ratio = total_wallet_usd / 123_000_000 if seizure else 0
             score4 = max(0, 10 - (ratio * 10))
         else:
-            score4 = 8.0  # Can't verify = high risk
-        indicators.append(RiskIndicator(
-            name='Solvency Indicator',
+            score4 = 8.0  # Missing snapshot = high uncertainty
+        indicators.append(DataGapIndicator(
+            name='Visible Reserve Coverage Gap',
             score=score4,
-            description=f'Known wallet balances: ${total_wallet_usd:,.2f} vs $123M in seized assets',
-            evidence=[f'Platform wallets held ~$16M vs ~$75M transferred to Binance (from CaptainAltcoin report)']
-        ))
-        color = '🔴' if score4 >= 7 else '🟡' if score4 >= 4 else '🟢'
-        print(f"  {color} Solvency Risk: {score4:.1f}/10")
-
-        # 5. License status
-        score5 = 7.0
-        indicators.append(RiskIndicator(
-            name='Regulatory Status',
-            score=score5,
-            description='Operating under transitional arrangement; original license expired Aug 2024',
+            description=f'Known wallet balances: ${total_wallet_usd:,.2f} vs $123M reported off-wallet event scale',
             evidence=[
-                'Gaming Curacao/365/JAZ ceased operations August 18, 2024',
-                'Pending application OGL/2024/1260/0494 with new Curacao GCB',
-                'License removed from website in March 2023 (restored after controversy)',
+                f'Known public wallets held ~${total_wallet_usd:,.0f} at the loaded snapshot',
+                'Public wallets do not expose total liabilities or exchange/proxy custody balances',
             ]
         ))
-        print(f"  🔴 Regulatory Risk: {score5:.1f}/10")
+        print(f"  [DATA] Visible Reserve Coverage Gap: {score4:.1f}/10")
 
-        # 6. Victim complaint acceleration
+        # 5. Public web verification surface
+        score5 = 6.5
+        indicators.append(DataGapIndicator(
+            name='Public Web Verification Friction',
+            score=score5,
+            description='Main application is challenge-gated and public domain-level verification was not cleanly reproducible',
+            evidence=[
+                'rollbit.com is fronted by Cloudflare challenge infrastructure',
+                'blog.rollbit.com is separately hosted on Ghost/Fastly and remains indexable',
+                'The public certificate check path described in Report 4 did not produce a clean confirmation on the snapshot date',
+            ]
+        ))
+        print(f"  [ELEVATED] Public Web Verification Friction: {score5:.1f}/10")
+
+        # 6. Public complaint acceleration
         score6 = 8.0
-        indicators.append(RiskIndicator(
+        indicators.append(DataGapIndicator(
             name='Complaint Acceleration',
             score=score6,
-            description='Victim complaints accelerating from 2 in 2022 to 37+ in 2025',
+            description='Counted public complaints rose from 2 in 2022 to 47 in 2025, with 13 more already visible in 2026 YTD',
             evidence=[
                 '2022: 2 cases ($10K)',
                 '2023: 4 cases ($46K)',
-                '2024: 8 cases ($158K)',
-                '2025: 37+ cases ($172K+)',
-                'Resolution rate: 4.5%',
+                '2024: 9 cases ($177K)',
+                '2025: 47 cases ($258K)',
+                '2026 YTD: 13 cases ($46K)',
+                'Public resolution rate: 5.0% (4/80)',
             ]
         ))
-        print(f"  🔴 Complaint Acceleration: {score6:.1f}/10")
+        print(f"  [DATA] Complaint Acceleration: {score6:.1f}/10")
 
         # Overall score
         avg_score = sum(r.score for r in indicators) / len(indicators) if indicators else 0
         print(f"\n  {'=' * 40}")
-        print(f"  OVERALL RISK SCORE: {avg_score:.1f}/10")
+        print(f"  OVERALL DATA-GAP SCORE: {avg_score:.1f}/10")
         if avg_score >= 8:
-            print(f"  RISK LEVEL: 🔴 CRITICAL — Active exit scam indicators")
+            print(f"  DATA-GAP LEVEL: CRITICAL - Multiple high-priority unanswered technical questions")
         elif avg_score >= 6:
-            print(f"  RISK LEVEL: 🟡 HIGH — Significant red flags")
+            print(f"  DATA-GAP LEVEL: HIGH - Significant unanswered technical questions")
         elif avg_score >= 4:
-            print(f"  RISK LEVEL: 🟡 ELEVATED — Notable concerns")
+            print(f"  DATA-GAP LEVEL: ELEVATED - Notable unresolved technical questions")
         else:
-            print(f"  RISK LEVEL: 🟢 MODERATE")
+            print(f"  DATA-GAP LEVEL: MODERATE")
         print(f"  {'=' * 40}")
 
         return indicators
@@ -1063,7 +1160,7 @@ class RollbitForensicAnalyzer:
             'treasury_flows': {},
             'rlb_analysis': {},
             'wallet_clusters': {},
-            'risk_indicators': [],
+            'data_gap_indicators': [],
             'summary': {},
         }
 
@@ -1086,12 +1183,12 @@ class RollbitForensicAnalyzer:
         clusters = self.clusterer.cluster_eth_wallets()
         result['wallet_clusters'] = clusters
 
-        # 5. Risk scoring
-        risk_indicators = RiskScorer.score(wallet_data, treasury_data, rlb_data)
-        result['risk_indicators'] = [asdict(r) for r in risk_indicators]
+        # 5. Data-gap scoring
+        data_gap_indicators = DataGapScorer.score(wallet_data, treasury_data, rlb_data)
+        result['data_gap_indicators'] = [asdict(r) for r in data_gap_indicators]
 
         # 6. Generate summary
-        avg_risk = sum(r.score for r in risk_indicators) / len(risk_indicators) if risk_indicators else 0
+        avg_data_gap = sum(r.score for r in data_gap_indicators) / len(data_gap_indicators) if data_gap_indicators else 0
         total_outflow = sum(
             e['amount_usd'] for e in KNOWN_TREASURY_EVENTS if e['direction'] == 'outflow'
         )
@@ -1104,8 +1201,8 @@ class RollbitForensicAnalyzer:
             'total_wallet_balance_usd': sum(w.balance_usd for w in wallet_data),
             'total_documented_outflows_usd': total_outflow,
             'total_seized_usd': total_seizure,
-            'avg_risk_score': round(avg_risk, 1),
-            'risk_level': 'CRITICAL' if avg_risk >= 8 else 'HIGH' if avg_risk >= 6 else 'ELEVATED',
+            'avg_data_gap_score': round(avg_data_gap, 1),
+            'data_gap_level': 'CRITICAL' if avg_data_gap >= 8 else 'HIGH' if avg_data_gap >= 6 else 'ELEVATED',
             'known_events_count': len(KNOWN_TREASURY_EVENTS),
         }
 
@@ -1115,7 +1212,7 @@ class RollbitForensicAnalyzer:
         """Run analysis using cached / hardcoded known data only."""
         print("\n  [CACHED MODE] Using known data — no live API calls")
 
-        wallet_data = []
+        wallet_data = [WalletBalance(**wallet) for wallet in CACHED_WALLET_SNAPSHOT]
         treasury_data = {
             'known_events': KNOWN_TREASURY_EVENTS,
             'total_confirmed_outflow_usd': sum(
@@ -1126,24 +1223,30 @@ class RollbitForensicAnalyzer:
         # Print known events
         print("\n  DOCUMENTED TREASURY EVENTS:")
         for event in sorted(KNOWN_TREASURY_EVENTS, key=lambda x: x['date']):
-            direction_icon = "⬆️" if event['direction'] == 'outflow' else "🚨"
-            print(f"  [{event['date']}] {direction_icon} ${event['amount_usd']:,.0f} — {event['event']}")
+            direction_label = {
+                'outflow': 'OUTFLOW',
+                'inflow': 'INFLOW',
+                'mixed': 'MIXED',
+                'seizure': 'OFF-WALLET',
+            }.get(event['direction'], event['direction'].upper())
+            print(f"  [{event['date']}] {direction_label}: ${event['amount_usd']:,.0f} - {event['event']}")
 
         rlb_data = {
             'buyback_analysis': {
-                'claimed_monthly_buyback_usd': 5_000_000,
+                'reported_first_month_buyback_usd': 5_538_265.59,
+                'reported_first_month_rlb_bought': 33_688_709,
                 'initial_supply': RLB_TOKEN['initial_supply'],
                 'reported_burned_pct': 50.86,
             },
-            'manipulation_indicators': [
-                {'indicator': 'Price decline despite buybacks', 'severity': 'HIGH'},
-                {'indicator': 'Influencer dumping via mixer', 'severity': 'HIGH'},
-                {'indicator': 'Revenue centralization', 'severity': 'MEDIUM'},
-                {'indicator': 'Treasury draining faster than buybacks', 'severity': 'CRITICAL'},
+            'market_structure_indicators': [
+                {'indicator': 'Price drawdown alongside reported buy-and-burn mechanics', 'collection_priority': 'HIGH'},
+                {'indicator': 'Influencer-promotion wallet reconstruction needed', 'collection_priority': 'MEDIUM'},
+                {'indicator': 'Revenue figures centralized, burns on-chain', 'collection_priority': 'MEDIUM'},
+                {'indicator': 'Treasury-related flows require operating baseline', 'collection_priority': 'MEDIUM'},
             ],
         }
 
-        risk_indicators = RiskScorer.score(wallet_data, treasury_data, rlb_data)
+        data_gap_indicators = DataGapScorer.score(wallet_data, treasury_data, rlb_data)
 
         total_outflow = treasury_data['total_confirmed_outflow_usd']
         total_seizure = sum(
@@ -1153,18 +1256,21 @@ class RollbitForensicAnalyzer:
         return {
             'timestamp': datetime.now(timezone.utc).isoformat(),
             'mode': 'cached',
-            'wallets': [],
+            'snapshot_note': 'Cached mode preserves the April 19, 2026 wallet snapshot from REPORT_1_ONCHAIN_FORENSICS.md; it does not imply current live balances.',
+            'wallets': [asdict(w) for w in wallet_data],
             'treasury_flows': treasury_data,
             'rlb_analysis': rlb_data,
             'wallet_clusters': {},
-            'risk_indicators': [asdict(r) for r in risk_indicators],
+            'data_gap_indicators': [asdict(r) for r in data_gap_indicators],
             'summary': {
+                'total_wallets_analyzed': len(wallet_data),
+                'total_wallet_balance_usd': sum(w.balance_usd for w in wallet_data),
                 'total_documented_outflows_usd': total_outflow,
                 'total_seized_usd': total_seizure,
-                'avg_risk_score': round(
-                    sum(r.score for r in risk_indicators) / len(risk_indicators), 1
-                ) if risk_indicators else 0,
-                'risk_level': 'CRITICAL',
+                'avg_data_gap_score': round(
+                    sum(r.score for r in data_gap_indicators) / len(data_gap_indicators), 1
+                ) if data_gap_indicators else 0,
+                'data_gap_level': 'HIGH',
                 'known_events_count': len(KNOWN_TREASURY_EVENTS),
             },
         }

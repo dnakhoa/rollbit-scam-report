@@ -2,12 +2,12 @@
 """
 Rollbit Forensic Visualizations Generator
 ==========================================
-Generates 5 key charts from on-chain data and victim case database:
+Generates 5 key charts from on-chain data and the complaint case database:
 1. Treasury Flow Analysis (outflows over time)
-2. RLB Manipulation Evidence (price vs buybacks)
-3. Victim Impact Analysis (from case database)
+2. RLB Market Structure (price, buy-and-burn context, and public DEX liquidity scope)
+3. Complaint Amount Analysis (from case database)
 4. Wallet Network Graph (fund flow visualization)
-5. Evidence Timeline (critical events chronology)
+5. Evidence Timeline (event chronology)
 
 Usage:
     python generate_visualizations.py                # Generate all charts
@@ -71,7 +71,6 @@ TREASURY_EVENTS = [
     {'date': '2025-09-03', 'label': '50K SOL sold', 'amount_usd': 10_170_000, 'chain': 'SOL'},
     {'date': '2026-01-11', 'label': '15K SOL (×2)', 'amount_usd': 4_090_000, 'chain': 'SOL'},
     {'date': '2026-01-15', 'label': '21.4K SOL', 'amount_usd': 3_140_000, 'chain': 'SOL'},
-    {'date': '2026-02-13', 'label': '626 BTC moved', 'amount_usd': 42_210_000, 'chain': 'BTC'},
 ]
 
 SEIZURE_EVENT = {'date': '2025-05-09', 'label': '$123M seized (Ukraine)', 'amount_usd': 123_000_000}
@@ -109,6 +108,21 @@ def load_cases():
         with open(CASES_DB) as f:
             return json.load(f)
     return {}
+
+
+def canonical_cases(payload):
+    """Return a flat list of cases from either the new or legacy schema."""
+    if isinstance(payload, dict) and isinstance(payload.get('cases'), list):
+        return payload['cases']
+
+    cases = []
+    for key in ['bitcointalk_cases', 'trustpilot_cases', 'casino_guru_cases', 'other_forum_cases']:
+        for case in payload.get(key, []):
+            enriched = dict(case)
+            enriched['source'] = key.replace('_cases', '')
+            enriched['counted_in_totals'] = True
+            cases.append(enriched)
+    return cases
 
 
 # =========================================================================
@@ -167,11 +181,11 @@ def chart_treasury_flows(output_dir):
 
 
 # =========================================================================
-# CHART 2: RLB Manipulation Evidence
+# CHART 2: RLB Market Structure
 # =========================================================================
 
-def chart_rlb_manipulation(output_dir):
-    print("  [2/5] RLB Manipulation Evidence...")
+def chart_rlb_market_structure(output_dir):
+    print("  [2/5] RLB Market Structure...")
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(14, 10), height_ratios=[2, 1])
 
     dates = [datetime.strptime(d, '%Y-%m') for d, _ in RLB_PRICE_HISTORY]
@@ -191,70 +205,70 @@ def chart_rlb_manipulation(output_dir):
                  arrowprops=dict(arrowstyle='->', color=COLORS['red']),
                  fontsize=10, color=COLORS['red'], fontweight='bold')
 
-    # Claimed buyback line
-    buyback_months = len(dates)
-    claimed_monthly = [5.0] * buyback_months  # $5M/month claimed
+    # Public company-reported first-month buy-and-burn context.
+    reported_buyback = [0.0] * len(dates)
+    if '2023-09' in [d for d, _ in RLB_PRICE_HISTORY]:
+        reported_buyback[[d for d, _ in RLB_PRICE_HISTORY].index('2023-09')] = 5.538
     ax1_twin = ax1.twinx()
-    ax1_twin.bar(dates, claimed_monthly, width=20, alpha=0.3,
-                 color=COLORS['cyan'], label='Claimed buyback ($M/mo)')
-    ax1_twin.set_ylabel('Claimed Buyback ($M/month)', color=COLORS['cyan'])
+    ax1_twin.bar(dates, reported_buyback, width=20, alpha=0.3,
+                 color=COLORS['cyan'], label='Reported first-month buy-and-burn ($M)')
+    ax1_twin.set_ylabel('Reported Buy-and-Burn ($M)', color=COLORS['cyan'])
     ax1_twin.set_ylim(0, 30)
     ax1_twin.tick_params(axis='y', colors=COLORS['cyan'])
 
-    ax1.set_title('RLB Token: Price vs Claimed Buybacks\n"$5M/month buybacks" yet -77% price decline',
+    ax1.set_title('RLB Token: Price History and Buy-and-Burn Context\nPublic DEX liquidity is a scoped market slice',
                   fontsize=14, fontweight='bold', pad=15)
     ax1.set_ylabel('RLB Price (USD)', fontsize=12)
     ax1.grid(alpha=0.3)
     ax1.xaxis.set_major_formatter(mdates.DateFormatter('%b %y'))
 
-    # Bottom panel: buyback inconsistency score
-    inconsistency = []
+    # Bottom panel: month-over-month price movement.
+    monthly_move = []
     for i, p in enumerate(prices):
         if i == 0:
-            inconsistency.append(0)
+            monthly_move.append(0)
         else:
             price_change = (p - prices[i-1]) / prices[i-1]
-            # If buybacks happening, price should trend up or stable
-            # Negative price with claimed buybacks = high inconsistency
-            score = max(0, -price_change * 100)
-            inconsistency.append(score)
+            monthly_move.append(price_change * 100)
 
-    bar_colors = [COLORS['red'] if v > 5 else COLORS['orange'] if v > 2 else COLORS['green']
-                  for v in inconsistency]
-    ax2.bar(dates, inconsistency, width=20, color=bar_colors, alpha=0.8)
-    ax2.set_title('Buyback Inconsistency Score (higher = more suspicious)', fontsize=12)
-    ax2.set_ylabel('Inconsistency %')
+    bar_colors = [COLORS['red'] if v < -5 else COLORS['green'] if v > 5 else COLORS['blue']
+                  for v in monthly_move]
+    ax2.bar(dates, monthly_move, width=20, color=bar_colors, alpha=0.8)
+    ax2.axhline(0, color=COLORS['text2'], linewidth=1)
+    ax2.set_title('Month-over-Month Price Movement', fontsize=12)
+    ax2.set_ylabel('Change %')
     ax2.grid(alpha=0.3)
     ax2.xaxis.set_major_formatter(mdates.DateFormatter('%b %y'))
 
     plt.tight_layout()
-    path = os.path.join(output_dir, 'rlb_manipulation_evidence.png')
+    path = os.path.join(output_dir, 'rlb_market_structure.png')
     fig.savefig(path, dpi=150, bbox_inches='tight')
     plt.close(fig)
     print(f"    Saved: {path}")
 
 
 # =========================================================================
-# CHART 3: Victim Impact Analysis
+# CHART 3: Complaint Amount Analysis
 # =========================================================================
 
-def chart_victim_impact(output_dir):
-    print("  [3/5] Victim Impact Analysis...")
-    cases = load_cases()
+def chart_complaint_amounts(output_dir):
+    print("  [3/5] Complaint Amount Analysis...")
+    payload = load_cases()
     fig, axes = plt.subplots(2, 2, figsize=(14, 10))
 
     # Gather all cases
     all_cases = []
-    for key in ['bitcointalk_cases', 'trustpilot_cases', 'casino_guru_cases', 'other_forum_cases']:
-        for c in cases.get(key, []):
-            amt = c.get('amount_usd') or c.get('amount_eur', 0)
-            if amt:
-                all_cases.append({
-                    'amount': float(amt),
-                    'category': c.get('category', 'unknown'),
-                    'status': c.get('status', 'UNRESOLVED'),
-                    'source': key.replace('_cases', ''),
-                })
+    for c in canonical_cases(payload):
+        if not c.get('counted_in_totals', True):
+            continue
+        amt = c.get('amount_usd') or c.get('amount_eur', 0)
+        if amt:
+            all_cases.append({
+                'amount': float(amt),
+                'category': c.get('category', 'unknown'),
+                'status': c.get('status', 'UNRESOLVED'),
+                'source': c.get('source', 'unknown'),
+            })
 
     # 3a: Category breakdown
     ax = axes[0, 0]
@@ -268,7 +282,7 @@ def chart_victim_impact(output_dir):
     colors = [COLORS['red'], COLORS['orange'], COLORS['purple'], COLORS['blue'],
               COLORS['cyan'], COLORS['green'], '#ff9ff3', '#feca57']
     ax.barh(labels[::-1], values[::-1], color=colors[:len(labels)][::-1], alpha=0.85)
-    ax.set_xlabel('Amount Locked ($K)')
+    ax.set_xlabel('Reported Amount ($K)')
     ax.set_title('By Category', fontsize=12, fontweight='bold')
     for i, v in enumerate(values[::-1]):
         ax.text(v + 0.5, i, f'${v:.0f}K', va='center', fontsize=9, color=COLORS['text'])
@@ -318,10 +332,10 @@ def chart_victim_impact(output_dir):
     ax.set_title('By Source Platform', fontsize=12, fontweight='bold')
 
     total_amount = sum(c['amount'] for c in all_cases)
-    fig.suptitle(f'Victim Impact Analysis\n{len(all_cases)} cases | ${total_amount:,.0f} confirmed locked',
+    fig.suptitle(f'Complaint Amount Analysis\n{len(all_cases)} quantified complaints | ${total_amount:,.0f} total quantified',
                  fontsize=16, fontweight='bold', y=1.02)
     plt.tight_layout()
-    path = os.path.join(output_dir, 'victim_impact_analysis.png')
+    path = os.path.join(output_dir, 'complaint_amount_analysis.png')
     fig.savefig(path, dpi=150, bbox_inches='tight')
     plt.close(fig)
     print(f"    Saved: {path}")
@@ -331,10 +345,79 @@ def chart_victim_impact(output_dir):
 # CHART 4: Wallet Network Graph
 # =========================================================================
 
+def chart_wallet_network_static(output_dir):
+    """Fallback wallet graph when networkx is not installed."""
+    fig, ax = plt.subplots(figsize=(14, 10))
+    ax.set_facecolor(COLORS['bg2'])
+
+    nodes = {
+        'BTC Treasury': (0.1, 0.75, COLORS['blue']),
+        'SOL Treasury': (0.1, 0.55, COLORS['blue']),
+        'ETH Hot Wallet': (0.1, 0.35, COLORS['blue']),
+        'Unknown Wallets': (0.48, 0.67, COLORS['orange']),
+        'Binance / CEX\ncustody path': (0.48, 0.42, COLORS['orange']),
+        'Ukrainian Accounts\n($123M event)': (0.85, 0.42, COLORS['red']),
+        'DEX Liquidity\n(~$4.7M top pools)': (0.85, 0.72, COLORS['purple']),
+    }
+    edges = [
+        ('BTC Treasury', 'Unknown Wallets', 'sampled operational payouts'),
+        ('SOL Treasury', 'Unknown Wallets', '$17.4M direct outflow set'),
+        ('ETH Hot Wallet', 'Binance / CEX\ncustody path', 'off-wallet custody question'),
+        ('Binance / CEX\ncustody path', 'Ukrainian Accounts\n($123M event)', '$123M reported event'),
+        ('ETH Hot Wallet', 'DEX Liquidity\n(~$4.7M top pools)', 'RLB market surface'),
+    ]
+
+    for src, dst, label in edges:
+        x1, y1, _ = nodes[src]
+        x2, y2, _ = nodes[dst]
+        ax.annotate(
+            '',
+            xy=(x2, y2), xytext=(x1, y1),
+            arrowprops=dict(arrowstyle='->', color=COLORS['text2'], lw=2, alpha=0.7),
+        )
+        ax.text(
+            (x1 + x2) / 2,
+            (y1 + y2) / 2 + 0.025,
+            label,
+            ha='center',
+            va='center',
+            fontsize=8,
+            color=COLORS['text2'],
+            bbox=dict(boxstyle='round,pad=0.25', facecolor=COLORS['bg'], edgecolor='none', alpha=0.8),
+        )
+
+    for label, (x, y, color) in nodes.items():
+        circle = plt.Circle((x, y), 0.075, color=color, alpha=0.9)
+        ax.add_patch(circle)
+        ax.text(x, y, label, ha='center', va='center', fontsize=8,
+                color='white', fontweight='bold')
+
+    ax.set_title('Rollbit Fund Flow Network\n(Static fallback without networkx)',
+                 fontsize=16, fontweight='bold', pad=20)
+    ax.set_xlim(0, 1)
+    ax.set_ylim(0.15, 0.9)
+    ax.axis('off')
+
+    legend_elements = [
+        mpatches.Patch(color=COLORS['blue'], label='Known Rollbit Wallets'),
+        mpatches.Patch(color=COLORS['orange'], label='External / Unknown'),
+        mpatches.Patch(color=COLORS['red'], label='Off-Wallet Event'),
+        mpatches.Patch(color=COLORS['purple'], label='Token Liquidity Surface'),
+    ]
+    ax.legend(handles=legend_elements, loc='lower left', fontsize=10, framealpha=0.8)
+
+    plt.tight_layout()
+    path = os.path.join(output_dir, 'wallet_network_graph.png')
+    fig.savefig(path, dpi=150, bbox_inches='tight')
+    plt.close(fig)
+    print(f"    Saved fallback: {path}")
+
+
 def chart_wallet_network(output_dir):
     print("  [4/5] Wallet Network Graph...")
     if not HAS_NX:
-        print("    [SKIP] networkx required: pip install networkx")
+        print("    [INFO] networkx unavailable; using static matplotlib fallback")
+        chart_wallet_network_static(output_dir)
         return
 
     fig, ax = plt.subplots(figsize=(14, 10))
@@ -354,10 +437,10 @@ def chart_wallet_network(output_dir):
 
     # External nodes
     external_nodes = [
-        ('Binance\n(~$75M transferred)', {'type': 'cex'}),
+        ('Binance / CEX\ncustody path', {'type': 'cex'}),
         ('Unknown Wallets', {'type': 'unknown'}),
         ('Ukrainian Accounts\n($123M seized)', {'type': 'seized'}),
-        ('DEX Liquidity\n(~$1.5M)', {'type': 'dex'}),
+        ('DEX Liquidity\n(~$4.7M top 4 pools)', {'type': 'dex'}),
         ('Influencer Wallets\n(Gainzy et al)', {'type': 'influencer'}),
     ]
     for name, attrs in external_nodes:
@@ -365,15 +448,14 @@ def chart_wallet_network(output_dir):
 
     # Edges: fund flows
     edges = [
-        ('BTC Treasury', 'Unknown Wallets', {'amount': '$42.2M (626 BTC)', 'weight': 4}),
-        ('SOL Treasury', 'Unknown Wallets', {'amount': '$10.2M (50K SOL)', 'weight': 3}),
-        ('SOL Treasury', 'Binance\n(~$75M transferred)', {'amount': '$7.2M (51K SOL)', 'weight': 3}),
-        ('ETH Hot Wallet', 'Binance\n(~$75M transferred)', {'amount': '~$75M total', 'weight': 5}),
+        ('BTC Treasury', 'Unknown Wallets', {'amount': 'sampled operational payouts', 'weight': 2}),
+        ('SOL Treasury', 'Unknown Wallets', {'amount': '$17.4M treasury-related SOL flows', 'weight': 3}),
+        ('ETH Hot Wallet', 'Binance / CEX\ncustody path', {'amount': 'off-wallet custody questions', 'weight': 4}),
         ('ETH Hot Wallet', 'rollbit.eth', {'amount': 'internal', 'weight': 1}),
         ('ETH Hot Wallet', 'ERC20 Ops', {'amount': 'token ops', 'weight': 1}),
-        ('rollbit.eth', 'DEX Liquidity\n(~$1.5M)', {'amount': 'RLB liquidity', 'weight': 2}),
+        ('rollbit.eth', 'DEX Liquidity\n(~$4.7M top 4 pools)', {'amount': 'RLB liquidity', 'weight': 2}),
         ('ERC20 Ops', 'Influencer Wallets\n(Gainzy et al)', {'amount': '$250K RLB deals', 'weight': 2}),
-        ('Binance\n(~$75M transferred)', 'Ukrainian Accounts\n($123M seized)', {'amount': '$123M linked', 'weight': 5}),
+        ('Binance / CEX\ncustody path', 'Ukrainian Accounts\n($123M seized)', {'amount': '$123M linked', 'weight': 5}),
     ]
     for src, dst, attrs in edges:
         G.add_edge(src, dst, **attrs)
@@ -441,15 +523,17 @@ def chart_evidence_timeline(output_dir):
         ('2023-04', 'License "restored"', 'regulatory', -1),
         ('2023-07', 'RLB token launches on Solana', 'token', 1),
         ('2023-08', 'RLB migrated to Ethereum', 'token', -1),
-        ('2023-10', 'Gainzy dumping exposed', 'manipulation', 1),
+        ('2023-10', 'Influencer promotion\nscrutiny', 'promotion', 1),
         ('2024-04', 'RLB SOL→ETH migration deadline', 'token', -1),
         ('2024-07', 'Complaints spike begins', 'complaint', 1),
         ('2024-08', 'Original Curacao license expires', 'regulatory', -1),
-        ('2024-11', '$44K maintenance scam', 'complaint', 1),
+        ('2024-11', '$44K maintenance-window\ndispute', 'complaint', 1),
         ('2025-05', '$123M seized in Ukraine', 'seizure', -1),
         ('2025-09', '50K SOL sold ($10.2M)', 'outflow', 1),
-        ('2026-01', '51.4K SOL transferred ($7.2M)', 'outflow', -1),
-        ('2026-02', '626 BTC moved ($42.2M)', 'outflow', 1),
+        ('2026-01', '497 BTC moved into Rollbit', 'flow', -1),
+        ('2026-01', '51.4K SOL transferred ($7.2M)', 'outflow', 1),
+        ('2026-02', '626 BTC mixed flow to\nBybit / Rollbit', 'flow', -1),
+        ('2026-03', '200 BTC from Coinbase\npartly to Rollbit', 'flow', 1),
     ]
 
     dates = [datetime.strptime(e[0], '%Y-%m') for e in events]
@@ -460,8 +544,8 @@ def chart_evidence_timeline(output_dir):
     cat_colors = {
         'launch': COLORS['green'], 'complaint': COLORS['orange'],
         'regulatory': COLORS['purple'], 'token': COLORS['blue'],
-        'manipulation': COLORS['red'], 'seizure': '#ff0000',
-        'outflow': COLORS['red'],
+        'promotion': COLORS['red'], 'seizure': '#ff0000',
+        'outflow': COLORS['red'], 'flow': COLORS['cyan'],
     }
 
     # Timeline base line
@@ -520,8 +604,8 @@ def main():
     print(f"{'='*60}\n")
 
     chart_treasury_flows(args.output)
-    chart_rlb_manipulation(args.output)
-    chart_victim_impact(args.output)
+    chart_rlb_market_structure(args.output)
+    chart_complaint_amounts(args.output)
     chart_wallet_network(args.output)
     chart_evidence_timeline(args.output)
 
