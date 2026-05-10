@@ -14,7 +14,7 @@ The main Rollbit application and its public-content stack are materially differe
 - **`rollbot.rollbit.com`** resolves to the same Cloudflare edge IPs as the main site.
 - Public **license verification is currently inconclusive** from direct web checks, because a previously indexed Rollbit/Bull Gaming certificate URL now returns **Not Found**, while current CGA policy says B2C sites should expose a domain-specific certificate path via `cert.cga.cw`.
 
-This does not prove wrongdoing by itself. It does show that the public web footprint is deliberately layered and that independent verification of the operational domain is harder than it should be for a player-facing gaming site.
+This does not prove wrongdoing by itself. It shows that the public web footprint is layered and that independent verification of the operational domain requires a browser-aware, timestamped capture process.
 
 ---
 

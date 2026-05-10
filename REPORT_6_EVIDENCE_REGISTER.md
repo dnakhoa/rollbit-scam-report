@@ -20,7 +20,7 @@ Machine-readable technical findings register: [output/forensic_indicators.csv](.
 | `ER-07` | Report 2 / Source quality | Casino Guru repeatedly described Rollbit complaints as unresolved under a no-reaction or non-cooperation pattern. | High |
 | `ER-08` | Report 2 / Timeline | Counted complaints continued into **April 2026**. | Medium |
 | `ER-09` | Report 3 / X corroboration | Selected X threads mirror the same withdrawal-block, KYC, and staff-conduct themes seen in the complaint corpus but are not counted as separate complaint totals. | Medium |
-| `ER-10` | Report 0 / Synthesis | The complaint corpus is consistent with a counterparty-risk thesis even without claiming that public treasury wallets are empty. | High |
+| `ER-10` | Report 0 / Synthesis | The complaint corpus is a recurring operational-dispute dataset even without claiming that public treasury wallets are empty. | High |
 
 ---
 
@@ -109,11 +109,11 @@ The legal/complaint claim register above is not the full forensic picture. The t
 |------------|---------|-------------------|
 | `TF-01` | Known public wallets are not verified reserves. | `REPORT_1_ONCHAIN_FORENSICS.md`; `output/blockchain_analysis.json` |
 | `TF-02` | Direct outflow narrative is bounded and mostly SOL. | `REPORT_1_ONCHAIN_FORENSICS.md`; `REPORT_5_NEWS_AND_REGULATORY_TIMELINE.md` |
-| `TF-03` | RLB exit liquidity is thin relative to headline value. | `REPORT_1_ONCHAIN_FORENSICS.md`; DEXScreener snapshot |
+| `TF-03` | RLB tracked public DEX liquidity is limited relative to headline value, and on-platform venue depth is not yet measured. | `REPORT_1_ONCHAIN_FORENSICS.md`; DEXScreener/CoinGecko snapshot |
 | `TF-04` | Complaint corpus contains a repeated control-trigger pattern. | `cases_database.json`; `output/corpus_metrics.json` |
 | `TF-05` | Multiple-account accusation is the dominant dispute script. | `REPORT_2_VICTIM_EVIDENCE.md`; `cases_database.json` |
 | `TF-06` | Corpus fidelity must be split by evidence class. | `cases_database.json`; `output/forensic_indicators.csv` |
-| `TF-07` | Duplicate risk is bounded but still needs analyst review. | `cases_database.json`; `output/technical_deep_dive.json` |
+| `TF-07` | Duplicate candidates are bounded but still need analyst review. | `cases_database.json`; `output/technical_deep_dive.json` |
 | `TF-08` | Web acquisition should preserve challenge and content layers separately. | `REPORT_4_WEBSITE_TECHNICAL_INVESTIGATION.md` |
 | `TF-09` | Operating controls and token-control attribution remain insufficiently mapped. | `REPORT_7_TECHNICAL_DEEP_DIVE.md`; `output/technical_deep_dive.json` |
 | `TF-10` | Public complaint and record acquisition is reproducible but incomplete. | `REPORT_8_PUBLIC_RECORDS_AND_COMPLAINT_CAPTURE.md`; `output/public_record_capture.json` |

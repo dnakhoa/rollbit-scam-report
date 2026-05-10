@@ -1,5 +1,5 @@
 # Report 1: On-Chain Financial Forensics
-## Rollbit / Bull Gaming N.V. — Live Wallet State, Treasury Flow Review, and Token Market Structure
+## Rollbit / Bull Gaming N.V. — Live Wallet State, Treasury Flow Review, and Public Token-Market Snapshot
 **Date:** April 19, 2026 | **Classification:** Forensic Investigation
 **Companion:** → [Report 2: Complaint Corpus](./REPORT_2_VICTIM_EVIDENCE.md) | → [Report 4: Website Technical Investigation](./REPORT_4_WEBSITE_TECHNICAL_INVESTIGATION.md) | → [Report 5: Public Event and Flow Timeline](./REPORT_5_NEWS_AND_REGULATORY_TIMELINE.md) | → [Report 7: Technical Deep Dive](./REPORT_7_TECHNICAL_DEEP_DIVE.md)
 
@@ -11,7 +11,7 @@ This revised on-chain report replaces several broad claims from the earlier draf
 
 1. **Directly observed chain facts** from a live snapshot taken on **April 19, 2026**
 2. **Published treasury-flow alerts** from public reporting and explorer-linked news items
-3. **Inference**, which is labeled as inference rather than presented as proof
+3. **Analytical limits**, which are labeled rather than presented as proof
 
 ### What the current chain snapshot shows
 
@@ -30,7 +30,7 @@ This revised on-chain report replaces several broad claims from the earlier draf
 |--------|-------|
 | RLB spot price | **$0.0595** |
 | RLB market cap | **~$101.2M** |
-| Top 4 Uniswap pools combined liquidity | **~$4.71M** |
+| Top 4 tracked public DEX pools combined liquidity | **~$4.71M** |
 | Primary USDC pool liquidity | **~$1.92M** |
 | Top 4 pools combined 24h volume | **~$153K** |
 | Drawdown from all-time high | **-77.5%** |
@@ -44,11 +44,11 @@ This revised on-chain report replaces several broad claims from the earlier draf
   - a **50,000 SOL** treasury-linked liquidation on **September 3, 2025**
   - **15,000 SOL + 15,000 SOL** moved out on **January 11, 2026**
   - **21,363.73 SOL** moved out on **January 15, 2026**
-- **RLB remains structurally thin.** Even using a more generous current liquidity figure than the earlier report, the token still shows only about **$4.7M** of combined liquidity across its top four Uniswap pools against a roughly **$101M** market cap.
+- **The RLB liquidity model is incomplete.** The repo currently captures about **$4.7M** of tracked public DEX liquidity across top Uniswap pools against a roughly **$101M** market cap. That is a scoped public-market snapshot, not a measurement of Rollbit app/on-platform liquidity, order-book depth, or custody-side token inventory.
 
 ### Bottom line
 
-The strongest present conclusion is **not** that chain data alone proves zero reserves or imminent collapse. The stronger and better-supported conclusion is that Rollbit's actual reserve position is **not publicly verifiable** from the current artifact set. Known wallets show funds, but they do not prove reserve completeness, liability coverage, customer-fund segregation, or exchange/proxy custody balances.
+The strongest present conclusion is **not** that chain data alone proves zero reserves or imminent collapse. The better-supported conclusion is that Rollbit's actual reserve position is **not publicly verifiable** from the current artifact set. Known wallets show funds, but they do not prove reserve completeness, liability coverage, customer-fund segregation, or exchange/proxy custody balances.
 
 ---
 
@@ -59,8 +59,8 @@ This report combines:
 - **Live chain data** pulled on **April 19, 2026 (UTC)** from:
   - Blockstream API for BTC
   - Solana JSON-RPC for SOL
-  - DEXScreener for RLB liquidity
-  - CoinGecko for RLB price, supply, and market cap
+  - DEXScreener for tracked public RLB DEX liquidity
+  - CoinGecko for RLB price, supply, market cap, and tracked exchange/market coverage
 - **Published event coverage** from:
   - `dev.ua`
   - `ChainCatcher`
@@ -174,7 +174,7 @@ If the **September 3, 2025** 50K SOL sale from a treasury-linked wallet is inclu
 
 - **$17.40M**
 
-This is still meaningful, but it is **materially lower** than the earlier draft's **$59.61M** figure, which depended on treating the February 13 BTC item as a confirmed Rollbit outflow.
+This is a smaller classified outflow set than the earlier draft because the February 13 BTC item is no longer treated as a confirmed Rollbit outflow.
 
 ### Technical ratio tests
 
@@ -226,7 +226,7 @@ That is a more defensible conclusion than simply asserting that the current trea
 | ATH | **$0.264358** |
 | Drawdown from ATH | **-77.49%** |
 
-### 7.2 Liquidity by primary pools
+### 7.2 Tracked Public DEX Liquidity By Primary Pools
 
 | Pool | Liquidity | 24h Volume |
 |------|-----------|------------|
@@ -236,10 +236,16 @@ That is a more defensible conclusion than simply asserting that the current trea
 | RLB / ETH (Uniswap V4) | **$4,440.41** | **$1,094.35** |
 | **Top 4 total** | **$4,713,083.87** | **$153,106.24** |
 
+Scope note:
+
+- This table is a public DEX snapshot from the repo's DEXScreener/CoinGecko capture path.
+- It does **not** measure Rollbit app/on-platform liquidity, internal conversion depth, order books, or custodial token inventory.
+- Rollbit's own materials describe RLB trading directly on Rollbit.com and RLB liquidity pools introduced in May 2023. The current whitepaper also describes RLB/USD pools used to support RLB trading on Rollbit. Those app-gated surfaces need a separate capture method.
+
 ### 7.3 Why this still matters
 
-- A roughly **$101M** token trading against only **~$4.7M** in visible top-pool liquidity is still **thin**.
-- Liquidity is concentrated in a handful of Uniswap pools rather than broad venue depth.
+- A roughly **$101M** token trading against **~$4.7M** in tracked public DEX liquidity shows that market cap should not be used as reserve depth.
+- Public market aggregators currently show tracked public RLB coverage concentrated in Uniswap pools, but this report must not describe Uniswap as the only RLB trading or liquidity venue.
 - The official buy-and-burn narrative remains **operator-reported**, not independently audited.
 
 ### 7.4 Official buy-and-burn claims
@@ -250,7 +256,7 @@ Rollbit's own **September 13, 2023** blog post said:
 - the system bought **33,688,709 RLB** worth **$5,538,265.59** in its first month
 - hourly purchases were funded from **10% of casino revenue, 20% of sportsbook revenue, and 30% of futures revenue**
 
-This is important because it establishes the company's own public framing. But it is still a **company statement**, not an external audit.
+This is important because it establishes the company's own public framing. It should be reconciled to transaction-level buy, burn, and distribution records rather than treated as an external audit.
 
 ### 7.5 Migration and custody concentration
 
@@ -264,18 +270,18 @@ That design choice concentrated an important token-migration path through the pl
 
 ---
 
-## 8. Updated Risk Framing
+## 8. Updated Data-Gap Framing
 
-The previous report leaned too heavily on a single "capital flight" narrative. The updated evidence supports a more precise matrix:
+The previous report leaned too heavily on a single "capital flight" narrative. The updated evidence supports a more precise data-gap matrix:
 
-| Risk Area | Current Assessment | Why |
+| Data Area | Current Assessment | Why |
 |-----------|--------------------|-----|
-| Public-wallet reserve verification | **Low** | Known wallets still hold sizeable BTC and SOL, but no liability-matched proof-of-reserves artifact exists |
-| Off-wallet custody opacity | **High** | Ukraine-linked Binance/proxy account reporting indicates custody may sit outside public wallets |
-| Token exit liquidity concentration | **High** | RLB market cap remains large relative to visible DEX liquidity |
-| Treasury-flow transparency | **High** | There are large published treasury-related flows, but direction and ownership are not always straightforward |
-| Complaint / counterparty risk | **High** | Reports 2 and 3 still document unresolved withdrawal and KYC disputes at scale |
-| Licensing / public verifiability | **Medium to High** | See Report 4: public certificate verification is currently inconclusive from direct web checks |
+| Public-wallet reserve verification | **Not established** | Known wallets still hold sizeable BTC and SOL, but no liability-matched proof-of-reserves artifact exists |
+| Off-wallet custody visibility | **Incomplete** | Ukraine-linked Binance/proxy account reporting indicates custody may sit outside public wallets |
+| RLB venue-depth coverage | **Incomplete** | Tracked public DEX liquidity is limited relative to market cap, and Rollbit app/on-platform liquidity is not yet measured |
+| Treasury-flow classification | **Needs transaction-level export** | There are large published treasury-related flows, but direction and ownership are not always straightforward |
+| Complaint / dispute-corpus coverage | **Structured but incomplete** | Reports 2 and 3 document unresolved withdrawal and KYC disputes, but source fidelity varies |
+| Licensing / public verifiability | **Inconclusive from direct checks** | See Report 4: public certificate verification is currently inconclusive from direct web checks |
 
 ### Best-supported synthesis
 
@@ -283,9 +289,9 @@ The live on-chain picture supports the following:
 
 1. **Rollbit-linked public wallets still show visible BTC and SOL balances.**
 2. **Those visible balances are not verified reserves**, because important funds have reportedly moved through exchange/proxy structures and no liability-matched reserve attestation is present.
-3. **RLB remains a thin-liquidity market structure** relative to its headline market cap.
+3. **RLB public DEX liquidity is limited relative to headline market cap**, but the repo has not measured Rollbit app/on-platform liquidity.
 4. **Published treasury alerts show mixed inflow/outflow behavior**, not a one-direction-only drain.
-5. **Counterparty risk remains high** because unresolved user-claim patterns coexist with opaque reserve location and off-wallet custody exposure.
+5. **The unresolved data gap remains material** because user-claim patterns coexist with opaque reserve location and off-wallet custody exposure.
 
 ---
 
@@ -293,7 +299,7 @@ The live on-chain picture supports the following:
 
 1. What proportion of Rollbit's operational custody historically sat in **exchange custody** rather than attributed public wallets?
 2. Which anonymous counterparties on **January 9, 2026**, **February 13, 2026**, and **March 11, 2026** were beneficially linked to Rollbit, if any?
-3. What is the relationship between the **public RLB buy-and-burn dashboard narrative**, actual market depth, deployer/admin controls, and top-holder concentration?
+3. What is the relationship between the **public RLB buy-and-burn dashboard narrative**, public DEX depth, Rollbit app/on-platform depth, deployer/admin controls, and top-holder concentration?
 4. Are customer balances contractually or operationally segregated from operating capital, and where is the evidence?
 
 ---
@@ -310,6 +316,8 @@ The live on-chain picture supports the following:
 - ChainCatcher September 3, 2025 50K SOL sale: https://www.chaincatcher.com/ko/article/2202906
 - ChainCatcher January 9, 2026 497.11 BTC to Rollbit: https://www.chaincatcher.com/article/2235971
 - Rollbit blog buy-and-burn post: https://blog.rollbit.com/rlb-utility-guide/amp/
+- Rollbot whitepaper buy-and-burn / RLB on Rollbit links: https://whitepaper.rollbot.com/rlb-whitepaper/i/buy-and-burn
+- Rollbot whitepaper provide-liquidity page: https://whitepaper.rollbot.com/rlb-whitepaper/i/utility/provide-liquidity
 - Rollbit blog migration post: https://blog.rollbit.com/rlb-eth-migration/
 - CoinDesk on March 31, 2023 licensing concerns: https://www.coindesk.com/markets/2023/03/31/crypto-casino-rollbits-token-drops-20-amid-licensing-concerns
 - CryptoSlate on influencer promotion scrutiny: https://cryptoslate.com/solana-based-rollbit-coin-faces-scrutiny-over-crypto-influencer-promotion-tactics/

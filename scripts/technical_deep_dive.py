@@ -4,7 +4,7 @@ Rollbit technical forensic deep-dive generator.
 
 This script converts the existing report artifacts into analyst-facing
 technical indicators. It does not decide legal liability. It scores observable
-data quality, custody visibility, token liquidity stress, complaint-pattern
+data quality, custody visibility, token-market data scope, complaint-pattern
 structure, and acquisition gaps.
 
 Outputs:
@@ -155,6 +155,7 @@ TOKEN_CONTROL_GAPS = [
     "RLB buy-and-burn execution wallet map",
     "Top-holder and LP-wallet clustering",
     "Known team/founder/affiliate wallet attribution",
+    "Rollbit app/on-platform RLB trade and liquidity surface",
     "Exchange custody path for RLB inventory",
     "Withdrawal decisioning and compliance-control workflow",
 ]
@@ -326,7 +327,7 @@ def summarize_cases(cases: list[dict[str, Any]]) -> dict[str, Any]:
         cases_count = stat["cases"]
         avg_conf = stat["confidence_total"] / cases_count if cases_count else 0
         unresolved_rate = stat["unresolved_cases"] / cases_count if cases_count else 0
-        severity_score = (
+        review_priority_score = (
             math.log10(stat["amount_usd"] + 1) * 1.8
             + unresolved_rate * 2.0
             + (stat["confirmed_cases"] / cases_count if cases_count else 0)
@@ -339,9 +340,9 @@ def summarize_cases(cases: list[dict[str, Any]]) -> dict[str, Any]:
             "confirmed_cases": stat["confirmed_cases"],
             "claimed_cases": stat["claimed_cases"],
             "avg_confidence": round(avg_conf, 3),
-            "technical_severity_score": round(severity_score, 2),
+            "review_priority_score": round(review_priority_score, 2),
         })
-    category_out.sort(key=lambda item: item["technical_severity_score"], reverse=True)
+    category_out.sort(key=lambda item: item["review_priority_score"], reverse=True)
 
     source_out = []
     for source, stat in source_stats.items():
@@ -512,7 +513,7 @@ def build_findings(
     return [
         {
             "finding_id": "TF-01",
-            "severity": "high",
+            "collection_priority": "high",
             "confidence": "high",
             "name": "Known public wallets are not verified reserves",
             "finding": (
@@ -525,33 +526,35 @@ def build_findings(
         },
         {
             "finding_id": "TF-02",
-            "severity": "medium",
+            "collection_priority": "medium",
             "confidence": "high",
-            "name": "Direct outflow narrative is bounded and mostly SOL",
+            "name": "Direct flow narrative is bounded and mostly SOL",
             "finding": (
                 f"Direct published outflows total {money(onchain['direct_outflow_usd'])}, equal to "
                 f"{pct(onchain['direct_outflow_to_visible_wallet_ratio'] or 0)} of the visible wallet snapshot. "
-                "Mixed BTC alerts should remain separated from direct Rollbit outflows."
+                "Mixed BTC alerts should remain separated from direct Rollbit outflows, and routine payouts need "
+                "an operating-cost baseline before interpretation."
             ),
             "primary_artifacts": "REPORT_1_ONCHAIN_FORENSICS.md; REPORT_5_NEWS_AND_REGULATORY_TIMELINE.md",
             "next_steps": "For each published alert, preserve original alert text, explorer links, counterparty labels, and direction classification.",
         },
         {
             "finding_id": "TF-03",
-            "severity": "high",
+            "collection_priority": "high",
             "confidence": "high",
-            "name": "RLB exit liquidity is thin relative to headline value",
+            "name": "RLB tracked public DEX liquidity is a scoped market slice",
             "finding": (
-                f"Top-four DEX pool liquidity is {money(rlb['top_4_pool_liquidity_usd'])}, only "
+                f"Top-four tracked public DEX pool liquidity is {money(rlb['top_4_pool_liquidity_usd'])}, equal to "
                 f"{pct(rlb['liquidity_to_market_cap_ratio'])} of the {money(rlb['market_cap_usd'])} market cap. "
-                f"A 5% market-cap notional equals {pct(rlb['five_pct_market_cap_vs_liquidity_ratio'])} of visible top-pool liquidity."
+                "This does not measure Rollbit app/on-platform liquidity, order-book depth, or custody-side token inventory, "
+                "and should not be described as the only RLB trading or liquidity venue."
             ),
             "primary_artifacts": "REPORT_1_ONCHAIN_FORENSICS.md; DEXScreener snapshot",
-            "next_steps": "Collect pool-level reserves, fee tiers, tick liquidity, and holder concentration for a slippage model.",
+            "next_steps": "Collect pool-level reserves, fee tiers, tick liquidity, holder concentration, and any public Rollbit app/on-platform RLB venue data.",
         },
         {
             "finding_id": "TF-04",
-            "severity": "high",
+            "collection_priority": "high",
             "confidence": "medium",
             "name": "Complaint corpus contains a repeated control-trigger pattern",
             "finding": (
@@ -564,7 +567,7 @@ def build_findings(
         },
         {
             "finding_id": "TF-05",
-            "severity": "high",
+            "collection_priority": "high",
             "confidence": "high",
             "name": "Multiple-account accusation is the dominant dispute script",
             "finding": (
@@ -577,7 +580,7 @@ def build_findings(
         },
         {
             "finding_id": "TF-06",
-            "severity": "medium",
+            "collection_priority": "medium",
             "confidence": "high",
             "name": "Corpus fidelity must be split by evidence class",
             "finding": (
@@ -590,9 +593,9 @@ def build_findings(
         },
         {
             "finding_id": "TF-07",
-            "severity": "medium",
+            "collection_priority": "medium",
             "confidence": "high",
-            "name": "Duplicate risk is bounded but still needs analyst review",
+            "name": "Duplicate candidates are bounded but still need analyst review",
             "finding": (
                 f"The duplicate heuristic produced {len(corpus['duplicate_candidates'])} candidate pairs after preserving explicit cross-post exclusions. "
                 "These are candidates, not automatic removals."
@@ -602,7 +605,7 @@ def build_findings(
         },
         {
             "finding_id": "TF-08",
-            "severity": "medium",
+            "collection_priority": "medium",
             "confidence": "high",
             "name": "Web acquisition should preserve challenge and content layers separately",
             "finding": (
@@ -614,19 +617,20 @@ def build_findings(
         },
         {
             "finding_id": "TF-09",
-            "severity": "high",
+            "collection_priority": "high",
             "confidence": "medium",
             "name": "Operating controls and token-control attribution remain insufficiently mapped",
             "finding": (
                 "Current artifacts do not establish who controls exchange custody, withdrawal decisioning, RLB admin/deployer paths, "
-                "buy-and-burn execution wallets, LP positions, market-making wallets, or team/affiliate token clusters."
+                "buy-and-burn execution wallets, LP positions, Rollbit app/on-platform liquidity, market-making wallets, "
+                "or team/affiliate token clusters."
             ),
             "primary_artifacts": "REPORT_7_TECHNICAL_DEEP_DIVE.md; output/technical_deep_dive.json",
             "next_steps": "Build an RLB and operations control map covering deployer/admin rights, top holders, LP wallets, burn wallets, exchange custody, and public team/affiliate wallet links.",
         },
         {
             "finding_id": "TF-10",
-            "severity": "medium",
+            "collection_priority": "medium",
             "confidence": "high",
             "name": "Public complaint and record acquisition is reproducible but incomplete",
             "finding": (
@@ -666,7 +670,7 @@ def build_deep_dive() -> dict[str, Any]:
         },
         "scope_note": (
             "Technical forensic synthesis. Legal/regulatory references are treated only as source context "
-            "or custody-location signals."
+            "or custody-location signals. Findings are data gaps and collection priorities, not conclusions about intent."
         ),
         "corpus_metrics_from_existing_file": metrics,
         "corpus_signal_analysis": corpus,
@@ -730,7 +734,7 @@ def write_outputs(payload: dict[str, Any], output_dir: Path = OUTPUT_DIR) -> Non
         json.dump(payload, f, indent=2)
         f.write("\n")
 
-    fieldnames = ["finding_id", "severity", "confidence", "name", "finding", "primary_artifacts", "next_steps"]
+    fieldnames = ["finding_id", "collection_priority", "confidence", "name", "finding", "primary_artifacts", "next_steps"]
     with (output_dir / "forensic_indicators.csv").open("w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
@@ -759,7 +763,7 @@ def main() -> None:
     print(f"  Findings: {len(payload['findings'])}")
     print(f"  Counted cases: {corpus['counted_cases']}")
     print(f"  Visible wallet snapshot: {money(onchain['visible_wallet_usd'])}")
-    print(f"  RLB liquidity / market cap: {pct(rlb['liquidity_to_market_cap_ratio'])}")
+    print(f"  RLB tracked public DEX liquidity / market cap: {pct(rlb['liquidity_to_market_cap_ratio'])}")
     print(f"  JSON: {output_dir / 'technical_deep_dive.json'}")
     print(f"  CSV:  {output_dir / 'forensic_indicators.csv'}")
 

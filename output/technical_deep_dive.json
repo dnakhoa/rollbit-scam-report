@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-25T11:35:55.179693+00:00",
+  "generated_at": "2026-05-10T10:05:27.132323+00:00",
   "input_artifacts": {
     "cases_database": "cases_database.json",
     "corpus_metrics": "output/corpus_metrics.json",
@@ -7,7 +7,7 @@
     "web_surface_capture": "output/web_surface_capture.json",
     "public_record_capture": "output/public_record_capture.json"
   },
-  "scope_note": "Technical forensic synthesis. Legal/regulatory references are treated only as source context or custody-location signals.",
+  "scope_note": "Technical forensic synthesis. Legal/regulatory references are treated only as source context or custody-location signals. Findings are data gaps and collection priorities, not conclusions about intent.",
   "corpus_metrics_from_existing_file": {
     "freeze_date": "2026-04-19",
     "captured_at": "2026-04-19T00:00:00Z",
@@ -33,8 +33,8 @@
       "restricted_country": 3,
       "kyc_delay_tactic": 9,
       "winning_block": 12,
-      "maintenance_scam": 1,
-      "futures_manipulation": 2
+      "maintenance_window_dispute": 1,
+      "futures_pricing_dispute": 2
     },
     "year_breakdown": {
       "2022": 2,
@@ -73,7 +73,7 @@
         "amount_usd": 44000.0,
         "source": "bitcointalk",
         "post_date": "2024-11-25",
-        "category": "maintenance_scam"
+        "category": "maintenance_window_dispute"
       },
       {
         "case_id": "BTC-002",
@@ -298,7 +298,7 @@
         "confirmed_cases": 3,
         "claimed_cases": 8,
         "avg_confidence": 0.55,
-        "technical_severity_score": 11.77
+        "review_priority_score": 11.77
       },
       {
         "category": "multiple_accounts_accusation",
@@ -308,17 +308,17 @@
         "confirmed_cases": 13,
         "claimed_cases": 16,
         "avg_confidence": 0.597,
-        "technical_severity_score": 11.62
+        "review_priority_score": 11.62
       },
       {
-        "category": "maintenance_scam",
+        "category": "maintenance_window_dispute",
         "cases": 1,
         "amount_usd": 44000.0,
         "unresolved_rate": 1.0,
         "confirmed_cases": 1,
         "claimed_cases": 0,
         "avg_confidence": 0.85,
-        "technical_severity_score": 11.36
+        "review_priority_score": 11.36
       },
       {
         "category": "account_closure",
@@ -328,7 +328,7 @@
         "confirmed_cases": 3,
         "claimed_cases": 13,
         "avg_confidence": 0.551,
-        "technical_severity_score": 10.8
+        "review_priority_score": 10.8
       },
       {
         "category": "kyc_delay_tactic",
@@ -338,7 +338,7 @@
         "confirmed_cases": 2,
         "claimed_cases": 7,
         "avg_confidence": 0.556,
-        "technical_severity_score": 10.5
+        "review_priority_score": 10.5
       },
       {
         "category": "restricted_country",
@@ -348,7 +348,7 @@
         "confirmed_cases": 3,
         "claimed_cases": 0,
         "avg_confidence": 0.68,
-        "technical_severity_score": 10.49
+        "review_priority_score": 10.49
       },
       {
         "category": "sportsbook_abuse",
@@ -358,17 +358,17 @@
         "confirmed_cases": 2,
         "claimed_cases": 2,
         "avg_confidence": 0.588,
-        "technical_severity_score": 10.28
+        "review_priority_score": 10.28
       },
       {
-        "category": "futures_manipulation",
+        "category": "futures_pricing_dispute",
         "cases": 2,
         "amount_usd": 500.0,
         "unresolved_rate": 1.0,
         "confirmed_cases": 0,
         "claimed_cases": 1,
         "avg_confidence": 0.5,
-        "technical_severity_score": 6.86
+        "review_priority_score": 6.86
       }
     ],
     "source_fidelity": [
@@ -665,6 +665,7 @@
     "RLB buy-and-burn execution wallet map",
     "Top-holder and LP-wallet clustering",
     "Known team/founder/affiliate wallet attribution",
+    "Rollbit app/on-platform RLB trade and liquidity surface",
     "Exchange custody path for RLB inventory",
     "Withdrawal decisioning and compliance-control workflow"
   ],
@@ -694,7 +695,7 @@
   "findings": [
     {
       "finding_id": "TF-01",
-      "severity": "high",
+      "collection_priority": "high",
       "confidence": "high",
       "name": "Known public wallets are not verified reserves",
       "finding": "The loaded wallet snapshot shows $67,620,165.30 in attributed public wallets, but the repo has no liability-matched proof-of-reserves artifact, complete custody inventory, exchange balance attestation, or customer-fund segregation evidence.",
@@ -703,25 +704,25 @@
     },
     {
       "finding_id": "TF-02",
-      "severity": "medium",
+      "collection_priority": "medium",
       "confidence": "high",
-      "name": "Direct outflow narrative is bounded and mostly SOL",
-      "finding": "Direct published outflows total $17,400,000.00, equal to 25.7% of the visible wallet snapshot. Mixed BTC alerts should remain separated from direct Rollbit outflows.",
+      "name": "Direct flow narrative is bounded and mostly SOL",
+      "finding": "Direct published outflows total $17,400,000.00, equal to 25.7% of the visible wallet snapshot. Mixed BTC alerts should remain separated from direct Rollbit outflows, and routine payouts need an operating-cost baseline before interpretation.",
       "primary_artifacts": "REPORT_1_ONCHAIN_FORENSICS.md; REPORT_5_NEWS_AND_REGULATORY_TIMELINE.md",
       "next_steps": "For each published alert, preserve original alert text, explorer links, counterparty labels, and direction classification."
     },
     {
       "finding_id": "TF-03",
-      "severity": "high",
+      "collection_priority": "high",
       "confidence": "high",
-      "name": "RLB exit liquidity is thin relative to headline value",
-      "finding": "Top-four DEX pool liquidity is $4,713,083.87, only 4.7% of the $101,223,201.00 market cap. A 5% market-cap notional equals 107.4% of visible top-pool liquidity.",
+      "name": "RLB tracked public DEX liquidity is a scoped market slice",
+      "finding": "Top-four tracked public DEX pool liquidity is $4,713,083.87, equal to 4.7% of the $101,223,201.00 market cap. This does not measure Rollbit app/on-platform liquidity, order-book depth, or custody-side token inventory, and should not be described as the only RLB trading or liquidity venue.",
       "primary_artifacts": "REPORT_1_ONCHAIN_FORENSICS.md; DEXScreener snapshot",
-      "next_steps": "Collect pool-level reserves, fee tiers, tick liquidity, and holder concentration for a slippage model."
+      "next_steps": "Collect pool-level reserves, fee tiers, tick liquidity, holder concentration, and any public Rollbit app/on-platform RLB venue data."
     },
     {
       "finding_id": "TF-04",
-      "severity": "high",
+      "collection_priority": "high",
       "confidence": "medium",
       "name": "Complaint corpus contains a repeated control-trigger pattern",
       "finding": "7 counted cases mention withdrawal control, KYC/compliance escalation, and win/profit context together. The compound set totals $83,401.00.",
@@ -730,7 +731,7 @@
     },
     {
       "finding_id": "TF-05",
-      "severity": "high",
+      "collection_priority": "high",
       "confidence": "high",
       "name": "Multiple-account accusation is the dominant dispute script",
       "finding": "The canonical category count shows 31 multiple-account accusation cases out of 80 counted complaints. Keyword extraction also finds 29 cases with linked-account language.",
@@ -739,7 +740,7 @@
     },
     {
       "finding_id": "TF-06",
-      "severity": "medium",
+      "collection_priority": "medium",
       "confidence": "high",
       "name": "Corpus fidelity must be split by evidence class",
       "finding": "27 quantified cases are marked confirmed and 47 are marked claimed. Confirmed quantified cases represent 36.5% of quantified case count and $295,178.56 of quantified amount.",
@@ -748,16 +749,16 @@
     },
     {
       "finding_id": "TF-07",
-      "severity": "medium",
+      "collection_priority": "medium",
       "confidence": "high",
-      "name": "Duplicate risk is bounded but still needs analyst review",
+      "name": "Duplicate candidates are bounded but still need analyst review",
       "finding": "The duplicate heuristic produced 3 candidate pairs after preserving explicit cross-post exclusions. These are candidates, not automatic removals.",
       "primary_artifacts": "cases_database.json; output/technical_deep_dive.json",
       "next_steps": "Manually review candidate pairs before changing corpus totals."
     },
     {
       "finding_id": "TF-08",
-      "severity": "medium",
+      "collection_priority": "medium",
       "confidence": "high",
       "name": "Web acquisition should preserve challenge and content layers separately",
       "finding": "The technical surface splits into Cloudflare-gated app endpoints and a separately hosted Ghost/Fastly blog. Forensic acquisition should therefore preserve DNS, TLS, edge headers, challenge HTML, and blog HTML as separate artifacts.",
@@ -766,16 +767,16 @@
     },
     {
       "finding_id": "TF-09",
-      "severity": "high",
+      "collection_priority": "high",
       "confidence": "medium",
       "name": "Operating controls and token-control attribution remain insufficiently mapped",
-      "finding": "Current artifacts do not establish who controls exchange custody, withdrawal decisioning, RLB admin/deployer paths, buy-and-burn execution wallets, LP positions, market-making wallets, or team/affiliate token clusters.",
+      "finding": "Current artifacts do not establish who controls exchange custody, withdrawal decisioning, RLB admin/deployer paths, buy-and-burn execution wallets, LP positions, Rollbit app/on-platform liquidity, market-making wallets, or team/affiliate token clusters.",
       "primary_artifacts": "REPORT_7_TECHNICAL_DEEP_DIVE.md; output/technical_deep_dive.json",
       "next_steps": "Build an RLB and operations control map covering deployer/admin rights, top holders, LP wallets, burn wallets, exchange custody, and public team/affiliate wallet links."
     },
     {
       "finding_id": "TF-10",
-      "severity": "medium",
+      "collection_priority": "medium",
       "confidence": "high",
       "name": "Public complaint and record acquisition is reproducible but incomplete",
       "finding": "The latest public-record capture preserved 53 deduplicated targets, with 52 HTTP captures written, 1 blocked/challenged target, and 1 request failure. Capture gaps should drive browser-aware follow-up.",

@@ -11,7 +11,7 @@ This appendix turns the scattered public coverage into a dated chronology. The a
 
 - show what was publicly reported
 - separate official company messaging from third-party reporting
-- preserve the sequence in which technical risk signals became visible
+- preserve the sequence in which technical questions became visible
 
 ---
 
@@ -38,13 +38,13 @@ This appendix turns the scattered public coverage into a dated chronology. The a
 
 ## Reading the Timeline Correctly
 
-Three patterns stand out once the chronology is cleaned up:
+Three chronology notes matter once the event list is cleaned up:
 
 1. **Corporate messaging and external scrutiny diverged early.**
    Rollbit's public materials emphasized product growth, migration, and buy-and-burn mechanics while media coverage flagged verification, promotion, and custody concerns.
 
 2. **2025-2026 treasury reporting is mixed, not one-way.**
-   The platform appears in both outflow and inflow alerts. That is still notable, but it argues for an **opacity** thesis more than a simplistic "everything only leaves" thesis.
+   The platform appears in both outflow and inflow alerts. Those events should be classified by direction and counterparty evidence before attaching significance to them.
 
 3. **The platform remained visibly active after the most serious negative events.**
    Blog posts and promotions continued after the Ukraine-linked seizure reporting and after the January-February 2026 treasury alerts.
@@ -53,14 +53,14 @@ Three patterns stand out once the chronology is cleaned up:
 
 ## What This Means for the Deep Dive
 
-The public news record now supports a stronger and more defensible narrative:
+The public news record supports a narrower data-collection frame:
 
 - Rollbit has faced **serious public verification and reputation events**
 - its treasury footprint shows **large, sometimes ambiguous routing activity**
 - the company has maintained an **active promotional and product-marketing surface**
 - the public record does **not** support every early social-media interpretation of those flows
 
-That makes the case more credible, not less. The goal of a forensic report is not maximum drama; it is maximum signal.
+The goal of this timeline is to preserve sequence, sources, and classification, not to supply a conclusion for the reader.
 
 ---
 

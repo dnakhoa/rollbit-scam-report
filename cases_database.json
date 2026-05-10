@@ -28,8 +28,8 @@
         "restricted_country": 3,
         "kyc_delay_tactic": 9,
         "winning_block": 12,
-        "maintenance_scam": 1,
-        "futures_manipulation": 2
+        "maintenance_window_dispute": 1,
+        "futures_pricing_dispute": 2
       },
       "year_breakdown": {
         "2022": 2,
@@ -68,7 +68,7 @@
           "amount_usd": 44000.0,
           "source": "bitcointalk",
           "post_date": "2024-11-25",
-          "category": "maintenance_scam"
+          "category": "maintenance_window_dispute"
         },
         {
           "case_id": "BTC-002",
@@ -497,7 +497,7 @@
       "amount_currency": "USD",
       "amount_native": "",
       "amount_status": "confirmed",
-      "category": "maintenance_scam",
+      "category": "maintenance_window_dispute",
       "status": "UNRESOLVED",
       "counted_in_totals": true,
       "confidence_score": 0.85,
@@ -578,7 +578,7 @@
       "amount_currency": "USD",
       "amount_native": "",
       "amount_status": "claimed",
-      "category": "futures_manipulation",
+      "category": "futures_pricing_dispute",
       "status": "UNRESOLVED",
       "counted_in_totals": true,
       "confidence_score": 0.5,
@@ -1735,7 +1735,7 @@
       "amount_currency": "USD",
       "amount_native": "",
       "amount_status": "unquantified",
-      "category": "futures_manipulation",
+      "category": "futures_pricing_dispute",
       "status": "UNRESOLVED",
       "counted_in_totals": true,
       "confidence_score": 0.5,

@@ -52,6 +52,11 @@ SOURCE_LABELS = {
     "x": "X",
 }
 
+CATEGORY_MAP = {
+    "maintenance_scam": "maintenance_window_dispute",
+    "futures_manipulation": "futures_pricing_dispute",
+}
+
 
 # Explicit cross-posts / non-corpus items we do not want counted twice.
 NON_COUNTED_CASE_IDS = {
@@ -657,31 +662,59 @@ def derive_title(case_id: str, details: str, category: str) -> str:
     return f"{case_id} ({category})"
 
 
+def normalize_category(category: str) -> str:
+    category = clean_text(category)
+    return CATEGORY_MAP.get(category, category)
+
+
 def convert_base_row(row: dict[str, str]) -> dict:
     source = normalize_source(row.get("source", ""))
     amount_usd = parse_float(row.get("amount_usd", ""))
-    details = clean_text(row.get("details", ""))
+    details = clean_text(row.get("details", "")) or clean_text(row.get("summary", ""))
+    source_url = default_source_url(source, row.get("url", "") or row.get("source_url", ""))
+    post_date = clean_text(row.get("date_posted", "")) or clean_text(row.get("post_date", ""))
+    confidence_score = (
+        parse_float(row.get("credibility_score", ""))
+        or parse_float(row.get("confidence_score", ""))
+        or 0.5
+    )
+    title = clean_text(row.get("title", "")) or derive_title(
+        row.get("case_id", ""),
+        details,
+        normalize_category(row.get("category", "")),
+    )
+    notes = clean_text(row.get("notes_on_verification", "")) or legacy_verification_note(
+        source,
+        row.get("url", "") or row.get("source_url", ""),
+        row.get("case_id", ""),
+    )
     case = {
         "case_id": clean_text(row.get("case_id", "")),
         "source": source,
-        "source_url": default_source_url(source, row.get("url", "")),
-        "title": derive_title(row.get("case_id", ""), details, row.get("category", "")),
+        "source_url": source_url,
+        "title": title,
         "username_forum": clean_text(row.get("username_forum", "")),
-        "username_rollbit": "",
-        "country": "",
-        "post_date": clean_text(row.get("date_posted", "")),
-        "captured_at": CAPTURED_AT,
+        "username_rollbit": clean_text(row.get("username_rollbit", "")),
+        "country": clean_text(row.get("country", "")),
+        "post_date": post_date,
+        "captured_at": clean_text(row.get("captured_at", "")) or CAPTURED_AT,
         "amount_usd": amount_usd,
         "amount_currency": clean_text(row.get("amount_currency", "")) or "USD",
-        "amount_native": clean_text(row.get("amount_crypto", "")),
+        "amount_native": clean_text(row.get("amount_crypto", "")) or clean_text(row.get("amount_native", "")),
         "amount_status": infer_amount_status(source, amount_usd),
-        "category": clean_text(row.get("category", "")),
+        "category": normalize_category(row.get("category", "")),
         "status": clean_text(row.get("status", "")) or "UNRESOLVED",
         "counted_in_totals": clean_text(row.get("case_id", "")) not in NON_COUNTED_CASE_IDS,
-        "confidence_score": parse_float(row.get("credibility_score", "")) or 0.5,
-        "cross_post_group": "XPOST-CL-001-AG-002" if row.get("case_id") in {"AG-002", "CL-001"} else "",
-        "alternate_urls": [],
-        "notes_on_verification": legacy_verification_note(source, row.get("url", ""), row.get("case_id", "")),
+        "confidence_score": confidence_score,
+        "cross_post_group": clean_text(row.get("cross_post_group", "")) or (
+            "XPOST-CL-001-AG-002" if row.get("case_id") in {"AG-002", "CL-001"} else ""
+        ),
+        "alternate_urls": [
+            url.strip()
+            for url in clean_text(row.get("alternate_urls", "")).split("|")
+            if url.strip()
+        ],
+        "notes_on_verification": notes,
         "summary": details,
         "rollbit_response": clean_text(row.get("rollbit_response", "")),
         "evidence": [],
@@ -871,7 +904,7 @@ def build_evidence_register(cases: list[dict], metrics: dict) -> list[dict]:
         {
             "claim_id": "ER-10",
             "report_section": "Report 0 / Synthesis",
-            "claim": "The complaint corpus is consistent with a counterparty-risk thesis even without claiming that public treasury wallets are empty.",
+            "claim": "The complaint corpus is a recurring operational-dispute dataset even without claiming that public treasury wallets are empty.",
             "case_ids": "ER-01|ER-02|ER-05|ER-06",
             "source_urls": "",
             "confidence": "high",
@@ -928,7 +961,7 @@ def export_cases_csv(cases: list[dict]) -> None:
         "rollbit_response",
     ]
     with BASE_CSV.open("w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         for case in cases:
             row = {key: case.get(key, "") for key in fieldnames}
@@ -945,7 +978,7 @@ def export_metrics(metrics: dict) -> None:
 def export_evidence_register(register: list[dict]) -> None:
     fieldnames = ["claim_id", "report_section", "claim", "case_ids", "source_urls", "confidence", "notes"]
     with EVIDENCE_REGISTER_CSV.open("w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         for row in register:
             writer.writerow(row)

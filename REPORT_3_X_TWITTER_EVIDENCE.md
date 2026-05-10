@@ -15,7 +15,7 @@ That distinction matters. X is useful because it captures:
 - public-facing conduct by staff or founders
 - cross-posting and amplification of complaints that also appear on forums or review sites
 
-X is **not** used here to create a separate total of victims or locked funds. Those totals live in [Report 2](./REPORT_2_VICTIM_EVIDENCE.md), with dedupe rules applied.
+X is **not** used here to create a separate total of complainants or locked funds. Those totals live in [Report 2](./REPORT_2_VICTIM_EVIDENCE.md), with dedupe rules applied.
 
 The main evidentiary value of X is narrower:
 
@@ -98,11 +98,11 @@ X evidence has clear limits and should be read accordingly:
 - a viral thread is not the same thing as a verified financial record
 - some X posts appear to summarize complaints that also live on Bitcointalk, Trustpilot, or Casino Guru
 - public engagement numbers can change and are not stable evidentiary metrics
-- copied screenshots or quote-tweets can create duplication risk if they are counted as standalone cases
+- copied screenshots or quote-tweets can create duplicate candidates if they are counted as standalone cases
 
 For those reasons, this report avoids:
 
-- separate X victim totals
+- separate X complainant totals
 - separate X fund totals
 - confident attribution where the underlying case identity is unclear
 

@@ -20,7 +20,7 @@ This report consolidates the public complaint record into one canonical corpus t
 | Resolution rate | **5.0%** |
 | Largest counted case | **$55,000** (`BTC-005`) |
 
-The strongest factual takeaway is not that every complaint proves wrongdoing on its own. It is that the same withdrawal-block, KYC-escalation, and multi-account script appears across **Bitcointalk, Trustpilot, Casino Guru, AskGamblers, and CasinoListings** over multiple years. The pattern is recurrent enough to be material even after the corpus is trimmed for explicit duplicates and labeled by confidence.
+The main corpus observation is not that every complaint proves wrongdoing on its own. It is that the same withdrawal-block, KYC-escalation, and multi-account language appears across **Bitcointalk, Trustpilot, Casino Guru, AskGamblers, and CasinoListings** over multiple years. The pattern is recurrent enough to justify source preservation and case-level review after the corpus is trimmed for explicit duplicates and labeled by confidence.
 
 Anchor claims for this report are listed in [Report 6](./REPORT_6_EVIDENCE_REGISTER.md), especially `ER-01` through `ER-08`.
 
@@ -64,7 +64,7 @@ Across the counted corpus, the repeated behavior clusters into a small set of re
 | KYC / compliance delay loop | 9 | $52,705.00 |
 | Sportsbook abuse label | 4 | $21,070.00 |
 | Restricted-country enforcement at withdrawal stage | 3 | $34,100.00 |
-| Futures manipulation allegation | 2 | $500.00 |
+| Futures pricing/trading allegation | 2 | $500.00 |
 | Maintenance-window trading dispute | 1 | $44,000.00 |
 
 **Observed facts**
@@ -75,7 +75,7 @@ Across the counted corpus, the repeated behavior clusters into a small set of re
 
 **Inference**
 
-- The corpus is consistent with a withdrawal-gating pattern in which compliance, KYC, geography, or sportsbook-provider flags are invoked most aggressively at the point where customer liabilities become more expensive.
+- The corpus is consistent with a post-withdrawal control pattern in which compliance, KYC, geography, or sportsbook-provider flags appear at the point where customer liabilities become more expensive.
 - That inference is supported by the recurrence of similar language and timing, but it should still be stated as an inference rather than as a conclusively proven internal policy.
 
 ---
@@ -92,7 +92,7 @@ Across the counted corpus, the repeated behavior clusters into a small set of re
 | Multi-account / linked-account language | 29 | $178,402.56 |
 | Named staff/team language | 8 | $69,287.56 |
 
-Compound markers are more probative than single keywords:
+Compound markers are more useful for triage than single keywords:
 
 | Compound Pattern | Cases | Amount Linked |
 |------------------|------:|--------------:|
@@ -148,7 +148,7 @@ These cases matter because they span:
 - different years
 - both sportsbook and casino-related activity
 
-That makes the recurrence harder to dismiss as a single-platform moderation artifact.
+That supports cross-source review rather than a single-venue explanation.
 
 ---
 
@@ -174,9 +174,9 @@ That does **not** prove there were no private resolutions. It does show that onl
 
 ### Analyst interpretation standard
 
-The safest forensic phrasing is:
+The safest data-analysis phrasing is:
 
-> The complaint corpus documents a recurrent pattern of reported withholding, account restriction, or post-win verification escalation. The pattern is strong enough to support further scrutiny, but individual allegations should still be evaluated on their own evidence.
+> The complaint corpus documents a recurrent pattern of reported withholding, account restriction, or post-win verification escalation. The pattern is enough to prioritize further collection, but individual allegations should still be evaluated on their own evidence.
 
 Operationally, the next step is not legal argument. It is source preservation:
 

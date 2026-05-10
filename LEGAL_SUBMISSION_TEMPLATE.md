@@ -114,7 +114,7 @@ I respectfully request:
 
 ### 1. FBI Internet Crime Complaint Center (IC3)
 - **URL:** https://www.ic3.gov/
-- **Best for:** U.S.-connected victims or transactions
+- **Best for:** U.S.-connected complainants or transactions
 
 ### 2. Curaçao Gaming Authority
 - **URL:** https://www.cga.cw/regulation/online-gaming

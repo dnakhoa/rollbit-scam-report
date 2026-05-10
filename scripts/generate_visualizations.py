@@ -2,12 +2,12 @@
 """
 Rollbit Forensic Visualizations Generator
 ==========================================
-Generates 5 key charts from on-chain data and victim case database:
+Generates 5 key charts from on-chain data and the complaint case database:
 1. Treasury Flow Analysis (outflows over time)
-2. RLB Market Structure Stress (price, buybacks, and liquidity)
-3. Victim Impact Analysis (from case database)
+2. RLB Market Structure (price, buy-and-burn context, and public DEX liquidity scope)
+3. Complaint Amount Analysis (from case database)
 4. Wallet Network Graph (fund flow visualization)
-5. Evidence Timeline (critical events chronology)
+5. Evidence Timeline (event chronology)
 
 Usage:
     python generate_visualizations.py                # Generate all charts
@@ -181,11 +181,11 @@ def chart_treasury_flows(output_dir):
 
 
 # =========================================================================
-# CHART 2: RLB Manipulation Evidence
+# CHART 2: RLB Market Structure
 # =========================================================================
 
-def chart_rlb_manipulation(output_dir):
-    print("  [2/5] RLB Market Structure Stress...")
+def chart_rlb_market_structure(output_dir):
+    print("  [2/5] RLB Market Structure...")
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(14, 10), height_ratios=[2, 1])
 
     dates = [datetime.strptime(d, '%Y-%m') for d, _ in RLB_PRICE_HISTORY]
@@ -205,55 +205,54 @@ def chart_rlb_manipulation(output_dir):
                  arrowprops=dict(arrowstyle='->', color=COLORS['red']),
                  fontsize=10, color=COLORS['red'], fontweight='bold')
 
-    # Claimed buyback line
-    buyback_months = len(dates)
-    claimed_monthly = [5.0] * buyback_months  # $5M/month claimed
+    # Public company-reported first-month buy-and-burn context.
+    reported_buyback = [0.0] * len(dates)
+    if '2023-09' in [d for d, _ in RLB_PRICE_HISTORY]:
+        reported_buyback[[d for d, _ in RLB_PRICE_HISTORY].index('2023-09')] = 5.538
     ax1_twin = ax1.twinx()
-    ax1_twin.bar(dates, claimed_monthly, width=20, alpha=0.3,
-                 color=COLORS['cyan'], label='Claimed buyback ($M/mo)')
-    ax1_twin.set_ylabel('Claimed Buyback ($M/month)', color=COLORS['cyan'])
+    ax1_twin.bar(dates, reported_buyback, width=20, alpha=0.3,
+                 color=COLORS['cyan'], label='Reported first-month buy-and-burn ($M)')
+    ax1_twin.set_ylabel('Reported Buy-and-Burn ($M)', color=COLORS['cyan'])
     ax1_twin.set_ylim(0, 30)
     ax1_twin.tick_params(axis='y', colors=COLORS['cyan'])
 
-    ax1.set_title('RLB Token: Price vs Claimed Buybacks\n"$5M/month buybacks" yet -77% price decline',
+    ax1.set_title('RLB Token: Price History and Buy-and-Burn Context\nPublic DEX liquidity is a scoped market slice',
                   fontsize=14, fontweight='bold', pad=15)
     ax1.set_ylabel('RLB Price (USD)', fontsize=12)
     ax1.grid(alpha=0.3)
     ax1.xaxis.set_major_formatter(mdates.DateFormatter('%b %y'))
 
-    # Bottom panel: buyback inconsistency score
-    inconsistency = []
+    # Bottom panel: month-over-month price movement.
+    monthly_move = []
     for i, p in enumerate(prices):
         if i == 0:
-            inconsistency.append(0)
+            monthly_move.append(0)
         else:
             price_change = (p - prices[i-1]) / prices[i-1]
-            # If buybacks happening, price should trend up or stable
-            # Negative price with claimed buybacks = high inconsistency
-            score = max(0, -price_change * 100)
-            inconsistency.append(score)
+            monthly_move.append(price_change * 100)
 
-    bar_colors = [COLORS['red'] if v > 5 else COLORS['orange'] if v > 2 else COLORS['green']
-                  for v in inconsistency]
-    ax2.bar(dates, inconsistency, width=20, color=bar_colors, alpha=0.8)
-    ax2.set_title('Buyback Inconsistency Score (higher = larger technical discrepancy)', fontsize=12)
-    ax2.set_ylabel('Inconsistency %')
+    bar_colors = [COLORS['red'] if v < -5 else COLORS['green'] if v > 5 else COLORS['blue']
+                  for v in monthly_move]
+    ax2.bar(dates, monthly_move, width=20, color=bar_colors, alpha=0.8)
+    ax2.axhline(0, color=COLORS['text2'], linewidth=1)
+    ax2.set_title('Month-over-Month Price Movement', fontsize=12)
+    ax2.set_ylabel('Change %')
     ax2.grid(alpha=0.3)
     ax2.xaxis.set_major_formatter(mdates.DateFormatter('%b %y'))
 
     plt.tight_layout()
-    path = os.path.join(output_dir, 'rlb_manipulation_evidence.png')
+    path = os.path.join(output_dir, 'rlb_market_structure.png')
     fig.savefig(path, dpi=150, bbox_inches='tight')
     plt.close(fig)
     print(f"    Saved: {path}")
 
 
 # =========================================================================
-# CHART 3: Victim Impact Analysis
+# CHART 3: Complaint Amount Analysis
 # =========================================================================
 
-def chart_victim_impact(output_dir):
-    print("  [3/5] Victim Impact Analysis...")
+def chart_complaint_amounts(output_dir):
+    print("  [3/5] Complaint Amount Analysis...")
     payload = load_cases()
     fig, axes = plt.subplots(2, 2, figsize=(14, 10))
 
@@ -283,7 +282,7 @@ def chart_victim_impact(output_dir):
     colors = [COLORS['red'], COLORS['orange'], COLORS['purple'], COLORS['blue'],
               COLORS['cyan'], COLORS['green'], '#ff9ff3', '#feca57']
     ax.barh(labels[::-1], values[::-1], color=colors[:len(labels)][::-1], alpha=0.85)
-    ax.set_xlabel('Amount Locked ($K)')
+    ax.set_xlabel('Reported Amount ($K)')
     ax.set_title('By Category', fontsize=12, fontweight='bold')
     for i, v in enumerate(values[::-1]):
         ax.text(v + 0.5, i, f'${v:.0f}K', va='center', fontsize=9, color=COLORS['text'])
@@ -333,10 +332,10 @@ def chart_victim_impact(output_dir):
     ax.set_title('By Source Platform', fontsize=12, fontweight='bold')
 
     total_amount = sum(c['amount'] for c in all_cases)
-    fig.suptitle(f'Victim Impact Analysis\n{len(all_cases)} quantified complaints | ${total_amount:,.0f} total quantified',
+    fig.suptitle(f'Complaint Amount Analysis\n{len(all_cases)} quantified complaints | ${total_amount:,.0f} total quantified',
                  fontsize=16, fontweight='bold', y=1.02)
     plt.tight_layout()
-    path = os.path.join(output_dir, 'victim_impact_analysis.png')
+    path = os.path.join(output_dir, 'complaint_amount_analysis.png')
     fig.savefig(path, dpi=150, bbox_inches='tight')
     plt.close(fig)
     print(f"    Saved: {path}")
@@ -524,11 +523,11 @@ def chart_evidence_timeline(output_dir):
         ('2023-04', 'License "restored"', 'regulatory', -1),
         ('2023-07', 'RLB token launches on Solana', 'token', 1),
         ('2023-08', 'RLB migrated to Ethereum', 'token', -1),
-        ('2023-10', 'Gainzy dumping exposed', 'manipulation', 1),
+        ('2023-10', 'Influencer promotion\nscrutiny', 'promotion', 1),
         ('2024-04', 'RLB SOL→ETH migration deadline', 'token', -1),
         ('2024-07', 'Complaints spike begins', 'complaint', 1),
         ('2024-08', 'Original Curacao license expires', 'regulatory', -1),
-        ('2024-11', '$44K maintenance scam', 'complaint', 1),
+        ('2024-11', '$44K maintenance-window\ndispute', 'complaint', 1),
         ('2025-05', '$123M seized in Ukraine', 'seizure', -1),
         ('2025-09', '50K SOL sold ($10.2M)', 'outflow', 1),
         ('2026-01', '497 BTC moved into Rollbit', 'flow', -1),
@@ -545,7 +544,7 @@ def chart_evidence_timeline(output_dir):
     cat_colors = {
         'launch': COLORS['green'], 'complaint': COLORS['orange'],
         'regulatory': COLORS['purple'], 'token': COLORS['blue'],
-        'manipulation': COLORS['red'], 'seizure': '#ff0000',
+        'promotion': COLORS['red'], 'seizure': '#ff0000',
         'outflow': COLORS['red'], 'flow': COLORS['cyan'],
     }
 
@@ -605,8 +604,8 @@ def main():
     print(f"{'='*60}\n")
 
     chart_treasury_flows(args.output)
-    chart_rlb_manipulation(args.output)
-    chart_victim_impact(args.output)
+    chart_rlb_market_structure(args.output)
+    chart_complaint_amounts(args.output)
     chart_wallet_network(args.output)
     chart_evidence_timeline(args.output)
 

@@ -48,7 +48,7 @@ def run_technical_phase():
         rlb = payload.get('rlb_market_structure', {})
         print(f"\n  Phase complete - {len(findings)} technical findings generated")
         print(f"  Visible wallet snapshot: ${onchain.get('visible_wallet_usd', 0):,.2f}")
-        print(f"  RLB liquidity / market cap: {rlb.get('liquidity_to_market_cap_ratio', 0) * 100:.1f}%")
+        print(f"  RLB tracked public DEX liquidity / market cap: {rlb.get('liquidity_to_market_cap_ratio', 0) * 100:.1f}%")
         print(f"  Files generated:")
         print(f"    - output/technical_deep_dive.json")
         print(f"    - output/forensic_indicators.csv")
@@ -122,15 +122,15 @@ def run_full(etherscan_key=''):
 
     try:
         from generate_visualizations import (
-            setup_style, chart_treasury_flows, chart_rlb_manipulation,
-            chart_victim_impact, chart_wallet_network, chart_evidence_timeline
+            setup_style, chart_treasury_flows, chart_rlb_market_structure,
+            chart_complaint_amounts, chart_wallet_network, chart_evidence_timeline
         )
         charts_dir = str(OUTPUT_DIR / 'charts')
         os.makedirs(charts_dir, exist_ok=True)
         setup_style()
         chart_treasury_flows(charts_dir)
-        chart_rlb_manipulation(charts_dir)
-        chart_victim_impact(charts_dir)
+        chart_rlb_market_structure(charts_dir)
+        chart_complaint_amounts(charts_dir)
         chart_wallet_network(charts_dir)
         chart_evidence_timeline(charts_dir)
         print("\n  ✅ Phase 2 complete — 5 charts generated")
@@ -150,8 +150,8 @@ def run_full(etherscan_key=''):
   Wallet balances:  ${summary.get('total_wallet_balance_usd', 0):,.2f}
   Documented outflows: ${summary.get('total_documented_outflows_usd', 0):,.2f}
   Assets seized:    ${summary.get('total_seized_usd', 0):,.2f}
-  Risk score:       {summary.get('avg_risk_score', 'N/A')}/10
-  Risk level:       {summary.get('risk_level', 'N/A')}
+  Data-gap score:  {summary.get('avg_data_gap_score', 'N/A')}/10
+  Data-gap level:  {summary.get('data_gap_level', 'N/A')}
     """)
 
     elapsed = time.time() - start
@@ -160,8 +160,8 @@ def run_full(etherscan_key=''):
     print(f"\n  Files generated:")
     print(f"    - output/blockchain_analysis.json")
     print(f"    - output/charts/treasury_flow_analysis.png")
-    print(f"    - output/charts/rlb_manipulation_evidence.png")
-    print(f"    - output/charts/victim_impact_analysis.png")
+    print(f"    - output/charts/rlb_market_structure.png")
+    print(f"    - output/charts/complaint_amount_analysis.png")
     print(f"    - output/charts/wallet_network_graph.png")
     print(f"    - output/charts/evidence_timeline.png")
     print()
@@ -185,15 +185,15 @@ def run_quick():
 
     try:
         from generate_visualizations import (
-            setup_style, chart_treasury_flows, chart_rlb_manipulation,
-            chart_victim_impact, chart_wallet_network, chart_evidence_timeline
+            setup_style, chart_treasury_flows, chart_rlb_market_structure,
+            chart_complaint_amounts, chart_wallet_network, chart_evidence_timeline
         )
         charts_dir = str(OUTPUT_DIR / 'charts')
         os.makedirs(charts_dir, exist_ok=True)
         setup_style()
         chart_treasury_flows(charts_dir)
-        chart_rlb_manipulation(charts_dir)
-        chart_victim_impact(charts_dir)
+        chart_rlb_market_structure(charts_dir)
+        chart_complaint_amounts(charts_dir)
         chart_wallet_network(charts_dir)
         chart_evidence_timeline(charts_dir)
         print("\n  ✅ All charts generated")

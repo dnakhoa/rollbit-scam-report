@@ -1,21 +1,25 @@
 # Publishing Notes
 **Purpose:** keep the public repo forensic, reproducible, and carefully worded.
 
-This repository should publish technical findings and testable suspicion. It should not present public complaints, attributed wallets, or token-market indicators as proof beyond what the artifacts show.
+This repository should publish technical findings, data gaps, and testable hypotheses. It should not present public complaints, attributed wallets, or token-market indicators as proof beyond what the artifacts show.
 
 ---
 
-## Public Thesis
+## Public Frame
 
 The strongest publishable finding is:
 
 > Rollbit-linked public wallet balances exist, but they are not verified reserves.
 
-The strongest publishable suspicion is:
+The strongest publishable data gap is:
 
-> Public complaints repeatedly describe funds becoming inaccessible after withdrawals, wins, KYC/compliance escalation, or multiple-account accusations, while the public artifact set does not let an outside analyst reconstruct reserves, liabilities, exchange custody, withdrawal decisioning, RLB control, or token-market support.
+> Public complaints repeatedly describe funds becoming inaccessible after withdrawals, wins, KYC/compliance escalation, or multiple-account accusations, while the public artifact set does not let an outside analyst reconstruct reserves, liabilities, exchange custody, withdrawal decisioning, RLB control, or complete RLB venue depth.
 
-That suspicion is enough to justify deeper forensic investigation. It does not prove intent, validate every complaint, or establish a complete custody map.
+That gap is enough to justify deeper collection. It does not prove intent, validate every complaint, or establish a complete custody or token-market map.
+
+## External Review Attribution
+
+X user `Defi3000` flagged that the repo should remove opinion-led framing, avoid overstating treasury-flow significance without an operating baseline, and correct the RLB venue-depth discussion so Uniswap is not treated as the only trading or liquidity surface.
 
 ---
 
@@ -28,8 +32,11 @@ Use:
 - "reported off-wallet custody event"
 - "public-source complaint corpus"
 - "claimed" vs "confirmed" complaint amounts
-- "reasonable forensic suspicion"
+- "working hypothesis"
+- "data gap"
 - "not verified reserves"
+- "tracked public DEX liquidity"
+- "Rollbit app/on-platform liquidity not measured"
 
 Avoid:
 
@@ -38,6 +45,9 @@ Avoid:
 - treating market cap as usable liquidity
 - treating raw complaint count as proof of misconduct
 - mixing direct outflows with mixed-flow alerts
+- treating sampled withdrawals as evidence of a drain without an operating-cost baseline
+- treating Uniswap/DEXScreener/CoinGecko data as complete RLB liquidity
+- saying RLB trades only on Uniswap or has no other liquidity venue unless that has been independently verified
 - making legal conclusions in the technical reports
 
 ---
@@ -47,7 +57,7 @@ Avoid:
 Before publishing:
 
 1. Confirm `.env*`, `.vscode/`, `.claude/`, `.cursor/`, `.idea/`, `.venv/`, caches, and raw captures are ignored.
-2. Review firsthand victim material for consent and private identifiers.
+2. Review firsthand complainant material for consent and private identifiers.
 3. Keep `output/captures/` local unless there is a separate rights/privacy review.
 4. Publish summary artifacts: reports, charts, `output/*.json`, and `output/*.csv`.
 5. Re-run `python3 scripts/run_investigation.py --quick` after report edits.

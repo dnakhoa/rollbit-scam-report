@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-25T11:35:46.098769+00:00",
+  "timestamp": "2026-05-10T10:03:31.965992+00:00",
   "mode": "cached",
   "snapshot_note": "Cached mode preserves the April 19, 2026 wallet snapshot from REPORT_1_ONCHAIN_FORENSICS.md; it does not imply current live balances.",
   "wallets": [
@@ -152,35 +152,36 @@
   },
   "rlb_analysis": {
     "buyback_analysis": {
-      "claimed_monthly_buyback_usd": 5000000,
+      "reported_first_month_buyback_usd": 5538265.59,
+      "reported_first_month_rlb_bought": 33688709,
       "initial_supply": 5000000000,
       "reported_burned_pct": 50.86
     },
-    "manipulation_indicators": [
+    "market_structure_indicators": [
       {
-        "indicator": "Price decline despite buybacks",
-        "severity": "HIGH"
+        "indicator": "Price drawdown alongside reported buy-and-burn mechanics",
+        "collection_priority": "HIGH"
       },
       {
-        "indicator": "Influencer dumping via mixer",
-        "severity": "HIGH"
+        "indicator": "Influencer-promotion wallet reconstruction needed",
+        "collection_priority": "MEDIUM"
       },
       {
-        "indicator": "Revenue centralization",
-        "severity": "MEDIUM"
+        "indicator": "Revenue figures centralized, burns on-chain",
+        "collection_priority": "MEDIUM"
       },
       {
-        "indicator": "Treasury outflows meaningful relative to RLB liquidity",
-        "severity": "HIGH"
+        "indicator": "Treasury-related flows require operating baseline",
+        "collection_priority": "MEDIUM"
       }
     ]
   },
   "wallet_clusters": {},
-  "risk_indicators": [
+  "data_gap_indicators": [
     {
-      "name": "Treasury Outflow Pressure",
+      "name": "Treasury Flow Baseline Gap",
       "score": 1.74,
-      "description": "$17,400,000 in documented treasury-related outflows",
+      "description": "$17,400,000 in documented treasury-related outflows requiring operating baseline comparison",
       "evidence": [
         "2025-09-03: 50K SOL sold from treasury-linked wallet after 2-year dormancy ($10,170,000)",
         "2026-01-11: 15K SOL transferred (batch 1) ($2,050,000)",
@@ -191,24 +192,25 @@
     {
       "name": "Off-Wallet Custody Exposure",
       "score": 8.5,
-      "description": "$123,000,000 reported in an exchange/proxy custody event",
+      "description": "$123,000,000 reported in an exchange/proxy custody event; custody map is incomplete",
       "evidence": [
         "Ukraine-linked reporting describes assets tied to Bull Gaming N.V. outside the public treasury wallet set",
         "This is treated as a custody-location signal, not as proof of current wallet depletion"
       ]
     },
     {
-      "name": "RLB Liquidity and Price Stress",
+      "name": "RLB Public-Market Data Scope",
       "score": 7.7,
-      "description": "RLB token declined 77% from highs while top-pool DEX liquidity remains thin",
+      "description": "RLB traded below its high while tracked public DEX liquidity covers only part of the market",
       "evidence": [
-        "Claimed buyback mechanics depend on operator-reported revenue inputs",
-        "Top-pool visible liquidity is small relative to headline market capitalization",
+        "Buy-and-burn mechanics depend on operator-reported revenue inputs",
+        "Top-pool visible DEX liquidity is limited relative to headline market capitalization",
+        "Rollbit app/on-platform liquidity is not measured in the current artifact set",
         "Token market depth should not be treated as reserve depth"
       ]
     },
     {
-      "name": "Visible Reserve Coverage",
+      "name": "Visible Reserve Coverage Gap",
       "score": 4.502425585365853,
       "description": "Known wallet balances: $67,620,165.30 vs $123M reported off-wallet event scale",
       "evidence": [
@@ -245,8 +247,8 @@
     "total_wallet_balance_usd": 67620165.3,
     "total_documented_outflows_usd": 17400000,
     "total_seized_usd": 123000000,
-    "avg_risk_score": 6.2,
-    "risk_level": "HIGH",
+    "avg_data_gap_score": 6.2,
+    "data_gap_level": "HIGH",
     "known_events_count": 8
   }
 }
